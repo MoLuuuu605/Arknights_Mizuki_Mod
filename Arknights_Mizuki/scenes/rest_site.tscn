@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://o6meyqih1ymp"]
+
+[ext_resource type="Script" uid="uid://b17ps3ul4spgv" path="res://Arknights_Mizuki/scenes/RestSite.cs" id="1_svqvd"]
+[ext_resource type="Texture2D" uid="uid://cw5051o8i2amf" path="res://Arknights_Mizuki/images/sleep.png" id="1_vi8nm"]
+[ext_resource type="Script" uid="uid://b8yvqokhdibri" path="res://Arknights_Mizuki/scenes/SelectionReticle.cs" id="3_ayivr"]
+
+[node name="SakayoriIrohaRestSite" type="Node2D"]
+script = ExtResource("1_svqvd")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -466.0
+offset_top = -831.0
+offset_right = 534.0
+offset_bottom = 169.0
+texture = ExtResource("1_vi8nm")
+
+[node name="ControlRoot" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SelectionReticle" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -239.0
+offset_top = -428.0
+offset_right = 267.0
+offset_bottom = 1.0
+script = ExtResource("3_ayivr")
+
+[node name="Hitbox" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -187.0
+offset_top = -411.0
+offset_right = 240.0
+offset_bottom = -6.0
+
+[node name="ThoughtBubbleRight" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 139.0
+offset_top = -246.0
+offset_right = 139.0
+offset_bottom = -246.0
+
+[node name="ThoughtBubbleLeft" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -117.0
+offset_top = -214.0
+offset_right = -117.0
+offset_bottom = -214.0

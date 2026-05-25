@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://pdy0teckf4i"]
+
+[ext_resource type="Script" uid="uid://b0uc38txt0drq" path="res://Arknights_Mizuki/scenes/TestCharacterMerchant.cs" id="1_da6le"]
+[ext_resource type="Texture2D" uid="uid://cdel5g0soptsk" path="res://Arknights_Mizuki/scenes/mv_frames_bg/frame_000000.png" id="2_da6le"]
+
+[node name="IroncladMerchant" type="Node2D"]
+script = ExtResource("1_da6le")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -462.0
+offset_top = -823.0
+offset_right = 538.0
+offset_bottom = 177.0
+texture = ExtResource("2_da6le")

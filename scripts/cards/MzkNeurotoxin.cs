@@ -1,0 +1,76 @@
+using BaseLib.Abstracts;
+using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models.CardPools;
+using MegaCrit.Sts2.Core.ValueProps;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.HoverTips;
+
+using Arknights_Mizuki.Scripts.Pools;
+using Arknights_Mizuki.Scripts.Powers;
+
+namespace Arknights_Mizuki.Scripts.Cards;
+
+[Pool(typeof(MzkCardPool))]
+public class MzkNeurotoxin : CustomCardModel
+{
+    // 基础耗能
+    private const int energyCost = 2;
+    // 卡牌类型
+    private const CardType type = CardType.Skill;
+    // 卡牌稀有度
+    private const CardRarity rarity = CardRarity.Common;
+    // 目标类型（None 表示无需手动选择目标）
+    private const TargetType targetType = TargetType.None;
+    // 是否在卡牌图鉴中显示
+    private const bool shouldShowInCardLibrary = true;
+
+    // 每次给予的损伤层数
+    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
+    {
+        (DynamicVar)new PowerVar<SanityPower>(3m),
+        (DynamicVar)new DynamicVar("Times",3m)
+    };
+
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
+    {
+        HoverTipFactory.FromPower<SanityPower>()
+    };
+
+    public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/neurotoxin.png";
+
+    public MzkNeurotoxin() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
+    {
+    }
+
+    // 打出时的效果逻辑
+    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    {
+        var opponents = ((CardModel)this).CombatState.GetOpponentsOf(Owner.Creature).ToList();
+        var rng = Owner.RunState.Rng.CombatTargets;
+
+        int repeatCount = (int)((DynamicVar)((CardModel)this).DynamicVars["Times"]).BaseValue;
+        for (int i = 0; i < repeatCount; i++)
+        {
+            var target = rng.NextItem(opponents);
+            await PowerCmd.Apply<SanityPower>(
+                choiceContext,
+                target,
+                ((DynamicVar)((CardModel)this).DynamicVars["SanityPower"]).BaseValue,
+                ((CardModel)this).Owner.Creature,
+                (CardModel)(object)this,
+                false
+            );
+        }
+    }
+
+    // 升级后的效果逻辑
+    protected override void OnUpgrade()
+    {
+        ((DynamicVar)((CardModel)this).DynamicVars["Times"]).UpgradeValueBy(1m);
+    }
+}

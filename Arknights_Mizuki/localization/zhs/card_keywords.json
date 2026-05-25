@@ -1,0 +1,17 @@
+{
+    "ARKNIGHTS_MIZUKI-AUTOPLAY.description": "抽到时自动免费打出",
+    "ARKNIGHTS_MIZUKI-AUTOPLAY.title": "急速",
+    "ARKNIGHTS_MIZUKI-KWSEACREATURE.title": "海嗣",
+    "ARKNIGHTS_MIZUKI-KWSEACREATURE.description": "进入时失去5点生命\n攻击附带2层[blue]损伤[/blue]\n受到伤害提高25%，造成伤害提高50%",
+    "ARKNIGHTS_MIZUKI-KWHUMAN.title":"人类",
+    "ARKNIGHTS_MIZUKI-KWHUMAN.description":"进入时获得2点能量,1层[blue]潜行[/blue]\n抽3张牌，[green]回复[/green]6",
+    "ARKNIGHTS_MIZUKI-ECHO1.title":"回响1",
+    "ARKNIGHTS_MIZUKI-ECHO1.description":"本场战斗中，此牌在你手牌中时,每打出1张其他牌,回响后的卡牌数值+1",
+    "ARKNIGHTS_MIZUKI-ECHO2.title":"回响2",
+    "ARKNIGHTS_MIZUKI-ECHO2.description":"本场战斗中，此牌在你手牌中时,每打出2张其他牌,回响后的卡牌数值+1",
+    "ARKNIGHTS_MIZUKI-ECHO3.title":"回响3",
+    "ARKNIGHTS_MIZUKI-ECHO3.description":"本场战斗中，此牌在你手牌中时,每打出3张其他牌,回响后的卡牌数值+1",
+    "ARKNIGHTS_MIZUKI-SPUTTER.title":"溅射",
+    "ARKNIGHTS_MIZUKI-SPUTTER.description":"对攻击目标外的其他敌人造成50%的伤害"
+    
+}
