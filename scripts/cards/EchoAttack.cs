@@ -33,7 +33,7 @@ public class EchoAttack : CustomCardModel
     // 卡牌的基础属性（例如这里是12点伤害）
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
 	{
-		(DynamicVar)new DamageVar(5m, (ValueProp)8),
+		(DynamicVar)new DamageVar(4m, (ValueProp)8),
 		(DynamicVar)new PowerVar<SanityPower>(1m)
 	};
 

@@ -53,7 +53,10 @@ public class AwakenPlus : CustomCardModel
             .FromCard(this) // 伤害来源于这张卡牌
             .TargetingAllOpponents(((CardModel)this).CombatState)
             .Execute(choiceContext);
-        var opponents = ((CardModel)this).CombatState.GetOpponentsOf(Owner.Creature);
+        var opponents = ((CardModel)this).CombatState
+            .GetOpponentsOf(Owner.Creature)
+            .Where(opponent => opponent.IsAlive)
+            .ToList();
         foreach (var opponent in opponents)
         {
             await PowerCmd.Apply<SanityPower>(

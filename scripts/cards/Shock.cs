@@ -55,7 +55,7 @@ public class Shock : CustomCardModel
             .FromCard(this)
             .TargetingAllOpponents(((CardModel)this).CombatState)
             .Execute(choiceContext);
-        var opponents = ((CardModel)this).CombatState.GetOpponentsOf(Owner.Creature);
+        var opponents = ((CardModel)this).CombatState.GetOpponentsOf(Owner.Creature).ToList();
         foreach (var opponent in opponents)
         {
             await PowerCmd.Apply<SanityPower>(

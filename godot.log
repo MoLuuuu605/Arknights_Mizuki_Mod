@@ -103,8 +103,19 @@ FMOD Sound System: Successfully initialized
 [INFO] [Sentry.NET] Shutting down because event reporting is disabled.
 [INFO] [Sentry.NET] Shutting down
 [Sentry.GDExtension] Shutting down
+ERROR: Sentry: Failed to close native SDK cleanly. Error code: 1
+   at: sentry::native::NativeSDK::close (src\sentry\native\native_sdk.cpp:489)
+   GDScript backtrace (most recent call first):
+       [0] shutdown (res://addons/sentry/SentryInit.gd:189)
+   C# backtrace (most recent call first):
+       [0] void MegaCrit.Sts2.Core.Debug.SentryService.Shutdown()
+       [1] void MegaCrit.Sts2.Core.Debug.SentryService.AfterGameInit(string, string, Godot.Node)
+       [2] void MegaCrit.Sts2.Core.Nodes.NGame+<GameStartup>d__117.MoveNext()
+       [3] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [4] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
+       [5] void Godot.SignalAwaiter.SignalCallback(nint, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_bool*)
 [INFO] AtlasManager: Loaded controller_atlas with 112 sprites
-[INFO] MuteInBackground: FocusIn received [tween=False, msSinceFocusOut=15729, windowFocused=True]
+[INFO] MuteInBackground: FocusIn received [tween=False, msSinceFocusOut=13150, windowFocused=True]
 [INFO] Applying display settings...
   FULLSCREEN: False
   ASPECT_RATIO: (SixteenByNine)
@@ -113,14 +124,13 @@ FMOD Sound System: Successfully initialized
   POSITION: (434, 260)
 [INFO] [Display] Min size: (64, 64) Max size: (16384, 16384)
 [INFO] [Display] Attempting WINDOWED mode on Display 1 of 1 at position (434, 260)
-[INFO] MuteInBackground: FocusIn received [tween=False, msSinceFocusOut=16045, windowFocused=True]
 [INFO] [Display] SUCCESS: (1920, 1080) Windowed mode in Display 0: Position (434, 260) ((434, 260))
 [INFO] [Display] New size: (1920, 1080) position: (434, 260)
 [INFO] VSync: Off
 [INFO] SteamStatsManager: User stats received
-[INFO] SteamStatsManager: Global stats received (found=True), architect damage = 236294868524
+[INFO] SteamStatsManager: Global stats received (found=True), architect damage = 236353052883
 [INFO] === Godot OS Debug Information ===
-Timestamp: 05/30/2026 00:03:29
+Timestamp: 05/30/2026 00:30:32
 OS: Windows
 OS Version: 10.0.19045
 Distribution Name: Windows
@@ -161,7 +171,7 @@ Screen info (primary 0):
 Video Memory Used: 0.0B
 Memory Info:
   physical: 15.9GB
-  free: 248.2MB
+  free: 3.6GB
   available: 41.8GB
   stack: 8.0MB
   Static Memory Usage: 0.0B
@@ -178,7 +188,7 @@ Important Environment Variables:
   LD_LIBRARY_PATH: 
 
 [INFO] Preloading 'MainMenuEssentials' assets... count=7 vfx=0
-[INFO] Preloading 'MainMenuEssentials' Complete: assets=7 time_elapsed=952ms
+[INFO] Preloading 'MainMenuEssentials' Complete: assets=7 time_elapsed=349ms
 ERROR: System.InvalidOperationException: Sequence contains no elements
    at System.Linq.ThrowHelper.ThrowNoElementsException()
    at MegaCrit.Sts2.Core.Nodes.Screens.Settings.NSettingsPanel._Ready()
@@ -264,7 +274,7 @@ ERROR: Attempt to disconnect a nonexistent connection from 'root:<Window#3290012
        [32] bool MegaCrit.Sts2.Core.Nodes.NAssetLoader.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
        [33] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*)
 [INFO] [sts2.piyixiajiuhenfen.modconfig] Mods tab injected into settings screen!
-[INFO] [Startup] Time to main menu (Godot ticks): 18743ms
+[INFO] [Startup] Time to main menu (Godot ticks): 14863ms
 [INFO] [BaseLib] Adding custom save data to SerializableRun.
 [INFO] [BaseLib] Added 0 new properties to SerializableRun
 [INFO] [BaseLib] Adding custom save data to SerializableCard.
@@ -278,8 +288,8 @@ ERROR: Attempt to disconnect a nonexistent connection from 'root:<Window#3290012
 [INFO] [BaseLib] Adding custom save data to SerializableReward.
 [INFO] [BaseLib] Added 0 new properties to SerializableReward
 [WARN] Asset not cached: res://Arknights_Mizuki/images/icon.svg
-[INFO] [Startup] Time to main menu: 19,448ms
-[INFO] [Startup] Resource stats (main menu loaded (essential)): StaticMem=0B, VRAM=465.6MB, Objects=8,591, Resources=671, Nodes=1,632, CachedAssets=10
+[INFO] [Startup] Time to main menu: 15,292ms
+[INFO] [Startup] Resource stats (main menu loaded (essential)): StaticMem=0B, VRAM=465.6MB, Objects=8,593, Resources=671, Nodes=1,632, CachedAssets=10
 [INFO] AtlasManager: Loaded epoch_atlas with 57 sprites
 [INFO] AtlasManager: Loaded relic_atlas with 341 sprites
 [INFO] AtlasManager: Loaded relic_outline_atlas with 341 sprites
@@ -296,25 +306,16 @@ ERROR: Attempt to disconnect a nonexistent connection from 'root:<Window#3290012
 [INFO] [BaseLib] Registered scene 'res://Arknights_Mizuki/scenes/energy_counter.tscn' for auto-conversion to NEnergyCounter
 [INFO] Unloading 3 missed cache assets
 [INFO] Preloading 'Common' assets... count=687 vfx=86
-[INFO] [Startup] Resource stats (main menu loaded (complete)): StaticMem=0B, VRAM=669.4MB, Objects=8,588, Resources=675, Nodes=1,630, CachedAssets=5
-[INFO] Preloading 'Common' Complete: assets=773 time_elapsed=2,377ms
+[INFO] [Startup] Resource stats (main menu loaded (complete)): StaticMem=0B, VRAM=669.4MB, Objects=8,599, Resources=675, Nodes=1,630, CachedAssets=5
+[INFO] Preloading 'Common' Complete: assets=773 time_elapsed=1,899ms
 [INFO] Wrote 55856 bytes to path=user://steam/76561198980263731/profile1\saves\current_run.save save_dir=user://steam/76561198980263731
 [INFO] Wrote 55856 bytes to profile1/saves/current_run.save in steam remote store
 [INFO] Continuing run with character: CHARACTER.ARKNIGHTS_MIZUKI-MIZUKI
 [INFO] [BaseLib] Creating new player for Sfx (Count: 1)
 [INFO] Preloading 'characters=ARKNIGHTS_MIZUKI-MIZUKI' assets... count=9 vfx=6
-[INFO] MuteInBackground: environment [displayServer=Windows, os=Windows]
-[INFO] MuteInBackground: FocusOut received [tween=False, windowFocused=False]
-[INFO] Limiting background FPS to 30
-[INFO] MuteInBackground: FocusIn received [tween=True, msSinceFocusOut=3736, windowFocused=True]
-[INFO] MuteInBackground: Unmuted, restored volume to 0.26
-[INFO] Restored foreground FPS
-[INFO] MuteInBackground: FocusIn received [tween=False, msSinceFocusOut=3774, windowFocused=True]
-[INFO] MuteInBackground: FocusOut received [tween=False, windowFocused=False]
-[INFO] Limiting background FPS to 30
-[INFO] Preloading 'characters=ARKNIGHTS_MIZUKI-MIZUKI' Complete: assets=15 time_elapsed=5,607ms
+[INFO] Preloading 'characters=ARKNIGHTS_MIZUKI-MIZUKI' Complete: assets=15 time_elapsed=2,416ms
 [INFO] Preloading 'Act=UNDERDOCKS' assets... count=8 vfx=0
-[INFO] Preloading 'Act=UNDERDOCKS' Complete: assets=8 time_elapsed=69ms
+[INFO] Preloading 'Act=UNDERDOCKS' Complete: assets=8 time_elapsed=16ms
 ERROR: System.InvalidOperationException: Sequence contains no elements
    at System.Linq.ThrowHelper.ThrowNoElementsException()
    at MegaCrit.Sts2.Core.Nodes.Screens.Settings.NSettingsPanel._Ready()
@@ -395,7 +396,7 @@ ERROR: Attempt to disconnect a nonexistent connection from 'root:<Window#3290012
        [30] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*)
 [INFO] [sts2.piyixiajiuhenfen.modconfig] Mods tab injected into settings screen!
 [INFO] Preloading 'Combat Room' assets... count=11 vfx=0
-[INFO] Preloading 'Combat Room' Complete: assets=11 time_elapsed=269ms
+[INFO] Preloading 'Combat Room' Complete: assets=11 time_elapsed=123ms
 [INFO] Creating NCombatRoom with mode=ActiveCombat encounter=SEAPUNK_NORMAL.
 ERROR: Cannot instantiate C# script because the associated class could not be found. Script: 'res://Arknights_Mizuki/scenes/Character.cs'. Make sure the script exists and contains a class definition with a name that matches the filename of the script exactly (it's case-sensitive).
    at: can_instantiate (modules/mono/csharp_script.cpp:2360)
@@ -439,9 +440,6 @@ ERROR: Cannot instantiate C# script because the associated class could not be fo
 [INFO] [BaseLib] Auto-converted 'res://Arknights_Mizuki/scenes/energy_counter.tscn' from Control to NEnergyCounter
 [WARN] Asset not cached: res://scenes/vfx/ui/vfx_buff_applied.tscn
 [WARN] Asset not cached: res://Arknights_Mizuki/images/powers/Sanity_Buff.png
-[INFO] MuteInBackground: FocusIn received [tween=True, msSinceFocusOut=5049, windowFocused=True]
-[INFO] MuteInBackground: Unmuted, restored volume to 0.26
-[INFO] Restored foreground FPS
 [WARN] Asset not cached: res://scenes/vfx/ui/vfx_debuff_applied.tscn
 [WARN] Asset not cached: res://Arknights_Mizuki/images/powers/Sanity.png
 [WARN] Asset not cached: res://images/powers/vulnerable_power.png
@@ -504,7 +502,7 @@ ERROR: Error loading resource: 'res://Arknights_Mizuki/images/cards/Float.png'.
        [23] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*)
 [INFO] Player 1 playing card ARKNIGHTS_MIZUKI-FLOAT (no target)
 [WARN] Asset not cached: res://Arknights_Mizuki/monsters/floater.tscn
-ERROR: Cannot instantiate C# script because the associated class could not be found. Script: 'res://Arknights_Mizuki/monsters/floater.cs'. Make sure the script exists and contains a class definition with a name that matches the filename of the script exactly (it's case-sensitive).
+ERROR: Cannot instantiate C# script because the associated class could not be found. Script: 'res://scripts/MonsterVisuals/FloaterVisuals.cs'. Make sure the script exists and contains a class definition with a name that matches the filename of the script exactly (it's case-sensitive).
    at: can_instantiate (modules/mono/csharp_script.cpp:2360)
    C# backtrace (most recent call first):
        [0] Godot.Node <unknown>.Godot.PackedScene.Instantiate_Patch1(Godot.PackedScene, Godot.PackedScene+GenEditState)
@@ -565,8 +563,7 @@ ERROR: Cannot instantiate C# script because the associated class could not be fo
        [55] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
        [56] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
        [57] void Godot.SignalAwaiter.SignalCallback(nint, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_bool*)
-[WARN] [BaseLib] GetRawText: Key 'FLOATING_SEA_MINION.name' not found in table 'monsters'
-[ERROR] Encountered exception loading the creature visuals for monsters.FLOATING_SEA_MINION.name. Falling back to error scene. Exception: System.InvalidCastException: Unable to cast object of type 'Godot.Node2D' to type 'MegaCrit.Sts2.Core.Nodes.Combat.NCreatureVisuals'.
+[ERROR] Encountered exception loading the creature visuals for 浮海漂移者. Falling back to error scene. Exception: System.InvalidCastException: Unable to cast object of type 'Godot.Node2D' to type 'MegaCrit.Sts2.Core.Nodes.Combat.NCreatureVisuals'.
    at MegaCrit.Sts2.Core.Models.MonsterModel.CreateVisuals_Patch1(MonsterModel this)
    at MegaCrit.Sts2.Core.Nodes.Rooms.NCombatRoom.AddCreature_Patch1(NCombatRoom this, Creature creature)
    at MegaCrit.Sts2.Core.Commands.CreatureCmd.Add(Creature creature)
@@ -625,56 +622,15 @@ ERROR: Cannot instantiate C# script because the associated class could not be fo
    at Godot.SignalAwaiter.SignalCallback(IntPtr awaiterGCHandlePtr, godot_variant** args, Int32 argCount, godot_bool* outAwaiterIsNull)
 
 [WARN] Asset not cached: res://scenes/creature_visuals/fallback.tscn
-[WARN] [BaseLib] GetRawText: Key 'FLOATING_SEA_MINION.name' not found in table 'monsters'
-[WARN] [BaseLib] GetRawText: Key 'FLOATING_SEA_MINION.name' not found in table 'monsters'
-[WARN] [BaseLib] GetRawText: Key 'FLOATING_SEA_MINION.name' not found in table 'monsters'
 [WARN] AtlasResourceLoader: Missing sprite 'arknights_mizuki-floating_sea_block_power' in power_atlas (requested: res://images/atlases/power_atlas.sprites/arknights_mizuki-floating_sea_block_power.tres)
 [WARN] Asset not cached: res://images/powers/missing_power.png
-[WARN] [BaseLib] GetRawText: Key 'FLOATING_SEA_MINION.name' not found in table 'monsters'
 [WARN] Asset not cached: res://images/enchantments/spiral.png
-[WARN] [BaseLib] GetRawText: Key 'FLOATING_SEA_MINION.name' not found in table 'monsters'
-[WARN] [BaseLib] GetRawText: Key 'FLOATING_SEA_MINION.name' not found in table 'monsters'
-[WARN] [BaseLib] GetRawText: Key 'FLOATING_SEA_MINION.name' not found in table 'monsters'
 [INFO] DevConsole: open logs
+[INFO] MuteInBackground: environment [displayServer=Windows, os=Windows]
 [INFO] MuteInBackground: FocusOut received [tween=False, windowFocused=False]
 [INFO] Limiting background FPS to 30
-[INFO] MuteInBackground: FocusIn received [tween=True, msSinceFocusOut=2047, windowFocused=True]
+[INFO] MuteInBackground: FocusIn received [tween=True, msSinceFocusOut=5269, windowFocused=True]
 [INFO] MuteInBackground: Unmuted, restored volume to 0.26
 [INFO] Restored foreground FPS
-[INFO] [BaseLib] NGame.Quit(): saving all ModConfigs
-[INFO] NGame.Quit called
-[INFO] [Display] On exit, saving window size: (1920, 1080) display: 0 position: (434, 260)
-[INFO] Wrote 2983 bytes to path=user://steam/76561198980263731/settings.save save_dir=user://steam/76561198980263731
-[INFO] Wrote 295 bytes to path=user://steam/76561198980263731/profile1\saves\prefs.save save_dir=user://steam/76561198980263731
-[INFO] Wrote 295 bytes to profile1/saves/prefs.save in steam remote store
-[INFO] Wrote 227869 bytes to path=user://steam/76561198980263731/profile1\saves\progress.save save_dir=user://steam/76561198980263731
-[INFO] Wrote 227869 bytes to profile1/saves/progress.save in steam remote store
-[INFO] Wrote 52 bytes to path=user://steam/76561198980263731/profile.save save_dir=user://steam/76561198980263731
-[INFO] Wrote 52 bytes to profile.save in steam remote store
-[WARN] [BaseLib] GetRawText: Key 'FLOATING_SEA_MINION.name' not found in table 'monsters'
-[INFO] Steamworks: shutting down...
-[INFO] Steamworks shutdown succeeded!
-FMOD Sound System: System released
-WARNING: 890 RIDs of type "CanvasItem" were leaked.
-   at: _free_rids (servers/rendering/renderer_canvas_cull.cpp:2678)
-ERROR: 1 RID allocations of type 'N26RendererEnvironmentStorage11EnvironmentE' were leaked at exit.
-ERROR: 6 shaders of type CanvasShaderRD were never freed
-   at: ~ShaderRD (servers/rendering/renderer_rd/shader_rd.cpp:1044)
-ERROR: 25 RID allocations of type 'N10RendererRD16ParticlesStorage9ParticlesE' were leaked at exit.
-ERROR: 1 shaders of type ParticlesShaderRD were never freed
-   at: ~ShaderRD (servers/rendering/renderer_rd/shader_rd.cpp:1044)
-ERROR: 25 RID allocations of type 'N10RendererRD11MeshStorage4MeshE' were leaked at exit.
-ERROR: 82 RID allocations of type 'N10RendererRD15MaterialStorage8MaterialE' were leaked at exit.
-ERROR: 7 RID allocations of type 'N10RendererRD15MaterialStorage6ShaderE' were leaked at exit.
-ERROR: 240 RID allocations of type 'N10RendererRD14TextureStorage7TextureE' were leaked at exit.
-WARNING: 157 RIDs of type "UniformBuffer" were leaked.
-   at: _free_rids (servers/rendering/rendering_device.cpp:6981)
-WARNING: 476 RIDs of type "Texture" were leaked.
-   at: finalize (servers/rendering/rendering_device.cpp:7191)
-ERROR: 304 RID allocations of type 'PN18TextServerAdvanced22ShapedTextDataAdvancedE' were leaked at exit.
-ERROR: 8 RID allocations of type 'PN18TextServerAdvanced12FontAdvancedE' were leaked at exit.
-ERROR: 4 RID allocations of type 'PN18TextServerAdvanced27FontAdvancedLinkedVariationE' were leaked at exit.
-WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
-   at: cleanup (core/object/object.cpp:2514)
-ERROR: 273 resources still in use at exit (run with --verbose for details).
-   at: clear (core/io/resource.cpp:795)
+[INFO] MuteInBackground: FocusOut received [tween=False, windowFocused=False]
+[INFO] Limiting background FPS to 30

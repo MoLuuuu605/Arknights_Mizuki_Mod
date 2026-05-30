@@ -99,7 +99,13 @@
     "ARKNIGHTS_MIZUKI-HARVEST.title":"收割",
     "ARKNIGHTS_MIZUKI-HARVEST.description":"造成{Damage:diff()}点伤害，[gold]收割[/gold]3",
     "ARKNIGHTS_MIZUKI-CRAW.title":"爬行",
-    "ARKNIGHTS_MIZUKI-CRAW.description":"给予{Sanity:diff()}点损伤，[gold]爬行[/gold]2"
+    "ARKNIGHTS_MIZUKI-CRAW.description":"给予{Sanity:diff()}点损伤，[gold]爬行[/gold]2",
+    "ARKNIGHTS_MIZUKI-INITIAL_FORM.title":"初生形态",
+    "ARKNIGHTS_MIZUKI-INITIAL_FORM.description":"获得{SanityProBurstPower:diff()}层[blue]初生形态[/blue]。",
+    "ARKNIGHTS_MIZUKI-SEA_BLESSING.title":"海佑",
+    "ARKNIGHTS_MIZUKI-SEA_BLESSING.description":"获得{Block:diff()}点格挡，然后[[gold]回响{IfUpgraded:show:1|2}[/gold]][gold]漂浮[/gold]{Float:diff()}。",
+    "ARKNIGHTS_MIZUKI-WATER_SHEILD.title":"水盾",
+    "ARKNIGHTS_MIZUKI-WATER_SHEILD.description":"获得{Block:diff()}点格挡，抽1张牌"
     
 
 

@@ -53,20 +53,20 @@ public class Awaken : CustomCardModel, ITranscendenceCard
             .FromCard(this) // 伤害来源于这张卡牌
             .TargetingAllOpponents(((CardModel)this).CombatState)
             .Execute(choiceContext);
-        var opponents = ((CardModel)this).CombatState.GetOpponentsOf(Owner.Creature);
+        var opponents = ((CardModel)this).CombatState
+            .GetOpponentsOf(Owner.Creature)
+            .Where(opponent => opponent.IsAlive)
+            .ToList();
         foreach (var opponent in opponents)
         {
-            if(opponent.IsAlive)
-            {
-                await PowerCmd.Apply<SanityPower>(
-                    choiceContext, 
-                    opponent, 
-                    ((DynamicVar)((CardModel)this).DynamicVars["SanityPower"]).BaseValue, 
-                    ((CardModel)this).Owner.Creature, 
-                    (CardModel)(object)this, 
-                    false
+            await PowerCmd.Apply<SanityPower>(
+                choiceContext, 
+                opponent, 
+                ((DynamicVar)((CardModel)this).DynamicVars["SanityPower"]).BaseValue, 
+                ((CardModel)this).Owner.Creature, 
+                (CardModel)(object)this, 
+                false
             );
-            }
         }
     }
 

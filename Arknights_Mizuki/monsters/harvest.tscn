@@ -1,0 +1,164 @@
+[gd_scene load_steps=33 format=3 uid="uid://cxaq62mn51qdl"]
+
+[ext_resource type="Texture2D" uid="uid://ghueifqkbmwn" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000000.png" id="131_fddjg"]
+[ext_resource type="Texture2D" uid="uid://bkyquxjiecca1" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000002.png" id="133_kiqsw"]
+[ext_resource type="Texture2D" uid="uid://y3if2in5atr0" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000004.png" id="135_dnoqg"]
+[ext_resource type="Texture2D" uid="uid://bwb03vwdyvbdc" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000006.png" id="137_3e4vv"]
+[ext_resource type="Texture2D" uid="uid://cxpoab60r0rwy" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000008.png" id="139_ccpw4"]
+[ext_resource type="Texture2D" uid="uid://cbgd1m27451yu" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000010.png" id="141_btim3"]
+[ext_resource type="Texture2D" uid="uid://dckynx8kk65xx" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000012.png" id="143_eqjt3"]
+[ext_resource type="Texture2D" uid="uid://dnlhl05cluvw0" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000014.png" id="145_skc36"]
+[ext_resource type="Texture2D" uid="uid://didxcjnrigfpj" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000016.png" id="147_b5smk"]
+[ext_resource type="Texture2D" uid="uid://bsusbaiodx3ih" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000018.png" id="149_nu1yb"]
+[ext_resource type="Texture2D" uid="uid://mhni5viql80d" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000020.png" id="151_u6tc4"]
+[ext_resource type="Texture2D" uid="uid://cgehtdkbqpi3l" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000022.png" id="153_a2pv7"]
+[ext_resource type="Texture2D" uid="uid://b6heat4u7hyxy" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000024.png" id="155_b51at"]
+[ext_resource type="Texture2D" uid="uid://le7wpig0tncy" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000026.png" id="157_objew"]
+[ext_resource type="Texture2D" uid="uid://c1wx7itshw17x" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000028.png" id="159_syaiu"]
+[ext_resource type="Texture2D" uid="uid://s34slt03ettm" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000030.png" id="161_h5m1l"]
+[ext_resource type="Texture2D" uid="uid://cw6x4n26j1yla" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000032.png" id="163_pa1hs"]
+[ext_resource type="Texture2D" uid="uid://dr5vgtv551lmo" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000034.png" id="165_2bxqq"]
+[ext_resource type="Texture2D" uid="uid://c2ugcqewcpu8v" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000036.png" id="167_lhwgi"]
+[ext_resource type="Texture2D" uid="uid://cstvm1g27etqa" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000038.png" id="169_avbd7"]
+[ext_resource type="Texture2D" uid="uid://btmp1qba3f6py" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000040.png" id="171_g5ck3"]
+[ext_resource type="Texture2D" uid="uid://cm0suvr05nb4a" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000042.png" id="173_wisyf"]
+[ext_resource type="Texture2D" uid="uid://ic1wj203wmq0" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000044.png" id="175_frnj5"]
+[ext_resource type="Texture2D" uid="uid://cd70itr8o8fi8" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000046.png" id="177_pntfj"]
+[ext_resource type="Texture2D" uid="uid://bm08h7a04amc5" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000048.png" id="179_qu4pq"]
+[ext_resource type="Texture2D" uid="uid://wf6mwief2oko" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000050.png" id="181_as0ab"]
+[ext_resource type="Texture2D" uid="uid://di5om2bjtph3s" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000052.png" id="183_odqu8"]
+[ext_resource type="Texture2D" uid="uid://co3wicph7ojo0" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000054.png" id="185_ndjiy"]
+[ext_resource type="Texture2D" uid="uid://6802q4m0asej" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000056.png" id="187_appae"]
+[ext_resource type="Texture2D" uid="uid://dp21gdu85whiy" path="res://Arknights_Mizuki/monsters/harvest/idle_bg/frame_000058.png" id="189_a3j3d"]
+[ext_resource type="Script" uid="uid://c24ddy4lkcfau" path="res://Arknights_Mizuki/scenes/visuals.gd" id="399_y1amw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e8q87"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("131_fddjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_kiqsw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("135_dnoqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_3e4vv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_ccpw4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_btim3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_eqjt3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145_skc36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("147_b5smk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("149_nu1yb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("151_u6tc4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("153_a2pv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("155_b51at")
+}, {
+"duration": 1.0,
+"texture": ExtResource("157_objew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_syaiu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_h5m1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_pa1hs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_2bxqq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167_lhwgi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_avbd7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_g5ck3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("173_wisyf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_frnj5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177_pntfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("179_qu4pq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("181_as0ab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("183_odqu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("185_ndjiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("187_appae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("189_a3j3d")
+}],
+"loop": true,
+"name": &"idle_loop",
+"speed": 20.0
+}]
+
+[node name="Character" type="Node2D"]
+
+[node name="Visuals" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(121, -169.00002)
+scale = Vector2(0.48550007, 0.47475)
+sprite_frames = SubResource("SpriteFrames_e8q87")
+animation = &"idle_loop"
+autoplay = "idle_loop"
+frame_progress = 0.46539178
+script = ExtResource("399_y1amw")
+
+[node name="Bounds" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -38.0
+offset_top = -276.0
+offset_right = 281.0
+offset_bottom = 24.0
+
+[node name="IntentPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(103, -168)
+
+[node name="CenterPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(97, -180)
+
+[node name="TalkPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(103, -230)

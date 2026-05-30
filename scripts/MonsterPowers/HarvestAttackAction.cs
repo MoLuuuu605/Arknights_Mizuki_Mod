@@ -6,13 +6,12 @@ using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.ValueProps;
 using MinionLib.BaseLibAdapters;
-using MinionLib.Commands;
 
 namespace Arknights_Mizuki.Scripts.Actions;
 
 public sealed class HarvestAttackAction : CustomActionModel
 {
-    public override TargetType TargetType => TargetType.AllEnemies;
+    public override TargetType TargetType => TargetType.AnyEnemy;
     public override bool AutoRemoveAtTurnEnd => true;
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
@@ -30,8 +29,7 @@ public sealed class HarvestAttackAction : CustomActionModel
         {
             if (!enemy.IsDead)
             {
-                await MinionAnimCmd.PlayBumpAttackAsync(actor, enemy,
-                    () => CreatureCmd.Damage(choiceContext, enemy, baseDamage, ValueProp.Move, actor, null));
+                await CreatureCmd.Damage(choiceContext, enemy, baseDamage, ValueProp.Move, actor, null);
             }
         }
         await PowerCmd.Remove<HarvestAttackAction>(Owner);

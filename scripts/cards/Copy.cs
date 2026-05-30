@@ -13,7 +13,7 @@ namespace Arknights_Mizuki.Scripts.Cards;
 [Pool(typeof(MzkCardPool))]
 public class Copy : CustomCardModel
 {
-    private const int energyCost = 1;
+    private const int energyCost = 2;
     private const CardType type = CardType.Skill;
     private const CardRarity rarity = CardRarity.Uncommon;
     private const TargetType targetType = TargetType.Self;
@@ -26,7 +26,7 @@ public class Copy : CustomCardModel
     {
         new RepeatVar(1)
     };
-    public override IEnumerable<CardKeyword> CanonicalKeywords => (IEnumerable<CardKeyword>)(object)new CardKeyword[2] {CardKeyword.Exhaust,CardKeyword.Ethereal};
+    public override IEnumerable<CardKeyword> CanonicalKeywords => (IEnumerable<CardKeyword>)(object)new CardKeyword[1] {CardKeyword.Exhaust};
 
     public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/Copy.png";
 
@@ -93,6 +93,6 @@ public class Copy : CustomCardModel
     protected override void OnUpgrade()
     {
         this.DynamicVars.Repeat.UpgradeValueBy(1);
-        this.RemoveKeyword(CardKeyword.Ethereal);
+        this.RemoveKeyword(CardKeyword.Exhaust);
     }
 }

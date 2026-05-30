@@ -18,8 +18,8 @@ public sealed class SuperSpeedPower : CustomPowerModel
     public override PowerStackType StackType => PowerStackType.Single;
     public override bool AllowNegative => false;
 
-    public override string CustomPackedIconPath => "res://Arknights_Mizuki/images/powers/speed.png";
-    public override string CustomBigIconPath => "res://Arknights_Mizuki/images/powers/speed.png";
+    public override string CustomPackedIconPath => "res://Arknights_Mizuki/images/cards/superspeed.png";
+    public override string CustomBigIconPath => "res://Arknights_Mizuki/images/cards/superspeed.png";
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
 	{
         HoverTipFactory.FromKeyword(AutoPlay.Autoplay)

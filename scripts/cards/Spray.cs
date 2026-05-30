@@ -72,5 +72,6 @@ public class Spray : CustomCardModel
     protected override void OnUpgrade()
     {
         ((CardModel)this).DynamicVars.Damage.UpgradeValueBy(2);
+        this.DynamicVars["VulnerablePower"].UpgradeValueBy(1);
     }
 }

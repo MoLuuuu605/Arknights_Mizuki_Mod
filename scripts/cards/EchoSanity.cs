@@ -18,8 +18,7 @@ namespace Arknights_Mizuki.Scripts.Cards;
 public class EchoSanity : CustomCardModel
 {
     // 基础耗能
-    private const int energyCost = 2;
-    protected override HashSet<CardTag> CanonicalTags => new HashSet<CardTag> { CardTag.Strike };
+    private const int energyCost = 1;
     // 卡牌类型
     private const CardType type = CardType.Skill;
     // 卡牌稀有度

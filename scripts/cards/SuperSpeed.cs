@@ -17,7 +17,7 @@ namespace Arknights_Mizuki.Scripts.Cards;
 public class SuperSpeed : CustomCardModel
 {
     private const int energyCost = 2;
-    private const CardType type = CardType.Skill;
+    private const CardType type = CardType.Power;
     private const CardRarity rarity = CardRarity.Rare;
     private const TargetType targetType = TargetType.None;
     private const bool shouldShowInCardLibrary = true;

@@ -20,9 +20,9 @@ namespace Arknights_Mizuki.Scripts.Cards;
 [Pool(typeof(MzkCardPool))]
 public sealed class Harvest : CustomCardModel
 {
-    private const int energyCost = 0;
+    private const int energyCost = 1;
     private const CardType type = CardType.Attack;
-    private const CardRarity rarity = CardRarity.Common;  // 蓝色
+    private const CardRarity rarity = CardRarity.Common;  // 
     private const TargetType targetType = TargetType.AnyEnemy;
     private const bool shouldShowInCardLibrary = true;
 
@@ -71,7 +71,6 @@ public sealed class Harvest : CustomCardModel
 
     protected override void OnUpgrade()
     {
-        // 升级：抽牌 2 → 3
         base.DynamicVars.Damage.UpgradeValueBy(3m);
     }
 }

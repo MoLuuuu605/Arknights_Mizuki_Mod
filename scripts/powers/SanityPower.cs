@@ -4,8 +4,8 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.ValueProps;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Arknights_Mizuki.Scripts.Powers;
 
@@ -35,8 +35,16 @@ public sealed class SanityPower : CustomPowerModel
         Creature applier,
         CardModel cardSource)
     {
-        // 只处理自身的变化，且层数必须 >= 阈值
-        if ((object)power != this || Amount < TriggerThreshold)
+        if ((object)power != this)
+            return;
+
+        var triggerThreshold = TriggerThreshold;
+        if (applier != null && applier.HasPower<SanityProBurstPower>())
+        {
+            triggerThreshold -= 2;
+        }
+
+        if (Amount < triggerThreshold)
             return;
 
         var owner = Owner;
@@ -59,7 +67,7 @@ public sealed class SanityPower : CustomPowerModel
         var maxHp = owner.MaxHp;
         var damage = maxHp * damagePercent / 100m;
 
-        var Unlimit = applier.HasPower<SanityBurstPower>()
+        var Unlimit = applier != null && applier.HasPower<SanityBurstPower>()
             ? applier.GetPower<SanityBurstPower>().Amount
             : 0;
 
@@ -98,7 +106,7 @@ public sealed class SanityPower : CustomPowerModel
         await PowerCmd.ModifyAmount(
             choiceContext,
             this,
-            -TriggerThreshold,
+            -triggerThreshold,
             null,
             null,
             false);
