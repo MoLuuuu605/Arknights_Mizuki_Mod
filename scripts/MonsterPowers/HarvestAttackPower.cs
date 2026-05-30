@@ -9,6 +9,9 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 namespace Arknights_Mizuki.Scripts.Powers;
 public sealed class HarvestAttackPower : CustomPowerModel
 {
+    public override string CustomPackedIconPath => "res://Arknights_Mizuki/images/powers/HarvestAttackPower.png";
+    public override string CustomBigIconPath => "res://Arknights_Mizuki/images/powers/HarvestAttackPower.png";
+
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
 

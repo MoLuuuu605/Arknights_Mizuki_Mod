@@ -16,9 +16,9 @@ public class Human: CustomPowerModel
 
 	public override PowerInstanceType InstanceType => PowerInstanceType.None;
 
-	public override string? CustomPackedIconPath => "res://images/powers/Human.png";
+	public override string? CustomPackedIconPath => "res://Arknights_Mizuki/images/powers/Human.png";
 
-	public override string? CustomBigIconPath => "res://images/powers/Human.png";
+	public override string? CustomBigIconPath => "res://Arknights_Mizuki/images/powers/Human.png";
 
 	protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[4]
     {
@@ -42,4 +42,3 @@ public class Human: CustomPowerModel
         await PowerCmd.Apply<StealthPower>(choiceContext,Owner,1,Owner,null);
     }
 }
-

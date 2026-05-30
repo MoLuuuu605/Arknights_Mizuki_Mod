@@ -48,6 +48,8 @@
     "ARKNIGHTS_MIZUKI-SEABORNIZATION_POWER.title":"海嗣化",
     "ARKNIGHTS_MIZUKI-SEABORNIZATION_POWER.description":"提高随从数值",
     "ARKNIGHTS_MIZUKI-SANITY_PRO_BURST_POWER.title":"初生形态",
-    "ARKNIGHTS_MIZUKI-SANITY_PRO_BURST_POWER.description":"神经损伤爆发所需层数降低2。"
+    "ARKNIGHTS_MIZUKI-SANITY_PRO_BURST_POWER.description":"神经损伤爆发所需层数降低2。",
+    "ARKNIGHTS_MIZUKI-SEABORNING_POOL.title":"育生池",
+    "ARKNIGHTS_MIZUKI-SEABORNING_POOL.description":"回合开始时，将两张[gold]幼体海嗣[/gold]加入抽牌堆底"
 
 }

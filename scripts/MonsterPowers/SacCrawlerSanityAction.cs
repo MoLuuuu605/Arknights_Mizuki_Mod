@@ -7,6 +7,9 @@ using MegaCrit.Sts2.Core.Entities.Powers;
 using MinionLib.BaseLibAdapters;
 public sealed class SacCrawlerSanityAction : CustomActionModel
 {
+    public override string CustomPackedIconPath => "res://Arknights_Mizuki/images/powers/SacCrawlerSanityPower.png";
+    public override string CustomBigIconPath => "res://Arknights_Mizuki/images/powers/SacCrawlerSanityPower.png";
+
     public override TargetType TargetType => TargetType.AnyEnemy; // 选择一个敌人
     public override bool AutoRemoveAtTurnEnd => true;
     public override PowerType Type => PowerType.Buff;

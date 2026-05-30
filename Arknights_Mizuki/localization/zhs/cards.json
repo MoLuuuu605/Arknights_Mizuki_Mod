@@ -105,7 +105,24 @@
     "ARKNIGHTS_MIZUKI-SEA_BLESSING.title":"海佑",
     "ARKNIGHTS_MIZUKI-SEA_BLESSING.description":"获得{Block:diff()}点格挡，然后[[gold]回响{IfUpgraded:show:1|2}[/gold]][gold]漂浮[/gold]{Float:diff()}。",
     "ARKNIGHTS_MIZUKI-WATER_SHEILD.title":"水盾",
-    "ARKNIGHTS_MIZUKI-WATER_SHEILD.description":"获得{Block:diff()}点格挡，抽1张牌"
+    "ARKNIGHTS_MIZUKI-WATER_SHEILD.description":"获得{Block:diff()}点格挡，抽1张牌",
+    "ARKNIGHTS_MIZUKI-BE_BIGGER.title":"增生组织",
+    "ARKNIGHTS_MIZUKI-BE_BIGGER.description":"当前抽牌堆里每有{CardsPerStat:diff()}张牌，获得{StrengthPower:diff()}点力量和{DexterityPower:diff()}点敏捷。",
+    "ARKNIGHTS_MIZUKI-DQ_GIVE_ME.title":"大群的供奉",
+    "ARKNIGHTS_MIZUKI-DQ_GIVE_ME.selectionScreenPrompt":"选择加入手牌的牌",
+    "ARKNIGHTS_MIZUKI-DQ_GIVE_ME.description":"获得{Block:diff()}点格挡。如果抽牌堆大于{DrawPileThreshold:diff()}张牌，从抽牌堆中选择{Picks:diff()}张牌加入手牌。",
+    "ARKNIGHTS_MIZUKI-NEW_DQ.title":"繁育",
+    "ARKNIGHTS_MIZUKI-NEW_DQ.description":"获得{Block:diff()}点格挡。将{Cards:diff()}张[gold]幼体海嗣[/gold]放入抽牌堆底部。",
+    "ARKNIGHTS_MIZUKI-BABY_HS.title":"幼体海嗣",
+    "ARKNIGHTS_MIZUKI-BABY_HS.description":"造成{Damage:diff()}点伤害。抽{Cards:diff()}张牌。",
+    "ARKNIGHTS_MIZUKI-SEA_WHISPER.title":"深海轻语",
+    "ARKNIGHTS_MIZUKI-SEA_WHISPER.description":"失去{StrengthPower:diff()}点力量，{exterityPower::diff()}点敏捷。获得{ArtifactPower:diff()}层人工制品。",
+    "ARKNIGHTS_MIZUKI-FLESH_ABERRATION.title":"血肉畸变",
+    "ARKNIGHTS_MIZUKI-FLESH_ABERRATION.description":"获得{VulnerablePower:diff()}层易伤,{StrengthPower:diff()}点力量，{DexterityPower:diff()}点敏捷",
+    "ARKNIGHTS_MIZUKI-NERVES_REGRESSION.title":"神经退行",
+    "ARKNIGHTS_MIZUKI-NERVES_REGRESSION.description":"获得{WeakPower:diff()}层虚弱，{Energy:energyIcons()}，抽{Cards:diff()}张牌。",
+    "ARKNIGHTS_MIZUKI-SEABORNING_POOL.title":"育生池",
+    "ARKNIGHTS_MIZUKI-SEABORNING_POOL.description":"回合开始时，向抽牌堆底加入两张[gold]幼体海嗣[/gold]。"
     
 
 

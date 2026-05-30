@@ -1,0 +1,57 @@
+using BaseLib.Abstracts;
+using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
+
+using Arknights_Mizuki.Scripts.Pools;
+using MegaCrit.Sts2.Core.Models.Powers;
+
+namespace Arknights_Mizuki.Scripts.Cards;
+
+[Pool(typeof(MzkCardPool))]
+public class NervesRegression : CustomCardModel
+{
+    private const int energyCost = 1;
+    private const CardType type = CardType.Skill;
+    private const CardRarity rarity = CardRarity.Uncommon;
+    private const TargetType targetType = TargetType.Self;
+    private const bool shouldShowInCardLibrary = true;
+
+    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[3]
+    {
+        (DynamicVar)new PowerVar<WeakPower>(2m),
+        new EnergyVar(2),
+        new CardsVar(2),
+    };
+    public override IEnumerable<CardKeyword> CanonicalKeywords => new CardKeyword[]
+    {
+        CardKeyword.Exhaust  // 
+    };
+
+    public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/SeaWhisper.png";
+
+
+    public NervesRegression() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
+    {
+    }
+
+    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    {
+        await PowerCmd.Apply<WeakPower>(choiceContext,
+        this.Owner.Creature,
+        ((DynamicVar)((CardModel)this).DynamicVars["WeakPower"]).BaseValue,
+        this.Owner.Creature,
+        this
+        );
+        await CardPileCmd.Draw(choiceContext,2,Owner);
+        await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue,Owner);
+    }
+    protected override void OnUpgrade()
+    {
+        ((CardModel)this).DynamicVars.Energy.UpgradeValueBy(1);
+        DynamicVars.Cards.UpgradeValueBy(1);
+    }
+}

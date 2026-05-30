@@ -4,10 +4,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Models.CardPools;
-using MegaCrit.Sts2.Core.ValueProps;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.HoverTips;
 
 using Arknights_Mizuki.Scripts.Pools;
@@ -18,7 +15,7 @@ namespace Arknights_Mizuki.Scripts.Cards;
 [Pool(typeof(MzkCardPool))]
 public class MzkSanityBurst : CustomCardModel
 {
-    private const int energyCost = 3;
+    private const int energyCost = 1;
     private const CardType type = CardType.Power;
     private const CardRarity rarity = CardRarity.Rare;
     private const TargetType targetType = TargetType.None;
@@ -26,7 +23,7 @@ public class MzkSanityBurst : CustomCardModel
 
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[1]
     {
-        (DynamicVar)new PowerVar<SanityBurstPower>(1m)
+        (DynamicVar)new PowerVar<SanityBurstPower>(2m)
     };
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[2]
@@ -55,7 +52,7 @@ public class MzkSanityBurst : CustomCardModel
 
     protected override void OnUpgrade()
     {
-        // 升级后降为1费
+        // 升级后降1费
         ((CardModel)this).EnergyCost.UpgradeBy(-1);
     }
 }

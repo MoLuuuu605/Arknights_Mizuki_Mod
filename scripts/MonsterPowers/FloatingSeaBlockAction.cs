@@ -12,6 +12,9 @@ namespace Arknights_Mizuki.Scripts.Actions;
 
 public sealed class FloatingSeaBlockAction : CustomActionModel
 {
+    public override string CustomPackedIconPath => "res://Arknights_Mizuki/images/powers/FloatingSeaBlockAction.png";
+    public override string CustomBigIconPath => "res://Arknights_Mizuki/images/powers/FloatingSeaBlockAction.png";
+
     public override TargetType TargetType => MinionTargetTypes.AnyMinionOrOwner;
     public override bool AutoRemoveAtTurnEnd => false;
     public override PowerType Type => PowerType.Buff;

@@ -18,8 +18,8 @@ public sealed class SanityThornsPower : CustomPowerModel
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
 
-    public override string CustomPackedIconPath => "res://Arknights_Mizuki/images/powers/sanity_thorns.png";
-    public override string CustomBigIconPath => "res://Arknights_Mizuki/images/powers/sanity_thorns.png";
+    public override string CustomPackedIconPath => "res://Arknights_Mizuki/images/powers/sanity_throns.png";
+    public override string CustomBigIconPath => "res://Arknights_Mizuki/images/powers/sanity_throns.png";
 
     /// <summary>
     /// 玩家回合开始时，层数-1

@@ -12,6 +12,6 @@ public sealed class SeabornizationPower: CustomPowerModel
     public override PowerStackType StackType => PowerStackType.Counter;
     public override bool AllowNegative => false;
 
-    public override string CustomPackedIconPath => "res://Arknights_Mizuki/images/powers/Sanity.png";
-    public override string CustomBigIconPath => "res://Arknights_Mizuki/images/powers/Sanity.png";
+    public override string CustomPackedIconPath => "res://Arknights_Mizuki/images/powers/SeabornizationPower.png";
+    public override string CustomBigIconPath => "res://Arknights_Mizuki/images/powers/SeabornizationPower.png";
 }

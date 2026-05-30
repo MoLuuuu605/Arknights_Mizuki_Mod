@@ -1,4 +1,4 @@
-using BaseLib.Abstracts;
+﻿using BaseLib.Abstracts;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -11,22 +11,23 @@ using MegaCrit.Sts2.Core.HoverTips;
 
 namespace Arknights_Mizuki.Scripts.Cards;
 
-// 注册卡牌到 MzkCardPool
+// 娉ㄥ唽鍗＄墝鍒?MzkCardPool
 [Pool(typeof(MzkCardPool))]
 public class SpeedUp : CustomCardModel
 {
-    // 基础耗能
+    // 鍩虹鑰楄兘
     private const int energyCost = 2;
-    // 卡牌类型（防御牌是技能类型）
+    // 鍗＄墝绫诲瀷锛堥槻寰＄墝鏄妧鑳界被鍨嬶級
     private const CardType type = CardType.Skill;
-    // 卡牌稀有度
+    // 鍗＄墝绋€鏈夊害
     private const CardRarity rarity = CardRarity.Rare;
-    // 目标类型（Self表示自己）
+
     private const TargetType targetType = TargetType.Self;
-    // 是否在卡牌图鉴中显示
+    // 鐩爣绫诲瀷锛圫elf琛ㄧず鑷繁锛?    private const TargetType targetType = TargetType.Self;
+    // 鏄惁鍦ㄥ崱鐗屽浘閴翠腑鏄剧ず
     private const bool shouldShowInCardLibrary = true;
 
-    // 卡牌的基础属性（格挡值）
+    // 鍗＄墝鐨勫熀纭€灞炴€э紙鏍兼尅鍊硷級
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[0];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
@@ -38,13 +39,13 @@ public class SpeedUp : CustomCardModel
     {
     }
 
-    // 打出时的效果逻辑
+    // 鎵撳嚭鏃剁殑鏁堟灉閫昏緫
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         var learnCard = Owner.RunState.CreateCard<Learn>(Owner);
-        await CardPileCmd.Add(CombatState.CreateCard<Learn>(Owner), PileType.Draw,CardPilePosition.Random,null,false);
-        await CardPileCmd.Add(CombatState.CreateCard<Learn>(Owner), PileType.Discard,CardPilePosition.Random,null,false);
-        await CardPileCmd.Add(learnCard, PileType.Deck,CardPilePosition.Random,null,false);
+        CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(CombatState.CreateCard<Learn>(Owner), PileType.Draw,Owner,CardPilePosition.Random));
+        CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(CombatState.CreateCard<Learn>(Owner), PileType.Discard,Owner,CardPilePosition.Random));
+        CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(learnCard, PileType.Deck,Owner,CardPilePosition.Random));
         await CardPileCmd.Draw(choiceContext, 1, ((CardModel)this).Owner, false);
     }
 
@@ -54,3 +55,5 @@ public class SpeedUp : CustomCardModel
         this.EnergyCost.UpgradeBy(-1);
     }
 }
+
+

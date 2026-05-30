@@ -17,9 +17,9 @@ public class SeaCreature: CustomPowerModel
 
 	public override PowerInstanceType InstanceType => PowerInstanceType.None;
 
-	public override string? CustomPackedIconPath => "res://images/powers/SeaCreature.png";
+	public override string? CustomPackedIconPath => "res://Arknights_Mizuki/images/powers/SeaCreatureForm.png";
 
-	public override string? CustomBigIconPath => "res://images/powers/SeaCreature.png";
+	public override string? CustomBigIconPath => "res://Arknights_Mizuki/images/powers/SeaCreatureForm.png";
 	protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
     {
         new DamageVar(4m,ValueProp.Unpowered),
@@ -60,4 +60,3 @@ public class SeaCreature: CustomPowerModel
         return multiplier;
     }
 }
-

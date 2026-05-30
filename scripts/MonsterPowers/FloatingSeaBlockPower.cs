@@ -10,6 +10,9 @@ namespace Arknights_Mizuki.Scripts.Powers;
 
 public sealed class FloatingSeaBlockPower : CustomPowerModel
 {
+    public override string CustomPackedIconPath => "res://Arknights_Mizuki/images/powers/FloatingSeaBlockPower.png";
+    public override string CustomBigIconPath => "res://Arknights_Mizuki/images/powers/FloatingSeaBlockPower.png";
+
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
 

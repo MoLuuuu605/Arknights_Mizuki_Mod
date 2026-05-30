@@ -1,14 +1,15 @@
+using Arknights_Mizuki.Scripts.Cards;
 using BaseLib.Abstracts;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Models;
 
 namespace Arknights_Mizuki.Scripts.Powers;
 
-public class BlueSeedPower : CustomPowerModel
+public class SeaborningPoolPower : CustomPowerModel
 {
 	public override PowerType Type => (PowerType)1;
 
@@ -16,16 +17,19 @@ public class BlueSeedPower : CustomPowerModel
 
 	public override PowerInstanceType InstanceType => (PowerInstanceType)1;
 
-	public override string? CustomPackedIconPath => "res://Arknights_Mizuki/images/powers/BlueSeedPower.png";
+	public override string? CustomPackedIconPath => "res://Arknights_Mizuki/images/powers/SeaborningPool.png";
 
-	public override string? CustomBigIconPath => "res://Arknights_Mizuki/images/powers/BlueSeedPower.png";
+	public override string? CustomBigIconPath => "res://Arknights_Mizuki/images/powers/SeaborningPool.png";
 
 	protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[1]
     {
-		(DynamicVar)new EnergyVar(1),
+		(DynamicVar)new CardsVar(2),
 	};	
     public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
 	{
-            await PlayerCmd.GainEnergy(1m, ((PowerModel)this).Owner.Player);
+        if(Amount == 0 )return;
+        var times = Amount * DynamicVars.Cards.BaseValue;
+        for (int i = 0 ; i<times;i++)
+        CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(CombatState.CreateCard<BabyHs>(Owner.Player),MegaCrit.Sts2.Core.Entities.Cards.PileType.Draw,Owner.Player,CardPilePosition.Bottom));
     }
 }

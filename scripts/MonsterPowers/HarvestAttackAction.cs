@@ -11,6 +11,9 @@ namespace Arknights_Mizuki.Scripts.Actions;
 
 public sealed class HarvestAttackAction : CustomActionModel
 {
+    public override string CustomPackedIconPath => "res://Arknights_Mizuki/images/powers/HarvestAttackAction.png";
+    public override string CustomBigIconPath => "res://Arknights_Mizuki/images/powers/HarvestAttackAction.png";
+
     public override TargetType TargetType => TargetType.AnyEnemy;
     public override bool AutoRemoveAtTurnEnd => true;
     public override PowerType Type => PowerType.Buff;
