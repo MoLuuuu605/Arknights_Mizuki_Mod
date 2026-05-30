@@ -34,7 +34,7 @@ public class Spray : CustomCardModel
         HoverTipFactory.FromPower<VulnerablePower>()
     };
 
-    // public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/Spray.png";
+    public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/Spray.png";
     public override IEnumerable<CardKeyword> CanonicalKeywords => [AutoPlay.Autoplay];
 
     public Spray() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)

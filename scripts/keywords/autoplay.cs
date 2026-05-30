@@ -56,3 +56,22 @@ public class Sputter
     [KeywordProperties(AutoKeywordPosition.Before)]
     public static CardKeyword sputter;
 }
+
+public class Monster1
+{
+    [CustomEnum("Monster1")]
+    [KeywordProperties(AutoKeywordPosition.Before)]
+    public static CardKeyword monster1;
+}
+public class Monster2
+{
+    [CustomEnum("Monster2")]
+    [KeywordProperties(AutoKeywordPosition.Before)]
+    public static CardKeyword monster2;
+}
+public class Monster3
+{
+    [CustomEnum("Monster3")]
+    [KeywordProperties(AutoKeywordPosition.Before)]
+    public static CardKeyword monster3;
+}

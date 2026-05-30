@@ -27,7 +27,7 @@ public class Share : CustomCardModel
         (DynamicVar)new DamageVar(6m, (ValueProp)6)
     };
 
-    // public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/share.png";
+    public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/share.png";
     public override IEnumerable<CardKeyword> CanonicalKeywords => [AutoPlay.Autoplay];
 
     public Share() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)

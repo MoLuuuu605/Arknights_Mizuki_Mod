@@ -33,7 +33,7 @@ public class SuperSpeed : CustomCardModel
         HoverTipFactory.FromKeyword(AutoPlay.Autoplay)
     };
 
-    // public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/superspeed.png";
+    public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/superspeed.png";
 
     public SuperSpeed() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
     {

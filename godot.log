@@ -1,0 +1,680 @@
+MegaDot v4.5.1.m.12.mono.custom_build - https://godotengine.org
+D3D12 12_0 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 3060 Laptop GPU
+WARNING: PSO caching is not implemented yet in the Direct3D 12 driver.
+   at: pipeline_cache_create (drivers/d3d12/rendering_device_driver_d3d12.cpp:4469)
+
+FMOD Sound System: Successfully initialized
+[INFO] Found release_info.json at: E:\SteamLibrary\steamapps\common\Slay the Spire 2\release_info.json
+[INFO] [Sentry.NET] Initialized: env=development, release=v0.106.1
+[INFO] Steamworks: attempting initialization...
+[INFO] Steam is running: True
+[INFO] Steamworks initialization succeeded!
+[INFO] Steam is enabled, we will write saves to steam storage. Enabled for account: True, app: True 
+[INFO] Registered 11 migrations
+[INFO] Current save versions: PrefsSave v2; ProfileSave v2; SerializableProgress v21; RunHistory v9; SerializableRun v16; SettingsSave v5
+[INFO] Found mod manifest file E:\SteamLibrary\steamapps\common\Slay the Spire 2\mods\Arknights_Mizuki\Arknights_Mizuki.json
+[INFO] Found mod manifest file E:\SteamLibrary\steamapps\common\Slay the Spire 2\mods\BaseLib\BaseLib.json
+[INFO] Found mod manifest file E:\SteamLibrary\steamapps\common\Slay the Spire 2\mods\Minion.BaseLibAdapters\MinionLib.BaseLibAdapters.json
+[INFO] Found mod manifest file E:\SteamLibrary\steamapps\common\Slay the Spire 2\mods\MinionLib\MinionLib.json
+[INFO] Found mod manifest file E:\SteamLibrary\steamapps\common\Slay the Spire 2\mods\ModConfig\ModConfig.json
+[INFO] Found mod manifest file E:\SteamLibrary\steamapps\common\Slay the Spire 2\mods\UnifidSavePath\UnifiedSavePath.json
+[WARN] Mod UnifiedSavePath does not declare min game version. Assuming that it is supported.
+[INFO] Loading assembly DLL E:\SteamLibrary\steamapps\common\Slay the Spire 2\mods\UnifidSavePath\UnifiedSavePath.dll
+[INFO] Loading Godot PCK E:\SteamLibrary\steamapps\common\Slay the Spire 2\mods\UnifidSavePath\UnifiedSavePath.pck
+[INFO] Calling initializer method of type UnifiedSavePath.UnifiedSavePathMod for UnifiedSavePath, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+[INFO] Finished mod initialization for 'UnifiedSavePath' (UnifiedSavePath).
+[WARN] Mod ModConfig does not declare min game version. Assuming that it is supported.
+[INFO] Loading assembly DLL E:\SteamLibrary\steamapps\common\Slay the Spire 2\mods\ModConfig\ModConfig.dll
+[INFO] Loading Godot PCK E:\SteamLibrary\steamapps\common\Slay the Spire 2\mods\ModConfig\ModConfig.pck
+[INFO] Calling initializer method of type ModConfig.MainFile for ModConfig, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+[INFO] [sts2.piyixiajiuhenfen.modconfig] LocManager.Instance is null at init, will use lazy detection
+[INFO] [sts2.piyixiajiuhenfen.modconfig] ModConfig v0.1.2 initialized! (zero Harmony, cross-platform)
+[INFO] Finished mod initialization for 'ModConfig' (ModConfig).
+[WARN] Mod BaseLib does not declare min game version. Assuming that it is supported.
+[INFO] Loading assembly DLL E:\SteamLibrary\steamapps\common\Slay the Spire 2\mods\BaseLib\BaseLib.dll
+[INFO] Loading Godot PCK E:\SteamLibrary\steamapps\common\Slay the Spire 2\mods\BaseLib\BaseLib.pck
+[INFO] Calling initializer method of type BaseLib.BaseLibMain for BaseLib, Version=3.1.8.0, Culture=neutral, PublicKeyToken=null
+[INFO] [BaseLib] Created node factory for Control.
+[INFO] [BaseLib] Created node factory for NCreatureVisuals.
+[INFO] [BaseLib] Created node factory for NRestSiteCharacter.
+[INFO] [BaseLib] Created node factory for NMerchantCharacter.
+[INFO] [BaseLib] Created node factory for NEnergyCounter.
+[INFO] [BaseLib] Created node factory for NCustomTreasureRoomChest.
+[INFO] [BaseLib] Registered config for mod BaseLib
+[INFO] [BaseLib] Performing CustomPile patch
+[INFO] [BaseLib] Starting PatchAll for assembly BaseLib, Version=3.1.8.0, Culture=neutral, PublicKeyToken=null
+[INFO] [BaseLib] Patching StateMachineType: MegaCrit.Sts2.Core.Nodes.Combat.NCreature+<AnimDie>d__105
+[INFO] [BaseLib] Adding new state 5 for method CustomAnimationPatch.WaitCustomAnim before Wait with result type None ()
+[INFO] [BaseLib] Patching StateMachineType: MegaCrit.Sts2.Core.Hooks.Hook+<AfterCardPlayed>d__15
+[INFO] [BaseLib] Adding new state 2 for method AfterCardPlayedPatch.BeforeAfterPlayHooks before AfterCardPlayed with result type None ()
+[INFO] [BaseLib] Applied 227 patches successfully, 0 failed
+[INFO] Finished mod initialization for 'BaseLib' (BaseLib).
+[INFO] Loading assembly DLL E:\SteamLibrary\steamapps\common\Slay the Spire 2\mods\MinionLib\MinionLib.dll
+[INFO] Loading Godot PCK E:\SteamLibrary\steamapps\common\Slay the Spire 2\mods\MinionLib\MinionLib.pck
+[INFO] Calling initializer method of type MinionLib.MainFile for MinionLib, Version=0.4.5.0, Culture=neutral, PublicKeyToken=null
+[INFO] Finished mod initialization for 'MinionLib' (MinionLib).
+[INFO] Loading assembly DLL E:\SteamLibrary\steamapps\common\Slay the Spire 2\mods\Minion.BaseLibAdapters\MinionLib.BaseLibAdapters.dll
+[INFO] No ModInitializerAttribute detected. Calling Harmony.PatchAll for MinionLib.BaseLibAdapters, Version=0.4.5.0, Culture=neutral, PublicKeyToken=null
+[INFO] Finished mod initialization for 'MinionLib.BaseLibAdapters' (MinionLib.BaseLibAdapters).
+[INFO] Loading assembly DLL E:\SteamLibrary\steamapps\common\Slay the Spire 2\mods\Arknights_Mizuki\Arknights_Mizuki.dll
+[INFO] Loading Godot PCK E:\SteamLibrary\steamapps\common\Slay the Spire 2\mods\Arknights_Mizuki\Arknights_Mizuki.pck
+[INFO] No ModInitializerAttribute detected. Calling Harmony.PatchAll for Arknights_Mizuki, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+[INFO] Finished mod initialization for '明日方舟水月' (Arknights_Mizuki).
+[INFO]  --- RUNNING MODDED! --- Loaded 6 mods (6 total)
+[INFO] Syncing cloud save files to the local save directory
+[WARN] Asset not cached: res://scenes/cards/card.tscn
+[WARN] Asset not cached: res://scenes/cards/holders/grid_card_holder.tscn
+[INFO] AtlasManager: Loaded ui_atlas with 102 sprites
+[INFO] AtlasManager: Loaded compressed with 45 sprites
+[INFO] [BaseLib] Performing post-mod init patch
+[INFO] [BaseLib] Patching act types for custom encounters and events | DeprecatedAct | Glory | Hive | Overgrowth | Underdocks
+[INFO] [BaseLib] Generating interop methods and properties
+[INFO] [BaseLib] Found 0 SavedSpireFields.
+[INFO] Loading locale path=res://localization/eng
+[INFO] Found loc table from mod: eng card_keywords.json. Merging with base loc table
+[INFO] Found loc table from mod: eng main_menu_ui.json. Merging with base loc table
+[INFO] Found loc table from mod: eng powers.json. Merging with base loc table
+[INFO] Found loc table from mod: eng powers.json. Merging with base loc table
+[INFO] Found loc table from mod: eng settings_ui.json. Merging with base loc table
+[INFO] Found loc table from mod: eng static_hover_tips.json. Merging with base loc table
+[INFO] Found loc table from mod: eng static_hover_tips.json. Merging with base loc table
+[INFO] Loading locale path=res://localization/zhs
+[INFO] Found loc table from mod: zhs ancients.json. Merging with base loc table
+[INFO] Found loc table from mod: zhs card_keywords.json. Merging with base loc table
+[INFO] Found loc table from mod: zhs cards.json. Merging with base loc table
+[INFO] Found loc table from mod: zhs characters.json. Merging with base loc table
+[INFO] Found loc table from mod: zhs main_menu_ui.json. Merging with base loc table
+[INFO] Found loc table from mod: zhs monsters.json. Merging with base loc table
+[INFO] Found loc table from mod: zhs powers.json. Merging with base loc table
+[INFO] Found loc table from mod: zhs powers.json. Merging with base loc table
+[INFO] Found loc table from mod: zhs powers.json. Merging with base loc table
+[INFO] Found loc table from mod: zhs relics.json. Merging with base loc table
+[INFO] Found loc table from mod: zhs settings_ui.json. Merging with base loc table
+[INFO] Found loc table from mod: zhs static_hover_tips.json. Merging with base loc table
+[INFO] Found loc table from mod: zhs static_hover_tips.json. Merging with base loc table
+[INFO] Found loc table from mod: zhs static_hover_tips.json. Merging with base loc table
+[INFO] [BaseLib] Generated KeyGenerator for enum MegaCrit.Sts2.Core.Entities.Cards.TargetType with starting value 10 | IsFlag: False | Half-Size: 16
+[INFO] [BaseLib] Generated KeyGenerator for enum MegaCrit.Sts2.Core.Entities.Cards.CardKeyword with starting value 8 | IsFlag: False | Half-Size: 16
+[WARN] Two AbstractModels Arknights_Mizuki.Scripts.Minions.FloatingSeaMinion and Arknights_Mizuki.Scripts.Minions.FloatingSeaMinion from mod Arknights_Mizuki share an ID! This might break multiplayer.
+[INFO] ModelIdSerializationCache initialized. Categories: 20 Entries: 1703 Epochs: 57 Hash: 1582086155
+[Sentry.GDExtension] Initialized: env=playtesters, release=v0.106.1
+[INFO] Profile-scoped data path initialized: user://steam/76561198980263731/profile1
+[INFO] [Sentry.NET] Is running modded
+[INFO] [Sentry.NET] Shutting down because event reporting is disabled.
+[INFO] [Sentry.NET] Shutting down
+[Sentry.GDExtension] Shutting down
+[INFO] AtlasManager: Loaded controller_atlas with 112 sprites
+[INFO] MuteInBackground: FocusIn received [tween=False, msSinceFocusOut=15729, windowFocused=True]
+[INFO] Applying display settings...
+  FULLSCREEN: False
+  ASPECT_RATIO: (SixteenByNine)
+  TARGET_DISPLAY: (0)
+  WINDOW_SIZE: (1920, 1080)
+  POSITION: (434, 260)
+[INFO] [Display] Min size: (64, 64) Max size: (16384, 16384)
+[INFO] [Display] Attempting WINDOWED mode on Display 1 of 1 at position (434, 260)
+[INFO] MuteInBackground: FocusIn received [tween=False, msSinceFocusOut=16045, windowFocused=True]
+[INFO] [Display] SUCCESS: (1920, 1080) Windowed mode in Display 0: Position (434, 260) ((434, 260))
+[INFO] [Display] New size: (1920, 1080) position: (434, 260)
+[INFO] VSync: Off
+[INFO] SteamStatsManager: User stats received
+[INFO] SteamStatsManager: Global stats received (found=True), architect damage = 236294868524
+[INFO] === Godot OS Debug Information ===
+Timestamp: 05/30/2026 00:03:29
+OS: Windows
+OS Version: 10.0.19045
+Distribution Name: Windows
+Device Model: Jiaolong Series GM7ZG0M
+Is Debug Build: False
+Is Sandboxed: False
+Executable Path: E:/SteamLibrary/steamapps/common/Slay the Spire 2/SlayTheSpire2.exe
+Data Directory: C:/Users/liuyuxuan/AppData/Roaming
+User Data Directory: C:/Users/liuyuxuan/AppData/Roaming/SlayTheSpire2
+Command Line Args: 
+User Command Line Args: 
+OS Locale: zh_CN
+OS Language: zh
+Game Locale: zh_CN
+Is UserFS Persistent: True
+Is Stdout Verbose: False
+Is Low Processor Usage Mode: False
+Architecture: x86_64
+Engine Version: 4.5.1-m.12 (custom_build)
+Is Editor: False
+Release Version: v0.106.1
+Release Commit: d3584805
+Release Date: 05/23/2026 00:01:28
+Processor Count: 16
+Processor Name: AMD Ryzen 9 5900HX with Radeon Graphics
+Main assembly hash: 1243315044
+Rendering device name: NVIDIA GeForce RTX 3060 Laptop GPU
+  Graphics adapter 0: NVIDIA GeForce RTX 3060 Laptop GPU
+  version: 32.0.15.0
+  Graphics adapter 1: NVIDIA GeForce RTX 3060 Laptop GPU
+  version: 32.0.15.0
+  Graphics adapter 2: NVIDIA GeForce RTX 3060 Laptop GPU
+  version: 32.0.15.0
+  Graphics adapter 3: Microsoft Basic Render Driver
+  version: 10.0.19041.0
+Screen info (primary 0):
+  Index 0: Size: (2560, 1440) Orientation: Landscape Scale: 1 DPI: 144 Refresh Rate: 143.999
+Video Memory Used: 0.0B
+Memory Info:
+  physical: 15.9GB
+  free: 248.2MB
+  available: 41.8GB
+  stack: 8.0MB
+  Static Memory Usage: 0.0B
+  Static Memory Peak Usage: 0.0B
+Disk Info:
+  Index 0: Name: C:\ Type: Fixed Format: NTFS Available: 73.7GB Total Free: 73.7GB Total Size: 476.6GB
+  Index 1: Name: D:\ Type: Fixed Format: NTFS Available: 30.1GB Total Free: 30.1GB Total Size: 400.0GB
+  Index 2: Name: E:\ Type: Fixed Format: NTFS Available: 84.5GB Total Free: 84.5GB Total Size: 0.5TB
+Important Environment Variables:
+  PATH: D:\steam;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\libnvvp;D:\Change java;C:\Users\刘宇轩\Downloads\JEnv;C:;Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\Javas\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\dotnet\;E:\Python;E:\Python\Scripts;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\nodejs\;C:\platform-tools;C:\Program Files\NVIDIA Corporation\Nsight Compute 2024.1.1\;C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.37.32705\bin\Hostx64\x64;C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.37.32705\bin;C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Auxiliary\Build;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files (x86)\STMicroelectronics\STM32 ST-LINK Utility\ST-LINK Utility;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Git\cmd;C:\Program Files\Microsoft VS Code\bin;D:\ANACONDA;D:\ANACONDA\Library\mingw-w64\bin;D:\ANACONDA\Library\usr\bin;D:\ANACONDA\Library\bin;D:\ANACONDA\Scripts;%USERPROFILE%\AppData\Local\Programs\Python\Launcher\;C:\Users\刘宇轩\AppData\Local\Microsoft\WindowsApps;global7\bin;%USERPROFILE%\AppData\Local\Programs\Microsoft VS Code\bin;%USERPROFILE%\AppData\Roaming\npm;C:\modeltech64_10.4\win64;C:\altera\13.1\win64;%USERPROFILE%\.dotnet\tools;%USERPROFILE%\.dotnet\tools;c:\users\liuyuxuan\appdata\roaming\python\python312\scripts;%USERPROFILE%\.dotnet\tools
+  GODOT_ROOT_DIR: 
+  HOME: 
+  DYLD_LIBRARY_PATH: 
+  LD_LIBRARY_PATH: 
+
+[INFO] Preloading 'MainMenuEssentials' assets... count=7 vfx=0
+[INFO] Preloading 'MainMenuEssentials' Complete: assets=7 time_elapsed=952ms
+ERROR: System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.ThrowHelper.ThrowNoElementsException()
+   at MegaCrit.Sts2.Core.Nodes.Screens.Settings.NSettingsPanel._Ready()
+   at Godot.Node.InvokeGodotClassMethod(godot_string_name& method, NativeVariantPtrArgs args, godot_variant& ret)
+   at Godot.CanvasItem.InvokeGodotClassMethod(godot_string_name& method, NativeVariantPtrArgs args, godot_variant& ret)
+   at Godot.Control.InvokeGodotClassMethod(godot_string_name& method, NativeVariantPtrArgs args, godot_variant& ret)
+   at MegaCrit.Sts2.Core.Nodes.Screens.Settings.NSettingsPanel.InvokeGodotClassMethod(godot_string_name& method, NativeVariantPtrArgs args, godot_variant& ret)
+   at Godot.Bridge.CSharpInstanceBridge.Call(IntPtr godotObjectGCHandle, godot_string_name* method, godot_variant** args, Int32 argCount, godot_variant_call_error* refCallError, godot_variant* ret)
+   at: void Godot.NativeCalls.godot_icall_3_864(nint, nint, nint, Godot.NativeInterop.godot_bool, int) (:0)
+   C# backtrace (most recent call first):
+       [0] void Godot.NativeInterop.ExceptionUtils.LogException(System.Exception)
+       [1] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*)
+       [2] void Godot.NativeCalls.godot_icall_3_864(nint, nint, nint, Godot.NativeInterop.godot_bool, int)
+       [3] void ModConfig.SettingsTabInjector.InjectModsTab(MegaCrit.Sts2.Core.Nodes.Screens.Settings.NSettingsTabManager)
+       [4] void Godot.Callable.<From>g__Trampoline|1_0(object, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [5] void Godot.DelegateUtils.InvokeWithVariantArgs(nint, System.Void*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant*)
+       [6] void Godot.NativeCalls.godot_icall_3_864(nint, nint, nint, Godot.NativeInterop.godot_bool, int)
+       [7] void MegaCrit.Sts2.Core.Helpers.GodotTreeExtensions.AddChildSafely(Godot.Node, Godot.Node)
+       [8] MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NSubmenu <unknown>.MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NMainMenuSubmenuStack.GetSubmenuType_Patch1(MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NMainMenuSubmenuStack, System.Type)
+       [9] T MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NMainMenuSubmenuStack.GetSubmenuType<T>()
+       [10] void MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NMainMenuSubmenuStack._Ready()
+       [11] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [12] bool Godot.CanvasItem.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [13] bool Godot.Control.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [14] bool MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NSubmenuStack.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [15] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*)
+       [16] void Godot.NativeCalls.godot_icall_3_864(nint, nint, nint, Godot.NativeInterop.godot_bool, int)
+       [17] void MegaCrit.Sts2.Core.Helpers.GodotTreeExtensions.AddChildSafely(Godot.Node, Godot.Node)
+       [18] void MegaCrit.Sts2.Core.Nodes.NSceneContainer.SetCurrentScene(Godot.Control)
+       [19] void MegaCrit.Sts2.Core.Nodes.NGame+<LoadMainMenu>d__139.MoveNext()
+       [20] void System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start<TStateMachine>(TStateMachine&)
+       [21] System.Threading.Tasks.Task MegaCrit.Sts2.Core.Nodes.NGame.LoadMainMenu(bool)
+       [22] void MegaCrit.Sts2.Core.Nodes.NGame+<LaunchMainMenu>d__131.MoveNext()
+       [23] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [24] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
+       [25] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [26] void System.Threading.Tasks.Task.RunContinuations(object)
+       [27] void MegaCrit.Sts2.Core.Assets.PreloadManager+<LoadMainMenuEssentials>d__8.MoveNext()
+       [28] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [29] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
+       [30] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [31] void System.Threading.Tasks.Task.RunContinuations(object)
+       [32] void MegaCrit.Sts2.Core.Assets.AssetLoadingSession.Process()
+       [33] void MegaCrit.Sts2.Core.Nodes.NAssetLoader._Process(double)
+       [34] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [35] bool MegaCrit.Sts2.Core.Nodes.NAssetLoader.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [36] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*)
+ERROR: Attempt to disconnect a nonexistent connection from 'root:<Window#32900122034>'. Signal: 'size_changed', callable: 'Control(NSettingsPanel.cs)::RefreshSize'.
+   at: _disconnect (core/object/object.cpp:1621)
+   C# backtrace (most recent call first):
+       [0] void ModConfig.SettingsTabInjector.InjectModsTab(MegaCrit.Sts2.Core.Nodes.Screens.Settings.NSettingsTabManager)
+       [1] void Godot.Callable.<From>g__Trampoline|1_0(object, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [2] void Godot.DelegateUtils.InvokeWithVariantArgs(nint, System.Void*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant*)
+       [3] void Godot.NativeCalls.godot_icall_3_864(nint, nint, nint, Godot.NativeInterop.godot_bool, int)
+       [4] void MegaCrit.Sts2.Core.Helpers.GodotTreeExtensions.AddChildSafely(Godot.Node, Godot.Node)
+       [5] MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NSubmenu <unknown>.MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NMainMenuSubmenuStack.GetSubmenuType_Patch1(MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NMainMenuSubmenuStack, System.Type)
+       [6] T MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NMainMenuSubmenuStack.GetSubmenuType<T>()
+       [7] void MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NMainMenuSubmenuStack._Ready()
+       [8] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [9] bool Godot.CanvasItem.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [10] bool Godot.Control.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [11] bool MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NSubmenuStack.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [12] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*)
+       [13] void Godot.NativeCalls.godot_icall_3_864(nint, nint, nint, Godot.NativeInterop.godot_bool, int)
+       [14] void MegaCrit.Sts2.Core.Helpers.GodotTreeExtensions.AddChildSafely(Godot.Node, Godot.Node)
+       [15] void MegaCrit.Sts2.Core.Nodes.NSceneContainer.SetCurrentScene(Godot.Control)
+       [16] void MegaCrit.Sts2.Core.Nodes.NGame+<LoadMainMenu>d__139.MoveNext()
+       [17] void System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start<TStateMachine>(TStateMachine&)
+       [18] System.Threading.Tasks.Task MegaCrit.Sts2.Core.Nodes.NGame.LoadMainMenu(bool)
+       [19] void MegaCrit.Sts2.Core.Nodes.NGame+<LaunchMainMenu>d__131.MoveNext()
+       [20] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [21] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
+       [22] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [23] void System.Threading.Tasks.Task.RunContinuations(object)
+       [24] void MegaCrit.Sts2.Core.Assets.PreloadManager+<LoadMainMenuEssentials>d__8.MoveNext()
+       [25] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [26] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
+       [27] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [28] void System.Threading.Tasks.Task.RunContinuations(object)
+       [29] void MegaCrit.Sts2.Core.Assets.AssetLoadingSession.Process()
+       [30] void MegaCrit.Sts2.Core.Nodes.NAssetLoader._Process(double)
+       [31] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [32] bool MegaCrit.Sts2.Core.Nodes.NAssetLoader.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [33] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*)
+[INFO] [sts2.piyixiajiuhenfen.modconfig] Mods tab injected into settings screen!
+[INFO] [Startup] Time to main menu (Godot ticks): 18743ms
+[INFO] [BaseLib] Adding custom save data to SerializableRun.
+[INFO] [BaseLib] Added 0 new properties to SerializableRun
+[INFO] [BaseLib] Adding custom save data to SerializableCard.
+[INFO] [BaseLib] Added 0 new properties to SerializableCard
+[INFO] [BaseLib] Adding custom save data to SerializablePlayer.
+[INFO] [BaseLib] Added 0 new properties to SerializablePlayer
+[INFO] [BaseLib] Adding custom save data to SerializablePotion.
+[INFO] [BaseLib] Added 0 new properties to SerializablePotion
+[INFO] [BaseLib] Adding custom save data to SerializableRelic.
+[INFO] [BaseLib] Added 0 new properties to SerializableRelic
+[INFO] [BaseLib] Adding custom save data to SerializableReward.
+[INFO] [BaseLib] Added 0 new properties to SerializableReward
+[WARN] Asset not cached: res://Arknights_Mizuki/images/icon.svg
+[INFO] [Startup] Time to main menu: 19,448ms
+[INFO] [Startup] Resource stats (main menu loaded (essential)): StaticMem=0B, VRAM=465.6MB, Objects=8,591, Resources=671, Nodes=1,632, CachedAssets=10
+[INFO] AtlasManager: Loaded epoch_atlas with 57 sprites
+[INFO] AtlasManager: Loaded relic_atlas with 341 sprites
+[INFO] AtlasManager: Loaded relic_outline_atlas with 341 sprites
+[INFO] AtlasManager: Loaded power_atlas with 264 sprites
+[INFO] AtlasManager: Loaded card_atlas with 875 sprites
+[INFO] AtlasManager: Loaded potion_atlas with 63 sprites
+[INFO] AtlasManager: Loaded potion_outline_atlas with 63 sprites
+[INFO] AtlasManager: Loaded stats_screen_atlas with 16 sprites
+[INFO] AtlasManager: Loaded intent_atlas with 310 sprites
+[INFO] AtlasManager: Loaded era_atlas with 27 sprites
+[INFO] [BaseLib] Registered scene 'res://Arknights_Mizuki/scenes/character.tscn' for auto-conversion to NCreatureVisuals
+[INFO] [BaseLib] Registered scene 'res://Arknights_Mizuki/scenes/rest_site.tscn' for auto-conversion to NRestSiteCharacter
+[INFO] [BaseLib] Registered scene 'res://Arknights_Mizuki/scenes/test_character_merchant.tscn' for auto-conversion to NMerchantCharacter
+[INFO] [BaseLib] Registered scene 'res://Arknights_Mizuki/scenes/energy_counter.tscn' for auto-conversion to NEnergyCounter
+[INFO] Unloading 3 missed cache assets
+[INFO] Preloading 'Common' assets... count=687 vfx=86
+[INFO] [Startup] Resource stats (main menu loaded (complete)): StaticMem=0B, VRAM=669.4MB, Objects=8,588, Resources=675, Nodes=1,630, CachedAssets=5
+[INFO] Preloading 'Common' Complete: assets=773 time_elapsed=2,377ms
+[INFO] Wrote 55856 bytes to path=user://steam/76561198980263731/profile1\saves\current_run.save save_dir=user://steam/76561198980263731
+[INFO] Wrote 55856 bytes to profile1/saves/current_run.save in steam remote store
+[INFO] Continuing run with character: CHARACTER.ARKNIGHTS_MIZUKI-MIZUKI
+[INFO] [BaseLib] Creating new player for Sfx (Count: 1)
+[INFO] Preloading 'characters=ARKNIGHTS_MIZUKI-MIZUKI' assets... count=9 vfx=6
+[INFO] MuteInBackground: environment [displayServer=Windows, os=Windows]
+[INFO] MuteInBackground: FocusOut received [tween=False, windowFocused=False]
+[INFO] Limiting background FPS to 30
+[INFO] MuteInBackground: FocusIn received [tween=True, msSinceFocusOut=3736, windowFocused=True]
+[INFO] MuteInBackground: Unmuted, restored volume to 0.26
+[INFO] Restored foreground FPS
+[INFO] MuteInBackground: FocusIn received [tween=False, msSinceFocusOut=3774, windowFocused=True]
+[INFO] MuteInBackground: FocusOut received [tween=False, windowFocused=False]
+[INFO] Limiting background FPS to 30
+[INFO] Preloading 'characters=ARKNIGHTS_MIZUKI-MIZUKI' Complete: assets=15 time_elapsed=5,607ms
+[INFO] Preloading 'Act=UNDERDOCKS' assets... count=8 vfx=0
+[INFO] Preloading 'Act=UNDERDOCKS' Complete: assets=8 time_elapsed=69ms
+ERROR: System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.ThrowHelper.ThrowNoElementsException()
+   at MegaCrit.Sts2.Core.Nodes.Screens.Settings.NSettingsPanel._Ready()
+   at Godot.Node.InvokeGodotClassMethod(godot_string_name& method, NativeVariantPtrArgs args, godot_variant& ret)
+   at Godot.CanvasItem.InvokeGodotClassMethod(godot_string_name& method, NativeVariantPtrArgs args, godot_variant& ret)
+   at Godot.Control.InvokeGodotClassMethod(godot_string_name& method, NativeVariantPtrArgs args, godot_variant& ret)
+   at MegaCrit.Sts2.Core.Nodes.Screens.Settings.NSettingsPanel.InvokeGodotClassMethod(godot_string_name& method, NativeVariantPtrArgs args, godot_variant& ret)
+   at Godot.Bridge.CSharpInstanceBridge.Call(IntPtr godotObjectGCHandle, godot_string_name* method, godot_variant** args, Int32 argCount, godot_variant_call_error* refCallError, godot_variant* ret)
+   at: void Godot.NativeCalls.godot_icall_3_864(nint, nint, nint, Godot.NativeInterop.godot_bool, int) (:0)
+   C# backtrace (most recent call first):
+       [0] void Godot.NativeInterop.ExceptionUtils.LogException(System.Exception)
+       [1] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*)
+       [2] void Godot.NativeCalls.godot_icall_3_864(nint, nint, nint, Godot.NativeInterop.godot_bool, int)
+       [3] void ModConfig.SettingsTabInjector.InjectModsTab(MegaCrit.Sts2.Core.Nodes.Screens.Settings.NSettingsTabManager)
+       [4] void Godot.Callable.<From>g__Trampoline|1_0(object, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [5] void Godot.DelegateUtils.InvokeWithVariantArgs(nint, System.Void*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant*)
+       [6] void Godot.NativeCalls.godot_icall_3_864(nint, nint, nint, Godot.NativeInterop.godot_bool, int)
+       [7] void MegaCrit.Sts2.Core.Helpers.GodotTreeExtensions.AddChildSafely(Godot.Node, Godot.Node)
+       [8] MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NSubmenu MegaCrit.Sts2.Core.Nodes.Screens.NRunSubmenuStack.GetSubmenuType(System.Type)
+       [9] T MegaCrit.Sts2.Core.Nodes.Screens.NRunSubmenuStack.GetSubmenuType<T>()
+       [10] void MegaCrit.Sts2.Core.Nodes.Screens.NRunSubmenuStack._Ready()
+       [11] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [12] bool Godot.CanvasItem.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [13] bool Godot.Control.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [14] bool MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NSubmenuStack.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [15] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*)
+       [16] void Godot.NativeCalls.godot_icall_3_864(nint, nint, nint, Godot.NativeInterop.godot_bool, int)
+       [17] void MegaCrit.Sts2.Core.Helpers.GodotTreeExtensions.AddChildSafely(Godot.Node, Godot.Node)
+       [18] void MegaCrit.Sts2.Core.Nodes.NSceneContainer.SetCurrentScene(Godot.Control)
+       [19] void MegaCrit.Sts2.Core.Nodes.NGame+<LoadRun>d__142.MoveNext()
+       [20] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [21] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
+       [22] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [23] void System.Threading.Tasks.Task.RunContinuations(object)
+       [24] void MegaCrit.Sts2.Core.Assets.PreloadManager+<LoadActAssets>d__12.MoveNext()
+       [25] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [26] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
+       [27] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [28] void System.Threading.Tasks.Task.RunContinuations(object)
+       [29] void MegaCrit.Sts2.Core.Assets.AssetLoadingSession.Process()
+       [30] void MegaCrit.Sts2.Core.Nodes.NAssetLoader._Process(double)
+       [31] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [32] bool MegaCrit.Sts2.Core.Nodes.NAssetLoader.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [33] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*)
+ERROR: Attempt to disconnect a nonexistent connection from 'root:<Window#32900122034>'. Signal: 'size_changed', callable: 'Control(NSettingsPanel.cs)::RefreshSize'.
+   at: _disconnect (core/object/object.cpp:1621)
+   C# backtrace (most recent call first):
+       [0] void ModConfig.SettingsTabInjector.InjectModsTab(MegaCrit.Sts2.Core.Nodes.Screens.Settings.NSettingsTabManager)
+       [1] void Godot.Callable.<From>g__Trampoline|1_0(object, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [2] void Godot.DelegateUtils.InvokeWithVariantArgs(nint, System.Void*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant*)
+       [3] void Godot.NativeCalls.godot_icall_3_864(nint, nint, nint, Godot.NativeInterop.godot_bool, int)
+       [4] void MegaCrit.Sts2.Core.Helpers.GodotTreeExtensions.AddChildSafely(Godot.Node, Godot.Node)
+       [5] MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NSubmenu MegaCrit.Sts2.Core.Nodes.Screens.NRunSubmenuStack.GetSubmenuType(System.Type)
+       [6] T MegaCrit.Sts2.Core.Nodes.Screens.NRunSubmenuStack.GetSubmenuType<T>()
+       [7] void MegaCrit.Sts2.Core.Nodes.Screens.NRunSubmenuStack._Ready()
+       [8] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [9] bool Godot.CanvasItem.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [10] bool Godot.Control.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [11] bool MegaCrit.Sts2.Core.Nodes.Screens.MainMenu.NSubmenuStack.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [12] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*)
+       [13] void Godot.NativeCalls.godot_icall_3_864(nint, nint, nint, Godot.NativeInterop.godot_bool, int)
+       [14] void MegaCrit.Sts2.Core.Helpers.GodotTreeExtensions.AddChildSafely(Godot.Node, Godot.Node)
+       [15] void MegaCrit.Sts2.Core.Nodes.NSceneContainer.SetCurrentScene(Godot.Control)
+       [16] void MegaCrit.Sts2.Core.Nodes.NGame+<LoadRun>d__142.MoveNext()
+       [17] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [18] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
+       [19] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [20] void System.Threading.Tasks.Task.RunContinuations(object)
+       [21] void MegaCrit.Sts2.Core.Assets.PreloadManager+<LoadActAssets>d__12.MoveNext()
+       [22] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [23] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
+       [24] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [25] void System.Threading.Tasks.Task.RunContinuations(object)
+       [26] void MegaCrit.Sts2.Core.Assets.AssetLoadingSession.Process()
+       [27] void MegaCrit.Sts2.Core.Nodes.NAssetLoader._Process(double)
+       [28] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [29] bool MegaCrit.Sts2.Core.Nodes.NAssetLoader.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [30] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*)
+[INFO] [sts2.piyixiajiuhenfen.modconfig] Mods tab injected into settings screen!
+[INFO] Preloading 'Combat Room' assets... count=11 vfx=0
+[INFO] Preloading 'Combat Room' Complete: assets=11 time_elapsed=269ms
+[INFO] Creating NCombatRoom with mode=ActiveCombat encounter=SEAPUNK_NORMAL.
+ERROR: Cannot instantiate C# script because the associated class could not be found. Script: 'res://Arknights_Mizuki/scenes/Character.cs'. Make sure the script exists and contains a class definition with a name that matches the filename of the script exactly (it's case-sensitive).
+   at: can_instantiate (modules/mono/csharp_script.cpp:2360)
+   C# backtrace (most recent call first):
+       [0] Godot.Node <unknown>.Godot.PackedScene.Instantiate_Patch1(Godot.PackedScene, Godot.PackedScene+GenEditState)
+       [1] MegaCrit.Sts2.Core.Nodes.Combat.NCreatureVisuals <unknown>.MegaCrit.Sts2.Core.Models.CharacterModel.CreateVisuals_Patch1(MegaCrit.Sts2.Core.Models.CharacterModel)
+       [2] MegaCrit.Sts2.Core.Nodes.Combat.NCreature MegaCrit.Sts2.Core.Nodes.Combat.NCreature.Create(MegaCrit.Sts2.Core.Entities.Creatures.Creature)
+       [3] void <unknown>.MegaCrit.Sts2.Core.Nodes.Rooms.NCombatRoom.AddCreature_Patch1(MegaCrit.Sts2.Core.Nodes.Rooms.NCombatRoom, MegaCrit.Sts2.Core.Entities.Creatures.Creature)
+       [4] void MegaCrit.Sts2.Core.Nodes.Rooms.NCombatRoom.CreateAllyNodes()
+       [5] void MegaCrit.Sts2.Core.Nodes.Rooms.NCombatRoom._Ready()
+       [6] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [7] bool Godot.CanvasItem.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [8] bool Godot.Control.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [9] bool MegaCrit.Sts2.Core.Nodes.Rooms.NCombatRoom.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [10] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*)
+       [11] void Godot.NativeCalls.godot_icall_3_864(nint, nint, nint, Godot.NativeInterop.godot_bool, int)
+       [12] void MegaCrit.Sts2.Core.Helpers.GodotTreeExtensions.AddChildSafely(Godot.Node, Godot.Node)
+       [13] void MegaCrit.Sts2.Core.Nodes.NSceneContainer.SetCurrentScene(Godot.Control)
+       [14] void MegaCrit.Sts2.Core.Rooms.CombatRoom+<StartCombat>d__46.MoveNext()
+       [15] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [16] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
+       [17] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [18] void System.Threading.Tasks.Task.RunContinuations(object)
+       [19] void MegaCrit.Sts2.Core.Assets.PreloadManager+<LoadRoomCombatAssets>d__14.MoveNext()
+       [20] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [21] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
+       [22] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [23] void System.Threading.Tasks.Task.RunContinuations(object)
+       [24] void MegaCrit.Sts2.Core.Assets.PreloadManager+<LoadRoomAssets>d__18.MoveNext()
+       [25] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [26] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
+       [27] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [28] void System.Threading.Tasks.Task.RunContinuations(object)
+       [29] void MegaCrit.Sts2.Core.Assets.AssetLoadingSession.Process()
+       [30] void MegaCrit.Sts2.Core.Nodes.NAssetLoader._Process(double)
+       [31] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [32] bool MegaCrit.Sts2.Core.Nodes.NAssetLoader.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [33] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*)
+[INFO] [BaseLib] Auto-converted 'res://Arknights_Mizuki/scenes/character.tscn' from Node2D to NCreatureVisuals
+[WARN] Asset not cached: res://themes/kreon_bold_shared.tres
+[INFO] [BaseLib] Auto-converted 'res://Arknights_Mizuki/scenes/energy_counter.tscn' from Control to NEnergyCounter
+[WARN] Asset not cached: res://scenes/vfx/ui/vfx_buff_applied.tscn
+[WARN] Asset not cached: res://Arknights_Mizuki/images/powers/Sanity_Buff.png
+[INFO] MuteInBackground: FocusIn received [tween=True, msSinceFocusOut=5049, windowFocused=True]
+[INFO] MuteInBackground: Unmuted, restored volume to 0.26
+[INFO] Restored foreground FPS
+[WARN] Asset not cached: res://scenes/vfx/ui/vfx_debuff_applied.tscn
+[WARN] Asset not cached: res://Arknights_Mizuki/images/powers/Sanity.png
+[WARN] Asset not cached: res://images/powers/vulnerable_power.png
+ERROR: Tween (bound to /root/Game/RootSceneContainer/Run/RoomContainer/CombatRoom): started with no Tweeners.
+   at: step (scene/animation/tween.cpp:346)
+[INFO] DevConsole: card ARKNIGHTS_MIZUKI-FLOAT
+ERROR: No loader found for resource: res://Arknights_Mizuki/images/cards/Float.png (expected type: unknown)
+   at: _load (core/io/resource_loader.cpp:328)
+   C# backtrace (most recent call first):
+       [0] Godot.Texture2D <unknown>.MegaCrit.Sts2.Core.Models.CardModel.get_Portrait_Patch1(MegaCrit.Sts2.Core.Models.CardModel)
+       [1] void <unknown>.MegaCrit.Sts2.Core.Nodes.Cards.NCard.Reload_Patch1(MegaCrit.Sts2.Core.Nodes.Cards.NCard)
+       [2] void MegaCrit.Sts2.Core.Nodes.Cards.NCard.set_Model(MegaCrit.Sts2.Core.Models.CardModel)
+       [3] MegaCrit.Sts2.Core.Nodes.Cards.NCard MegaCrit.Sts2.Core.Commands.CardPileCmd.CreateCardNodeAndUpdateVisuals(MegaCrit.Sts2.Core.Models.CardModel, MegaCrit.Sts2.Core.Entities.Cards.PileType, bool)
+       [4] void <unknown>.MegaCrit.Sts2.Core.Commands.CardPileCmd+<Add>d__9.MoveNext_Patch2(MegaCrit.Sts2.Core.Commands.CardPileCmd+<Add>d__9&)
+       [5] void System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start<TStateMachine>(TStateMachine&)
+       [6] System.Threading.Tasks.Task`1[System.Collections.Generic.IReadOnlyList`1[MegaCrit.Sts2.Core.Entities.Cards.CardPileAddResult]] MegaCrit.Sts2.Core.Commands.CardPileCmd.Add(System.Collections.Generic.IEnumerable`1[MegaCrit.Sts2.Core.Models.CardModel], MegaCrit.Sts2.Core.Entities.Cards.CardPile, MegaCrit.Sts2.Core.Entities.Cards.CardPilePosition, MegaCrit.Sts2.Core.Models.AbstractModel, bool)
+       [7] void MegaCrit.Sts2.Core.Commands.CardPileCmd+<Add>d__7.MoveNext()
+       [8] void System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start<TStateMachine>(TStateMachine&)
+       [9] System.Threading.Tasks.Task`1[MegaCrit.Sts2.Core.Entities.Cards.CardPileAddResult] MegaCrit.Sts2.Core.Commands.CardPileCmd.Add(MegaCrit.Sts2.Core.Models.CardModel, MegaCrit.Sts2.Core.Entities.Cards.CardPile, MegaCrit.Sts2.Core.Entities.Cards.CardPilePosition, MegaCrit.Sts2.Core.Models.AbstractModel, bool)
+       [10] void MegaCrit.Sts2.Core.Commands.CardPileCmd+<Add>d__6.MoveNext()
+       [11] void System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start<TStateMachine>(TStateMachine&)
+       [12] System.Threading.Tasks.Task`1[MegaCrit.Sts2.Core.Entities.Cards.CardPileAddResult] MegaCrit.Sts2.Core.Commands.CardPileCmd.Add(MegaCrit.Sts2.Core.Models.CardModel, MegaCrit.Sts2.Core.Entities.Cards.PileType, MegaCrit.Sts2.Core.Entities.Cards.CardPilePosition, MegaCrit.Sts2.Core.Models.AbstractModel, bool)
+       [13] MegaCrit.Sts2.Core.DevConsole.CmdResult <unknown>.MegaCrit.Sts2.Core.DevConsole.ConsoleCommands.CardConsoleCmd.Process_Patch1(MegaCrit.Sts2.Core.DevConsole.ConsoleCommands.CardConsoleCmd, MegaCrit.Sts2.Core.Entities.Players.Player, System.String[])
+       [14] MegaCrit.Sts2.Core.DevConsole.CmdResult& <unknown>.Glue:AbiFixup<MegaCrit.Sts2.Core.DevConsole.CmdResult MegaCrit.Sts2.Core.DevConsole.ConsoleCommands.CardConsoleCmd:Process(MegaCrit.Sts2.Core.Entities.Players.Player, System.String[]),MegaCrit.Sts2.Core.DevConsole.CmdResult MegaCrit.Sts2.Core.DevConsole.ConsoleCommands.CardConsoleCmd.Process_Patch1(MegaCrit.Sts2.Core.DevConsole.ConsoleCommands.CardConsoleCmd, MegaCrit.Sts2.Core.Entities.Players.Player, System.String[])>(MegaCrit.Sts2.Core.DevConsole.ConsoleCommands.CardConsoleCmd, MegaCrit.Sts2.Core.DevConsole.CmdResult&, MegaCrit.Sts2.Core.Entities.Players.Player, System.String[])
+       [15] MegaCrit.Sts2.Core.DevConsole.CmdResult MegaCrit.Sts2.Core.DevConsole.DevConsole.ProcessCommand(MegaCrit.Sts2.Core.Entities.Players.Player, string, System.String[])
+       [16] MegaCrit.Sts2.Core.DevConsole.CmdResult MegaCrit.Sts2.Core.DevConsole.DevConsole.ProcessCommand(string)
+       [17] void MegaCrit.Sts2.Core.Nodes.Debug.NDevConsole.ProcessCommand()
+       [18] void MegaCrit.Sts2.Core.Nodes.Debug.NDevConsole._Input(Godot.InputEvent)
+       [19] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [20] bool Godot.CanvasItem.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [21] bool Godot.Control.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [22] bool MegaCrit.Sts2.Core.Nodes.Debug.NDevConsole.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [23] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*)
+ERROR: Error loading resource: 'res://Arknights_Mizuki/images/cards/Float.png'.
+   at: load (core/core_bind.cpp:74)
+   C# backtrace (most recent call first):
+       [0] Godot.Texture2D <unknown>.MegaCrit.Sts2.Core.Models.CardModel.get_Portrait_Patch1(MegaCrit.Sts2.Core.Models.CardModel)
+       [1] void <unknown>.MegaCrit.Sts2.Core.Nodes.Cards.NCard.Reload_Patch1(MegaCrit.Sts2.Core.Nodes.Cards.NCard)
+       [2] void MegaCrit.Sts2.Core.Nodes.Cards.NCard.set_Model(MegaCrit.Sts2.Core.Models.CardModel)
+       [3] MegaCrit.Sts2.Core.Nodes.Cards.NCard MegaCrit.Sts2.Core.Commands.CardPileCmd.CreateCardNodeAndUpdateVisuals(MegaCrit.Sts2.Core.Models.CardModel, MegaCrit.Sts2.Core.Entities.Cards.PileType, bool)
+       [4] void <unknown>.MegaCrit.Sts2.Core.Commands.CardPileCmd+<Add>d__9.MoveNext_Patch2(MegaCrit.Sts2.Core.Commands.CardPileCmd+<Add>d__9&)
+       [5] void System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start<TStateMachine>(TStateMachine&)
+       [6] System.Threading.Tasks.Task`1[System.Collections.Generic.IReadOnlyList`1[MegaCrit.Sts2.Core.Entities.Cards.CardPileAddResult]] MegaCrit.Sts2.Core.Commands.CardPileCmd.Add(System.Collections.Generic.IEnumerable`1[MegaCrit.Sts2.Core.Models.CardModel], MegaCrit.Sts2.Core.Entities.Cards.CardPile, MegaCrit.Sts2.Core.Entities.Cards.CardPilePosition, MegaCrit.Sts2.Core.Models.AbstractModel, bool)
+       [7] void MegaCrit.Sts2.Core.Commands.CardPileCmd+<Add>d__7.MoveNext()
+       [8] void System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start<TStateMachine>(TStateMachine&)
+       [9] System.Threading.Tasks.Task`1[MegaCrit.Sts2.Core.Entities.Cards.CardPileAddResult] MegaCrit.Sts2.Core.Commands.CardPileCmd.Add(MegaCrit.Sts2.Core.Models.CardModel, MegaCrit.Sts2.Core.Entities.Cards.CardPile, MegaCrit.Sts2.Core.Entities.Cards.CardPilePosition, MegaCrit.Sts2.Core.Models.AbstractModel, bool)
+       [10] void MegaCrit.Sts2.Core.Commands.CardPileCmd+<Add>d__6.MoveNext()
+       [11] void System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start<TStateMachine>(TStateMachine&)
+       [12] System.Threading.Tasks.Task`1[MegaCrit.Sts2.Core.Entities.Cards.CardPileAddResult] MegaCrit.Sts2.Core.Commands.CardPileCmd.Add(MegaCrit.Sts2.Core.Models.CardModel, MegaCrit.Sts2.Core.Entities.Cards.PileType, MegaCrit.Sts2.Core.Entities.Cards.CardPilePosition, MegaCrit.Sts2.Core.Models.AbstractModel, bool)
+       [13] MegaCrit.Sts2.Core.DevConsole.CmdResult <unknown>.MegaCrit.Sts2.Core.DevConsole.ConsoleCommands.CardConsoleCmd.Process_Patch1(MegaCrit.Sts2.Core.DevConsole.ConsoleCommands.CardConsoleCmd, MegaCrit.Sts2.Core.Entities.Players.Player, System.String[])
+       [14] MegaCrit.Sts2.Core.DevConsole.CmdResult& <unknown>.Glue:AbiFixup<MegaCrit.Sts2.Core.DevConsole.CmdResult MegaCrit.Sts2.Core.DevConsole.ConsoleCommands.CardConsoleCmd:Process(MegaCrit.Sts2.Core.Entities.Players.Player, System.String[]),MegaCrit.Sts2.Core.DevConsole.CmdResult MegaCrit.Sts2.Core.DevConsole.ConsoleCommands.CardConsoleCmd.Process_Patch1(MegaCrit.Sts2.Core.DevConsole.ConsoleCommands.CardConsoleCmd, MegaCrit.Sts2.Core.Entities.Players.Player, System.String[])>(MegaCrit.Sts2.Core.DevConsole.ConsoleCommands.CardConsoleCmd, MegaCrit.Sts2.Core.DevConsole.CmdResult&, MegaCrit.Sts2.Core.Entities.Players.Player, System.String[])
+       [15] MegaCrit.Sts2.Core.DevConsole.CmdResult MegaCrit.Sts2.Core.DevConsole.DevConsole.ProcessCommand(MegaCrit.Sts2.Core.Entities.Players.Player, string, System.String[])
+       [16] MegaCrit.Sts2.Core.DevConsole.CmdResult MegaCrit.Sts2.Core.DevConsole.DevConsole.ProcessCommand(string)
+       [17] void MegaCrit.Sts2.Core.Nodes.Debug.NDevConsole.ProcessCommand()
+       [18] void MegaCrit.Sts2.Core.Nodes.Debug.NDevConsole._Input(Godot.InputEvent)
+       [19] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [20] bool Godot.CanvasItem.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [21] bool Godot.Control.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [22] bool MegaCrit.Sts2.Core.Nodes.Debug.NDevConsole.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [23] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*)
+[INFO] Player 1 playing card ARKNIGHTS_MIZUKI-FLOAT (no target)
+[WARN] Asset not cached: res://Arknights_Mizuki/monsters/floater.tscn
+ERROR: Cannot instantiate C# script because the associated class could not be found. Script: 'res://Arknights_Mizuki/monsters/floater.cs'. Make sure the script exists and contains a class definition with a name that matches the filename of the script exactly (it's case-sensitive).
+   at: can_instantiate (modules/mono/csharp_script.cpp:2360)
+   C# backtrace (most recent call first):
+       [0] Godot.Node <unknown>.Godot.PackedScene.Instantiate_Patch1(Godot.PackedScene, Godot.PackedScene+GenEditState)
+       [1] MegaCrit.Sts2.Core.Nodes.Combat.NCreatureVisuals <unknown>.MegaCrit.Sts2.Core.Models.MonsterModel.CreateVisuals_Patch1(MegaCrit.Sts2.Core.Models.MonsterModel)
+       [2] MegaCrit.Sts2.Core.Nodes.Combat.NCreature MegaCrit.Sts2.Core.Nodes.Combat.NCreature.Create(MegaCrit.Sts2.Core.Entities.Creatures.Creature)
+       [3] void <unknown>.MegaCrit.Sts2.Core.Nodes.Rooms.NCombatRoom.AddCreature_Patch1(MegaCrit.Sts2.Core.Nodes.Rooms.NCombatRoom, MegaCrit.Sts2.Core.Entities.Creatures.Creature)
+       [4] void MegaCrit.Sts2.Core.Commands.CreatureCmd+<Add>d__2.MoveNext()
+       [5] void System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start<TStateMachine>(TStateMachine&)
+       [6] System.Threading.Tasks.Task MegaCrit.Sts2.Core.Commands.CreatureCmd.Add(MegaCrit.Sts2.Core.Entities.Creatures.Creature)
+       [7] void MegaCrit.Sts2.Core.Commands.PlayerCmd+<AddPet>d__15.MoveNext()
+       [8] void System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start<TStateMachine>(TStateMachine&)
+       [9] System.Threading.Tasks.Task MegaCrit.Sts2.Core.Commands.PlayerCmd.AddPet(MegaCrit.Sts2.Core.Entities.Creatures.Creature, MegaCrit.Sts2.Core.Entities.Players.Player)
+       [10] void MegaCrit.Sts2.Core.Commands.PlayerCmd+<AddPet>d__14`1.MoveNext()
+       [11] void System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start<TStateMachine>(TStateMachine&)
+       [12] System.Threading.Tasks.Task`1[MegaCrit.Sts2.Core.Entities.Creatures.Creature] MegaCrit.Sts2.Core.Commands.PlayerCmd.AddPet<T>(MegaCrit.Sts2.Core.Entities.Players.Player)
+       [13] void MinionLib.Commands.MinionCmd+<AddMinion>d__0`1.MoveNext()
+       [14] void System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start<TStateMachine>(TStateMachine&)
+       [15] void Arknights_Mizuki.Scripts.Cards.Float+<OnPlay>d__15.MoveNext()
+       [16] void System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start<TStateMachine>(TStateMachine&)
+       [17] System.Threading.Tasks.Task Arknights_Mizuki.Scripts.Cards.Float.OnPlay(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext, MegaCrit.Sts2.Core.Entities.Cards.CardPlay)
+       [18] void MegaCrit.Sts2.Core.Models.CardModel+<OnPlayWrapper>d__332.MoveNext()
+       [19] void System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start<TStateMachine>(TStateMachine&)
+       [20] void MegaCrit.Sts2.Core.GameActions.PlayCardAction+<ExecuteAction>d__25.MoveNext()
+       [21] void System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start<TStateMachine>(TStateMachine&)
+       [22] System.Threading.Tasks.Task MegaCrit.Sts2.Core.GameActions.PlayCardAction.ExecuteAction()
+       [23] void MegaCrit.Sts2.Core.GameActions.GameAction+<Execute>d__45.MoveNext()
+       [24] void System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start<TStateMachine>(TStateMachine&)
+       [25] System.Threading.Tasks.Task MegaCrit.Sts2.Core.GameActions.GameAction.Execute()
+       [26] void MegaCrit.Sts2.Core.GameActions.ActionExecutor+<ExecuteActions>d__28.MoveNext()
+       [27] void System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start<TStateMachine>(TStateMachine&)
+       [28] System.Threading.Tasks.Task MegaCrit.Sts2.Core.GameActions.ActionExecutor.ExecuteActions()
+       [29] void MegaCrit.Sts2.Core.GameActions.ActionExecutor.ActionQueueChanged()
+       [30] void MegaCrit.Sts2.Core.GameActions.Multiplayer.ActionQueueSet.EnqueueWithoutSynchronizing(MegaCrit.Sts2.Core.GameActions.GameAction)
+       [31] void MegaCrit.Sts2.Core.GameActions.Multiplayer.ActionQueueSynchronizer.EnqueueAction(MegaCrit.Sts2.Core.GameActions.GameAction, ulong)
+       [32] void MegaCrit.Sts2.Core.GameActions.Multiplayer.ActionQueueSynchronizer.RequestEnqueue(MegaCrit.Sts2.Core.GameActions.GameAction)
+       [33] void <unknown>.MegaCrit.Sts2.Core.Nodes.Combat.NCardPlay.TryPlayCard_Patch3(MegaCrit.Sts2.Core.Nodes.Combat.NCardPlay, MegaCrit.Sts2.Core.Entities.Creatures.Creature)
+       [34] void MegaCrit.Sts2.Core.Nodes.Combat.NMouseCardPlay+<StartAsync>d__23.MoveNext()
+       [35] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [36] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
+       [37] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [38] void System.Threading.Tasks.Task.RunContinuations(object)
+       [39] void MegaCrit.Sts2.Core.Nodes.Combat.NMouseCardPlay+<TargetSelection>d__25.MoveNext()
+       [40] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [41] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
+       [42] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [43] void System.Threading.Tasks.Task.RunContinuations(object)
+       [44] void MegaCrit.Sts2.Core.Nodes.Combat.NMouseCardPlay+<MultiCreatureTargeting>d__28.MoveNext()
+       [45] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [46] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
+       [47] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [48] void System.Threading.Tasks.Task.RunContinuations(object)
+       [49] void MegaCrit.Sts2.Core.Nodes.Combat.NMouseCardPlay+<LerpToMouse>d__30.MoveNext()
+       [50] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [51] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
+       [52] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [53] void System.Threading.Tasks.Task.RunContinuations(object)
+       [54] void MegaCrit.Sts2.Core.Nodes.GodotExtensions.NodeUtil+<AwaitProcessFrame>d__0.MoveNext()
+       [55] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [56] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
+       [57] void Godot.SignalAwaiter.SignalCallback(nint, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_bool*)
+[WARN] [BaseLib] GetRawText: Key 'FLOATING_SEA_MINION.name' not found in table 'monsters'
+[ERROR] Encountered exception loading the creature visuals for monsters.FLOATING_SEA_MINION.name. Falling back to error scene. Exception: System.InvalidCastException: Unable to cast object of type 'Godot.Node2D' to type 'MegaCrit.Sts2.Core.Nodes.Combat.NCreatureVisuals'.
+   at MegaCrit.Sts2.Core.Models.MonsterModel.CreateVisuals_Patch1(MonsterModel this)
+   at MegaCrit.Sts2.Core.Nodes.Rooms.NCombatRoom.AddCreature_Patch1(NCombatRoom this, Creature creature)
+   at MegaCrit.Sts2.Core.Commands.CreatureCmd.Add(Creature creature)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at MegaCrit.Sts2.Core.Commands.CreatureCmd.Add(Creature creature)
+   at MegaCrit.Sts2.Core.Commands.PlayerCmd.AddPet(Creature pet, Player player)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at MegaCrit.Sts2.Core.Commands.PlayerCmd.AddPet(Creature pet, Player player)
+   at MegaCrit.Sts2.Core.Commands.PlayerCmd.AddPet[T](Player player)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at MegaCrit.Sts2.Core.Commands.PlayerCmd.AddPet[T](Player player)
+   at MinionLib.Commands.MinionCmd.AddMinion[T](Player player, MinionSummonOptions options)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Arknights_Mizuki.Scripts.Cards.Float.OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at Arknights_Mizuki.Scripts.Cards.Float.OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+   at MegaCrit.Sts2.Core.Models.CardModel.OnPlayWrapper(PlayerChoiceContext choiceContext, Creature target, Boolean isAutoPlay, ResourceInfo resources, Boolean skipCardPileVisuals)
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at MegaCrit.Sts2.Core.GameActions.PlayCardAction.ExecuteAction()
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at MegaCrit.Sts2.Core.GameActions.PlayCardAction.ExecuteAction()
+   at MegaCrit.Sts2.Core.GameActions.GameAction.Execute()
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at MegaCrit.Sts2.Core.GameActions.GameAction.Execute()
+   at MegaCrit.Sts2.Core.GameActions.ActionExecutor.ExecuteActions()
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine& stateMachine)
+   at MegaCrit.Sts2.Core.GameActions.ActionExecutor.ExecuteActions()
+   at MegaCrit.Sts2.Core.GameActions.ActionExecutor.ActionQueueChanged()
+   at MegaCrit.Sts2.Core.GameActions.Multiplayer.ActionQueueSet.EnqueueWithoutSynchronizing(GameAction gameAction)
+   at MegaCrit.Sts2.Core.GameActions.Multiplayer.ActionQueueSynchronizer.EnqueueAction(GameAction action, UInt64 actionOwnerId)
+   at MegaCrit.Sts2.Core.GameActions.Multiplayer.ActionQueueSynchronizer.RequestEnqueue(GameAction action)
+   at MegaCrit.Sts2.Core.Nodes.Combat.NCardPlay.TryPlayCard_Patch3(NCardPlay this, Creature target)
+   at MegaCrit.Sts2.Core.Nodes.Combat.NMouseCardPlay.StartAsync()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Threading.Tasks.AwaitTaskContinuation.RunCallback(ContextCallback callback, Object state, Task& currentTask)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at MegaCrit.Sts2.Core.Nodes.Combat.NMouseCardPlay.TargetSelection(TargetMode targetMode)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Threading.Tasks.AwaitTaskContinuation.RunCallback(ContextCallback callback, Object state, Task& currentTask)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at MegaCrit.Sts2.Core.Nodes.Combat.NMouseCardPlay.MultiCreatureTargeting(TargetMode targetMode)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Threading.Tasks.AwaitTaskContinuation.RunCallback(ContextCallback callback, Object state, Task& currentTask)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at MegaCrit.Sts2.Core.Nodes.Combat.NMouseCardPlay.LerpToMouse(NHandCardHolder cardHolder)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Threading.Tasks.AwaitTaskContinuation.RunCallback(ContextCallback callback, Object state, Task& currentTask)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at MegaCrit.Sts2.Core.Nodes.GodotExtensions.NodeUtil.AwaitProcessFrame(Node node, CancellationToken ct)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at Godot.SignalAwaiter.SignalCallback(IntPtr awaiterGCHandlePtr, godot_variant** args, Int32 argCount, godot_bool* outAwaiterIsNull)
+
+[WARN] Asset not cached: res://scenes/creature_visuals/fallback.tscn
+[WARN] [BaseLib] GetRawText: Key 'FLOATING_SEA_MINION.name' not found in table 'monsters'
+[WARN] [BaseLib] GetRawText: Key 'FLOATING_SEA_MINION.name' not found in table 'monsters'
+[WARN] [BaseLib] GetRawText: Key 'FLOATING_SEA_MINION.name' not found in table 'monsters'
+[WARN] AtlasResourceLoader: Missing sprite 'arknights_mizuki-floating_sea_block_power' in power_atlas (requested: res://images/atlases/power_atlas.sprites/arknights_mizuki-floating_sea_block_power.tres)
+[WARN] Asset not cached: res://images/powers/missing_power.png
+[WARN] [BaseLib] GetRawText: Key 'FLOATING_SEA_MINION.name' not found in table 'monsters'
+[WARN] Asset not cached: res://images/enchantments/spiral.png
+[WARN] [BaseLib] GetRawText: Key 'FLOATING_SEA_MINION.name' not found in table 'monsters'
+[WARN] [BaseLib] GetRawText: Key 'FLOATING_SEA_MINION.name' not found in table 'monsters'
+[WARN] [BaseLib] GetRawText: Key 'FLOATING_SEA_MINION.name' not found in table 'monsters'
+[INFO] DevConsole: open logs
+[INFO] MuteInBackground: FocusOut received [tween=False, windowFocused=False]
+[INFO] Limiting background FPS to 30
+[INFO] MuteInBackground: FocusIn received [tween=True, msSinceFocusOut=2047, windowFocused=True]
+[INFO] MuteInBackground: Unmuted, restored volume to 0.26
+[INFO] Restored foreground FPS
+[INFO] [BaseLib] NGame.Quit(): saving all ModConfigs
+[INFO] NGame.Quit called
+[INFO] [Display] On exit, saving window size: (1920, 1080) display: 0 position: (434, 260)
+[INFO] Wrote 2983 bytes to path=user://steam/76561198980263731/settings.save save_dir=user://steam/76561198980263731
+[INFO] Wrote 295 bytes to path=user://steam/76561198980263731/profile1\saves\prefs.save save_dir=user://steam/76561198980263731
+[INFO] Wrote 295 bytes to profile1/saves/prefs.save in steam remote store
+[INFO] Wrote 227869 bytes to path=user://steam/76561198980263731/profile1\saves\progress.save save_dir=user://steam/76561198980263731
+[INFO] Wrote 227869 bytes to profile1/saves/progress.save in steam remote store
+[INFO] Wrote 52 bytes to path=user://steam/76561198980263731/profile.save save_dir=user://steam/76561198980263731
+[INFO] Wrote 52 bytes to profile.save in steam remote store
+[WARN] [BaseLib] GetRawText: Key 'FLOATING_SEA_MINION.name' not found in table 'monsters'
+[INFO] Steamworks: shutting down...
+[INFO] Steamworks shutdown succeeded!
+FMOD Sound System: System released
+WARNING: 890 RIDs of type "CanvasItem" were leaked.
+   at: _free_rids (servers/rendering/renderer_canvas_cull.cpp:2678)
+ERROR: 1 RID allocations of type 'N26RendererEnvironmentStorage11EnvironmentE' were leaked at exit.
+ERROR: 6 shaders of type CanvasShaderRD were never freed
+   at: ~ShaderRD (servers/rendering/renderer_rd/shader_rd.cpp:1044)
+ERROR: 25 RID allocations of type 'N10RendererRD16ParticlesStorage9ParticlesE' were leaked at exit.
+ERROR: 1 shaders of type ParticlesShaderRD were never freed
+   at: ~ShaderRD (servers/rendering/renderer_rd/shader_rd.cpp:1044)
+ERROR: 25 RID allocations of type 'N10RendererRD11MeshStorage4MeshE' were leaked at exit.
+ERROR: 82 RID allocations of type 'N10RendererRD15MaterialStorage8MaterialE' were leaked at exit.
+ERROR: 7 RID allocations of type 'N10RendererRD15MaterialStorage6ShaderE' were leaked at exit.
+ERROR: 240 RID allocations of type 'N10RendererRD14TextureStorage7TextureE' were leaked at exit.
+WARNING: 157 RIDs of type "UniformBuffer" were leaked.
+   at: _free_rids (servers/rendering/rendering_device.cpp:6981)
+WARNING: 476 RIDs of type "Texture" were leaked.
+   at: finalize (servers/rendering/rendering_device.cpp:7191)
+ERROR: 304 RID allocations of type 'PN18TextServerAdvanced22ShapedTextDataAdvancedE' were leaked at exit.
+ERROR: 8 RID allocations of type 'PN18TextServerAdvanced12FontAdvancedE' were leaked at exit.
+ERROR: 4 RID allocations of type 'PN18TextServerAdvanced27FontAdvancedLinkedVariationE' were leaked at exit.
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+   at: cleanup (core/object/object.cpp:2514)
+ERROR: 273 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:795)

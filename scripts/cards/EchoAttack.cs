@@ -42,7 +42,7 @@ public class EchoAttack : CustomCardModel
         HoverTipFactory.FromKeyword(Echo1.Echo)
 	};
 
-    // public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/EchoAttack.png";
+    public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/EchoAttack.png";
     public EchoAttack() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
     {
         

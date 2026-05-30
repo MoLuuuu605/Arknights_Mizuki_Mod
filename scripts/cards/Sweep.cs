@@ -37,7 +37,7 @@ public class Sweep : CustomCardModel
 		HoverTipFactory.FromCard<Dazed>()
 	};
 
-    // public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/Sweep.png";
+    public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/Sweep.png";
 
     public Sweep() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
     {

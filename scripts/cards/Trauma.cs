@@ -26,7 +26,7 @@ public class Trauma : CustomCardModel
         (DynamicVar)new PowerVar<SanityBuffPower>(2m)
     };
 
-    // public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/Trauma.png";
+    public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/Trauma.png";
     public override IEnumerable<CardKeyword> CanonicalKeywords => (IEnumerable<CardKeyword>)(object)new CardKeyword[1] { AutoPlay.Autoplay };
 
     public Trauma() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)

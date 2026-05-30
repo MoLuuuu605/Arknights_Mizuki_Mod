@@ -27,6 +27,9 @@ public class Copy : CustomCardModel
         new RepeatVar(1)
     };
     public override IEnumerable<CardKeyword> CanonicalKeywords => (IEnumerable<CardKeyword>)(object)new CardKeyword[2] {CardKeyword.Exhaust,CardKeyword.Ethereal};
+
+    public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/Copy.png";
+
     public Copy() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
     {
     }

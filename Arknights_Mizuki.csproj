@@ -20,6 +20,7 @@
       <Private>false</Private>
     </Reference>
     <Compile Remove="Arknights_Mizuki\**" />
+
     <Reference Include="0Harmony">
       <HintPath>$(Sts2DataDir)\0Harmony.dll</HintPath>
       <Private>false</Private>
@@ -28,7 +29,15 @@
       <HintPath>$(Sts2Dir)/mods/BaseLib/BaseLib.dll</HintPath>
       <Private>false</Private>
     </Reference>
-      
+    <Reference Include="MinionLib">
+      <HintPath>$(Sts2Dir)/mods/MinionLib/MinionLib.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="MinionLib.BaseLibAdapters">
+      <HintPath>$(Sts2Dir)/mods/Minion.BaseLibAdapters/MinionLib.BaseLibAdapters.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    
   </ItemGroup>
 
   <!-- 自动复制dll和json -->

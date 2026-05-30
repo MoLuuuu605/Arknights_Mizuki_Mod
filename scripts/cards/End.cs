@@ -28,7 +28,7 @@ public class End : CustomCardModel
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[0];
 
-    // public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/End.png";
+    public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/End.png";
 
     public End() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
     {

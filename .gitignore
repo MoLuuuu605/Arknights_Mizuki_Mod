@@ -3,3 +3,8 @@
 /android/
 .Turorials/
 .vscode/
+.extract.py
+.remove_bg.py
+.parse_cards.py
+.generate_table.py
+.temp/

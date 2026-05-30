@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://80uoltapevbn"]
+
+[ext_resource type="Script" uid="uid://7fyflv46nt71" path="res://Arknights_Mizuki/monsters/floater.cs" id="1_7phho"]
+[ext_resource type="Texture2D" uid="uid://xwvichfcijl0" path="res://Arknights_Mizuki/monsters/floater/idle_rb/frame_000000.png" id="2_k3juj"]
+
+[node name="floater" type="Node2D"]
+script = ExtResource("1_7phho")
+
+[node name="Visuals" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(195, -315)
+texture = ExtResource("2_k3juj")
+
+[node name="Bounds" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -12.0
+offset_top = -283.0
+offset_right = 430.0
+offset_bottom = 8.0
+
+[node name="IntentPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(227, -96)
+
+[node name="CenterPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(235, -92)

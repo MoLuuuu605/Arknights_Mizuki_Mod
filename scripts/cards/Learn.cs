@@ -32,7 +32,7 @@ public class Learn : CustomCardModel
         (DynamicVar)new CardsVar(2)
     };
 
-    // public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/learn.png";
+    public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/learn.png";
     public override IEnumerable<CardKeyword> CanonicalKeywords => [AutoPlay.Autoplay,CardKeyword.Exhaust];
     public Learn() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
     {

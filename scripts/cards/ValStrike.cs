@@ -42,7 +42,7 @@ public class ValStrike : CustomCardModel
 		HoverTipFactory.FromPower<SanityPower>()
 	};
 
-    // public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/VulStrike.png";
+    public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/VulStrike.png";
 
     public ValStrike() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
     {

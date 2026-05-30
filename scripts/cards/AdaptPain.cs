@@ -31,7 +31,7 @@ public class AdaptPain : CustomCardModel
         HoverTipFactory.FromPower<AdaptPainPower>()
     };
 
-    // public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/unlimit.png";
+    public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/AdaptPain.png";
 
     public AdaptPain() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
     {
