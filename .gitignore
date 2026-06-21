@@ -1,13 +1,13 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
-.Turorials/
+Tutorials/
 .vscode/
-.extract.py
-.remove_bg.py
-.parse_cards.py
-.generate_table.py
-.temp/
+extract.py
+remove_bg.py
+parse_cards.py
+generate_table.py
+temp/
 .tmp/
 /Arknights_Mizuki.pck
 Arknights_Mizuki.json
@@ -15,3 +15,6 @@ Cards.xlsx
 card_list.xlsx
 card_list.md
 *.pck
+*.import
+icon.svg
+images/
