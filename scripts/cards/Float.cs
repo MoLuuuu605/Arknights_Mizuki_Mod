@@ -56,7 +56,7 @@ public sealed class Float : CustomCardModel
         // 召唤浮海漂移者
         if(!HasMinion<FloatingSeaMinion>(Owner))
         {
-            _ = await MinionCmd.AddMinion<FloatingSeaMinion>(Owner, new MinionSummonOptions(
+            _ = await MinionCmd.AddMinion<FloatingSeaMinion>(choiceContext,Owner, new MinionSummonOptions(
                 MaxHp: 8m,                              // 血量
                 PrimaryStatAmount: 2m,                  // 主要参数（具体内容在随从的 OnSummon 里定义），还有次要参数等可以按需传入
                 Source: this,                           // 召唤来源（通常是这张牌）

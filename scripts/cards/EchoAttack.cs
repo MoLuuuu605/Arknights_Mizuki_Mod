@@ -49,6 +49,9 @@ public class EchoAttack : CustomCardModel
     }
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        if (cardPlay.Card.Owner != Owner)
+            return;
+
         if (this.Pile.Type == PileType.Hand){
         DynamicVars.Damage.BaseValue += 1;
         }

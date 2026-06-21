@@ -18,6 +18,8 @@
     "ARKNIGHTS_MIZUKI-MONSTER2.title":"收获",
     "ARKNIGHTS_MIZUKI-MONSTER2.description":"召唤钵海收割者，若其已存在，给予其数值层[blue]海嗣化[/blue]",
     "ARKNIGHTS_MIZUKI-MONSTER3.title":"爬行",
-    "ARKNIGHTS_MIZUKI-MONSTER3.description":"召唤囊海爬行者，若其已存在，给予其数值层[blue]海嗣化[/blue]"
+    "ARKNIGHTS_MIZUKI-MONSTER3.description":"召唤囊海爬行者，若其已存在，给予其数值层[blue]海嗣化[/blue]",
+    "ARKNIGHTS_MIZUKI-MONSTER.title":"召唤",
+    "ARKNIGHTS_MIZUKI-MONSTET.description":"召唤的随从每回合获得一次主动行动"
     
 }

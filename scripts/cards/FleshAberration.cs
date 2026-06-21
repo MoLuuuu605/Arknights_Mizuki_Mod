@@ -24,7 +24,7 @@ public class FleshAberration : CustomCardModel
     {
         (DynamicVar)new PowerVar<StrengthPower>(1m),
         new PowerVar<DexterityPower>(1m),
-        new PowerVar<VulnerablePower>(2m)
+        new PowerVar<VulnerablePower>(1m)
     };
     public override IEnumerable<CardKeyword> CanonicalKeywords => new CardKeyword[]
     {

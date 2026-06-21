@@ -1,12 +1,13 @@
 using BaseLib.Utils.NodeFactories;
 using MegaCrit.Sts2.Core.Commands;
-using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Nodes.Combat;
-using MinionLib.BaseLibAdapters;
+using Arknights_Mizuki.BaseLibAdapters;
 using MinionLib.Minion;
 
+
+namespace Arknights_Mizuki.Scripts.Minions;
 public sealed class SacCrawlerMinion : CustomMinionModel
 {
     public override int MinInitialHp => 8;
@@ -20,12 +21,12 @@ public sealed class SacCrawlerMinion : CustomMinionModel
         RegisterSceneConversions();
     }
 
-    public override async Task OnSummon(Player owner, Creature self, MinionSummonOptions options)
+    public override async Task OnSummon(PlayerChoiceContext choiceContext,Player owner, MinionSummonOptions options)
     {
         if (options.MaxHp is decimal maxHp)
-            await CreatureCmd.SetMaxAndCurrentHp(self, maxHp);
+            await CreatureCmd.SetMaxAndCurrentHp(this.Creature, maxHp);
 
-        await PowerCmd.Apply<SacCrawlerSanityPower>(choiceContext:new ThrowingPlayerChoiceContext(),this.Creature, 1, owner.Creature, options.Source);
-        await PowerCmd.Apply<SacCrawlerSanityAction>(choiceContext:new ThrowingPlayerChoiceContext(),this.Creature, 1, owner.Creature, options.Source);
+        await PowerCmd.Apply<SacCrawlerSanityPower>(choiceContext,this.Creature, 1, owner.Creature, options.Source);
+        await PowerCmd.Apply<SacCrawlerSanityAction>(choiceContext,this.Creature, 1, owner.Creature, options.Source);
     }
 }

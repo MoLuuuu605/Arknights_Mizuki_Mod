@@ -23,8 +23,8 @@ public class MzkMirrorFlower : CustomCardModel
 
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
     {
-        (DynamicVar)new DamageVar(6m, (ValueProp)8),
-        (DynamicVar)new HpLossVar(6m)
+        (DynamicVar)new DamageVar(10m, (ValueProp)8),
+        (DynamicVar)new HpLossVar(4m)
     };
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[0];
@@ -64,7 +64,7 @@ public class MzkMirrorFlower : CustomCardModel
     protected override void OnUpgrade()
     {
         // 伤害+3，HpLoss-3
-        ((DynamicVar)((CardModel)this).DynamicVars.Damage).UpgradeValueBy(3m);
-        ((DynamicVar)((CardModel)this).DynamicVars["HpLoss"]).UpgradeValueBy(-3m);
+        ((DynamicVar)((CardModel)this).DynamicVars.Damage).UpgradeValueBy(4m);
+        ((DynamicVar)((CardModel)this).DynamicVars["HpLoss"]).UpgradeValueBy(-2m);
     }
 }

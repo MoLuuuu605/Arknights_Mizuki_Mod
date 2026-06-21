@@ -1,5 +1,7 @@
 {
-    "ARKNIGHTS_MIZUKI-MZK_TREE_BRANCH.title":"深蓝之树",
-    "ARKNIGHTS_MIZUKI-MZK_TREE_BRANCH.description": "每场战斗，你造成的第一次伤害附加3层神经损伤"
+    "ARKNIGHTS_MIZUKI-MZK_TREE_BRANCH.title":"深蓝之籽",
+    "ARKNIGHTS_MIZUKI-MZK_TREE_BRANCH.description": "每场战斗,你造成的第一次伤害附加[gold]3[/gold]层[blue]神经损伤[/blue]",
+    "ARKNIGHTS_MIZUKI-DARK_BLUE_TREE.title":"深蓝之树",
+    "ARKNIGHTS_MIZUKI-DARK_BLUE_TREE.description": "你每次造成伤害时额外施加[gold]2[/gold]层[blue]神经损伤[/blue]"
     
 }

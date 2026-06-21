@@ -27,6 +27,9 @@ public sealed class SuperSpeedPower : CustomPowerModel
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await base.AfterCardPlayed(choiceContext, cardPlay);
+
+        if (cardPlay.Card.Owner != Owner.Player)
+            return;
         
         var playedCard = cardPlay.Card;
         

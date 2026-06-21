@@ -15,7 +15,7 @@ namespace Arknights_Mizuki.Scripts.Cards;
 [Pool(typeof(MzkCardPool))]
 public class Bigge : CustomCardModel
 {
-    private const int energyCost = 1;
+    private const int energyCost = 0;
     private const CardType type = CardType.Skill;
     private const CardRarity rarity = CardRarity.Uncommon;
     private const TargetType targetType = TargetType.None;
@@ -24,7 +24,7 @@ public class Bigge : CustomCardModel
     // 参考官方写法：使用 CardsVar 或者 IntVar
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[1]
     {
-        (DynamicVar)new IntVar("DiscardPicks", 1m)  // 基础 1，升级后 3
+        (DynamicVar)new IntVar("DiscardPicks", 2m)  // 基础 1，升级后 3
     };
 
     public override string PortraitPath => "res://Arknights_Mizuki/images/cards/bigge.png";

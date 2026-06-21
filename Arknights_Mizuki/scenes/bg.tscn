@@ -10,8 +10,8 @@ offset_bottom = 40.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = -116.0
-offset_top = -85.0
-offset_right = 2925.0
-offset_bottom = 1693.0
+offset_left = 6.0
+offset_top = -60.0
+offset_right = 2608.0
+offset_bottom = 1473.0
 texture = ExtResource("1_ha6g5")

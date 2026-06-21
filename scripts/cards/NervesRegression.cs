@@ -14,7 +14,7 @@ namespace Arknights_Mizuki.Scripts.Cards;
 [Pool(typeof(MzkCardPool))]
 public class NervesRegression : CustomCardModel
 {
-    private const int energyCost = 1;
+    private const int energyCost = 0;
     private const CardType type = CardType.Skill;
     private const CardRarity rarity = CardRarity.Uncommon;
     private const TargetType targetType = TargetType.Self;
@@ -31,7 +31,7 @@ public class NervesRegression : CustomCardModel
         CardKeyword.Exhaust  // 
     };
 
-    public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/SeaWhisper.png";
+    public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/NervesRegression.png";
 
 
     public NervesRegression() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
@@ -46,7 +46,7 @@ public class NervesRegression : CustomCardModel
         this.Owner.Creature,
         this
         );
-        await CardPileCmd.Draw(choiceContext,2,Owner);
+        await CardPileCmd.Draw(choiceContext,DynamicVars.Cards.BaseValue,Owner);
         await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue,Owner);
     }
     protected override void OnUpgrade()

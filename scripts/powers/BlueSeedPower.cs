@@ -26,6 +26,9 @@ public class BlueSeedPower : CustomPowerModel
 	};	
     public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
 	{
+        if (Owner != player.Creature)
+            return;
+
             await PlayerCmd.GainEnergy(1m, ((PowerModel)this).Owner.Player);
     }
 }

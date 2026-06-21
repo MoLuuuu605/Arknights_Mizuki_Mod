@@ -19,6 +19,9 @@ public sealed class ErodeTidePower : CustomPowerModel
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await base.AfterCardPlayed(choiceContext, cardPlay);
+
+        if (cardPlay.Card.Owner != Owner.Player)
+            return;
         
         if (Amount <= 0)
             return;
@@ -37,13 +40,13 @@ public sealed class ErodeTidePower : CustomPowerModel
                     false);
             }
         }
-
-        Flash();
     }
 
-    // 完全复制 Kaguya 的写法
     public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
-            await PowerCmd.Remove((PowerModel)(object)this);
+        if (Owner != player.Creature)
+            return;
+
+        await PowerCmd.Remove((PowerModel)(object)this);
     }
 }

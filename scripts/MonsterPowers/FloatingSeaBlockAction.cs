@@ -4,7 +4,7 @@ using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.ValueProps;
 using MinionLib.Targeting;
-using MinionLib.BaseLibAdapters;
+using Arknights_Mizuki.BaseLibAdapters;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using Arknights_Mizuki.Scripts.Powers;
 
@@ -26,7 +26,7 @@ public sealed class FloatingSeaBlockAction : CustomActionModel
         if (target == null) return;
         var actor = Owner;
         var block = actor.GetPowerAmount<SeabornizationPower>();
-        await CreatureCmd.GainBlock(target, block+baseBlock, ValueProp.Move, null);
-        await PowerCmd.Remove<FloatingSeaBlockAction>(Owner);
+        await CreatureCmd.GainBlock(target, block+baseBlock, ValueProp.Unblockable|ValueProp.Unpowered, null);
+        await PowerCmd.Apply<FloatingSeaBlockAction>(choiceContext,Owner,-1,Owner,null);
     }
 }

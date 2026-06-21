@@ -5,7 +5,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.ValueProps;
-using MinionLib.BaseLibAdapters;
+using Arknights_Mizuki.BaseLibAdapters;
 
 namespace Arknights_Mizuki.Scripts.Actions;
 
@@ -35,7 +35,7 @@ public sealed class HarvestAttackAction : CustomActionModel
                 await CreatureCmd.Damage(choiceContext, enemy, baseDamage, ValueProp.Move, actor, null);
             }
         }
-        await PowerCmd.Remove<HarvestAttackAction>(Owner);
+        await PowerCmd.Apply<HarvestAttackAction>(choiceContext,Owner,-1,Owner,null);
     }
 
 }

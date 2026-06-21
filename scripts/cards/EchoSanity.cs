@@ -48,6 +48,9 @@ public class EchoSanity : CustomCardModel
     private int echo=0;
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        if (cardPlay.Card.Owner != Owner)
+            return;
+
         if (this.Pile.Type == PileType.Hand){
             echo +=1 ;
             if(echo ==2)

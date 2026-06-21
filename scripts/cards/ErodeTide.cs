@@ -23,7 +23,7 @@ public class ErodeTide : CustomCardModel
 
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[1]
     {
-        (DynamicVar)new PowerVar<ErodeTidePower>(2m)
+        (DynamicVar)new PowerVar<ErodeTidePower>(1m)
     };
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]

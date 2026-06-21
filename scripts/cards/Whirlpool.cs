@@ -22,8 +22,8 @@ public class Whirlpool : CustomCardModel
 
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
     {
-        (DynamicVar)new DamageVar(4m, (ValueProp)8),
-        (DynamicVar)new RepeatVar(2)
+        (DynamicVar)new DamageVar(2m, (ValueProp)8),
+        (DynamicVar)new RepeatVar(4)
     };
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[0];

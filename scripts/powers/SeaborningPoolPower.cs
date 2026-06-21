@@ -27,6 +27,9 @@ public class SeaborningPoolPower : CustomPowerModel
 	};	
     public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
 	{
+        if (Owner != player.Creature)
+            return;
+
         if(Amount == 0 )return;
         var times = Amount * DynamicVars.Cards.BaseValue;
         for (int i = 0 ; i<times;i++)

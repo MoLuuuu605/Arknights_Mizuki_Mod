@@ -28,7 +28,7 @@ public class AutoSheild : CustomCardModel
 	protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
     {
 		(DynamicVar)new EnergyVar(2),
-		(DynamicVar)new PowerVar<SheildPower>(1m)
+		(DynamicVar)new PowerVar<SheildPower>(2m)
 	};
 
 	public AutoSheild()
@@ -38,7 +38,7 @@ public class AutoSheild : CustomCardModel
 
 	protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay _)
 	{
-		await PowerCmd.Apply<SheildPower>(choiceContext, ((CardModel)this).Owner.Creature, ((CardModel)this).DynamicVars["AutoSheildPower"].BaseValue, ((CardModel)this).Owner.Creature, (CardModel)(object)this, false);
+		await PowerCmd.Apply<SheildPower>(choiceContext, ((CardModel)this).Owner.Creature, ((CardModel)this).DynamicVars["SheildPower"].BaseValue, ((CardModel)this).Owner.Creature, (CardModel)(object)this, false);
 	}
 
 	protected override void OnUpgrade()

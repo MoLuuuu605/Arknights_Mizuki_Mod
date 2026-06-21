@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 
 using Arknights_Mizuki.Scripts.Pools;
 using MegaCrit.Sts2.Core.HoverTips;
@@ -44,6 +45,9 @@ public class EchoGenerateAuto : CustomCardModel
     private int echo=0;
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        if (cardPlay.Card.Owner != Owner)
+            return;
+
         if (this.Pile.Type == PileType.Hand){
             echo +=1 ;
             if(echo ==3)
@@ -54,22 +58,21 @@ public class EchoGenerateAuto : CustomCardModel
         }
     }
 
-    Random rng = new Random();
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         int num=(int)this.DynamicVars.Cards.BaseValue;
         for(int i=0;i<num;i++)
         {
-            int p =rng.Next(5);
-            switch(p)
+            CardModel generatedCard = Owner.RunState.Rng.CombatCardSelection.NextItem(new CardModel[]
             {
-                case 1:CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(CombatState.CreateCard<Learn>(Owner), PileType.Discard,Owner,CardPilePosition.Random));break;
-                case 2:CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(CombatState.CreateCard<Share>(Owner), PileType.Discard,Owner,CardPilePosition.Random));break;
-                case 3:CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(CombatState.CreateCard<Shock>(Owner), PileType.Discard,Owner,CardPilePosition.Random));break;
-                case 4:CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(CombatState.CreateCard<Spray>(Owner), PileType.Discard,Owner,CardPilePosition.Random));break;
-                case 5:CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(CombatState.CreateCard<WaterSheild>(Owner),PileType.Discard,Owner,CardPilePosition.Random));break;
-                default:CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(CombatState.CreateCard<Explain>(Owner), PileType.Discard,Owner,CardPilePosition.Random));break;
-            }
+                CombatState.CreateCard<Learn>(Owner),
+                CombatState.CreateCard<Share>(Owner),
+                CombatState.CreateCard<Shock>(Owner),
+                CombatState.CreateCard<Spray>(Owner),
+                CombatState.CreateCard<WaterSheild>(Owner),
+                CombatState.CreateCard<Explain>(Owner),
+            });
+            CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(generatedCard, PileType.Discard, Owner, CardPilePosition.Random));
         }
     }
 

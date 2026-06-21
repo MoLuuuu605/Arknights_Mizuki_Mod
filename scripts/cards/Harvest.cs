@@ -1,4 +1,5 @@
 using Arknights_Mizuki.Scripts.keywords;
+using Arknights_Mizuki.Scripts.Minions;
 using Arknights_Mizuki.Scripts.Pools;
 using Arknights_Mizuki.Scripts.Powers;
 using BaseLib.Abstracts;
@@ -52,8 +53,8 @@ public sealed class Harvest : CustomCardModel
         // 召唤浮海漂移者
         if(!HasMinion<HarvestMinion>(Owner))
         {
-            _ = await MinionCmd.AddMinion<HarvestMinion>(Owner, new MinionSummonOptions(
-                MaxHp: 4m,                              // 血量
+            _ = await MinionCmd.AddMinion<HarvestMinion>(choiceContext,Owner, new MinionSummonOptions(
+                MaxHp: 6m,                              // 血量
                 PrimaryStatAmount: 2m,                  // 主要参数（具体内容在随从的 OnSummon 里定义），还有次要参数等可以按需传入
                 Source: this,                           // 召唤来源（通常是这张牌）
                 Position: MinionPosition.Front));

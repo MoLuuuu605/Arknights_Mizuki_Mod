@@ -16,7 +16,7 @@ namespace Arknights_Mizuki.Scripts.Cards;
 [Pool(typeof(MzkCardPool))]
 public class Sign : CustomCardModel
 {
-    private const int energyCost = 1;
+    private const int energyCost = 0;
     private const CardType type = CardType.Skill;
     private const CardRarity rarity = CardRarity.Uncommon;
     private const TargetType targetType = TargetType.Self;
@@ -24,9 +24,9 @@ public class Sign : CustomCardModel
 
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[3]
     {
-        (DynamicVar)new PowerVar<SanityBuffPower>(1m),
+        (DynamicVar)new PowerVar<SanityBuffPower>(2m),
         (DynamicVar)new DamageVar(3m, ValueProp.Unblockable),
-        new PowerVar<VigorPower>(3m)
+        new PowerVar<VigorPower>(4m)
     };
 
     public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/Sign.png";

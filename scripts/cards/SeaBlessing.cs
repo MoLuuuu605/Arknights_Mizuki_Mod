@@ -31,7 +31,7 @@ public class SeaBlessing : CustomCardModel
 
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
     {
-        (DynamicVar)new BlockVar(8m, (ValueProp)8),
+        (DynamicVar)new BlockVar(6m, (ValueProp)8),
         (DynamicVar)new DynamicVar("Float", 3m)
     };
 
@@ -49,6 +49,9 @@ public class SeaBlessing : CustomCardModel
 
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        if (cardPlay.Card.Owner != Owner)
+            return;
+
         if (Pile.Type != PileType.Hand)
             return;
 
@@ -66,7 +69,7 @@ public class SeaBlessing : CustomCardModel
 
         if (!HasMinion<FloatingSeaMinion>(Owner))
         {
-            _ = await MinionCmd.AddMinion<FloatingSeaMinion>(Owner, new MinionSummonOptions(
+            _ = await MinionCmd.AddMinion<FloatingSeaMinion>(choiceContext,Owner, new MinionSummonOptions(
                 MaxHp: 8m,
                 PrimaryStatAmount: 2m,
                 Source: this,
@@ -86,6 +89,7 @@ public class SeaBlessing : CustomCardModel
 
     protected override void OnUpgrade()
     {
+        this.DynamicVars["Float"].UpgradeValueBy(1m);
     }
 
     private static bool HasMinion<T>(Player player) where T : MinionModel

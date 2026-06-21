@@ -42,10 +42,10 @@ public class SpeedUp : CustomCardModel
     // 鎵撳嚭鏃剁殑鏁堟灉閫昏緫
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        var learnCard = Owner.RunState.CreateCard<Learn>(Owner);
+        var card= Owner.RunState.CreateCard<Learn>(Owner);
         CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(CombatState.CreateCard<Learn>(Owner), PileType.Draw,Owner,CardPilePosition.Random));
         CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(CombatState.CreateCard<Learn>(Owner), PileType.Discard,Owner,CardPilePosition.Random));
-        CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(learnCard, PileType.Deck,Owner,CardPilePosition.Random));
+        CardCmd.PreviewCardPileAdd(await CardPileCmd.Add(card, PileType.Deck));
         await CardPileCmd.Draw(choiceContext, 1, ((CardModel)this).Owner, false);
     }
 

@@ -9,7 +9,6 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.HoverTips;
 
 using Arknights_Mizuki.Scripts.Pools;
-using Arknights_Mizuki.Scripts.Powers;
 using MegaCrit.Sts2.Core.Models.Powers;
 
 namespace Arknights_Mizuki.Scripts.Cards;
@@ -39,7 +38,7 @@ public class ValStrike : CustomCardModel
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
 	{
-		HoverTipFactory.FromPower<SanityPower>()
+		HoverTipFactory.FromPower<VulnerablePower>()
 	};
 
     public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/VulStrike.png";
@@ -55,7 +54,7 @@ public class ValStrike : CustomCardModel
             .FromCard(this) // 伤害来源于这张卡牌
             .Targeting(cardPlay.Target) // 伤害目标是玩家选择的目标
             .Execute(choiceContext);
-        await PowerCmd.Apply<VulnerablePower>(choiceContext, cardPlay.Target, ((DynamicVar)((CardModel)this).DynamicVars["SanityPower"]).BaseValue, ((CardModel)this).Owner.Creature, (CardModel)(object)this, false);
+        await PowerCmd.Apply<VulnerablePower>(choiceContext, cardPlay.Target, ((DynamicVar)((CardModel)this).DynamicVars["VulnerablePower"]).BaseValue, ((CardModel)this).Owner.Creature, (CardModel)(object)this, false);
     }
 
     // 升级后的效果逻辑

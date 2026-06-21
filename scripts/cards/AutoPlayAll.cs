@@ -8,7 +8,8 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using Arknights_Mizuki.Scripts.Pools;
 using MegaCrit.Sts2.Core.HoverTips;
 using Arknights_Mizuki.Scripts.keywords;
-using MegaCrit.Sts2.Core.Models.Cards;
+using System.Runtime.InteropServices.Marshalling;
+using MegaCrit.Sts2.Core.Models;
 
 namespace Arknights_Mizuki.Scripts.Cards;
 
@@ -45,11 +46,10 @@ public class AutoPlayAll : CustomCardModel
     // 鎵撳嚭鏃剁殑鏁堟灉閫昏緫
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-
         CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(CombatState.CreateCard<Learn>(Owner), PileType.Discard,Owner,CardPilePosition.Random));
         CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(CombatState.CreateCard<Share>(Owner), PileType.Discard,Owner,CardPilePosition.Random));
         CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(CombatState.CreateCard<Shock>(Owner), PileType.Discard,Owner,CardPilePosition.Random));
-        await CardPileCmd.Add(CombatState.CloneCard(this), PileType.Hand,CardPilePosition.Bottom);
+        await CardPileCmd.AddGeneratedCardToCombat(CombatState.CreateCard<AutoPlayAll>(Owner),PileType.Hand,Owner);
     }
 
     protected override void OnUpgrade()

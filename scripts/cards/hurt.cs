@@ -32,8 +32,13 @@ public class Hurt : CustomCardModel
         (DynamicVar)new DamageVar(3m,(ValueProp)8)
     };
 
+    public override IEnumerable<CardKeyword> CanonicalKeywords => new CardKeyword[2]{
+        CardKeyword.Exhaust,
+        AutoPlay.Autoplay
+    };
+
+
     public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/hurt.png";
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [AutoPlay.Autoplay];
     public Hurt() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
     {
     }

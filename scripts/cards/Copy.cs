@@ -43,6 +43,7 @@ public class Copy : CustomCardModel
         
         var lastCard = cardPlay.Card;
         if (lastCard == null) return;
+        if (lastCard.Owner != Owner) return;
         
         // 记录当前复制的目标
         _currentCopyTarget = lastCard;

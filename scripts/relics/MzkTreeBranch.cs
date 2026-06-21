@@ -4,10 +4,10 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Entities.Creatures;
 
 using Arknights_Mizuki.Scripts.Pools;
 using Arknights_Mizuki.Scripts.Powers;
+using MegaCrit.Sts2.Core.Models;
 
 namespace Arknights_Mizuki.Scripts.Relics;
 
@@ -21,14 +21,14 @@ public class MzkTreeBranch : CustomRelicModel
     public override RelicRarity Rarity => RelicRarity.Starter;
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
-        new[] { new PowerVar<SanityPower>(3m) };
+        new[] { new PowerVar<SanityPower>(5m) };
 
     public override string PackedIconPath =>
-        $"res://Arknights_Mizuki/images/relics/MzkTreeBranch.png";
+        $"res://Arknights_Mizuki/images/relics/DarkBlueSeed.png";
     protected override string PackedIconOutlinePath =>
-        $"res://Arknights_Mizuki/images/relics/MzkTreeBranch.png";
+        $"res://Arknights_Mizuki/images/relics/DarkBlueSeed.png";
     protected override string BigIconPath =>
-        $"res://Arknights_Mizuki/images/relics/MzkTreeBranch.png";
+        $"res://Arknights_Mizuki/images/relics/DarkBlueSeed.png";
 
     public override async Task BeforeCombatStart()
     {
@@ -41,5 +41,8 @@ public class MzkTreeBranch : CustomRelicModel
             false
         );
     }
-    
+    	public override RelicModel GetUpgradeReplacement()
+	{
+		return (RelicModel)(object)ModelDb.Relic<DarkBlueTree>();
+	}
 }

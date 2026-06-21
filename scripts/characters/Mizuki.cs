@@ -23,7 +23,7 @@ public class Mizuki : PlaceholderCharacterModel
 
     public override CharacterGender Gender => CharacterGender.Masculine;
 
-    public override int StartingHp => 65;
+    public override int StartingHp => 70;
 
     public override string CustomVisualPath => "res://Arknights_Mizuki/scenes/character.tscn";
 

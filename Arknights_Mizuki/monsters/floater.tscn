@@ -1,15 +1,10 @@
-[gd_scene load_steps=32 format=3 uid="uid://80uoltapevbn"]
+[gd_scene load_steps=27 format=3 uid="uid://80uoltapevbn"]
 
 [ext_resource type="Texture2D" uid="uid://xwvichfcijl0" path="res://Arknights_Mizuki/monsters/floater/idle_rb/frame_000000.png" id="2_k3juj"]
-[ext_resource type="Texture2D" uid="uid://7l1aqhbc4pll" path="res://Arknights_Mizuki/monsters/floater/idle_rb/frame_000002.png" id="91_pnlc5"]
 [ext_resource type="Texture2D" uid="uid://d2hmdlqkanpfh" path="res://Arknights_Mizuki/monsters/floater/idle_rb/frame_000004.png" id="93_pydm4"]
-[ext_resource type="Texture2D" uid="uid://cgwft8r0kj8pf" path="res://Arknights_Mizuki/monsters/floater/idle_rb/frame_000006.png" id="95_gfkqc"]
 [ext_resource type="Texture2D" uid="uid://b8y1gwa1drx3u" path="res://Arknights_Mizuki/monsters/floater/idle_rb/frame_000008.png" id="97_xof0q"]
-[ext_resource type="Texture2D" uid="uid://dj64jnepyyiby" path="res://Arknights_Mizuki/monsters/floater/idle_rb/frame_000010.png" id="99_fu1qy"]
 [ext_resource type="Texture2D" uid="uid://b1w60e5p138ww" path="res://Arknights_Mizuki/monsters/floater/idle_rb/frame_000012.png" id="101_0jaey"]
-[ext_resource type="Texture2D" uid="uid://vlgf4unwflm0" path="res://Arknights_Mizuki/monsters/floater/idle_rb/frame_000014.png" id="103_5f1x6"]
 [ext_resource type="Texture2D" uid="uid://cpel7h3pdxyu6" path="res://Arknights_Mizuki/monsters/floater/idle_rb/frame_000016.png" id="105_y06gw"]
-[ext_resource type="Texture2D" uid="uid://bsluuchs3lojc" path="res://Arknights_Mizuki/monsters/floater/idle_rb/frame_000018.png" id="107_k0de4"]
 [ext_resource type="Texture2D" uid="uid://bcikcj6d77l84" path="res://Arknights_Mizuki/monsters/floater/idle_rb/frame_000020.png" id="109_6de0h"]
 [ext_resource type="Texture2D" uid="uid://li5mijn1pwbd" path="res://Arknights_Mizuki/monsters/floater/idle_rb/frame_000022.png" id="111_0aofl"]
 [ext_resource type="Texture2D" uid="uid://b37pyj47l4sea" path="res://Arknights_Mizuki/monsters/floater/idle_rb/frame_000024.png" id="113_aplo0"]
@@ -34,91 +29,76 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_e8q87"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("2_k3juj")
 }, {
-"duration": 1.0,
-"texture": ExtResource("91_pnlc5")
-}, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("93_pydm4")
 }, {
-"duration": 1.0,
-"texture": ExtResource("95_gfkqc")
-}, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("97_xof0q")
 }, {
-"duration": 1.0,
-"texture": ExtResource("99_fu1qy")
-}, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("101_0jaey")
 }, {
-"duration": 1.0,
-"texture": ExtResource("103_5f1x6")
-}, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("105_y06gw")
 }, {
-"duration": 1.0,
-"texture": ExtResource("107_k0de4")
-}, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("109_6de0h")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("111_0aofl")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("113_aplo0")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("115_mjwt3")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("117_tu3lu")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("119_xc0bm")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("121_uw3om")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("123_v6rd1")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("125_ned83")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("127_j4dbg")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("129_paiv6")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("131_hc5b3")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("133_18b52")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("135_w0rvq")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("137_u2w73")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("139_n8rk8")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("141_arphp")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("143_f8ay4")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("145_tn81k")
 }],
 "loop": true,
@@ -135,7 +115,7 @@ scale = Vector2(0.511, 0.5325)
 sprite_frames = SubResource("SpriteFrames_e8q87")
 animation = &"idle_loop"
 autoplay = "idle_loop"
-frame_progress = 0.19967222
+frame_progress = 0.4422267
 script = ExtResource("399_y1amw")
 
 [node name="Bounds" type="Control" parent="."]

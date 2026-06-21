@@ -4,7 +4,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Entities.Powers;
-using MinionLib.BaseLibAdapters;
+using Arknights_Mizuki.BaseLibAdapters;
 public sealed class SacCrawlerSanityAction : CustomActionModel
 {
     public override string CustomPackedIconPath => "res://Arknights_Mizuki/images/powers/SacCrawlerSanityPower.png";
@@ -24,6 +24,6 @@ public sealed class SacCrawlerSanityAction : CustomActionModel
 
         var finalSanity = baseSanity + extraSanity / 3;
         await PowerCmd.Apply<SanityPower>(choiceContext,target, finalSanity, actor, null);
-        await PowerCmd.Remove<SacCrawlerSanityAction>(Owner);
+        await PowerCmd.Apply<SacCrawlerSanityAction>(choiceContext,Owner,-1,Owner,null);
     }
 }

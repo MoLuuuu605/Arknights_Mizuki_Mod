@@ -20,23 +20,14 @@
       <Private>false</Private>
     </Reference>
     <Compile Remove="Arknights_Mizuki\**" />
+    <Compile Remove=".tmp\**" />
 
     <Reference Include="0Harmony">
       <HintPath>$(Sts2DataDir)\0Harmony.dll</HintPath>
       <Private>false</Private>
     </Reference>
-    <Reference Include="BaseLib">
-      <HintPath>$(Sts2Dir)/mods/BaseLib/BaseLib.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-    <Reference Include="MinionLib">
-      <HintPath>$(Sts2Dir)/mods/MinionLib/MinionLib.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-    <Reference Include="MinionLib.BaseLibAdapters">
-      <HintPath>$(Sts2Dir)/mods/Minion.BaseLibAdapters/MinionLib.BaseLibAdapters.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
+      <PackageReference Include="Alchyr.Sts2.BaseLib" Version="*" />
+      <PackageReference Include="FuYnAloft.Sts2.MinionLib" Version="0.5.2"/>
     
   </ItemGroup>
 

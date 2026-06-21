@@ -1,59 +1,64 @@
+using Arknights_Mizuki.Scripts.keywords;
+using Arknights_Mizuki.Scripts.Pools;
 using BaseLib.Abstracts;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.ValueProps;
 using MegaCrit.Sts2.Core.Models;
-
-using Arknights_Mizuki.Scripts.Pools;
+using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Arknights_Mizuki.Scripts.Cards;
 
-// 注册卡牌到 MzkCardPool
 [Pool(typeof(MzkCardPool))]
 public class IronWave : CustomCardModel
 {
-    // 基础耗能
     private const int energyCost = 1;
-    // 卡牌类型（防御牌是技能类型）
     private const CardType type = CardType.Attack;
-    // 卡牌稀有度
     private const CardRarity rarity = CardRarity.Common;
-    // 目标类型（Self表示自己）
     private const TargetType targetType = TargetType.AnyEnemy;
-    // 是否在卡牌图鉴中显示
     private const bool shouldShowInCardLibrary = true;
 
-    // 卡牌的基础属性（格挡值）
-    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
+    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[3]
     {
-        (DynamicVar)new BlockVar(5m, (ValueProp)8),
-        (DynamicVar)new DamageVar(5m,(ValueProp)8)
+        (DynamicVar)new DamageVar(6m, ValueProp.Move),
+        (DynamicVar)new BlockVar(6m, ValueProp.Move),
+        (DynamicVar)new DynamicVar("Float", 1m)
     };
-
-    public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/Defence.png";
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
+    {
+        HoverTipFactory.FromKeyword(Monster1.monster1)
+    };
+    public override string PortraitPath => "res://Arknights_Mizuki/images/cards/IronWave.png";
 
     public IronWave() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
     {
     }
 
-    // 打出时的效果逻辑
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        // 获得格挡
-    await CreatureCmd.GainBlock(((CardModel)this).Owner.Creature, ((CardModel)this).DynamicVars.Block, cardPlay, false);
-    await DamageCmd.Attack(DynamicVars.Damage.BaseValue) // 造成伤害，数值来源于卡牌的基础伤害属性
-        .FromCard(this) // 伤害来源于这张卡牌
-        .Targeting(cardPlay.Target) // 伤害目标是玩家选择的目标
-        .Execute(choiceContext);
+        bool hadMinion = Owner.PlayerCombatState?.Pets.Any(pet => pet is { IsAlive: true, IsPet: true }) == true;
+
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+            .FromCard(this)
+            .Targeting(cardPlay.Target)
+            .Execute(choiceContext);
+
+        if (hadMinion)
+        {
+            await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay, false);
+        }
+        else
+        {
+            await GroupHatching.Float(choiceContext, (CardModel)(object)this, Owner, DynamicVars["Float"].BaseValue);
+        }
     }
 
-    // 升级后的效果逻辑（5 → 8 格挡）
     protected override void OnUpgrade()
     {
-        ((DynamicVar)((CardModel)this).DynamicVars.Block).UpgradeValueBy(3m);
-        ((DynamicVar)((CardModel)this).DynamicVars.Damage).UpgradeValueBy(2m);
+        DynamicVars.Damage.UpgradeValueBy(3m);
+        DynamicVars.Block.UpgradeValueBy(3m);
     }
 }

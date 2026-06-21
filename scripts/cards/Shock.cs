@@ -25,7 +25,7 @@ public class Shock : CustomCardModel
 
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
     {
-        (DynamicVar)new DamageVar(5m, (ValueProp)5),
+        (DynamicVar)new DamageVar(5m, (ValueProp)8),
         (DynamicVar)new PowerVar<SanityPower>(1m)
     };
 

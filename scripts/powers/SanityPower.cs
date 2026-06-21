@@ -23,9 +23,9 @@ public sealed class SanityPower : CustomPowerModel
 
     private const int TriggerThreshold = 8;
     private const int MultiplierIncrement = 15;
-    private const int BaseDamagePercent = 25;
-    private const int BaseDamageCap = 25;
-    private const int DamageCapPerBurst = 30;
+    private const int BaseDamagePercent = 20;
+    private const int BaseDamageCap = 30;
+    private const int DamageCapPerBurst = 15;
     private const int DamageCapPerUnlimit = 20;
 
     public override async Task AfterPowerAmountChanged(
@@ -98,7 +98,7 @@ public sealed class SanityPower : CustomPowerModel
             choiceContext,
             owner,
             damage,
-            ValueProp.Unblockable | ValueProp.Unpowered,
+            ValueProp.Unpowered|ValueProp.Move,
             owner,
             cardSource);
 
@@ -110,6 +110,9 @@ public sealed class SanityPower : CustomPowerModel
             null,
             null,
             false);
+
+        if (applier != null)
+            await PainEchoPower.Trigger(choiceContext, applier);
 
         // 增加损伤倍率
         await PowerCmd.Apply<SanityMultiplierPower>(

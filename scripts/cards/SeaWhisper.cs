@@ -14,7 +14,7 @@ namespace Arknights_Mizuki.Scripts.Cards;
 [Pool(typeof(MzkCardPool))]
 public class SeaWhisper : CustomCardModel
 {
-    private const int energyCost = 2;
+    private const int energyCost = 1;
     private const CardType type = CardType.Skill;
     private const CardRarity rarity = CardRarity.Rare;
     private const TargetType targetType = TargetType.Self;
@@ -61,6 +61,7 @@ public class SeaWhisper : CustomCardModel
     }
     protected override void OnUpgrade()
     {
-        ((CardModel)this).DynamicVars["ArtifactPower"].UpgradeValueBy(1);
+        ((CardModel)this).DynamicVars["StrengthPower"].UpgradeValueBy(-1);
+        this.DynamicVars["DexterityPower"].UpgradeValueBy(-1);
     }
 }

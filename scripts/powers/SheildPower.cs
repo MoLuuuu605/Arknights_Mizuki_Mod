@@ -2,7 +2,6 @@ using Arknights_Mizuki.Scripts.keywords;
 using BaseLib.Abstracts;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 
@@ -15,7 +14,7 @@ namespace Arknights_Mizuki.Scripts.Powers;
 public sealed class SheildPower : CustomPowerModel
 {
     public override PowerType Type => PowerType.Buff;
-    public override PowerStackType StackType => PowerStackType.Single;
+    public override PowerStackType StackType => PowerStackType.Counter;
     public override bool AllowNegative => false;
 
     public override string CustomPackedIconPath => "res://Arknights_Mizuki/images/powers/sheild.png";
@@ -24,6 +23,9 @@ public sealed class SheildPower : CustomPowerModel
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await base.AfterCardPlayed(choiceContext, cardPlay);
+
+        if (cardPlay.Card.Owner != Owner.Player)
+            return;
         
         var playedCard = cardPlay.Card;
         
@@ -31,7 +33,7 @@ public sealed class SheildPower : CustomPowerModel
         if (playedCard.Keywords.Contains(AutoPlay.Autoplay))
         {
             // 给玩家自己叠加1层 ShadowPower
-            await CreatureCmd.GainBlock(Owner,1,MegaCrit.Sts2.Core.ValueProps.ValueProp.Move,null);
+            await CreatureCmd.GainBlock(Owner,Amount,MegaCrit.Sts2.Core.ValueProps.ValueProp.Move,null);
             Flash();
         }
     }

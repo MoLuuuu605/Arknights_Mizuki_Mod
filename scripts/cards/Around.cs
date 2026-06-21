@@ -27,10 +27,9 @@ public class Around : CustomCardModel
     // 是否在卡牌图鉴中显示
     private const bool shouldShowInCardLibrary = true;
 
-    // 卡牌的基础属性（例如这里是12点伤害）
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
 	{
-		(DynamicVar)new PowerVar<WeakPower>(1m),
+		(DynamicVar)new PowerVar<WeakPower>(2m),
         new CardsVar(1)
 	};
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
@@ -54,7 +53,6 @@ public class Around : CustomCardModel
     // 升级后的效果逻辑
     protected override void OnUpgrade()
     {
-		((DynamicVar)((CardModel)this).DynamicVars["WeakPower"]).UpgradeValueBy(1);
-        this.DynamicVars.Cards.UpgradeValueBy(1);
+        this.EnergyCost.UpgradeBy(-1);
     }
 }

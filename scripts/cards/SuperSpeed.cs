@@ -41,7 +41,7 @@ public class SuperSpeed : CustomCardModel
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<SanityThornsPower>(
+        await PowerCmd.Apply<SuperSpeedPower>(
             choiceContext,
             ((CardModel)this).Owner.Creature,
             ((DynamicVar)((CardModel)this).DynamicVars["SuperSpeedPower"]).BaseValue,
@@ -53,7 +53,7 @@ public class SuperSpeed : CustomCardModel
 
     protected override void OnUpgrade()
     {
-        this.AddKeyword(CardKeyword.Retain);
+        this.EnergyCost.UpgradeBy(-1);
 
     }
 }
