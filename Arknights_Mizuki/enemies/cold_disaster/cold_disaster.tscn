@@ -1,0 +1,1103 @@
+[gd_scene load_steps=262 format=3 uid="uid://hun6mqqhnlgk"]
+
+[ext_resource type="Script" uid="uid://mxcf2m3bm3bs" path="res://Arknights_Mizuki/scenes/Character.cs" id="1_root"]
+[ext_resource type="Script" uid="uid://c24ddy4lkcfau" path="res://Arknights_Mizuki/scenes/visuals.gd" id="2_anim"]
+[ext_resource type="Texture2D" uid="uid://hiivhgnnjadr" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000000.png" id="2_dfdnv"]
+[ext_resource type="Texture2D" uid="uid://bg4y7xu33dd4q" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000001.png" id="3_v4wvq"]
+[ext_resource type="Texture2D" uid="uid://cej6mri3meyko" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000002.png" id="4_3uj6o"]
+[ext_resource type="Texture2D" uid="uid://bbeq8pxw787u1" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000003.png" id="5_lccth"]
+[ext_resource type="Texture2D" uid="uid://h4fys8ct18f7" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000004.png" id="6_sci7b"]
+[ext_resource type="Texture2D" uid="uid://ccfk0giwg6ch2" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000005.png" id="7_j4wxi"]
+[ext_resource type="Texture2D" uid="uid://dsx3a5627jwc7" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000006.png" id="8_6v2cl"]
+[ext_resource type="Texture2D" uid="uid://dp784y6fi4hgo" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000007.png" id="9_1u0un"]
+[ext_resource type="Texture2D" uid="uid://bou30y1h1aex" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000008.png" id="10_je07j"]
+[ext_resource type="Texture2D" uid="uid://dvg4l4msks1mg" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000009.png" id="11_ft8a6"]
+[ext_resource type="Texture2D" uid="uid://dmlr2nsowe7mr" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000010.png" id="12_ls25b"]
+[ext_resource type="Texture2D" uid="uid://d14yxdfxj8xxb" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000011.png" id="13_wkgwf"]
+[ext_resource type="Texture2D" uid="uid://b6h6cvmn3g2nu" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000012.png" id="14_2edvq"]
+[ext_resource type="Texture2D" uid="uid://dinprplp4tdj3" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000013.png" id="15_i1xby"]
+[ext_resource type="Texture2D" uid="uid://cneysysbxuc8d" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000014.png" id="16_cnjxd"]
+[ext_resource type="Texture2D" uid="uid://bp5m01kp5f3p4" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000015.png" id="17_t7xu5"]
+[ext_resource type="Texture2D" uid="uid://cpwvp8uipnvu6" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000016.png" id="18_82uax"]
+[ext_resource type="Texture2D" uid="uid://l04xwgrwjex4" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000017.png" id="19_8y4jw"]
+[ext_resource type="Texture2D" uid="uid://brf3nwttuq8e2" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000018.png" id="20_pes44"]
+[ext_resource type="Texture2D" uid="uid://ejdq68hcctlr" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000019.png" id="21_swpy1"]
+[ext_resource type="Texture2D" uid="uid://dyaexrcr3l01f" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000020.png" id="22_yx1rd"]
+[ext_resource type="Texture2D" uid="uid://do4dp71sm7g05" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000021.png" id="23_3j76t"]
+[ext_resource type="Texture2D" uid="uid://ulgckv02oa7u" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000022.png" id="24_7e4jt"]
+[ext_resource type="Texture2D" uid="uid://bqg2k28uddpv5" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000023.png" id="25_qu6y2"]
+[ext_resource type="Texture2D" uid="uid://ceftydynd32mp" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000024.png" id="26_0eqtg"]
+[ext_resource type="Texture2D" uid="uid://ti1ikglt1an7" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000025.png" id="27_1geoi"]
+[ext_resource type="Texture2D" uid="uid://duucs3axqui5j" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000026.png" id="28_d4ygu"]
+[ext_resource type="Texture2D" uid="uid://behrvul7tdbol" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000027.png" id="29_x75af"]
+[ext_resource type="Texture2D" uid="uid://bmcuod1uoymnw" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000028.png" id="30_rtvxt"]
+[ext_resource type="Texture2D" uid="uid://dng05cscy43gw" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000029.png" id="31_7jahf"]
+[ext_resource type="Texture2D" uid="uid://dxftxcms5r16a" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000030.png" id="32_jhutj"]
+[ext_resource type="Texture2D" uid="uid://xmyte0s8m2sn" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000031.png" id="33_1qmpj"]
+[ext_resource type="Texture2D" uid="uid://w57g0uestvat" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000032.png" id="34_x1tq2"]
+[ext_resource type="Texture2D" uid="uid://d0v4rcpoxco5r" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000033.png" id="35_r0atc"]
+[ext_resource type="Texture2D" uid="uid://4j0how5nk5lw" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000034.png" id="36_h0u0n"]
+[ext_resource type="Texture2D" uid="uid://bmtpf1u3p5ivj" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000035.png" id="37_8pd0n"]
+[ext_resource type="Texture2D" uid="uid://dkvlsxv178g7i" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000036.png" id="38_0toxj"]
+[ext_resource type="Texture2D" uid="uid://du3c8x5al7ww6" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000037.png" id="39_bkquk"]
+[ext_resource type="Texture2D" uid="uid://u3h0ujfxdtf1" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000038.png" id="40_cwknq"]
+[ext_resource type="Texture2D" uid="uid://dfuewwkqemkhf" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000039.png" id="41_u3gpi"]
+[ext_resource type="Texture2D" uid="uid://bgt5pnhtflnjx" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000040.png" id="42_0cmwk"]
+[ext_resource type="Texture2D" uid="uid://1cmgpajcpvnr" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000041.png" id="43_dy6x2"]
+[ext_resource type="Texture2D" uid="uid://dkg555q4vvab3" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000042.png" id="44_h71us"]
+[ext_resource type="Texture2D" uid="uid://ciumk3ufy6g8w" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000043.png" id="45_4iq4r"]
+[ext_resource type="Texture2D" uid="uid://cktan3kdjihoa" path="res://Arknights_Mizuki/enemies/cold_disaster/attack/frame_000044.png" id="46_prn7o"]
+[ext_resource type="Texture2D" uid="uid://cnka0nytwe0fq" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000000.png" id="47_yxvyd"]
+[ext_resource type="Texture2D" uid="uid://bpavop8imhelh" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000001.png" id="48_jxgkr"]
+[ext_resource type="Texture2D" uid="uid://d348bqxp1utg2" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000002.png" id="49_aumbo"]
+[ext_resource type="Texture2D" uid="uid://y8bilcrasj5q" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000003.png" id="50_5wq75"]
+[ext_resource type="Texture2D" uid="uid://cwdn0imxf4l4f" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000004.png" id="51_4wgsj"]
+[ext_resource type="Texture2D" uid="uid://b1t6o3o1id8pk" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000005.png" id="52_80xwi"]
+[ext_resource type="Texture2D" uid="uid://cb8pbnjl6dbkn" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000006.png" id="53_5t35g"]
+[ext_resource type="Texture2D" uid="uid://dpx3asgiv7tkj" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000007.png" id="54_cu5n2"]
+[ext_resource type="Texture2D" uid="uid://csf6phor8hppi" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000008.png" id="55_qa7rh"]
+[ext_resource type="Texture2D" uid="uid://cj7a1rephsohf" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000009.png" id="56_a6mcm"]
+[ext_resource type="Texture2D" uid="uid://b2d86nqfolsw5" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000010.png" id="57_cmn7v"]
+[ext_resource type="Texture2D" uid="uid://buanfyd781406" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000011.png" id="58_sxog6"]
+[ext_resource type="Texture2D" uid="uid://b44ioj7dqejag" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000012.png" id="59_ddwp1"]
+[ext_resource type="Texture2D" uid="uid://dh2c7p0ysiewm" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000013.png" id="60_thjj6"]
+[ext_resource type="Texture2D" uid="uid://cy7e0dr43f4dn" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000014.png" id="61_ddlju"]
+[ext_resource type="Texture2D" uid="uid://cwsgcd3llwrum" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000015.png" id="62_277uo"]
+[ext_resource type="Texture2D" uid="uid://duaqwae0d8ovl" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000016.png" id="63_sqyxn"]
+[ext_resource type="Texture2D" uid="uid://emskefv0d7li" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000017.png" id="64_fdnil"]
+[ext_resource type="Texture2D" uid="uid://cj3u2yyryt5n4" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000018.png" id="65_87ois"]
+[ext_resource type="Texture2D" uid="uid://b77nyutiloiq2" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000019.png" id="66_5t61n"]
+[ext_resource type="Texture2D" uid="uid://cqhtd63go5sef" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000020.png" id="67_wjqb4"]
+[ext_resource type="Texture2D" uid="uid://tsdfnnvva6an" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000021.png" id="68_lq00w"]
+[ext_resource type="Texture2D" uid="uid://bm22c65gslb24" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000022.png" id="69_8eysd"]
+[ext_resource type="Texture2D" uid="uid://c5bec5hts2tww" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000023.png" id="70_nksiu"]
+[ext_resource type="Texture2D" uid="uid://ct4xghjt0kad" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000024.png" id="71_s1qbp"]
+[ext_resource type="Texture2D" uid="uid://bbeu5di7pqs7i" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000025.png" id="72_ltorc"]
+[ext_resource type="Texture2D" uid="uid://b4d0osd5rdxcw" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000026.png" id="73_dwhgp"]
+[ext_resource type="Texture2D" uid="uid://cs721vshevamn" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000027.png" id="74_fp3yr"]
+[ext_resource type="Texture2D" uid="uid://bymbgun81cmng" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000028.png" id="75_o3dkx"]
+[ext_resource type="Texture2D" uid="uid://caq2yalihvyph" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000029.png" id="76_5rirn"]
+[ext_resource type="Texture2D" uid="uid://dqgml0hivnibt" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000030.png" id="77_o8iy7"]
+[ext_resource type="Texture2D" uid="uid://cnxxtqga67aw6" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000031.png" id="78_atlvh"]
+[ext_resource type="Texture2D" uid="uid://bvj0cw3dj0co3" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000032.png" id="79_mwutq"]
+[ext_resource type="Texture2D" uid="uid://b3l1qxem3mb6s" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000033.png" id="80_7eli6"]
+[ext_resource type="Texture2D" uid="uid://c2gtnmbuqer2n" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000034.png" id="81_0rnvo"]
+[ext_resource type="Texture2D" uid="uid://d21n20n0wj51x" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000035.png" id="82_68gb8"]
+[ext_resource type="Texture2D" uid="uid://dbyb4cu5o4qo8" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000036.png" id="83_d2ewh"]
+[ext_resource type="Texture2D" uid="uid://o77myfkakk2x" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000037.png" id="84_ht0y6"]
+[ext_resource type="Texture2D" uid="uid://bsfk0o0mgc8nc" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000038.png" id="85_p8syh"]
+[ext_resource type="Texture2D" uid="uid://n57qgo0v2gmo" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000039.png" id="86_7gc4o"]
+[ext_resource type="Texture2D" uid="uid://b5dfd2fy38jlx" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000040.png" id="87_5ifek"]
+[ext_resource type="Texture2D" uid="uid://epnacfjoka33" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000041.png" id="88_0j4eb"]
+[ext_resource type="Texture2D" uid="uid://cy0nuxjb34q8w" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000042.png" id="89_wj7sh"]
+[ext_resource type="Texture2D" uid="uid://bbr8avmr8xry3" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000043.png" id="90_tgy5j"]
+[ext_resource type="Texture2D" uid="uid://dnheqk7eve4o7" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000044.png" id="91_sqh22"]
+[ext_resource type="Texture2D" uid="uid://ce2xcxkftq2an" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000045.png" id="92_ewsry"]
+[ext_resource type="Texture2D" uid="uid://c518cgwy3aaxk" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000046.png" id="93_w8813"]
+[ext_resource type="Texture2D" uid="uid://ckss87tsxhgy7" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000047.png" id="94_3w38c"]
+[ext_resource type="Texture2D" uid="uid://dxbir71fapoig" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000048.png" id="95_r3duo"]
+[ext_resource type="Texture2D" uid="uid://c0wkjd7tp6reu" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000049.png" id="96_yt10x"]
+[ext_resource type="Texture2D" uid="uid://bl7uedej8764e" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000050.png" id="97_8hoas"]
+[ext_resource type="Texture2D" uid="uid://dgi7rvxdiwppd" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000051.png" id="98_trwyq"]
+[ext_resource type="Texture2D" uid="uid://87ioj3yoqn0u" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000052.png" id="99_001j2"]
+[ext_resource type="Texture2D" uid="uid://i20cbum1pd5d" path="res://Arknights_Mizuki/enemies/cold_disaster/die/frame_000053.png" id="100_14i8g"]
+[ext_resource type="Texture2D" uid="uid://1lvuxupepcv3" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000000.png" id="101_dca5s"]
+[ext_resource type="Texture2D" uid="uid://kdjwhystvvgi" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000001.png" id="102_3rot7"]
+[ext_resource type="Texture2D" uid="uid://b0w225ucgkbnl" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000002.png" id="103_rgg6d"]
+[ext_resource type="Texture2D" uid="uid://cvb6ur6gxt7y7" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000003.png" id="104_ei0jm"]
+[ext_resource type="Texture2D" uid="uid://bi3qenoq6v30r" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000004.png" id="105_8afx6"]
+[ext_resource type="Texture2D" uid="uid://dtumtlyxgx0xl" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000005.png" id="106_e6mp5"]
+[ext_resource type="Texture2D" uid="uid://ukrqmbxns8gu" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000006.png" id="107_jfp41"]
+[ext_resource type="Texture2D" uid="uid://p66mbv6hewnu" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000007.png" id="108_ob5c2"]
+[ext_resource type="Texture2D" uid="uid://cjatnk520pgkr" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000008.png" id="109_txy85"]
+[ext_resource type="Texture2D" uid="uid://dfstipdsngbor" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000009.png" id="110_38lod"]
+[ext_resource type="Texture2D" uid="uid://cdcjaw0vokj62" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000010.png" id="111_xj0n0"]
+[ext_resource type="Texture2D" uid="uid://dykfes5xk78e2" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000011.png" id="112_p7wu4"]
+[ext_resource type="Texture2D" uid="uid://bvrv2h31x0hbm" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000012.png" id="113_dkipc"]
+[ext_resource type="Texture2D" uid="uid://bq2vpveato0fo" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000013.png" id="114_nlcf8"]
+[ext_resource type="Texture2D" uid="uid://dup5ehk4v3sxm" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000014.png" id="115_i61mj"]
+[ext_resource type="Texture2D" uid="uid://c41yh3svwyxeq" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000015.png" id="116_8bisk"]
+[ext_resource type="Texture2D" uid="uid://b01q7xo7ub4ws" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000016.png" id="117_qx30n"]
+[ext_resource type="Texture2D" uid="uid://b7ol7mq5tysbr" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000017.png" id="118_6rcra"]
+[ext_resource type="Texture2D" uid="uid://djdqcap7swqey" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000018.png" id="119_x3ehk"]
+[ext_resource type="Texture2D" uid="uid://b7gwva1jmuhpp" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000019.png" id="120_q8vqk"]
+[ext_resource type="Texture2D" uid="uid://dmiayv1g43bwa" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000020.png" id="121_jb7sx"]
+[ext_resource type="Texture2D" uid="uid://ca7bbqkaggk3c" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000021.png" id="122_ivgox"]
+[ext_resource type="Texture2D" uid="uid://cpttryx6ypar3" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000022.png" id="123_huhtr"]
+[ext_resource type="Texture2D" uid="uid://cb5mr0x355yyc" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000023.png" id="124_iirle"]
+[ext_resource type="Texture2D" uid="uid://bb5yqvs3tobd6" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000024.png" id="125_407do"]
+[ext_resource type="Texture2D" uid="uid://bhkddflr5ngrk" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000025.png" id="126_o0jjh"]
+[ext_resource type="Texture2D" uid="uid://b1j30m88o2luq" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000026.png" id="127_cbdvb"]
+[ext_resource type="Texture2D" uid="uid://boyy3am4av5p1" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000027.png" id="128_f6dc8"]
+[ext_resource type="Texture2D" uid="uid://cd03g11ial3x" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000028.png" id="129_nkuc2"]
+[ext_resource type="Texture2D" uid="uid://cixebjjdukbmy" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000029.png" id="130_r31ds"]
+[ext_resource type="Texture2D" uid="uid://xgg8k0p508q3" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000030.png" id="131_h0laa"]
+[ext_resource type="Texture2D" uid="uid://dxvc3deirg2yd" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000031.png" id="132_k74gh"]
+[ext_resource type="Texture2D" uid="uid://c8j3gg0bvnh4y" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000032.png" id="133_24np4"]
+[ext_resource type="Texture2D" uid="uid://cgjfhye7du0ck" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000033.png" id="134_wew85"]
+[ext_resource type="Texture2D" uid="uid://c5fdb8n0yd66" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000034.png" id="135_oerpn"]
+[ext_resource type="Texture2D" uid="uid://bovnkccp16fx4" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000035.png" id="136_00p71"]
+[ext_resource type="Texture2D" uid="uid://6oj045boyc2u" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000036.png" id="137_5fu31"]
+[ext_resource type="Texture2D" uid="uid://1k3f2bkhkk7u" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000037.png" id="138_q06rd"]
+[ext_resource type="Texture2D" uid="uid://5vpyarwdlr0a" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000038.png" id="139_r66og"]
+[ext_resource type="Texture2D" uid="uid://db1ed81unnft6" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000039.png" id="140_sfqhr"]
+[ext_resource type="Texture2D" uid="uid://e4faq1yy046j" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000040.png" id="141_4luhx"]
+[ext_resource type="Texture2D" uid="uid://ccr48t3ml00s0" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000041.png" id="142_87vnm"]
+[ext_resource type="Texture2D" uid="uid://dgogx3e84wx11" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000042.png" id="143_y7hex"]
+[ext_resource type="Texture2D" uid="uid://c1ovxyfknglqg" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000043.png" id="144_r274v"]
+[ext_resource type="Texture2D" uid="uid://4efgwlo1fy8l" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000044.png" id="145_mbsyy"]
+[ext_resource type="Texture2D" uid="uid://bvtuwhbcjd4eg" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000045.png" id="146_2dqul"]
+[ext_resource type="Texture2D" uid="uid://caw5faugah1uo" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000046.png" id="147_p80p1"]
+[ext_resource type="Texture2D" uid="uid://5g1kubrevlwa" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000047.png" id="148_53smv"]
+[ext_resource type="Texture2D" uid="uid://30vis40bql4p" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000048.png" id="149_kdjms"]
+[ext_resource type="Texture2D" uid="uid://cy51f21d5xl7g" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000049.png" id="150_amgb6"]
+[ext_resource type="Texture2D" uid="uid://deifgvgr1f04o" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000050.png" id="151_b486l"]
+[ext_resource type="Texture2D" uid="uid://doagu6td4f58i" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000051.png" id="152_ut1i2"]
+[ext_resource type="Texture2D" uid="uid://bywfngojetwrx" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000052.png" id="153_n1ooo"]
+[ext_resource type="Texture2D" uid="uid://c7vnv1tx4xfnc" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000053.png" id="154_cvjfd"]
+[ext_resource type="Texture2D" uid="uid://crtkmvuxo6jvr" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000054.png" id="155_6jvyk"]
+[ext_resource type="Texture2D" uid="uid://c4v1s8fa587wk" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000055.png" id="156_yaixu"]
+[ext_resource type="Texture2D" uid="uid://cnixa73j6mgtk" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000056.png" id="157_oa0qi"]
+[ext_resource type="Texture2D" uid="uid://cyoni38hivc07" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000057.png" id="158_ijst3"]
+[ext_resource type="Texture2D" uid="uid://li8oehmn6854" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000058.png" id="159_ixkfd"]
+[ext_resource type="Texture2D" uid="uid://bc72fg1rl4tdu" path="res://Arknights_Mizuki/enemies/cold_disaster/idle/frame_000059.png" id="160_gyv4g"]
+[ext_resource type="Texture2D" uid="uid://72bd0ymb4aev" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000000.png" id="161_v7xj4"]
+[ext_resource type="Texture2D" uid="uid://bstbcmb6knohf" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000001.png" id="162_ck1lm"]
+[ext_resource type="Texture2D" uid="uid://cleqd0ttajrgk" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000002.png" id="163_q0bt4"]
+[ext_resource type="Texture2D" uid="uid://dbbbpv70xluo0" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000003.png" id="164_llne0"]
+[ext_resource type="Texture2D" uid="uid://ddvagru1716jc" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000004.png" id="165_5lxmq"]
+[ext_resource type="Texture2D" uid="uid://f6ced0ookbka" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000005.png" id="166_dgyyd"]
+[ext_resource type="Texture2D" uid="uid://c7fki7bx1udux" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000006.png" id="167_qknbb"]
+[ext_resource type="Texture2D" uid="uid://ba1o38fmtev5b" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000007.png" id="168_61gdf"]
+[ext_resource type="Texture2D" uid="uid://b63b305ywx865" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000008.png" id="169_3k463"]
+[ext_resource type="Texture2D" uid="uid://d4ipqtj3smh2j" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000009.png" id="170_g32nr"]
+[ext_resource type="Texture2D" uid="uid://cpam74jr3v3rm" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000010.png" id="171_6wq4e"]
+[ext_resource type="Texture2D" uid="uid://chfqyrbirdcbx" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000011.png" id="172_ofqbm"]
+[ext_resource type="Texture2D" uid="uid://do2xdhco5dns1" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000012.png" id="173_casc2"]
+[ext_resource type="Texture2D" uid="uid://dsbk1ffeb4xgf" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000013.png" id="174_84sys"]
+[ext_resource type="Texture2D" uid="uid://ckwxx42vtn5yh" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000014.png" id="175_h8l2q"]
+[ext_resource type="Texture2D" uid="uid://c31u400247ed3" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000015.png" id="176_fb67o"]
+[ext_resource type="Texture2D" uid="uid://bq888l141ealt" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000016.png" id="177_j8omb"]
+[ext_resource type="Texture2D" uid="uid://c4o4cwm040xwu" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000017.png" id="178_8d30q"]
+[ext_resource type="Texture2D" uid="uid://bcfh7vtkg33k8" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000018.png" id="179_8q5kr"]
+[ext_resource type="Texture2D" uid="uid://c3ojxy2na4bfg" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000019.png" id="180_y5s6g"]
+[ext_resource type="Texture2D" uid="uid://bik7h5hsvk7qa" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000020.png" id="181_u1ldy"]
+[ext_resource type="Texture2D" uid="uid://caomnunov4eml" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000021.png" id="182_fbcxb"]
+[ext_resource type="Texture2D" uid="uid://bljw2w6s64eew" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000022.png" id="183_q1efj"]
+[ext_resource type="Texture2D" uid="uid://brxlp3rkkwtbg" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000023.png" id="184_ysjan"]
+[ext_resource type="Texture2D" uid="uid://djnadhoj512om" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000024.png" id="185_i4xep"]
+[ext_resource type="Texture2D" uid="uid://k6oe5ojwmnhg" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000025.png" id="186_yp0gk"]
+[ext_resource type="Texture2D" uid="uid://cvmeqx5mtkfm1" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000026.png" id="187_rrciw"]
+[ext_resource type="Texture2D" uid="uid://cuf88ffporrua" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000027.png" id="188_pkxh3"]
+[ext_resource type="Texture2D" uid="uid://dcqnwq3tbuf2m" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000028.png" id="189_p0t3f"]
+[ext_resource type="Texture2D" uid="uid://bya1n28hvahqy" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000029.png" id="190_yxxjx"]
+[ext_resource type="Texture2D" uid="uid://bumy23ieexyjb" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000030.png" id="191_n13vr"]
+[ext_resource type="Texture2D" uid="uid://bicjf1dv03fo5" path="res://Arknights_Mizuki/enemies/cold_disaster/skill/frame_000031.png" id="192_1kno1"]
+[ext_resource type="Texture2D" uid="uid://d0d31dsw1sk3w" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000000.png" id="193_rhlaj"]
+[ext_resource type="Texture2D" uid="uid://df2y6hm5e1duw" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000001.png" id="194_7s3hf"]
+[ext_resource type="Texture2D" uid="uid://chtyc7x37i5y2" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000002.png" id="195_5sijs"]
+[ext_resource type="Texture2D" uid="uid://jsmcqydefqki" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000003.png" id="196_6xjme"]
+[ext_resource type="Texture2D" uid="uid://cg8m15dmnxol2" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000004.png" id="197_jofvn"]
+[ext_resource type="Texture2D" uid="uid://up7b1437upbv" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000005.png" id="198_yoqfs"]
+[ext_resource type="Texture2D" uid="uid://bkakf76b3sgbw" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000006.png" id="199_m6sa7"]
+[ext_resource type="Texture2D" uid="uid://cl5fejsmw8iif" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000007.png" id="200_sana7"]
+[ext_resource type="Texture2D" uid="uid://cqcpdxeuw0miw" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000008.png" id="201_8wmng"]
+[ext_resource type="Texture2D" uid="uid://c8r4ona6w4arb" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000009.png" id="202_rimfn"]
+[ext_resource type="Texture2D" uid="uid://cnvk2d8xlt0lq" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000010.png" id="203_jqb5o"]
+[ext_resource type="Texture2D" uid="uid://by7nckx6pnkcd" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000011.png" id="204_x10hs"]
+[ext_resource type="Texture2D" uid="uid://hb335p6p8ce8" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000012.png" id="205_rwwyf"]
+[ext_resource type="Texture2D" uid="uid://cgff2h84y437m" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000013.png" id="206_gsh8o"]
+[ext_resource type="Texture2D" uid="uid://sm335u18csng" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000014.png" id="207_3oj08"]
+[ext_resource type="Texture2D" uid="uid://bqbdrv6sn271d" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000015.png" id="208_q0j03"]
+[ext_resource type="Texture2D" uid="uid://ch41wew1jcgii" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000016.png" id="209_660mc"]
+[ext_resource type="Texture2D" uid="uid://dhthhxmvfc6hy" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000017.png" id="210_vk13d"]
+[ext_resource type="Texture2D" uid="uid://cvemdi4gx80li" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000018.png" id="211_toqw5"]
+[ext_resource type="Texture2D" uid="uid://bxeu5oy4qqhcp" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000019.png" id="212_0tuhn"]
+[ext_resource type="Texture2D" uid="uid://c17vemdilvusm" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000020.png" id="213_x55bi"]
+[ext_resource type="Texture2D" uid="uid://dmj4khnbuh0ds" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000021.png" id="214_06hfj"]
+[ext_resource type="Texture2D" uid="uid://bfb7guf2xnmxu" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000022.png" id="215_osyrd"]
+[ext_resource type="Texture2D" uid="uid://nr1pkusxvo1y" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000023.png" id="216_we5yc"]
+[ext_resource type="Texture2D" uid="uid://dp1m58eelpj5v" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000024.png" id="217_8o2fa"]
+[ext_resource type="Texture2D" uid="uid://cp5nu0la3pefk" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000025.png" id="218_y7fy5"]
+[ext_resource type="Texture2D" uid="uid://cgujpagxvnhkj" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000026.png" id="219_0x8fo"]
+[ext_resource type="Texture2D" uid="uid://d04dbrj5u3xwx" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000027.png" id="220_4q5tn"]
+[ext_resource type="Texture2D" uid="uid://dfpy1c4kdl2wo" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000028.png" id="221_wyxag"]
+[ext_resource type="Texture2D" uid="uid://yrupjkjf3eb4" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000029.png" id="222_4brpb"]
+[ext_resource type="Texture2D" uid="uid://yi78is0k02kd" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000030.png" id="223_2kpg7"]
+[ext_resource type="Texture2D" uid="uid://bn7ea3now1sf4" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000031.png" id="224_ir3fa"]
+[ext_resource type="Texture2D" uid="uid://bh2wr7237atju" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000032.png" id="225_qb1fn"]
+[ext_resource type="Texture2D" uid="uid://cdtt40jhbwxqy" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000033.png" id="226_arvto"]
+[ext_resource type="Texture2D" uid="uid://cl8m6rrl4w4mc" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000034.png" id="227_oc5r8"]
+[ext_resource type="Texture2D" uid="uid://bc0j3iq6rxiqf" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000035.png" id="228_l5ihj"]
+[ext_resource type="Texture2D" uid="uid://pcwvanjvkcw3" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000036.png" id="229_6akk8"]
+[ext_resource type="Texture2D" uid="uid://hkyct3kkbhts" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000037.png" id="230_1uw48"]
+[ext_resource type="Texture2D" uid="uid://bjjolmad2ygtk" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000038.png" id="231_kehvj"]
+[ext_resource type="Texture2D" uid="uid://cuf6qtn1kw4c8" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000039.png" id="232_gw33n"]
+[ext_resource type="Texture2D" uid="uid://r4cq5snndn8k" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000040.png" id="233_kppmr"]
+[ext_resource type="Texture2D" uid="uid://b113dwk3kgb8f" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000041.png" id="234_c65us"]
+[ext_resource type="Texture2D" uid="uid://l230m8p44nvc" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000042.png" id="235_rktqo"]
+[ext_resource type="Texture2D" uid="uid://wcatge57tdob" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000043.png" id="236_8vmyn"]
+[ext_resource type="Texture2D" uid="uid://cicqxbt5knwk1" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000044.png" id="237_sdkgt"]
+[ext_resource type="Texture2D" uid="uid://dositwc5kvtfc" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000045.png" id="238_ilfqg"]
+[ext_resource type="Texture2D" uid="uid://6ifw0x0xnxnc" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000046.png" id="239_w5hty"]
+[ext_resource type="Texture2D" uid="uid://ch6fa0hrpiavl" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000047.png" id="240_vpg48"]
+[ext_resource type="Texture2D" uid="uid://bhbsm1x3ks68n" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000048.png" id="241_1fjyq"]
+[ext_resource type="Texture2D" uid="uid://dxodyipuhbxp8" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000049.png" id="242_fvpe4"]
+[ext_resource type="Texture2D" uid="uid://cvcxa2ty6pc28" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000050.png" id="243_lu4oc"]
+[ext_resource type="Texture2D" uid="uid://cq5cycrhy78td" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000051.png" id="244_xke8g"]
+[ext_resource type="Texture2D" uid="uid://m2ln4xme0a6g" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000052.png" id="245_aeec6"]
+[ext_resource type="Texture2D" uid="uid://ckwqawnsgwq6y" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000053.png" id="246_rw6jy"]
+[ext_resource type="Texture2D" uid="uid://jo1johiyrk72" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000054.png" id="247_0s57e"]
+[ext_resource type="Texture2D" uid="uid://d112nmly66e12" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000055.png" id="248_lmxnx"]
+[ext_resource type="Texture2D" uid="uid://cymv3piroktwi" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000056.png" id="249_o22cm"]
+[ext_resource type="Texture2D" uid="uid://cfbxlydyogs04" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000057.png" id="250_0mdm4"]
+[ext_resource type="Texture2D" uid="uid://drr6fy8hrbd7k" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000058.png" id="251_44arj"]
+[ext_resource type="Texture2D" uid="uid://c0b0jrhja65mr" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000059.png" id="252_ye4xs"]
+[ext_resource type="Texture2D" uid="uid://dl4ofvpadjdis" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000060.png" id="253_pi4u6"]
+[ext_resource type="Texture2D" uid="uid://b6kjuop5xaq6p" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000061.png" id="254_tewbi"]
+[ext_resource type="Texture2D" uid="uid://51gkvvvx58dd" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000062.png" id="255_etadm"]
+[ext_resource type="Texture2D" uid="uid://bbmtuxckib4yp" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000063.png" id="256_vg8fr"]
+[ext_resource type="Texture2D" uid="uid://cp0occsntbgxl" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000064.png" id="257_wf3k4"]
+[ext_resource type="Texture2D" uid="uid://0gf8i8fvw5e3" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000065.png" id="258_w7j5b"]
+[ext_resource type="Texture2D" uid="uid://b88k4uxgc8wcp" path="res://Arknights_Mizuki/enemies/cold_disaster/skill2/frame_000066.png" id="259_w1wel"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_knvkt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dfdnv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_v4wvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3uj6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lccth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sci7b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_j4wxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6v2cl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1u0un")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_je07j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ft8a6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ls25b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_wkgwf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_2edvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_i1xby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_cnjxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_t7xu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_82uax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_8y4jw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_pes44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_swpy1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_yx1rd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_3j76t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_7e4jt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_qu6y2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_0eqtg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_1geoi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_d4ygu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_x75af")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_rtvxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_7jahf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_jhutj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_1qmpj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_x1tq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_r0atc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_h0u0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_8pd0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_0toxj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_bkquk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_cwknq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_u3gpi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_0cmwk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_dy6x2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_h71us")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_4iq4r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_prn7o")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("47_yxvyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_jxgkr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_aumbo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_5wq75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_4wgsj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_80xwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_5t35g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_cu5n2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_qa7rh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_a6mcm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_cmn7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_sxog6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_ddwp1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_thjj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_ddlju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_277uo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_sqyxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_fdnil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_87ois")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_5t61n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_wjqb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_lq00w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_8eysd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_nksiu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_s1qbp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_ltorc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_dwhgp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_fp3yr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_o3dkx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_5rirn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_o8iy7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_atlvh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_mwutq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_7eli6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_0rnvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_68gb8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_d2ewh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_ht0y6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_p8syh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_7gc4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_5ifek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_0j4eb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_wj7sh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_tgy5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_sqh22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_ewsry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_w8813")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_3w38c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_r3duo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_yt10x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_8hoas")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_trwyq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_001j2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_14i8g")
+}],
+"loop": false,
+"name": &"die",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("101_dca5s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_3rot7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_rgg6d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_ei0jm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_8afx6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_e6mp5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_jfp41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_ob5c2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_txy85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_38lod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_xj0n0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_p7wu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_dkipc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_nlcf8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_i61mj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_8bisk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_qx30n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_6rcra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_x3ehk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_q8vqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_jb7sx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_ivgox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_huhtr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_iirle")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_407do")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_o0jjh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127_cbdvb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128_f6dc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_nkuc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_r31ds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_h0laa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("132_k74gh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_24np4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_wew85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("135_oerpn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_00p71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_5fu31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138_q06rd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_r66og")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_sfqhr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_4luhx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142_87vnm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_y7hex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144_r274v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145_mbsyy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("146_2dqul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("147_p80p1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("148_53smv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("149_kdjms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("150_amgb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("151_b486l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("152_ut1i2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("153_n1ooo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("154_cvjfd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("155_6jvyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("156_yaixu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("157_oa0qi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158_ijst3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_ixkfd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_gyv4g")
+}],
+"loop": true,
+"name": &"idle_loop",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("161_v7xj4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_ck1lm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_q0bt4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_llne0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_5lxmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_dgyyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167_qknbb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("168_61gdf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_3k463")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170_g32nr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_6wq4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("172_ofqbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("173_casc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("174_84sys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_h8l2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_fb67o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177_j8omb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("178_8d30q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("179_8q5kr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("180_y5s6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("181_u1ldy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("182_fbcxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("183_q1efj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("184_ysjan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("185_i4xep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("186_yp0gk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("187_rrciw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("188_pkxh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("189_p0t3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("190_yxxjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("191_n13vr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("192_1kno1")
+}],
+"loop": false,
+"name": &"skill",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("193_rhlaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("194_7s3hf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("195_5sijs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("196_6xjme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("197_jofvn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("198_yoqfs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("199_m6sa7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("200_sana7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("201_8wmng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("202_rimfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("203_jqb5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("204_x10hs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("205_rwwyf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("206_gsh8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("207_3oj08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("208_q0j03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("209_660mc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("210_vk13d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("211_toqw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("212_0tuhn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("213_x55bi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("214_06hfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("215_osyrd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("216_we5yc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("217_8o2fa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("218_y7fy5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("219_0x8fo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("220_4q5tn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("221_wyxag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("222_4brpb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("223_2kpg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("224_ir3fa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("225_qb1fn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("226_arvto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("227_oc5r8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("228_l5ihj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("229_6akk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("230_1uw48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("231_kehvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("232_gw33n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("233_kppmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("234_c65us")
+}, {
+"duration": 1.0,
+"texture": ExtResource("235_rktqo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("236_8vmyn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("237_sdkgt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("238_ilfqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("239_w5hty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("240_vpg48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("241_1fjyq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("242_fvpe4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("243_lu4oc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("244_xke8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("245_aeec6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("246_rw6jy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("247_0s57e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("248_lmxnx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("249_o22cm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("250_0mdm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("251_44arj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("252_ye4xs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("253_pi4u6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("254_tewbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("255_etadm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("256_vg8fr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("257_wf3k4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("258_w7j5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("259_w1wel")
+}],
+"loop": false,
+"name": &"skill2",
+"speed": 30.0
+}]
+
+[node name="ColdDisaster" type="Node2D"]
+script = ExtResource("1_root")
+
+[node name="Visuals" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(185, -220)
+scale = Vector2(0.58, 0.58)
+sprite_frames = SubResource("SpriteFrames_knvkt")
+animation = &"skill2"
+autoplay = "idle_loop"
+frame = 66
+frame_progress = 1.0
+script = ExtResource("2_anim")
+
+[node name="Bounds" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -30.0
+offset_top = -420.0
+offset_right = 410.0
+offset_bottom = 35.0
+
+[node name="IntentPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(186, -404)
+
+[node name="CenterPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(185, -220)
+
+[node name="TalkPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(185, -345)
+
+[node name="OrbPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(185, -260)

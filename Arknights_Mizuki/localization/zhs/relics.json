@@ -1,7 +1,19 @@
 {
-    "ARKNIGHTS_MIZUKI-MZK_TREE_BRANCH.title":"深蓝之籽",
-    "ARKNIGHTS_MIZUKI-MZK_TREE_BRANCH.description": "每场战斗,你造成的第一次伤害附加[gold]3[/gold]层[blue]神经损伤[/blue]",
-    "ARKNIGHTS_MIZUKI-DARK_BLUE_TREE.title":"深蓝之树",
-    "ARKNIGHTS_MIZUKI-DARK_BLUE_TREE.description": "你每次造成伤害时额外施加[gold]2[/gold]层[blue]神经损伤[/blue]"
-    
+  "ARKNIGHTS_MIZUKI-MZK_TREE_BRANCH.title": "深蓝之籽",
+  "ARKNIGHTS_MIZUKI-MZK_TREE_BRANCH.description": "每场战斗,你造成的第一次伤害附加[gold]3[/gold]层[blue]神经损伤[/blue]",
+  "ARKNIGHTS_MIZUKI-DARK_BLUE_TREE.title": "深蓝之树",
+  "ARKNIGHTS_MIZUKI-DARK_BLUE_TREE.description": "你每次造成伤害时额外施加[gold]2[/gold]层[blue]神经损伤[/blue]",
+  "ARKNIGHTS_MIZUKI-DETERMINATION.title": "决心",
+  "ARKNIGHTS_MIZUKI-DETERMINATION.description": "获得时，将 [gold]{Cards}[/gold] 张随机诅咒牌加入你的卡组。每场战斗开始时，将一张[blue]粘液[/blue]加入你的手牌。开启通往第四层的道路。",
+  "ARKNIGHTS_MIZUKI-OBSERVATION.title": "观望",
+  "ARKNIGHTS_MIZUKI-OBSERVATION.description": "每回合开始时，获得 [gold]{Block}[/gold] 点格挡。",
+  "ARKNIGHTS_MIZUKI-TIDEWATCHER_LANTERN.title": "提灯",
+  "ARKNIGHTS_MIZUKI-TIDEWATCHER_LANTERN.description": "获得时，移除你卡组中的所有诅咒。",
+  "ARKNIGHTS_MIZUKI-TIDEWATCHER_LANTERN.flavor": "灯芯浸在潮水里，却仍亮着。",
+  "ARKNIGHTS_MIZUKI-DEEP_BLUE_HEART.title": "深蓝之心",
+  "ARKNIGHTS_MIZUKI-DEEP_BLUE_HEART.description": "获得时，选择卡组中最多 [gold]{Cards}[/gold] 张牌移除。每场战斗开始时，获得 [gold]{StrengthPower}[/gold] 点力量与 [gold]{DexterityPower}[/gold] 点敏捷。",
+  "ARKNIGHTS_MIZUKI-DEEP_BLUE_HEART.flavor": "它跳动时，你会错觉自己正被整片海洋承认。",
+  "ARKNIGHTS_MIZUKI-SWAN_SONG.title": "绝唱",
+  "ARKNIGHTS_MIZUKI-SWAN_SONG.description": "获得时，选择卡组中 [gold]{Cards}[/gold] 张牌附魔：启示。",
+  "ARKNIGHTS_MIZUKI-SWAN_SONG.flavor": "最后的声音不是终止，而是归巢前的回响。"
 }

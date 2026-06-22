@@ -1,5 +1,7 @@
-[gd_scene load_steps=64 format=3 uid="uid://bst1jxqptrelu"]
+[gd_scene load_steps=66 format=3 uid="uid://bst1jxqptrelu"]
 
+[ext_resource type="Script" uid="uid://mxcf2m3bm3bs" path="res://Arknights_Mizuki/scenes/Character.cs" id="root_script"]
+[ext_resource type="Script" uid="uid://c24ddy4lkcfau" path="res://Arknights_Mizuki/scenes/visuals.gd" id="anim_script"]
 [ext_resource type="Texture2D" uid="uid://d5dfabgmnnjd" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000000.png" id="1_pk510"]
 [ext_resource type="Texture2D" uid="uid://ow03ci4751lo" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000001.png" id="2_6awex"]
 [ext_resource type="Texture2D" uid="uid://c1bfpob3jxsia" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000002.png" id="3_5htrd"]
@@ -153,7 +155,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("29_sh3bi")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 24.0
 }, {
@@ -263,15 +265,17 @@ animations = [{
 }]
 
 [node name="Character" type="Node2D"]
+script = ExtResource("root_script")
 
 [node name="Visuals" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(265.99997, -167.25)
 scale = Vector2(0.67599994, 0.6275)
 sprite_frames = SubResource("SpriteFrames_e8q87")
-animation = &"idle_loop"
+animation = &"attack"
 autoplay = "idle_loop"
-frame_progress = 0.7274575
+frame_progress = 0.09138904
+script = ExtResource("anim_script")
 
 [node name="Bounds" type="Control" parent="."]
 unique_name_in_owner = true
@@ -289,5 +293,3 @@ position = Vector2(228, -439)
 [node name="CenterPos" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(176, -272)
-
-[connection signal="animation_finished" from="Visuals" to="." method="_on_visuals_animation_finished"]

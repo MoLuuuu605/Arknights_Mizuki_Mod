@@ -1,0 +1,13 @@
+{
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.title": "升华",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.description": "[blue]族群唯求生存，生存即为苦难，由是，我们演化不息。克服缺陷，面对自然，对抗外敌。灭绝狡猾且饥渴，大群稍有疏漏，它便要撕扯我们的血肉。所以我们纠错，所以我们适应。从爬上海岸开始，从触碰源石开始，扩大族群领地，接触致命威胁，直到彻底理解，直到化为食粮。如今，大地与海洋皆为乐土，然而族群仍在繁衍，生存仍是苦难，我们需要更广阔的家园。\n\n在迎接[jitter]进化奇点[/jitter]之前，引领我们未来的祂需给自己一个答案：\n\n“[jitter]我，是谁？[/jitter]”[/blue]",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_DETERMINATION.title": "我是水月，我会完成博士的请求。",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_DETERMINATION.description": "生命值高于80%。获得遗物“决心”。",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_OBSERVATION.title": "让时间来解答吧。",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_OBSERVATION.description": "生命值高于50%。获得遗物“观望”。",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_HERD.title": "大群非我，我即大群。",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_HERD.description": "将一张[red]疑虑[/red]加入卡组，获得{MaxHpGain}点最大生命值。",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.DETERMINATION.description": "我并非完全的我，正如祂并非完全的祂。我们的相遇虽是意外，但终有分别的时候。时候到了。",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.OBSERVATION.description": "没有迭代无法消解的问题，没有进化无法打破的障碍。当时机成熟，答案自然会显现。",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.HERD.description": "我为何不是大群，还有什么在影响着我?我又为何是大群，还有什么在支撑着我?我该如何成为大群，还有什么在阻碍着我?"
+}

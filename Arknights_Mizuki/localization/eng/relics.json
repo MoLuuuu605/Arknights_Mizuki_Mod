@@ -2,5 +2,18 @@
   "ARKNIGHTS_MIZUKI-MZK_TREE_BRANCH.title": "Seed of The Sea",
   "ARKNIGHTS_MIZUKI-MZK_TREE_BRANCH.description": "At the start of each combat, your first damage dealt applies [gold]3[/gold] [blue]Neural Damage[/blue].",
   "ARKNIGHTS_MIZUKI-DARK_BLUE_TREE.title": "Tree of The Sea",
-  "ARKNIGHTS_MIZUKI-DARK_BLUE_TREE.description": "Whenever you deal damage, apply [gold]2[/gold] additional [blue]Neural Damage[/blue]."
+  "ARKNIGHTS_MIZUKI-DARK_BLUE_TREE.description": "Whenever you deal damage, apply [gold]2[/gold] additional [blue]Neural Damage[/blue].",
+  "ARKNIGHTS_MIZUKI-DETERMINATION.title": "Determination",
+  "ARKNIGHTS_MIZUKI-DETERMINATION.description": "Upon pickup, add [gold]{Cards}[/gold] random Curses to your deck. At the start of each combat, add a [blue]Slimed[/blue] to your hand. Opens the path to Act 4.",
+  "ARKNIGHTS_MIZUKI-OBSERVATION.title": "Observation",
+  "ARKNIGHTS_MIZUKI-OBSERVATION.description": "At the start of each turn, gain [gold]{Block}[/gold] Block.",
+  "ARKNIGHTS_MIZUKI-TIDEWATCHER_LANTERN.title": "Lantern",
+  "ARKNIGHTS_MIZUKI-TIDEWATCHER_LANTERN.description": "Upon pickup, remove all Curses from your deck.",
+  "ARKNIGHTS_MIZUKI-TIDEWATCHER_LANTERN.flavor": "Its wick is soaked in tidewater, yet still burns.",
+  "ARKNIGHTS_MIZUKI-DEEP_BLUE_HEART.title": "Deep Blue Heart",
+  "ARKNIGHTS_MIZUKI-DEEP_BLUE_HEART.description": "Upon pickup, choose up to [gold]{Cards}[/gold] cards in your deck to remove. At the start of each combat, gain [gold]{StrengthPower}[/gold] Strength and [gold]{DexterityPower}[/gold] Dexterity.",
+  "ARKNIGHTS_MIZUKI-DEEP_BLUE_HEART.flavor": "When it beats, it almost feels as if the entire sea has accepted you.",
+  "ARKNIGHTS_MIZUKI-SWAN_SONG.title": "Swan Song",
+  "ARKNIGHTS_MIZUKI-SWAN_SONG.description": "Upon pickup, choose [gold]{Cards}[/gold] cards in your deck to enchant with Revelation.",
+  "ARKNIGHTS_MIZUKI-SWAN_SONG.flavor": "The final voice is not an ending, but an echo before returning home."
 }

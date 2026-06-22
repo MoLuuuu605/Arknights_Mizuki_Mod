@@ -85,5 +85,21 @@
   "THE_ARCHITECT.talk.ARKNIGHTS_MIZUKI-MIZUKI.2-0r.next": "Continue",
   "THE_ARCHITECT.talk.ARKNIGHTS_MIZUKI-MIZUKI.2-1r.char": "I want to first understand why they do it. Then, remove the part that would make everything beautiful disappear.",
   "THE_ARCHITECT.talk.ARKNIGHTS_MIZUKI-MIZUKI.2-1r.next": "Continue",
-  "THE_ARCHITECT.talk.ARKNIGHTS_MIZUKI-MIZUKI.2-2r.ancient": "Good. Continue upward with your gentleness and your judgment. Together, they are your true shape."
+  "THE_ARCHITECT.talk.ARKNIGHTS_MIZUKI-MIZUKI.2-2r.ancient": "Good. Continue upward with your gentleness and your judgment. Together, they are your true shape.",
+  "ARKNIGHTS_MIZUKI-LAST_TIDEWATCHER.title": "Last Tidewatcher",
+  "ARKNIGHTS_MIZUKI-LAST_TIDEWATCHER.epithet": "End of the Tide Line",
+  "ARKNIGHTS_MIZUKI-LAST_TIDEWATCHER.pages.INITIAL.description": "The storm waits outside the Spire, and the sea line lies stretched like a wound. A lone figure looks down from the rocks. Lantern, heart, song, and nameless inheritance rest on the wet stone before you.\n\n?Choose. One who has come this far should entrust what remains to an answer.?",
+  "ARKNIGHTS_MIZUKI-LAST_TIDEWATCHER.pages.INITIAL.options.FIVE_RELICS.title": "Shed the Vessel",
+  "ARKNIGHTS_MIZUKI-LAST_TIDEWATCHER.pages.INITIAL.options.FIVE_RELICS.description": "Lose [gold]20%[/gold] Max HP. Obtain [gold]5[/gold] random relics.",
+  "ARKNIGHTS_MIZUKI-LAST_TIDEWATCHER.pages.INITIAL.options.LANTERN.title": "Take the Lantern",
+  "ARKNIGHTS_MIZUKI-LAST_TIDEWATCHER.pages.INITIAL.options.LANTERN.description": "Obtain [relic]Lantern[/relic].",
+  "ARKNIGHTS_MIZUKI-LAST_TIDEWATCHER.pages.INITIAL.options.HEART.title": "Offer the Gold Tide",
+  "ARKNIGHTS_MIZUKI-LAST_TIDEWATCHER.pages.INITIAL.options.HEART.description": "Lose all Gold and [gold]30%[/gold] Max HP. Obtain [relic]Deep Blue Heart[/relic].",
+  "ARKNIGHTS_MIZUKI-LAST_TIDEWATCHER.pages.INITIAL.options.THREE_RELICS.title": "Trust the Surge",
+  "ARKNIGHTS_MIZUKI-LAST_TIDEWATCHER.pages.INITIAL.options.THREE_RELICS.description": "Obtain [gold]3[/gold] random relics.",
+  "ARKNIGHTS_MIZUKI-LAST_TIDEWATCHER.pages.INITIAL.options.SWAN_SONG.title": "Remember the Swan Song",
+  "ARKNIGHTS_MIZUKI-LAST_TIDEWATCHER.pages.INITIAL.options.SWAN_SONG.description": "Obtain [relic]Swan Song[/relic].",
+  "ARKNIGHTS_MIZUKI-LAST_TIDEWATCHER.pages.DONE.description": "The Tidewatcher offers no farewell. The waves withdraw, then return from somewhere deeper.",
+  "ARKNIGHTS_MIZUKI-LAST_TIDEWATCHER.talk.firstVisitEver.0-0.ancient": "You have seen the end of the tide. Now the tide sees you.",
+  "ARKNIGHTS_MIZUKI-LAST_TIDEWATCHER.talk.ANY.0-0r.ancient": "Choose. Hesitation does not make an answer lighter."
 }

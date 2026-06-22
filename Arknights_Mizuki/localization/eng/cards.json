@@ -189,5 +189,7 @@
   "ARKNIGHTS_MIZUKI-PERFECT_ABERRATION.title": "Perfect Aberration",
   "ARKNIGHTS_MIZUKI-PERFECT_ABERRATION.description": "Whenever you lose max HP, gain that much Strength. Whenever you gain max HP, deal 3 times that amount as damage to all enemies.",
   "ARKNIGHTS_MIZUKI-ABYSSAL_CONVERGENCE.title": "Abyssal Convergence",
-  "ARKNIGHTS_MIZUKI-ABYSSAL_CONVERGENCE.description": "[gold]Float[/gold] {Float:diff()}, [gold]Harvest[/gold] {Harvest:diff()}. Repeat X{IfUpgraded:show:+1|} times."
+  "ARKNIGHTS_MIZUKI-ABYSSAL_CONVERGENCE.description": "[gold]Float[/gold] {Float:diff()}, [gold]Harvest[/gold] {Harvest:diff()}. Repeat X{IfUpgraded:show:+1|} times.",
+  "ARKNIGHTS_MIZUKI-FROZEN.title": "Frozen",
+  "ARKNIGHTS_MIZUKI-FROZEN.description": "At the end of turn, if this card is in your hand, gain 1 [blue]Cold[/blue]."
 }

@@ -79,6 +79,7 @@ public class Knight : CustomMonsterModel
         if (target == null)
             return;
 
+        await CreatureCmd.TriggerAnim(Creature, "Attack", 0.25f);
         await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), target, damage, ValueProp.Move, Creature);
     }
 

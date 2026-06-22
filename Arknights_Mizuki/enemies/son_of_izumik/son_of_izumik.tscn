@@ -1,0 +1,461 @@
+[gd_scene load_steps=104 format=3 uid="uid://cyv8d7oq2tv0i"]
+
+[ext_resource type="Script" uid="uid://mxcf2m3bm3bs" path="res://Arknights_Mizuki/scenes/Character.cs" id="1_root"]
+[ext_resource type="Texture2D" uid="uid://5k512juqd6rm" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000000.png" id="2_0nk1a"]
+[ext_resource type="Script" uid="uid://c24ddy4lkcfau" path="res://Arknights_Mizuki/scenes/visuals.gd" id="2_anim"]
+[ext_resource type="Texture2D" uid="uid://ceofn0kcrdicw" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000001.png" id="3_bf4ek"]
+[ext_resource type="Texture2D" uid="uid://bg84w78kc07oo" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000002.png" id="4_qhlyh"]
+[ext_resource type="Texture2D" uid="uid://hfsmlq1mmtry" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000003.png" id="5_nm40s"]
+[ext_resource type="Texture2D" uid="uid://xy1x5lq0ee13" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000004.png" id="6_4xrp2"]
+[ext_resource type="Texture2D" uid="uid://kuittwmxe7gk" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000005.png" id="7_gmrny"]
+[ext_resource type="Texture2D" uid="uid://b3pqr0n17t8yq" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000006.png" id="8_igo1c"]
+[ext_resource type="Texture2D" uid="uid://dnvpse2756q5l" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000007.png" id="9_qx6xr"]
+[ext_resource type="Texture2D" uid="uid://dy35j7pqexmlh" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000008.png" id="10_j0erm"]
+[ext_resource type="Texture2D" uid="uid://cpuaxcbaqybhe" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000009.png" id="11_jasqg"]
+[ext_resource type="Texture2D" uid="uid://c3bla13f2a743" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000010.png" id="12_77mf8"]
+[ext_resource type="Texture2D" uid="uid://ciwicpg123p4y" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000011.png" id="13_idwst"]
+[ext_resource type="Texture2D" uid="uid://dwbauxgmp0m5n" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000012.png" id="14_ls2r3"]
+[ext_resource type="Texture2D" uid="uid://xwcrrph7i43y" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000013.png" id="15_uuki0"]
+[ext_resource type="Texture2D" uid="uid://dgrlxmx1tvrna" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000014.png" id="16_fattg"]
+[ext_resource type="Texture2D" uid="uid://rggevloc3nik" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000015.png" id="17_sm7b4"]
+[ext_resource type="Texture2D" uid="uid://bn2vrgnspg7pp" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000016.png" id="18_80hbe"]
+[ext_resource type="Texture2D" uid="uid://di371btqwgpsh" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000017.png" id="19_m7ma8"]
+[ext_resource type="Texture2D" uid="uid://bf8vdblpfpojx" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000018.png" id="20_0lmpy"]
+[ext_resource type="Texture2D" uid="uid://dwkdktevqyh" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000019.png" id="21_wmnkb"]
+[ext_resource type="Texture2D" uid="uid://edfiye3dgf0i" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000020.png" id="22_4tp4t"]
+[ext_resource type="Texture2D" uid="uid://b7dvgpmtnuaa" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000021.png" id="23_vleun"]
+[ext_resource type="Texture2D" uid="uid://blh3u8d21l7hw" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000022.png" id="24_3xiod"]
+[ext_resource type="Texture2D" uid="uid://c7c66hidgfxli" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000023.png" id="25_x1mbj"]
+[ext_resource type="Texture2D" uid="uid://ubxe38o0vlp5" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000024.png" id="26_pamd3"]
+[ext_resource type="Texture2D" uid="uid://batdinlpywo0k" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000025.png" id="27_hr7m6"]
+[ext_resource type="Texture2D" uid="uid://cackup5igyagw" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000026.png" id="28_gso14"]
+[ext_resource type="Texture2D" uid="uid://bsupg7btkat" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000027.png" id="29_dhe8w"]
+[ext_resource type="Texture2D" uid="uid://bq8lmfbd8p6hj" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000028.png" id="30_ntl23"]
+[ext_resource type="Texture2D" uid="uid://v7juuh670wfj" path="res://Arknights_Mizuki/enemies/son_of_izumik/attack/frame_000029.png" id="31_23vol"]
+[ext_resource type="Texture2D" uid="uid://b3q6djcrpnmyp" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000000.png" id="32_aljbq"]
+[ext_resource type="Texture2D" uid="uid://5yhucdfkf24j" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000001.png" id="33_e5ydh"]
+[ext_resource type="Texture2D" uid="uid://e5ney1hypusd" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000002.png" id="34_447jq"]
+[ext_resource type="Texture2D" uid="uid://dip0qvy172eia" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000003.png" id="35_1ltte"]
+[ext_resource type="Texture2D" uid="uid://e6u8jy28cflv" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000004.png" id="36_oth73"]
+[ext_resource type="Texture2D" uid="uid://dmr5alk2los7g" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000005.png" id="37_pjvc6"]
+[ext_resource type="Texture2D" uid="uid://cfj5w5caiihua" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000006.png" id="38_rkdhi"]
+[ext_resource type="Texture2D" uid="uid://damosmlrrmbmq" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000007.png" id="39_vh07t"]
+[ext_resource type="Texture2D" uid="uid://cclwggpug5lc1" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000008.png" id="40_mnqek"]
+[ext_resource type="Texture2D" uid="uid://cc3kcyfrr5y8f" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000009.png" id="41_ljmr1"]
+[ext_resource type="Texture2D" uid="uid://bbnk6el68lain" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000010.png" id="42_r2sxg"]
+[ext_resource type="Texture2D" uid="uid://d1rvbtx5c0d4u" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000011.png" id="43_7hhc2"]
+[ext_resource type="Texture2D" uid="uid://daaf7ic8o57u5" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000012.png" id="44_o5804"]
+[ext_resource type="Texture2D" uid="uid://quttueq4468d" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000013.png" id="45_e5avb"]
+[ext_resource type="Texture2D" uid="uid://d0h3m2yg3lq6w" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000014.png" id="46_i0hdb"]
+[ext_resource type="Texture2D" uid="uid://rah6sijstthi" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000015.png" id="47_ghuc0"]
+[ext_resource type="Texture2D" uid="uid://b5hd1d7ybqtb0" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000016.png" id="48_1ut3p"]
+[ext_resource type="Texture2D" uid="uid://bl34wyhedas1q" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000017.png" id="49_xw7wp"]
+[ext_resource type="Texture2D" uid="uid://chdkx4m2sdec" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000018.png" id="50_gera5"]
+[ext_resource type="Texture2D" uid="uid://dqxguf6m7sb0w" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000019.png" id="51_mvcgy"]
+[ext_resource type="Texture2D" uid="uid://bbjfxrwfr0som" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000020.png" id="52_u833v"]
+[ext_resource type="Texture2D" uid="uid://d1f727hq2efgs" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000021.png" id="53_ihcgj"]
+[ext_resource type="Texture2D" uid="uid://b1x2fduwp4yef" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000022.png" id="54_k0crv"]
+[ext_resource type="Texture2D" uid="uid://qbp45swbovt0" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000023.png" id="55_o0pic"]
+[ext_resource type="Texture2D" uid="uid://db8tamjm5i4rf" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000024.png" id="56_rn1ne"]
+[ext_resource type="Texture2D" uid="uid://b21ibxvim77wm" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000025.png" id="57_u63bj"]
+[ext_resource type="Texture2D" uid="uid://boydsr63mg27w" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000026.png" id="58_5o0lj"]
+[ext_resource type="Texture2D" uid="uid://cpitje8dkx1eo" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000027.png" id="59_7onan"]
+[ext_resource type="Texture2D" uid="uid://cosoxximu1oor" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000028.png" id="60_h8jj2"]
+[ext_resource type="Texture2D" uid="uid://bbhj0g0efywt6" path="res://Arknights_Mizuki/enemies/son_of_izumik/die/frame_000029.png" id="61_yotpj"]
+[ext_resource type="Texture2D" uid="uid://dlavfifxxacfv" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000000.png" id="62_m3agg"]
+[ext_resource type="Texture2D" uid="uid://dm5mj6mm7kr21" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000001.png" id="63_5vlk6"]
+[ext_resource type="Texture2D" uid="uid://djaq12ybb28wi" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000002.png" id="64_0kiq8"]
+[ext_resource type="Texture2D" uid="uid://cdqunlpk258q2" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000003.png" id="65_nn7jk"]
+[ext_resource type="Texture2D" uid="uid://bu8dfsjyemibr" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000004.png" id="66_juf61"]
+[ext_resource type="Texture2D" uid="uid://c11bxtriut4t4" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000005.png" id="67_per77"]
+[ext_resource type="Texture2D" uid="uid://dc048xgt1ruwd" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000006.png" id="68_ayopb"]
+[ext_resource type="Texture2D" uid="uid://i7oh8s8k2167" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000007.png" id="69_ts83l"]
+[ext_resource type="Texture2D" uid="uid://bntxuccty1go6" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000008.png" id="70_t4ulm"]
+[ext_resource type="Texture2D" uid="uid://va5ynngb8aav" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000009.png" id="71_6oyxx"]
+[ext_resource type="Texture2D" uid="uid://cvv7qkmvdfrnn" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000010.png" id="72_fc1c4"]
+[ext_resource type="Texture2D" uid="uid://d2un3gdebkxuq" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000011.png" id="73_427bw"]
+[ext_resource type="Texture2D" uid="uid://0tsj8qodoj5j" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000012.png" id="74_0lw0h"]
+[ext_resource type="Texture2D" uid="uid://bxg40jkp6t80s" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000013.png" id="75_5hkao"]
+[ext_resource type="Texture2D" uid="uid://v56xhi6dg8po" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000014.png" id="76_xinx1"]
+[ext_resource type="Texture2D" uid="uid://bee37lvgkn0em" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000015.png" id="77_lg6vx"]
+[ext_resource type="Texture2D" uid="uid://b7gf6sai0nbnv" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000016.png" id="78_cmy3y"]
+[ext_resource type="Texture2D" uid="uid://sx8b7xcciuka" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000017.png" id="79_fjeq2"]
+[ext_resource type="Texture2D" uid="uid://cok70uuqcokaj" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000018.png" id="80_wqhtb"]
+[ext_resource type="Texture2D" uid="uid://ck7fjdd4ioael" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000019.png" id="81_jep8m"]
+[ext_resource type="Texture2D" uid="uid://gxwcrxaefvhd" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000020.png" id="82_ij8jt"]
+[ext_resource type="Texture2D" uid="uid://c7jut43fx6se1" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000021.png" id="83_wgxk3"]
+[ext_resource type="Texture2D" uid="uid://dpp3n2bjbe1mc" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000022.png" id="84_sfc7w"]
+[ext_resource type="Texture2D" uid="uid://ykijhvgady1j" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000023.png" id="85_bmwc3"]
+[ext_resource type="Texture2D" uid="uid://5fg1s2p1drje" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000024.png" id="86_ktaca"]
+[ext_resource type="Texture2D" uid="uid://bfx8qtgblnffn" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000025.png" id="87_00ghp"]
+[ext_resource type="Texture2D" uid="uid://tca80vfpb3ik" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000026.png" id="88_pc5u0"]
+[ext_resource type="Texture2D" uid="uid://ug4f536kqj8s" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000027.png" id="89_dx4qk"]
+[ext_resource type="Texture2D" uid="uid://dyvh7egd8varc" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000028.png" id="90_tx6ys"]
+[ext_resource type="Texture2D" uid="uid://d0fyr4dgvu5p7" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000029.png" id="91_m7fkb"]
+[ext_resource type="Texture2D" uid="uid://cp0vgwhn32li4" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000030.png" id="92_qtdu3"]
+[ext_resource type="Texture2D" uid="uid://bdkpn1d2b1f5i" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000031.png" id="93_kr83a"]
+[ext_resource type="Texture2D" uid="uid://dc8wkjxro4s0j" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000032.png" id="94_7bfji"]
+[ext_resource type="Texture2D" uid="uid://bf1q15idrdua1" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000033.png" id="95_ieqpi"]
+[ext_resource type="Texture2D" uid="uid://cf81vstjrtcop" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000034.png" id="96_ddrrj"]
+[ext_resource type="Texture2D" uid="uid://cl17ubq6cmn3i" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000035.png" id="97_hi0vm"]
+[ext_resource type="Texture2D" uid="uid://dq57g4xoo5hbl" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000036.png" id="98_xlwu1"]
+[ext_resource type="Texture2D" uid="uid://ch585ngdwtykd" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000037.png" id="99_nqqql"]
+[ext_resource type="Texture2D" uid="uid://bpxgbnetl7i0w" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000038.png" id="100_10px4"]
+[ext_resource type="Texture2D" uid="uid://w2camy6c4kug" path="res://Arknights_Mizuki/enemies/son_of_izumik/idle/frame_000039.png" id="101_qbqff"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1xpkn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0nk1a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bf4ek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qhlyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nm40s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4xrp2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gmrny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_igo1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qx6xr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_j0erm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jasqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_77mf8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_idwst")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ls2r3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_uuki0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_fattg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_sm7b4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_80hbe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_m7ma8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_0lmpy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_wmnkb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_4tp4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_vleun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_3xiod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_x1mbj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_pamd3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_hr7m6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_gso14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_dhe8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ntl23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_23vol")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_aljbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_e5ydh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_447jq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_1ltte")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_oth73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_pjvc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_rkdhi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_vh07t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_mnqek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_ljmr1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_r2sxg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_7hhc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_o5804")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_e5avb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_i0hdb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_ghuc0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_1ut3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_xw7wp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_gera5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_mvcgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_u833v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_ihcgj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_k0crv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_o0pic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_rn1ne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_u63bj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_5o0lj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_7onan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_h8jj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_yotpj")
+}],
+"loop": false,
+"name": &"die",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("62_m3agg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_5vlk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_0kiq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_nn7jk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_juf61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_per77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_ayopb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_ts83l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_t4ulm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_6oyxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_fc1c4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_427bw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_0lw0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_5hkao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_xinx1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_lg6vx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_cmy3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_fjeq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_wqhtb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_jep8m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_ij8jt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_wgxk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_sfc7w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_bmwc3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_ktaca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_00ghp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_pc5u0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_dx4qk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_tx6ys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_m7fkb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_qtdu3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_kr83a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_7bfji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_ieqpi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_ddrrj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_hi0vm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_xlwu1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_nqqql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_10px4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_qbqff")
+}],
+"loop": true,
+"name": &"idle_loop",
+"speed": 30.0
+}]
+
+[node name="SonOfIzumik" type="Node2D"]
+script = ExtResource("1_root")
+
+[node name="Visuals" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(77, -186)
+scale = Vector2(0.6590001, 0.6560001)
+sprite_frames = SubResource("SpriteFrames_1xpkn")
+animation = &"attack"
+autoplay = "idle_loop"
+frame = 29
+frame_progress = 1.0
+script = ExtResource("2_anim")
+
+[node name="Bounds" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -6.0
+offset_top = -221.0
+offset_right = 184.0
+offset_bottom = 4.0
+
+[node name="IntentPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(80, -189)
+
+[node name="CenterPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(85, -108)
+
+[node name="TalkPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(75, -110)
+
+[node name="OrbPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(75, -109)

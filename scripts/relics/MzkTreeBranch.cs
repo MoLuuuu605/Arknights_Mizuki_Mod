@@ -21,7 +21,7 @@ public class MzkTreeBranch : CustomRelicModel
     public override RelicRarity Rarity => RelicRarity.Starter;
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
-        new[] { new PowerVar<SanityPower>(5m) };
+        new[] { new PowerVar<SanityPower>(3m) };
 
     public override string PackedIconPath =>
         $"res://Arknights_Mizuki/images/relics/DarkBlueSeed.png";

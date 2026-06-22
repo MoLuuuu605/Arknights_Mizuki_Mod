@@ -1,7 +1,8 @@
 {
-    
-        "ARKNIGHTS_MIZUKI-HARVEST_MINION.name":"钵海收割者",
-        "ARKNIGHTS_MIZUKI-FLOATING_SEA_MINION.name":"浮海漂移者",
-        "ARKNIGHTS_MIZUKI-KNIGHT.name":"最后的骑士"
-
+  "ARKNIGHTS_MIZUKI-HARVEST_MINION.name": "钵海收割者",
+  "ARKNIGHTS_MIZUKI-FLOATING_SEA_MINION.name": "浮海漂移者",
+  "ARKNIGHTS_MIZUKI-KNIGHT.name": "最后的骑士",
+  "ARKNIGHTS_MIZUKI-IZUMIK.name": "伊祖米克，生态泉源",
+  "ARKNIGHTS_MIZUKI-IZUMIK_OFFSPRING.name": "伊祖米克的子代",
+  "ARKNIGHTS_MIZUKI-COLD_DISASTER.name": "寒灾"
 }

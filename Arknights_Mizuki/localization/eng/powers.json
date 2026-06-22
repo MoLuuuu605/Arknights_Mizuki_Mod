@@ -70,7 +70,15 @@
   "ARKNIGHTS_MIZUKI-PERFECT_ABERRATION_POWER.title": "Perfect Aberration",
   "ARKNIGHTS_MIZUKI-PERFECT_ABERRATION_POWER.description": "Whenever you lose max HP, gain that much Strength. Whenever you gain max HP, deal 3 times that amount as damage to all enemies.",
   "ARKNIGHTS_MIZUKI-COLD_POWER.title": "Cold",
-  "ARKNIGHTS_MIZUKI-COLD_POWER.description": "At the start of the player's turn, lose {Amount} Energy. At the end of the player's turn, lose this effect.",
+  "ARKNIGHTS_MIZUKI-COLD_POWER.description": "At the start of the player's turn, lose {Amount} Energy, then lose this effect.",
   "ARKNIGHTS_MIZUKI-SEABORNING_POOL_POWER.title": "Breeding Pool",
-  "ARKNIGHTS_MIZUKI-SEABORNING_POOL_POWER.description": "At the start of each turn, add {Amount} [gold]Juvenile Seaborn[/gold] to the bottom of your draw pile."
+  "ARKNIGHTS_MIZUKI-SEABORNING_POOL_POWER.description": "At the start of each turn, add {Amount} [gold]Juvenile Seaborn[/gold] to the bottom of your draw pile.",
+  "ARKNIGHTS_MIZUKI-IZUMIK_EVOLUTION_POWER.title": "Ecological Evolution",
+  "ARKNIGHTS_MIZUKI-IZUMIK_EVOLUTION_POWER.description": "Whenever an offspring sacrifices itself, Izumik heals and gains 1 Ecological Evolution. Every 3 stacks grants 1 Strength.",
+  "ARKNIGHTS_MIZUKI-OFFSPRING_SACRIFICE_POWER.title": "Homing Instinct",
+  "ARKNIGHTS_MIZUKI-OFFSPRING_SACRIFICE_POWER.description": "On its second action, this offspring explodes for damage equal to its current HP, then is absorbed by Izumik, healing it and granting Ecological Evolution.",
+  "ARKNIGHTS_MIZUKI-COLD_WAVE_POWER.title": "Cold Wave",
+  "ARKNIGHTS_MIZUKI-COLD_WAVE_POWER.description": "Whenever this creature takes attack damage, reduce this by 1. At 0, apply 1 [blue]Cold[/blue] to all players, then reset to 3.",
+  "ARKNIGHTS_MIZUKI-FROZEN_WATCHER_POWER.title": "Frozen",
+  "ARKNIGHTS_MIZUKI-FROZEN_WATCHER_POWER.description": "At the end of the player's turn, gain 1 [blue]Cold[/blue] for each [gold]Frozen[/gold] in hand."
 }

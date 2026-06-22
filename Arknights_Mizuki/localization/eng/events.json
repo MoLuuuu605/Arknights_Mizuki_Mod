@@ -1,0 +1,13 @@
+{
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.title": "Sublimation",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.description": "[blue]The swarm seeks only survival, and survival is suffering. So we evolve without end. We overcome defects, face nature, resist our enemies. Extinction is cunning and hungry; one lapse, and it tears into our flesh. So we correct. So we adapt. From crawling onto the shore, to touching Originium, to expanding our territory and confronting lethal threats until we understand them completely, until they become nourishment. The land and sea are both paradise now, yet the swarm still breeds, and survival remains suffering. We need a broader home.\n\nBefore the singularity of evolution arrives, the one who would guide our future must answer one question:\n\n\"Who am I?\"[/blue]",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_DETERMINATION.title": "I am Mizuki. I will fulfill the Doctor's request.",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_DETERMINATION.description": "Above 80% HP. Gain the Determination relic.",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_OBSERVATION.title": "Let time answer.",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_OBSERVATION.description": "Above 50% HP. Gain the Observation relic.",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_HERD.title": "The swarm is not me. I am the swarm.",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_HERD.description": "Add a Doubt to your deck. Gain {MaxHpGain} max HP.",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.DETERMINATION.description": "The answer does not quiet the tide, but it reveals the path. You take that determination and walk deeper.",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.OBSERVATION.description": "You leave the answer to time. The tide recedes, leaving only a quiet witness.",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.HERD.description": "The boundary dissolves, and doubt sinks into your deck. The swarm answers softly, while the body gains room to continue."
+}
