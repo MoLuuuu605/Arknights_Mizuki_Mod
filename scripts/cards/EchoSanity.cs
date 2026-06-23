@@ -34,9 +34,10 @@ public class EchoSanity : CustomCardModel
 		(DynamicVar)new PowerVar<SanityPower>(2m)
 	};
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[2]
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[3]
 	{
 		HoverTipFactory.FromPower<SanityPower>(),
+HoverTipFactory.FromPower<SanityBurstDescriptionPower>(),
         HoverTipFactory.FromKeyword(Echo2.Echo)
 	};
 

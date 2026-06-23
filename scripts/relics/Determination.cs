@@ -22,7 +22,7 @@ public sealed class Determination : CustomRelicModel
 
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[]
     {
-        new CardsVar(2)
+        new CardsVar(3)
     };
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => HoverTipFactory.FromCardWithCardHoverTips<Slimed>();

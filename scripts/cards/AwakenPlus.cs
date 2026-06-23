@@ -35,10 +35,11 @@ public class AwakenPlus : CustomCardModel
 		(DynamicVar)new PowerVar<SanityPower>(6m)
 	};
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
-	{
-		HoverTipFactory.FromPower<SanityPower>()
-	};
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[2]
+    {
+        HoverTipFactory.FromPower<SanityPower>(),
+HoverTipFactory.FromPower<SanityBurstDescriptionPower>()
+    };
 
     public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/AwakenPlus.png";
 

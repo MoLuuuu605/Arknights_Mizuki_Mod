@@ -81,4 +81,7 @@
   "ARKNIGHTS_MIZUKI-COLD_WAVE_POWER.description": "Whenever this creature takes attack damage, reduce this by 1. At 0, apply 1 [blue]Cold[/blue] to all players, then reset to 3.",
   "ARKNIGHTS_MIZUKI-FROZEN_WATCHER_POWER.title": "Frozen",
   "ARKNIGHTS_MIZUKI-FROZEN_WATCHER_POWER.description": "At the end of the player's turn, gain 1 [blue]Cold[/blue] for each [gold]Frozen[/gold] in hand."
+  ,
+  "ARKNIGHTS_MIZUKI-IZUMIK_PHASE_SHIFT_POWER.title": "Critical Metamorphosis",
+  "ARKNIGHTS_MIZUKI-IZUMIK_PHASE_SHIFT_POWER.description": "When Izumik's HP falls to {Amount} or below, it shifts into its second phase and removes this power."
 }

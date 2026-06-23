@@ -7,7 +7,6 @@ using MegaCrit.Sts2.Core.Factories;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Models;
 
 namespace Arknights_Mizuki.Scripts.Enchantments;
 
@@ -20,9 +19,10 @@ public sealed class RevelationEnchantment : CustomEnchantmentModel
         new PowerVar<SanityPower>(4m)
     };
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => new IHoverTip[]
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[2]
     {
-        HoverTipFactory.FromPower<SanityPower>()
+        HoverTipFactory.FromPower<SanityPower>(),
+HoverTipFactory.FromPower<SanityBurstDescriptionPower>()
     };
 
     protected override string? CustomIconPath => "res://Arknights_Mizuki/images/map/ancients/last_tidewatcher.png";

@@ -15,5 +15,8 @@
   "ARKNIGHTS_MIZUKI-DEEP_BLUE_HEART.flavor": "When it beats, it almost feels as if the entire sea has accepted you.",
   "ARKNIGHTS_MIZUKI-SWAN_SONG.title": "Swan Song",
   "ARKNIGHTS_MIZUKI-SWAN_SONG.description": "Upon pickup, choose [gold]{Cards}[/gold] cards in your deck to enchant with Revelation.",
-  "ARKNIGHTS_MIZUKI-SWAN_SONG.flavor": "The final voice is not an ending, but an echo before returning home."
+  "ARKNIGHTS_MIZUKI-SWAN_SONG.flavor": "The final voice is not an ending, but an echo before returning home.",
+  "ARKNIGHTS_MIZUKI-OCEAN_PULSE.title": "Ocean's Pulse",
+  "ARKNIGHTS_MIZUKI-OCEAN_PULSE.description": "Whenever you play a Colorless or Token card, gain [gold]{Block}[/gold] Block.",
+  "ARKNIGHTS_MIZUKI-OCEAN_PULSE.flavor": "Each beat answers a tide that has not yet reached the shore."
 }

@@ -29,11 +29,12 @@ public sealed class ThrowKid : CustomCardModel
         (DynamicVar)new CardsVar(5)
     };
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[3]
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[4]
     {
         HoverTipFactory.FromPower<WeakPower>(),
         HoverTipFactory.FromPower<VulnerablePower>(),
-        HoverTipFactory.FromPower<SanityPower>()
+        HoverTipFactory.FromPower<SanityPower>(),
+HoverTipFactory.FromPower<SanityBurstDescriptionPower>()
     };
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => new CardKeyword[2]

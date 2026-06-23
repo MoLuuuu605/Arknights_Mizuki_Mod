@@ -4,10 +4,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Models.CardPools;
-using MegaCrit.Sts2.Core.ValueProps;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.HoverTips;
 
 using Arknights_Mizuki.Scripts.Pools;
@@ -36,9 +33,10 @@ public class SeaSnakeBite : CustomCardModel
 		(DynamicVar)new PowerVar<SanityPower>(6m)
 	};
     public override IEnumerable<CardKeyword> CanonicalKeywords => (IEnumerable<CardKeyword>)(object)new CardKeyword[1] { (CardKeyword)5 };
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[2]
 	{
-		HoverTipFactory.FromPower<SanityPower>()
+		HoverTipFactory.FromPower<SanityPower>(),
+        HoverTipFactory.FromPower<SanityBurstDescriptionPower>()
 	};
 
     public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/Sea_Snake_Bite.png";
@@ -56,6 +54,6 @@ public class SeaSnakeBite : CustomCardModel
     // 升级后的效果逻辑
     protected override void OnUpgrade()
     {
-		((DynamicVar)((CardModel)this).DynamicVars["SanityPower"]).UpgradeValueBy(3m);
+		((DynamicVar)((CardModel)this).DynamicVars["SanityPower"]).UpgradeValueBy(2m);
     }
 }

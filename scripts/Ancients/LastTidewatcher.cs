@@ -85,7 +85,9 @@ public sealed class LastTidewatcher : CustomAncientModel
                 .WithRelic<DeepBlueHeart>(Owner),
             new EventOption(this, ObtainThreeRelics, $"{Key}.pages.INITIAL.options.THREE_RELICS"),
             new EventOption(this, ObtainSwanSong, $"{Key}.pages.INITIAL.options.SWAN_SONG")
-                .WithRelic<SwanSong>(Owner)
+                .WithRelic<SwanSong>(Owner),
+            new EventOption(this, ObtainOceanPulse, $"{Key}.pages.INITIAL.options.OCEAN_PULSE")
+                .WithRelic<OceanPulse>(Owner)
         };
     }
 
@@ -128,6 +130,12 @@ public sealed class LastTidewatcher : CustomAncientModel
     private async Task ObtainSwanSong()
     {
         await RelicCmd.Obtain(ModelDb.Relic<SwanSong>().ToMutable(), Owner!);
+        Done();
+    }
+
+    private async Task ObtainOceanPulse()
+    {
+        await RelicCmd.Obtain(ModelDb.Relic<OceanPulse>().ToMutable(), Owner!);
         Done();
     }
 

@@ -4,7 +4,6 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.ValueProps;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.HoverTips;
 
@@ -34,9 +33,10 @@ public class SeaSnakeBigBite : CustomCardModel
 		(DynamicVar)new PowerVar<SanityPower>(5m)
 	};
     public override IEnumerable<CardKeyword> CanonicalKeywords => (IEnumerable<CardKeyword>)(object)new CardKeyword[2] { (CardKeyword)1,(CardKeyword)2 };
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[2]
 	{
-		HoverTipFactory.FromPower<SanityPower>()
+		HoverTipFactory.FromPower<SanityPower>(),
+        HoverTipFactory.FromPower<SanityBurstDescriptionPower>()
 	};
 
     public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/Sea_Snake_Bite.png";

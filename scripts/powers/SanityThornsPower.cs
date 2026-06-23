@@ -1,4 +1,3 @@
-using System.Threading.Tasks;
 using BaseLib.Abstracts;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -47,6 +46,11 @@ public sealed class SanityThornsPower : CustomPowerModel
     /// <summary>
     /// 当拥有此能力的生物受到伤害后触发，给予伤害来源 SanityPower
     /// </summary>
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
     public override async Task AfterDamageReceived(
         PlayerChoiceContext choiceContext,
         Creature target,
@@ -58,7 +62,7 @@ public sealed class SanityThornsPower : CustomPowerModel
         await base.AfterDamageReceived(choiceContext, target, result, props, dealer, cardSource);
 
         // 只处理自己是受伤者的情况
-        if (target != Owner)
+        if (target != Owner || dealer == Owner)
             return;
 
         // 伤害来源存在且还活着，且层数 > 0，且实际造成了伤害

@@ -1,3 +1,4 @@
+using Arknights_Mizuki.Scripts.Cards;
 using Arknights_Mizuki.Scripts.Powers;
 using BaseLib.Abstracts;
 using BaseLib.Utils.NodeFactories;
@@ -36,12 +37,24 @@ public sealed class Izumik : CustomMonsterModel
     private int absorbedOffspring;
     private bool phaseTwoStarted;
 
-    public override int MinInitialHp => Asc(600, 560);
-    public override int MaxInitialHp => Asc(700, 660);
+    public override int MinInitialHp => Asc(700, 660);
+    public override int MaxInitialHp => Asc(780, 720);
     protected override string VisualsPath => CustomVisualPath;
     public override string CustomVisualPath => "res://Arknights_Mizuki/enemies/izumik/izumik.tscn";
     public override bool ShouldReceiveCombatHooks => true;
     public override NCreatureVisuals? CreateCustomVisuals() => NodeFactory<NCreatureVisuals>.CreateFromScene(CustomVisualPath);
+
+    public override async Task AfterAddedToRoom()
+    {
+        await base.AfterAddedToRoom();
+        await PowerCmd.Apply<IzumikPhaseShiftPower>(
+            new ThrowingPlayerChoiceContext(),
+            Creature,
+            Math.Ceiling(Creature.MaxHp / 2m),
+            Creature,
+            null,
+            false);
+    }
 
     protected override MonsterMoveStateMachine GenerateMoveStateMachine()
     {
@@ -52,11 +65,11 @@ public sealed class Izumik : CustomMonsterModel
         {
             FollowUpStateId = PressureMoveId
         };
-        MoveState pressure = new(PressureMoveId, targets => AttackAndSummon(targets, Asc(13, 10), 2, 1), new MultiAttackIntent(Asc(13, 10), 2), new SummonIntent())
+        MoveState pressure = new(PressureMoveId, targets => AttackAndSummon(targets, Asc(18, 14), 2, 1), new MultiAttackIntent(Asc(18, 14), 2), new SummonIntent())
         {
             FollowUpStateId = CorruptMoveId
         };
-        MoveState corrupt = new(CorruptMoveId, targets => CorruptAndSummon(targets, weak: 1, vulnerable: 1, sanity: Asc(3, 2), summonCount: 1), new DebuffIntent(true), new SummonIntent())
+        MoveState corrupt = new(CorruptMoveId, targets => CorruptAndSummon(targets, weak: 2, vulnerable: 2, sanity: Asc(3, 2), summonCount: 1), new StatusIntent(3), new SummonIntent())
         {
             FollowUpStateId = CrushMoveId
         };
@@ -72,11 +85,11 @@ public sealed class Izumik : CustomMonsterModel
         {
             FollowUpStateId = PhaseTwoCorruptMoveId
         };
-        MoveState phaseTwoCorrupt = new(PhaseTwoCorruptMoveId, targets => PhaseTwoCorruption(targets), new DebuffIntent(true))
+        MoveState phaseTwoCorrupt = new(PhaseTwoCorruptMoveId, targets => PhaseTwoCorruption(targets), new StatusIntent(5),new DebuffIntent(false))
         {
             FollowUpStateId = PhaseTwoCrushMoveId
         };
-        MoveState phaseTwoCrush = new(PhaseTwoCrushMoveId, targets => Attack(targets, Damage(34, 42, 38, 48)), new SingleAttackIntent(() => DamageIntent(34, 42, 38, 48)))
+        MoveState phaseTwoCrush = new(PhaseTwoCrushMoveId, targets => Attack(targets, Damage(34, 42, 38, 48)), new SingleAttackIntent(() => DamageIntent(34, 42, 38, 48)),new StatusIntent(1))
         {
             FollowUpStateId = PhaseTwoSpawnMoveId
         };
@@ -101,9 +114,9 @@ public sealed class Izumik : CustomMonsterModel
             spawn);
     }
 
-    public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props, Creature dealer, CardModel cardSource)
+    public void QueuePhaseTwoIntent()
     {
-        if (target != Creature || phaseTwoStarted || Creature.CurrentHp > Creature.MaxHp / 2m || !Creature.IsAlive)
+        if (phaseTwoStarted || !Creature.IsAlive)
             return;
 
         SetMoveImmediate(MoveStateMachine.States[PhaseTwoStartMoveId] as MoveState, true);
@@ -199,6 +212,7 @@ public sealed class Izumik : CustomMonsterModel
 
         await CreatureCmd.TriggerAnim(Creature, "Attack", 0.25f);
         await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), target, damage, ValueProp.Move, Creature);
+        await AddFrozen(target);
     }
 
     private async Task AttackAndSanity(IReadOnlyList<Creature> targets, int damage, int hits, decimal sanity)
@@ -227,6 +241,15 @@ public sealed class Izumik : CustomMonsterModel
     {
         await CorruptPlayer(targets, weak, vulnerable, sanity);
         await SummonOffspring(summonCount, 0);
+        for (int i = 0; i < targets.Count; i++)
+        {
+            CardModel frozen = Creature.CombatState.CreateCard<Frozen>(targets[i].Player);
+            CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(
+                frozen,
+                PileType.Discard,
+                targets[i].Player,
+                CardPilePosition.Random));
+        }
     }
 
     private async Task PhaseTwoCorruption(IReadOnlyList<Creature> targets)
@@ -242,8 +265,20 @@ public sealed class Izumik : CustomMonsterModel
                     slimed,
                     PileType.Discard,
                     target.Player,
-                    CardPilePosition.Bottom));
+                    CardPilePosition.Random));
             }
+            CardModel frozen = Creature.CombatState.CreateCard<Frozen>(target.Player);
+            CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(
+                frozen,
+                PileType.Discard,
+                target.Player,
+                CardPilePosition.Random));
+            CardModel hazed = Creature.CombatState.CreateCard<Haze>(target.Player);
+            CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(
+                hazed,
+                PileType.Discard,
+                target.Player,
+                CardPilePosition.Random));
         }
 
         await CorruptPlayer(targets, weak: 0, vulnerable: 2, sanity: Asc(4, 3));
@@ -306,4 +341,17 @@ public sealed class Izumik : CustomMonsterModel
     {
         return AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, highAscensionValue, normalValue);
     }
+    private async Task AddFrozen(Creature? target)
+    {
+        if (target?.Player != null)
+        {
+            CardModel slimed = Creature.CombatState.CreateCard<Frozen>(target.Player);
+            CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(
+                slimed,
+                PileType.Discard,
+                target.Player,
+                CardPilePosition.Bottom));
+        }
+    }
+
 }

@@ -2,9 +2,11 @@ using Arknights_Mizuki.Scripts.Powers;
 using BaseLib.Abstracts;
 using BaseLib.Utils.NodeFactories;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Ascension;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Powers;
@@ -17,12 +19,16 @@ namespace Arknights_Mizuki.Scripts.Enemies;
 
 public sealed class IzumikOffspring : CustomMonsterModel
 {
+    private static int Asc(int highAscensionValue, int normalValue)
+    {
+        return AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, highAscensionValue, normalValue);
+    }
     private const string AttackAndSlimeMoveId = "IZUMIK_OFFSPRING_ATTACK_AND_SLIME";
     private const string ExplodeSacrificeMoveId = "IZUMIK_OFFSPRING_EXPLODE_SACRIFICE";
     private const int AttackDamage = 7;
 
-    public override int MinInitialHp => 22;
-    public override int MaxInitialHp => 26;
+    public override int MinInitialHp => Asc(28,24);
+    public override int MaxInitialHp => Asc(36,28);
     protected override string VisualsPath => CustomVisualPath;
     public override string CustomVisualPath => "res://Arknights_Mizuki/enemies/son_of_izumik/son_of_izumik.tscn";
     public override NCreatureVisuals? CreateCustomVisuals() => NodeFactory<NCreatureVisuals>.CreateFromScene(CustomVisualPath);
@@ -40,7 +46,7 @@ public sealed class IzumikOffspring : CustomMonsterModel
             AttackAndSlimeMoveId,
             targets => AttackAndSlime(targets),
             new SingleAttackIntent(AttackDamage),
-            new DebuffIntent(false))
+            new StatusIntent(1))
         {
             FollowUpStateId = ExplodeSacrificeMoveId
         };

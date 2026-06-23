@@ -36,9 +36,10 @@ public class MzkNeurotoxin : CustomCardModel
         (DynamicVar)new DynamicVar("Times",3m)
     };
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[2]
     {
-        HoverTipFactory.FromPower<SanityPower>()
+        HoverTipFactory.FromPower<SanityPower>(),
+HoverTipFactory.FromPower<SanityBurstDescriptionPower>()
     };
 
     public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/neurotoxin.png";

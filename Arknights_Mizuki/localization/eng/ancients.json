@@ -99,6 +99,8 @@
   "ARKNIGHTS_MIZUKI-LAST_TIDEWATCHER.pages.INITIAL.options.THREE_RELICS.description": "Obtain [gold]3[/gold] random relics.",
   "ARKNIGHTS_MIZUKI-LAST_TIDEWATCHER.pages.INITIAL.options.SWAN_SONG.title": "Remember the Swan Song",
   "ARKNIGHTS_MIZUKI-LAST_TIDEWATCHER.pages.INITIAL.options.SWAN_SONG.description": "Obtain [relic]Swan Song[/relic].",
+  "ARKNIGHTS_MIZUKI-LAST_TIDEWATCHER.pages.INITIAL.options.OCEAN_PULSE.title": "Listen to the Pulse",
+  "ARKNIGHTS_MIZUKI-LAST_TIDEWATCHER.pages.INITIAL.options.OCEAN_PULSE.description": "Whenever you play a Colorless card, gain [gold]2[/gold] Block.",
   "ARKNIGHTS_MIZUKI-LAST_TIDEWATCHER.pages.DONE.description": "The Tidewatcher offers no farewell. The waves withdraw, then return from somewhere deeper.",
   "ARKNIGHTS_MIZUKI-LAST_TIDEWATCHER.talk.firstVisitEver.0-0.ancient": "You have seen the end of the tide. Now the tide sees you.",
   "ARKNIGHTS_MIZUKI-LAST_TIDEWATCHER.talk.ANY.0-0r.ancient": "Choose. Hesitation does not make an answer lighter."

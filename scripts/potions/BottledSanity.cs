@@ -35,7 +35,8 @@ public sealed class BottledSanity : CustomPotionModel
 
     public override IEnumerable<IHoverTip> ExtraHoverTips => new IHoverTip[]
     {
-        HoverTipFactory.FromPower<SanityPower>()
+        HoverTipFactory.FromPower<SanityPower>(),
+HoverTipFactory.FromPower<SanityBurstDescriptionPower>()
     };
 
     protected override async Task OnUse(PlayerChoiceContext choiceContext, Creature? target)

@@ -3,6 +3,8 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
@@ -28,6 +30,18 @@ public sealed class SanityPower : CustomPowerModel
     private const int DamageCapPerBurst = 15;
     private const int DamageCapPerUnlimit = 20;
 
+    public void SetDamage(decimal damage)
+	{
+		AssertMutable();
+		this.DynamicVars.Damage.BaseValue = damage;
+	}
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
+    {
+        HoverTipFactory.FromPower<SanityBurstDescriptionPower>()
+    };
+    protected override IEnumerable<DynamicVar> CanonicalVars => [
+        new DamageVar(0m, ValueProp.Unpowered|ValueProp.Move)
+    ];
     public override async Task AfterPowerAmountChanged(
         PlayerChoiceContext choiceContext,
         PowerModel power,
@@ -37,28 +51,17 @@ public sealed class SanityPower : CustomPowerModel
     {
         if ((object)power != this)
             return;
-
+        
         var triggerThreshold = TriggerThreshold;
         if (applier != null && applier.HasPower<SanityProBurstPower>())
         {
-            triggerThreshold -= 2;
+            triggerThreshold = 6;
         }
-
-        if (Amount < triggerThreshold)
-            return;
 
         var owner = Owner;
         if (owner == null || !owner.IsAlive)
             return;
 
-        await PowerCmd.Apply<PiercingWailPower>(
-            choiceContext,
-            owner, 
-            1,
-            owner, 
-            cardSource,
-            false
-        );
         // 计算损伤伤害：最大生命值 * (BaseDamagePercent + SanityMultiplier)%
         var multiplier = owner.HasPower<SanityMultiplierPower>()
             ? owner.GetPower<SanityMultiplierPower>().Amount
@@ -89,11 +92,27 @@ public sealed class SanityPower : CustomPowerModel
             : 0;
         var damageCap = BaseDamageCap + burstCount * DamageCapPerBurst + unlimitAmount * DamageCapPerUnlimit;
 
-        // 伤害不超过上限
+
+
         if (damage > damageCap)
             damage = damageCap;
 
+        SetDamage(damage);
+
+        if (Amount < triggerThreshold)
+            return;
         // 造成 HpLoss 伤害
+
+        
+        await PowerCmd.Apply<PiercingWailPower>(
+            choiceContext,
+            owner, 
+            1,
+            owner, 
+            cardSource,
+            false
+        );
+        
         await CreatureCmd.Damage(
             choiceContext,
             owner,
