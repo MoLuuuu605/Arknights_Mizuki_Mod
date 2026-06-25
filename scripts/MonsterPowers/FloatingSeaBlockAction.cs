@@ -28,5 +28,6 @@ public sealed class FloatingSeaBlockAction : CustomActionModel
         var block = actor.GetPowerAmount<SeabornizationPower>();
         await CreatureCmd.GainBlock(target, block+baseBlock, ValueProp.Unblockable|ValueProp.Unpowered, null);
         await PowerCmd.Apply<FloatingSeaBlockAction>(choiceContext,Owner,-1,Owner,null);
+        await CreatureCmd.Damage(choiceContext,Owner,1,ValueProp.Unblockable|ValueProp.Unpowered,null,null);
     }
 }

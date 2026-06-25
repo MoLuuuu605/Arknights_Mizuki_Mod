@@ -1,31 +1,14 @@
-using System.ComponentModel;
-using Godot;
-using Godot.Bridge;
-using MegaCrit.Sts2.Core.Nodes.Combat;
+extends SpineSprite
 
-public class CustomCreatureVisuals : NCreatureVisuals
-{
-	public class MethodName : MethodName
-	{
-	}
+const IDLE := "Idle_loop"
 
-	public class PropertyName : PropertyName
-	{
-	}
+func _ready():
+	get_animation_state().set_animation(IDLE, true, 0)
 
-	public class SignalName : SignalName
-	{
-	}
-
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	protected override void SaveGodotObjectData(GodotSerializationInfo info)
-	{
-		((NCreatureVisuals)this).SaveGodotObjectData(info);
-	}
-
-	[EditorBrowsable(EditorBrowsableState.Never)]
-	protected override void RestoreGodotObjectData(GodotSerializationInfo info)
-	{
-		((NCreatureVisuals)this).RestoreGodotObjectData(info);
-	}
-}
+func play_trigger(trigger: String):
+	match trigger:
+		"Idle":
+			get_animation_state().set_animation(IDLE, true, 0)
+		"Attack":
+			get_animation_state().set_animation("Attack", false, 0)
+			get_animation_state().add_animation(IDLE, 0.0, true, 0)

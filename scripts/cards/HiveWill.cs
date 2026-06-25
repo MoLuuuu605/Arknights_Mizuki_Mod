@@ -25,9 +25,8 @@ public sealed class HiveWill : CustomCardModel
         (DynamicVar)new PowerVar<HiveWillPower>(2m),
     };
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[2]
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
     {
-        HoverTipFactory.FromPower<HiveWillPower>(),
         HoverTipFactory.FromPower<SeabornizationPower>()
     };
 

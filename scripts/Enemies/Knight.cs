@@ -1,7 +1,10 @@
 using BaseLib.Abstracts;
 using BaseLib.Utils.NodeFactories;
 using Arknights_Mizuki.Scripts.Powers;
+using Arknights_Mizuki.Scripts.Utils;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Animation;
+using MegaCrit.Sts2.Core.Bindings.MegaSpine;
 using MegaCrit.Sts2.Core.Entities.Ascension;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
@@ -37,6 +40,8 @@ public class Knight : CustomMonsterModel
     public override string CustomVisualPath => "res://Arknights_Mizuki/enemies/last_knight/knight.tscn";
     public override bool ShouldReceiveCombatHooks => true;
     public override NCreatureVisuals? CreateCustomVisuals() => NodeFactory<NCreatureVisuals>.CreateFromScene(CustomVisualPath);
+
+    public override CreatureAnimator GenerateAnimator(MegaSprite controller) => SpineAnimatorFactory.Create(controller, cast: "Skill_1_Begin", buff: "Skill_1_Begin", summon: "Skill_1_Begin");
 
 
     protected override MonsterMoveStateMachine GenerateMoveStateMachine()

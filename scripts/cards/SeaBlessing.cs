@@ -32,7 +32,7 @@ public class SeaBlessing : CustomCardModel
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
     {
         (DynamicVar)new BlockVar(6m, (ValueProp)8),
-        (DynamicVar)new DynamicVar("Float", 3m)
+        (DynamicVar)new DynamicVar("Float", 2m)
     };
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[2]
@@ -89,7 +89,6 @@ public class SeaBlessing : CustomCardModel
 
     protected override void OnUpgrade()
     {
-        this.DynamicVars["Float"].UpgradeValueBy(1m);
     }
 
     private static bool HasMinion<T>(Player player) where T : MinionModel

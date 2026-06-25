@@ -17,7 +17,7 @@ public sealed class EvolutionSingularityAct : CustomActModel
     {
     }
 
-    protected override int BaseNumberOfRooms => 4;
+    protected override int BaseNumberOfRooms => 3;
 
     protected override string CustomRestSiteBackgroundPath => ModelDb.Act<Glory>().RestSiteBackgroundPath;
 
@@ -80,7 +80,7 @@ public sealed class EvolutionSingularityAct : CustomActModel
 
 public sealed class EvolutionSingularityMap : ActMap
 {
-    private readonly MapPoint?[,] grid = new MapPoint?[7, 5];
+    private readonly MapPoint?[,] grid = new MapPoint?[7, 4];
 
     public override MapPoint BossMapPoint { get; }
 
@@ -99,7 +99,7 @@ public sealed class EvolutionSingularityMap : ActMap
         MapPoint rest = CreatePoint(3, 1, MapPointType.RestSite);
         MapPoint shop = CreatePoint(3, 2, MapPointType.Shop);
         MapPoint elite = CreatePoint(3, 3, MapPointType.Elite);
-        BossMapPoint = new MapPoint(3, 4)
+        BossMapPoint = new MapPoint(3, GetRowCount())
         {
             PointType = MapPointType.Boss,
             CanBeModified = false

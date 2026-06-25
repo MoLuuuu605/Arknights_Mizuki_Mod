@@ -27,9 +27,8 @@ public class SuperSpeed : CustomCardModel
         (DynamicVar)new PowerVar<SuperSpeedPower>(1m),
     };
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[2]
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
     {
-        HoverTipFactory.FromPower<SuperSpeedPower>(),
         HoverTipFactory.FromKeyword(AutoPlay.Autoplay)
     };
 

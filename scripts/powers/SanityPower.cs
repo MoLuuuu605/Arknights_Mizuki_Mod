@@ -107,6 +107,14 @@ public sealed class SanityPower : CustomPowerModel
         await PowerCmd.Apply<PiercingWailPower>(
             choiceContext,
             owner, 
+            3,
+            owner, 
+            cardSource,
+            false
+        );
+        await PowerCmd.Apply<WeakPower>(
+            choiceContext,
+            owner, 
             1,
             owner, 
             cardSource,
@@ -117,7 +125,7 @@ public sealed class SanityPower : CustomPowerModel
             choiceContext,
             owner,
             damage,
-            ValueProp.Unpowered|ValueProp.Move,
+            ValueProp.Unpowered|ValueProp.Unblockable,
             owner,
             cardSource);
 

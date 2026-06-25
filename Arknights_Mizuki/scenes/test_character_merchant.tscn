@@ -1,14 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://pdy0teckf4i"]
+[gd_scene load_steps=6 format=3 uid="uid://pdy0teckf4i"]
 
 [ext_resource type="Script" uid="uid://b0uc38txt0drq" path="res://Arknights_Mizuki/scenes/TestCharacterMerchant.cs" id="1_da6le"]
-[ext_resource type="Texture2D" uid="uid://cdel5g0soptsk" path="res://Arknights_Mizuki/scenes/mv_frames_bg/frame_000000.png" id="2_da6le"]
+[ext_resource type="SpineAtlasResource" uid="uid://cwyoefm1bww6f" path="res://Arknights_Mizuki/images/character/build_char_437_mizuki.atlas" id="2_67bxs"]
+[ext_resource type="SpineSkeletonFileResource" uid="uid://nbsnuesubqxy" path="res://Arknights_Mizuki/images/character/build_char_437_mizuki_424.skel" id="3_ywkh3"]
+[ext_resource type="Script" uid="uid://bjufrx8si2aeq" path="res://Arknights_Mizuki/scenes/Merchant.cs" id="4_gih1j"]
+
+[sub_resource type="SpineSkeletonDataResource" id="SpineSkeletonDataResource_60v20"]
+atlas_res = ExtResource("2_67bxs")
+skeleton_file_res = ExtResource("3_ywkh3")
 
 [node name="IroncladMerchant" type="Node2D"]
 script = ExtResource("1_da6le")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -462.0
-offset_top = -823.0
-offset_right = 538.0
-offset_bottom = 177.0
-texture = ExtResource("2_da6le")
+[node name="SpineSprite" type="SpineSprite" parent="."]
+skeleton_data_res = SubResource("SpineSkeletonDataResource_60v20")
+preview_skin = "Default"
+preview_animation = "-- Empty --"
+preview_frame = false
+preview_time = 0.0
+position = Vector2(261, -8)
+script = ExtResource("4_gih1j")

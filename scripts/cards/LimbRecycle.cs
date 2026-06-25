@@ -16,17 +16,18 @@ namespace Arknights_Mizuki.Scripts.Cards;
 [Pool(typeof(TokenCardPool))]
 public sealed class LimbRecycle : CustomCardModel
 {
-    private const int energyCost = 1;
+    private const int energyCost = 2;
     private const CardType type = CardType.Skill;
     private const CardRarity rarity = CardRarity.Common;
     private const TargetType targetType = TargetType.AllEnemies;
     private const bool shouldShowInCardLibrary = true;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[3]
+    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[4]
     {
-        (DynamicVar)new DamageVar(6m, (ValueProp)8),
+        (DynamicVar)new DamageVar(12m, (ValueProp)8),
         (DynamicVar)new DynamicVar("MaxHpGain", 10m),
-        (DynamicVar)new PowerVar<SanityPower>(1m)
+        (DynamicVar)new PowerVar<SanityPower>(1m),
+        new HpLossVar(5)
     };
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[2]
@@ -77,8 +78,8 @@ HoverTipFactory.FromPower<SanityBurstDescriptionPower>()
         }
         decimal maxHpGain = DynamicVars["MaxHpGain"].BaseValue;
         await CreatureCmd.GainMaxHp(Owner.Creature, maxHpGain);
+        await CreatureCmd.Damage(choiceContext,Owner.Creature,DynamicVars.HpLoss.BaseValue,ValueProp.Unblockable|ValueProp.Unpowered,null,null);
         await PerfectAberrationPower.NotifyMaxHpGain(choiceContext, Owner.Creature, maxHpGain, (CardModel)(object)this);
-        
     }
 
     protected override void OnUpgrade()

@@ -24,7 +24,7 @@ public sealed class SeabornFinale : CustomCardModel
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
     {
         (DynamicVar)new DamageVar(0m, ValueProp.Move),
-        (DynamicVar)new IntVar("Hits", 2m)
+        (DynamicVar)new IntVar("Hits", 3m)
     };
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]

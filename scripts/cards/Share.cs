@@ -24,7 +24,7 @@ public class Share : CustomCardModel
 
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[1]
     {
-        (DynamicVar)new DamageVar(6m, (ValueProp)6)
+        (DynamicVar)new DamageVar(8m, (ValueProp)6)
     };
 
     public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/share.png";

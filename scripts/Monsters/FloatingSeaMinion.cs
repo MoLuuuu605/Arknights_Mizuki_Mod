@@ -13,8 +13,8 @@ namespace Arknights_Mizuki.Scripts.Minions;
 
 public sealed class FloatingSeaMinion : CustomMinionModel
 {
-    public override int MinInitialHp => 12;
-    public override int MaxInitialHp => 12;
+    public override int MinInitialHp => 5;
+    public override int MaxInitialHp => 5;
 
     protected override string VisualsPath => CustomVisualPath;
     public override string CustomVisualPath => "res://Arknights_Mizuki/monsters/floater.tscn";

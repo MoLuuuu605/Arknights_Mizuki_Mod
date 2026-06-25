@@ -30,7 +30,7 @@ public sealed class BottledSeaborn : CustomPotionModel
 
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[]
     {
-        new CardsVar(3)
+        new CardsVar(4)
     };
 
     public override IEnumerable<IHoverTip> ExtraHoverTips => new IHoverTip[]
@@ -45,7 +45,9 @@ public sealed class BottledSeaborn : CustomPotionModel
         List<CardModel> cards = new();
         for (int i = 0; i < DynamicVars.Cards.IntValue; i++)
         {
-            cards.Add(Owner.Creature.CombatState.CreateCard<BabyHs>(Owner));
+            var BabyHs = Owner.Creature.CombatState.CreateCard<BabyHs>(Owner);
+            CardCmd.Upgrade(BabyHs);
+            cards.Add(BabyHs);
         }
 
         CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardsToCombat(

@@ -58,6 +58,7 @@ public class DqGiveMe : CustomCardModel
     protected override void OnUpgrade()
     {
         DynamicVars["Picks"].UpgradeValueBy(1m);
+        DynamicVars["DrawPileThreshold"].UpgradeValueBy(-5m);
     }
 }
 

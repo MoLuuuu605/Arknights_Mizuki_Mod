@@ -5,7 +5,6 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.HoverTips;
 
 using Arknights_Mizuki.Scripts.Pools;
 using Arknights_Mizuki.Scripts.Powers;
@@ -26,10 +25,6 @@ public class AdaptPain : CustomCardModel
         (DynamicVar)new PowerVar<AdaptPainPower>(1m)
     };
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
-    {
-        HoverTipFactory.FromPower<AdaptPainPower>()
-    };
 
     public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/AdaptPain.png";
 

@@ -36,6 +36,7 @@ public sealed class HarvestAttackAction : CustomActionModel
             }
         }
         await PowerCmd.Apply<HarvestAttackAction>(choiceContext,Owner,-1,Owner,null);
+        await CreatureCmd.Damage(choiceContext,Owner,1,ValueProp.Unblockable|ValueProp.Unpowered,null,null);
     }
 
 }

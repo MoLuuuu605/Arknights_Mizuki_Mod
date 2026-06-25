@@ -5,7 +5,6 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 
@@ -25,10 +24,6 @@ public sealed class BlueLifeBloom : CustomCardModel
         (DynamicVar)new PowerVar<BlueLifeBloomPower>(2m)
     };
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
-    {
-        HoverTipFactory.FromPower<BlueLifeBloomPower>()
-    };
 
     public override string PortraitPath => "res://Arknights_Mizuki/images/cards/BlueLifeBloom.png";
 

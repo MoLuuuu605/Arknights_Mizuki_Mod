@@ -2,7 +2,6 @@ using Arknights_Mizuki.Scripts.Actions;
 using Arknights_Mizuki.Scripts.Powers;
 using BaseLib.Utils.NodeFactories;
 using MegaCrit.Sts2.Core.Commands;
-using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Nodes.Combat;
@@ -12,8 +11,8 @@ using Arknights_Mizuki.BaseLibAdapters;
 namespace Arknights_Mizuki.Scripts.Minions;
 public sealed class HarvestMinion : CustomMinionModel
 {
-    public override int MinInitialHp => 10;
-    public override int MaxInitialHp => 10;
+    public override int MinInitialHp => 8;
+    public override int MaxInitialHp => 8;
     protected override string VisualsPath => CustomVisualPath;
     public override string CustomVisualPath => "res://Arknights_Mizuki/monsters/harvest.tscn";
     public override NCreatureVisuals? CreateCustomVisuals() => NodeFactory<NCreatureVisuals>.CreateFromScene(CustomVisualPath);

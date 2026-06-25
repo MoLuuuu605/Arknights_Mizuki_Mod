@@ -24,7 +24,7 @@ public class MzkStealth : CustomCardModel
 
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
     {
-        (DynamicVar)new BlockVar(12m, (ValueProp)8),
+        (DynamicVar)new BlockVar(10m, (ValueProp)8),
         (DynamicVar)new PowerVar<StealthPower>(1m)
     };
 

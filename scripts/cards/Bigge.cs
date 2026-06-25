@@ -24,7 +24,7 @@ public class Bigge : CustomCardModel
     // 参考官方写法：使用 CardsVar 或者 IntVar
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[1]
     {
-        (DynamicVar)new IntVar("DiscardPicks", 2m)  // 基础 1，升级后 3
+        (DynamicVar)new CardsVar(2)
     };
 
     public override string PortraitPath => "res://Arknights_Mizuki/images/cards/bigge.png";
@@ -36,7 +36,7 @@ public class Bigge : CustomCardModel
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         // 获取最多可消耗数量
-        int maxPicks = base.DynamicVars["DiscardPicks"].IntValue;
+        int maxPicks = base.DynamicVars.Cards.IntValue;
         
         if (maxPicks < 1)
             return;
@@ -49,26 +49,22 @@ public class Bigge : CustomCardModel
         
         // 实际可消耗数量
         int pickCount = System.Math.Min(maxPicks, discardPile.Cards.Count);
-        
+        var Count=0;
         // 🔧 修改点：使用 FromSimpleGrid 替代 FromCombatPile
-        List<CardModel> pickedCards = (await CardSelectCmd.FromSimpleGrid(
-            choiceContext,
-            discardPile.Cards,  // 注意：这里传 .Cards，不是整个 pile
-            base.Owner,
-            new CardSelectorPrefs(this.SelectionScreenPrompt,pickCount)  // 提示文本可以为空
-        )).ToList();
-        
-        // 如果没有选择任何牌，不触发效果
-        if (pickedCards.Count == 0)
-            return;
-        
-        // 消耗选中的牌
-        foreach (CardModel card in pickedCards)
+		if (pickCount > 0)
+		{
+			var selectedCards = await CardSelectCmd.FromSimpleGrid(choiceContext, PileType.Discard.GetPile(base.Owner).Cards, base.Owner, new CardSelectorPrefs(base.SelectionScreenPrompt, 0, pickCount));
+        foreach (var card in selectedCards)
         {
-            await CardCmd.Exhaust(choiceContext, card);
+            if (card != null)
+            {
+                // 将选中的牌从弃牌堆中移除
+                await CardCmd.Exhaust(choiceContext,card);
+                Count++;
+            }
         }
-        
-        int consumedCount = pickedCards.Count;
+        }
+        int consumedCount = Count;
         
         // 对所有敌人施加等同于消耗牌数量的 SanityPower
         var opponents = ((CardModel)this).CombatState.GetOpponentsOf(Owner.Creature).ToList();
@@ -91,6 +87,6 @@ public class Bigge : CustomCardModel
     protected override void OnUpgrade()
     {
         // 升级：从 1 变成 3
-        base.DynamicVars["DiscardPicks"].UpgradeValueBy(2m);
+        base.DynamicVars.Cards.UpgradeValueBy(2m);
     }
 }

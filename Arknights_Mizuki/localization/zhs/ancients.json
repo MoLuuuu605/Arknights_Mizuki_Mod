@@ -103,5 +103,5 @@
   "ARKNIGHTS_MIZUKI-LAST_TIDEWATCHER.talk.firstVisitEver.0-0.ancient": "你已经看见潮的尽头。那么，现在轮到潮看见你。",
   "ARKNIGHTS_MIZUKI-LAST_TIDEWATCHER.talk.ANY.0-0r.ancient": "选吧。答案不会因为迟疑而变轻。",
   "ARKNIGHTS_MIZUKI-LAST_TIDEWATCHER.pages.INITIAL.options.OCEAN_PULSE.title": "聆听脉搏",
-  "ARKNIGHTS_MIZUKI-LAST_TIDEWATCHER.pages.INITIAL.options.OCEAN_PULSE.description": "每打出一张无色牌，获得[gold]2点[/gold]格挡。"
+  "ARKNIGHTS_MIZUKI-LAST_TIDEWATCHER.pages.INITIAL.options.OCEAN_PULSE.description": "每打出一张无色或衍生牌，获得[gold]2[/gold]点格挡。"
 }

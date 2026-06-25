@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using Arknights_Mizuki.BaseLibAdapters;
+using Arknights_Mizuki.Scripts.Powers;
 using MinionLib.Minion;
 
 

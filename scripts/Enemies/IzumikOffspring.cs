@@ -1,7 +1,10 @@
 using Arknights_Mizuki.Scripts.Powers;
+using Arknights_Mizuki.Scripts.Utils;
 using BaseLib.Abstracts;
 using BaseLib.Utils.NodeFactories;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Animation;
+using MegaCrit.Sts2.Core.Bindings.MegaSpine;
 using MegaCrit.Sts2.Core.Entities.Ascension;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -32,6 +35,8 @@ public sealed class IzumikOffspring : CustomMonsterModel
     protected override string VisualsPath => CustomVisualPath;
     public override string CustomVisualPath => "res://Arknights_Mizuki/enemies/son_of_izumik/son_of_izumik.tscn";
     public override NCreatureVisuals? CreateCustomVisuals() => NodeFactory<NCreatureVisuals>.CreateFromScene(CustomVisualPath);
+
+    public override CreatureAnimator GenerateAnimator(MegaSprite controller) => SpineAnimatorFactory.Create(controller, attack: "Move", cast: "Move", buff: "Move", summon: "Move");
 
     public override async Task AfterAddedToRoom()
     {

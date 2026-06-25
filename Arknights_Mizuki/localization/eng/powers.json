@@ -1,6 +1,9 @@
 {
+  "ARKNIGHTS_MIZUKI-SANITY_POWER.smartDescription": "At 8 stacks, triggers a Neural Damage burst.\nThe next Neural Damage burst deals {Damage} damage to this enemy.",
   "ARKNIGHTS_MIZUKI-SANITY_POWER.description": "At 8 stacks, trigger a Neural Damage burst.\nDeal damage equal to 20% of the target's max HP, up to 30.\nAfter bursting, the next burst deals an additional 15% of max HP and its damage cap increases by 15.",
   "ARKNIGHTS_MIZUKI-SANITY_POWER.title": "Neural Damage",
+  "ARKNIGHTS_MIZUKI-SANITY_BURST_DESCRIPTION_POWER.description": "Deals damage equal to 20% of max HP, up to 30.\nIncreases the next Neural Damage burst by 15% of max HP and raises its damage cap by 15.\nThen clears all Neural Damage stacks.",
+  "ARKNIGHTS_MIZUKI-SANITY_BURST_DESCRIPTION_POWER.title": "Neural Damage Burst",
   "ARKNIGHTS_MIZUKI-SANITY_MULTIPLIER_POWER.description": "The next Neural Damage burst deals {Amount}% more damage and its damage cap increases by {Amount}.",
   "ARKNIGHTS_MIZUKI-SANITY_MULTIPLIER_POWER.title": "Deepened Neural Damage",
   "ARKNIGHTS_MIZUKI-SANITY_UNLIMIT_POWER.description": "Each stack increases Neural Damage burst's damage cap by 20.",

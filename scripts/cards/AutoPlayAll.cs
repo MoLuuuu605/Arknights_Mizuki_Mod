@@ -7,7 +7,6 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 
 using Arknights_Mizuki.Scripts.Pools;
 using MegaCrit.Sts2.Core.HoverTips;
-using Arknights_Mizuki.Scripts.keywords;
 using System.Runtime.InteropServices.Marshalling;
 using MegaCrit.Sts2.Core.Models;
 
@@ -31,7 +30,7 @@ public class AutoPlayAll : CustomCardModel
 
     // 鍗＄墝鐨勫熀纭€灞炴€э紙鏍兼尅鍊硷級
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[0];
-    public override IEnumerable<CardKeyword> CanonicalKeywords => (IEnumerable<CardKeyword>)(object)new CardKeyword[2] {CardKeyword.Exhaust,AutoPlay.Autoplay};
+    public override IEnumerable<CardKeyword> CanonicalKeywords => (IEnumerable<CardKeyword>)(object)new CardKeyword[1] {CardKeyword.Exhaust};
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[3]
 	{
 		HoverTipFactory.FromCard<Learn>(),

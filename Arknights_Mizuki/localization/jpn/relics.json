@@ -1,0 +1,22 @@
+{
+  "ARKNIGHTS_MIZUKI-MZK_TREE_BRANCH.title": "深藍の種",
+  "ARKNIGHTS_MIZUKI-MZK_TREE_BRANCH.description": "毎戦闘、最初に与えるダメージに[gold]3[/gold]層の[blue]神経損傷[/blue]を追加付与する。",
+  "ARKNIGHTS_MIZUKI-DARK_BLUE_TREE.title": "深藍の樹",
+  "ARKNIGHTS_MIZUKI-DARK_BLUE_TREE.description": "ダメージを与えるたびに、追加で[gold]2[/gold]層の[blue]神経損傷[/blue]を与える。",
+  "ARKNIGHTS_MIZUKI-DETERMINATION.title": "決意",
+  "ARKNIGHTS_MIZUKI-DETERMINATION.description": "取得時、[gold]{Cards}[/gold]枚のランダムな呪いカードをデッキに加える。毎戦闘開始時、1枚の[blue]粘液[/blue]を手札に加える。第四層への道を開く。",
+  "ARKNIGHTS_MIZUKI-OBSERVATION.title": "観望",
+  "ARKNIGHTS_MIZUKI-OBSERVATION.description": "毎ターン開始時、[gold]{Block}[/gold]ブロックを得る。",
+  "ARKNIGHTS_MIZUKI-TIDEWATCHER_LANTERN.title": "手提げ灯",
+  "ARKNIGHTS_MIZUKI-TIDEWATCHER_LANTERN.description": "取得時、デッキ内のすべての呪いを除去する。",
+  "ARKNIGHTS_MIZUKI-TIDEWATCHER_LANTERN.flavor": "灯芯は潮水に浸かっているのに、まだ灯っている。",
+  "ARKNIGHTS_MIZUKI-DEEP_BLUE_HEART.title": "深藍の心臓",
+  "ARKNIGHTS_MIZUKI-DEEP_BLUE_HEART.description": "取得時、デッキから最大[gold]{Cards}[/gold]枚を選んで除去する。\n毎戦闘開始時、[gold]{StrengthPower}[/gold]筋力と[gold]{DexterityPower}[/gold]敏捷を得る。",
+  "ARKNIGHTS_MIZUKI-DEEP_BLUE_HEART.flavor": "鼓動するとき、まるで海全体に承認されているかのような錯覚に陥る。",
+  "ARKNIGHTS_MIZUKI-SWAN_SONG.title": "絶唱",
+  "ARKNIGHTS_MIZUKI-SWAN_SONG.description": "取得時、デッキから[gold]{Cards}[/gold]枚を選んでエンチャント：[aqua]啓示[/aqua]を付与する。",
+  "ARKNIGHTS_MIZUKI-SWAN_SONG.flavor": "最後の声は終わりではなく、帰巣前のこだま。",
+  "ARKNIGHTS_MIZUKI-OCEAN_PULSE.title": "海洋の脈搏",
+  "ARKNIGHTS_MIZUKI-OCEAN_PULSE.description": "[gold]1[/gold]枚の無色カードまたは派生カードをプレイするたび、[gold]{Block}[/gold]ブロックを得る。",
+  "ARKNIGHTS_MIZUKI-OCEAN_PULSE.flavor": "鼓動のひとつひとつが、まだ岸に届かぬ潮騒に応えている。"
+}

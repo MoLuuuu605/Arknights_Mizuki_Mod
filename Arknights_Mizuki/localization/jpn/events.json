@@ -1,0 +1,13 @@
+{
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.title": "昇華",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.description": "[blue]大群はただ生存を求める。生存すなわち苦難なり。故に我らは進化を止めない。欠陥を克服し、自然に立ち向かい、外敵と戦う。絶滅は狡猾で飢えている。大群が少しでも隙を見せれば、奴らは我らの血肉を引き裂こうとする。だから我らは誤りを正し、だから我らは適応する。海岸に這い上がったときから、源石に触れたときから、大群の領地を広げ、致命的な脅威に触れ、完全に理解するまで、糧となるまで。今や大地も海も楽土となった。しかし大群はなおも繁殖し、生存はなおも苦難である。我らにはより広い故郷が必要だ。\n\n[jitter]進化の特異点[/jitter]を迎える前に、我らの未来を導く彼は自らに答えを与えねばならない：\n\n「[jitter]我は、誰か？[/jitter]」[/blue]",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_DETERMINATION.title": "私はミヅキ。博士の依頼を果たす。",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_DETERMINATION.description": "HPが80%以上。レリック「決意」を取得する。",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_OBSERVATION.title": "時間に答えてもらおう。",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_OBSERVATION.description": "HPが50%以上。レリック「観望」を取得する。",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_HERD.title": "大群は我にあらず、我すなわち大群。",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_HERD.description": "1枚の[red]疑念[/red]をデッキに加え、{MaxHpGain}の最大HPを得る。",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.DETERMINATION.description": "私は完全な私ではない。彼が完全な彼ではないように。我らの出会いは偶然だったが、別れの時は必ず来る。その時が来た。",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.OBSERVATION.description": "反復が解消できぬ問題はなく、進化が突破できぬ障壁はない。機が熟せば、答えは自ずと現れる。",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.HERD.description": "なぜ私は大群ではないのか、何が私をなおも影響しているのか？なぜ私は大群なのか、何が私をなおも支えているのか？どうすれば大群になれるのか、何が私をなおも阻んでいるのか？"
+}

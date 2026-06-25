@@ -2,12 +2,15 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using BaseLib.Abstracts;
 using MegaCrit.Sts2.Core.Entities;
+using MegaCrit.Sts2.Core.Animation;
+using MegaCrit.Sts2.Core.Bindings.MegaSpine;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Characters;
 using MegaCrit.Sts2.Core.Models.Relics;
 using Godot;
 using Arknights_Mizuki.Scripts.Cards;
+using Arknights_Mizuki.Scripts.Utils;
 using Arknights_Mizuki.Scripts.Relics;
 
 namespace Arknights_Mizuki.Scripts.Characters;
@@ -28,6 +31,8 @@ public class Mizuki : PlaceholderCharacterModel
     public override string CustomVisualPath => "res://Arknights_Mizuki/scenes/character.tscn";
 
     public override string CustomIconTexturePath => "res://Arknights_Mizuki/images/icon.svg";
+
+    public override CreatureAnimator GenerateAnimator(MegaSprite controller) => SpineAnimatorFactory.Create(controller, cast: "Skill_1", buff: "Skill_1", summon: "Skill_1");
 
     public override string CustomEnergyCounterPath => "res://Arknights_Mizuki/scenes/energy_counter.tscn";
 

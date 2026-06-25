@@ -4,7 +4,6 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.ValueProps;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.HoverTips;
 
@@ -27,9 +26,10 @@ public class Attack_Sanity : CustomCardModel
         (DynamicVar)new PowerVar<AttackApplySanityPower>(1m)
     };
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[2]
     {
-        HoverTipFactory.FromPower<AttackApplySanityPower>()
+        HoverTipFactory.FromPower<SanityPower>(),
+        HoverTipFactory.FromPower<SanityBurstDescriptionPower>()
     };
 
     public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/attack_sanity.png";

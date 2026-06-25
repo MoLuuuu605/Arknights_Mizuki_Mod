@@ -1,295 +1,42 @@
-[gd_scene load_steps=66 format=3 uid="uid://bst1jxqptrelu"]
+[gd_scene load_steps=5 format=3 uid="uid://bst1jxqptrelu"]
 
-[ext_resource type="Script" uid="uid://mxcf2m3bm3bs" path="res://Arknights_Mizuki/scenes/Character.cs" id="root_script"]
-[ext_resource type="Script" uid="uid://c24ddy4lkcfau" path="res://Arknights_Mizuki/scenes/visuals.gd" id="anim_script"]
-[ext_resource type="Texture2D" uid="uid://d5dfabgmnnjd" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000000.png" id="1_pk510"]
-[ext_resource type="Texture2D" uid="uid://ow03ci4751lo" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000001.png" id="2_6awex"]
-[ext_resource type="Texture2D" uid="uid://c1bfpob3jxsia" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000002.png" id="3_5htrd"]
-[ext_resource type="Texture2D" uid="uid://ofa6eobqynbt" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000003.png" id="4_gxjqx"]
-[ext_resource type="Texture2D" uid="uid://hsl3fbper0xh" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000004.png" id="5_s3p2u"]
-[ext_resource type="Texture2D" uid="uid://2b4sh1bl68cv" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000005.png" id="6_7lfa6"]
-[ext_resource type="Texture2D" uid="uid://c6c3ijnlt0uug" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000006.png" id="7_dfr7q"]
-[ext_resource type="Texture2D" uid="uid://dh6ks1lv71xel" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000007.png" id="8_yf2fs"]
-[ext_resource type="Texture2D" uid="uid://bppbj3u8yrpim" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000008.png" id="9_wchkt"]
-[ext_resource type="Texture2D" uid="uid://ctabtbjoqu1fn" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000009.png" id="10_w4b34"]
-[ext_resource type="Texture2D" uid="uid://luu66igs828k" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000010.png" id="11_whvgt"]
-[ext_resource type="Texture2D" uid="uid://oyh2kqwxwjrj" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000011.png" id="12_kk36k"]
-[ext_resource type="Texture2D" uid="uid://bfhkk0msm5ox2" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000012.png" id="13_1cvrk"]
-[ext_resource type="Texture2D" uid="uid://1gjnmori0cne" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000013.png" id="14_u436f"]
-[ext_resource type="Texture2D" uid="uid://co6isya4jbm72" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000014.png" id="15_lt1mk"]
-[ext_resource type="Texture2D" uid="uid://y5qj4lmu3c85" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000015.png" id="16_h3hnb"]
-[ext_resource type="Texture2D" uid="uid://ccmdyahi0yku" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000016.png" id="17_pbuko"]
-[ext_resource type="Texture2D" uid="uid://cx68vgkw83qo3" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000017.png" id="18_2nav8"]
-[ext_resource type="Texture2D" uid="uid://dkwvq0a8lcpvw" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000018.png" id="19_41m7y"]
-[ext_resource type="Texture2D" uid="uid://dh5qnltcw4qwb" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000019.png" id="20_0q3xb"]
-[ext_resource type="Texture2D" uid="uid://dpynsr0hu216o" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000020.png" id="21_l3j3i"]
-[ext_resource type="Texture2D" uid="uid://t3h6s1ltrh5u" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000021.png" id="22_s68h3"]
-[ext_resource type="Texture2D" uid="uid://cei7urq18f1bm" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000022.png" id="23_120tc"]
-[ext_resource type="Texture2D" uid="uid://c0aciwsj803aq" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000023.png" id="24_wemct"]
-[ext_resource type="Texture2D" uid="uid://cg50hct8wqs0y" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000024.png" id="25_0uxnj"]
-[ext_resource type="Texture2D" uid="uid://mgbxoqn1akjg" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000025.png" id="26_a2tv5"]
-[ext_resource type="Texture2D" uid="uid://gw7jopljcvws" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000026.png" id="27_pcvju"]
-[ext_resource type="Texture2D" uid="uid://ccnriqau00g4b" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000027.png" id="28_wygms"]
-[ext_resource type="Texture2D" uid="uid://5wx4g27t5an8" path="res://Arknights_Mizuki/enemies/last_knight/knight_attack_1/frame_000028.png" id="29_sh3bi"]
-[ext_resource type="Texture2D" uid="uid://btxygl5nxit7m" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000000.png" id="30_j0yxr"]
-[ext_resource type="Texture2D" uid="uid://i3kbt8ewm360" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000001.png" id="31_fqc3e"]
-[ext_resource type="Texture2D" uid="uid://mhoh0b00q7cq" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000002.png" id="32_mqbuw"]
-[ext_resource type="Texture2D" uid="uid://dv6dk06c60oht" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000003.png" id="33_c136u"]
-[ext_resource type="Texture2D" uid="uid://vlwm6bwcljky" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000004.png" id="34_120ej"]
-[ext_resource type="Texture2D" uid="uid://bmugykufa82vt" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000005.png" id="35_425qu"]
-[ext_resource type="Texture2D" uid="uid://fcixcs1v587p" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000006.png" id="36_aifyk"]
-[ext_resource type="Texture2D" uid="uid://dnta1tyebjukr" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000007.png" id="37_13wdc"]
-[ext_resource type="Texture2D" uid="uid://c2tiwknx1hhd6" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000008.png" id="38_7smin"]
-[ext_resource type="Texture2D" uid="uid://dsd2x6aopkwb0" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000009.png" id="39_nv52g"]
-[ext_resource type="Texture2D" uid="uid://duntuvy0774p7" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000010.png" id="40_m4ksj"]
-[ext_resource type="Texture2D" uid="uid://dn33j5dkdqy6c" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000011.png" id="41_juffp"]
-[ext_resource type="Texture2D" uid="uid://dc33lc80hcrki" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000012.png" id="42_clxpi"]
-[ext_resource type="Texture2D" uid="uid://n2kg04crltdf" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000013.png" id="43_hkp2b"]
-[ext_resource type="Texture2D" uid="uid://bxws8dmk6kuc5" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000014.png" id="44_ejd2k"]
-[ext_resource type="Texture2D" uid="uid://ukt0xtchxaub" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000015.png" id="45_lty6n"]
-[ext_resource type="Texture2D" uid="uid://b00jrbebmlm3p" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000016.png" id="46_oxfif"]
-[ext_resource type="Texture2D" uid="uid://c8t1tq68qa0s5" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000017.png" id="47_rjv35"]
-[ext_resource type="Texture2D" uid="uid://bvt8pdbraachj" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000018.png" id="48_v1x0t"]
-[ext_resource type="Texture2D" uid="uid://da6b42uhauhei" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000019.png" id="49_gybnq"]
-[ext_resource type="Texture2D" uid="uid://0cpukl5nr56r" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000020.png" id="50_4y800"]
-[ext_resource type="Texture2D" uid="uid://wxg6qytk6gu" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000021.png" id="51_sl1cn"]
-[ext_resource type="Texture2D" uid="uid://ep302m8r6qbx" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000022.png" id="52_ipwuf"]
-[ext_resource type="Texture2D" uid="uid://ditu48u5a5yq7" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000023.png" id="53_b88vg"]
-[ext_resource type="Texture2D" uid="uid://b7cv26qaxmyng" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000024.png" id="54_d44qq"]
-[ext_resource type="Texture2D" uid="uid://b3giao611sa4f" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000025.png" id="55_m6cfd"]
-[ext_resource type="Texture2D" uid="uid://h2m2a2a0uc3i" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000026.png" id="56_am4qo"]
-[ext_resource type="Texture2D" uid="uid://cx1rwocxor3u4" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000027.png" id="57_y6mqv"]
-[ext_resource type="Texture2D" uid="uid://k2jtb6c05hin" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000028.png" id="58_gicym"]
-[ext_resource type="Texture2D" uid="uid://cpvnabqrchbm6" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000029.png" id="59_4hkt2"]
-[ext_resource type="Texture2D" uid="uid://c186pws6qh1w7" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000030.png" id="60_3rhki"]
-[ext_resource type="Texture2D" uid="uid://dpd3rn35ublag" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000031.png" id="61_r1lam"]
-[ext_resource type="Texture2D" uid="uid://n8fuq31nlmn2" path="res://Arknights_Mizuki/enemies/last_knight/knight_idle_1/frame_000032.png" id="62_kcet0"]
+[ext_resource type="SpineAtlasResource" uid="uid://ba3mip57jwe2j" path="res://Arknights_Mizuki/images/monsters/knight/enemy_2038_sydonq.atlas" id="1_lxj1u"]
+[ext_resource type="SpineSkeletonFileResource" uid="uid://cy03i4u1sytxk" path="res://Arknights_Mizuki/images/monsters/knight/enemy_2038_sydonq_424.skel" id="2_7b32e"]
+[ext_resource type="Script" uid="uid://b82paatqubah1" path="res://Arknights_Mizuki/scenes/spine_visuals.gd" id="3_spine"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_e8q87"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_pk510")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_6awex")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_5htrd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_gxjqx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_s3p2u")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_7lfa6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_dfr7q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_yf2fs")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_wchkt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_w4b34")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_whvgt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_kk36k")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_1cvrk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_u436f")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_lt1mk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_h3hnb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_pbuko")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_2nav8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_41m7y")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_0q3xb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_l3j3i")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_s68h3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_120tc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_wemct")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_0uxnj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_a2tv5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_pcvju")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_wygms")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_sh3bi")
-}],
-"loop": false,
-"name": &"attack",
-"speed": 24.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("30_j0yxr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_fqc3e")
-}, {
-"duration": 1.0,
-"texture": ExtResource("32_mqbuw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33_c136u")
-}, {
-"duration": 1.0,
-"texture": ExtResource("34_120ej")
-}, {
-"duration": 1.0,
-"texture": ExtResource("35_425qu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("36_aifyk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("37_13wdc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("38_7smin")
-}, {
-"duration": 1.0,
-"texture": ExtResource("39_nv52g")
-}, {
-"duration": 1.0,
-"texture": ExtResource("40_m4ksj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("41_juffp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("42_clxpi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("43_hkp2b")
-}, {
-"duration": 1.0,
-"texture": ExtResource("44_ejd2k")
-}, {
-"duration": 1.0,
-"texture": ExtResource("45_lty6n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("46_oxfif")
-}, {
-"duration": 1.0,
-"texture": ExtResource("47_rjv35")
-}, {
-"duration": 1.0,
-"texture": ExtResource("48_v1x0t")
-}, {
-"duration": 1.0,
-"texture": ExtResource("49_gybnq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("50_4y800")
-}, {
-"duration": 1.0,
-"texture": ExtResource("51_sl1cn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("52_ipwuf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("53_b88vg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("54_d44qq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("55_m6cfd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("56_am4qo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("57_y6mqv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("58_gicym")
-}, {
-"duration": 1.0,
-"texture": ExtResource("59_4hkt2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("60_3rhki")
-}, {
-"duration": 1.0,
-"texture": ExtResource("61_r1lam")
-}, {
-"duration": 1.0,
-"texture": ExtResource("62_kcet0")
-}],
-"loop": true,
-"name": &"idle_loop",
-"speed": 24.0
-}]
+[sub_resource type="SpineSkeletonDataResource" id="SpineSkeletonDataResource_nw0kq"]
+atlas_res = ExtResource("1_lxj1u")
+skeleton_file_res = ExtResource("2_7b32e")
 
 [node name="Character" type="Node2D"]
-script = ExtResource("root_script")
 
-[node name="Visuals" type="AnimatedSprite2D" parent="."]
+[node name="Visuals" type="SpineSprite" parent="."]
+skeleton_data_res = SubResource("SpineSkeletonDataResource_nw0kq")
+preview_skin = "Default"
+preview_animation = "Idle"
+preview_frame = false
+preview_time = 0.0
 unique_name_in_owner = true
-position = Vector2(265.99997, -167.25)
-scale = Vector2(0.67599994, 0.6275)
-sprite_frames = SubResource("SpriteFrames_e8q87")
-animation = &"attack"
-autoplay = "idle_loop"
-frame_progress = 0.09138904
-script = ExtResource("anim_script")
+position = Vector2(-2, -11)
+scale = Vector2(-0.6, 0.6)
+script = ExtResource("3_spine")
+cast_animation = "Skill_1_Begin"
+buff_animation = "Skill_1_Begin"
+summon_animation = "Skill_1_Begin"
 
 [node name="Bounds" type="Control" parent="."]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 0
-offset_left = -72.0
-offset_top = -434.0
-offset_right = 577.0
-offset_bottom = 40.0
+offset_left = -235.0
+offset_top = -390.0
+offset_right = 235.0
+offset_bottom = 1.0
 
 [node name="IntentPos" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(228, -439)
+position = Vector2(10, -350)
 
 [node name="CenterPos" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(176, -272)
+position = Vector2(2, -167)
