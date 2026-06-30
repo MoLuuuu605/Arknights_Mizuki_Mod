@@ -4,10 +4,8 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.ValueProps;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.HoverTips;
 
 using Arknights_Mizuki.Scripts.Pools;
@@ -29,9 +27,10 @@ public class MzkUnlimit : CustomCardModel
         (DynamicVar)new PowerVar<SanityUnlimitPower>(1m)
     };
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[]
     {
-        HoverTipFactory.FromPower<SanityUnlimitPower>()
+        HoverTipFactory.FromPower<SanityPower>(),
+        HoverTipFactory.FromPower<SanityBurstDescriptionPower>(),
     };
 
     public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/unlimit.png";

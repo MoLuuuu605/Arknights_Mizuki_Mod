@@ -13,13 +13,12 @@ public class SeaborningPoolPower : CustomPowerModel
 {
 	public override PowerType Type => (PowerType)1;
 
-	public override PowerStackType StackType => (PowerStackType)2;
+	public override PowerStackType StackType => PowerStackType.Counter;
 
-	public override PowerInstanceType InstanceType => (PowerInstanceType)1;
 
-	public override string? CustomPackedIconPath => "res://Arknights_Mizuki/images/powers/SeaborningPool.png";
+	public override string? CustomPackedIconPath => "res://Arknights_Mizuki/images/powers/Human.png";
 
-	public override string? CustomBigIconPath => "res://Arknights_Mizuki/images/powers/SeaborningPool.png";
+	public override string? CustomBigIconPath => "res://Arknights_Mizuki/images/powers/Human.png";
 
 	protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[1]
     {

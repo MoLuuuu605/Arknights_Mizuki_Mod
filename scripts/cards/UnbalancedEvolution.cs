@@ -1,10 +1,10 @@
 using Arknights_Mizuki.Scripts.Pools;
-using Arknights_Mizuki.Scripts.Powers;
 using BaseLib.Abstracts;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 
@@ -28,6 +28,11 @@ public sealed class UnbalancedEvolution : CustomCardModel
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => new CardKeyword[1] { CardKeyword.Exhaust };
 
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[]
+    {
+        HoverTipFactory.FromPower<StrengthPower>(),
+        HoverTipFactory.FromPower<DexterityPower>()
+    };
     public override string PortraitPath => "res://Arknights_Mizuki/images/cards/UnbalancedEvolution.png";
 
     public UnbalancedEvolution() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
@@ -38,7 +43,6 @@ public sealed class UnbalancedEvolution : CustomCardModel
     {
         decimal loss = DynamicVars["MaxHpLoss"].BaseValue;
         await CreatureCmd.SetMaxHp(Owner.Creature, Owner.Creature.MaxHp - loss);
-        await AberrantRegenerationPower.NotifyMaxHpLoss(choiceContext, Owner.Creature, loss, cardPlay);
         await PowerCmd.Apply<StrengthPower>(choiceContext, Owner.Creature, DynamicVars["StrengthPower"].BaseValue, Owner.Creature, this);
         await PowerCmd.Apply<DexterityPower>(choiceContext, Owner.Creature, DynamicVars["DexterityPower"].BaseValue, Owner.Creature, this);
     }

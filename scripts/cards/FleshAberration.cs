@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Models;
 
 using Arknights_Mizuki.Scripts.Pools;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.HoverTips;
 
 namespace Arknights_Mizuki.Scripts.Cards;
 
@@ -26,9 +27,12 @@ public class FleshAberration : CustomCardModel
         new PowerVar<DexterityPower>(1m),
         new PowerVar<VulnerablePower>(1m)
     };
-    public override IEnumerable<CardKeyword> CanonicalKeywords => new CardKeyword[]
+
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[]
     {
-        CardKeyword.Exhaust  // 
+        HoverTipFactory.FromPower<StrengthPower>(),
+        HoverTipFactory.FromPower<DexterityPower>(),
+        HoverTipFactory.FromPower<VulnerablePower>()
     };
     public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/FleshAberration.png";
 

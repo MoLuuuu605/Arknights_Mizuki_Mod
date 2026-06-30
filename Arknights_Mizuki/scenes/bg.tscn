@@ -10,10 +10,10 @@ offset_bottom = 40.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = -33.0
-offset_top = -45.0
-offset_right = 3330.0
-offset_bottom = 1105.0
+offset_left = 22.0
+offset_top = 69.0
+offset_right = 3385.0
+offset_bottom = 1219.0
 texture = ExtResource("1_ha6g5")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]

@@ -9,6 +9,12 @@ using MegaCrit.Sts2.Core.HoverTips;
 
 using Arknights_Mizuki.Scripts.Pools;
 using Arknights_Mizuki.Scripts.Powers;
+using Arknights_Mizuki.Scripts.Minions;
+using MinionLib.Minion;
+using MinionLib.Commands;
+using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Players;
+using Arknights_Mizuki.Scripts.keywords;
 
 namespace Arknights_Mizuki.Scripts.Cards;
 
@@ -28,32 +34,55 @@ public class SeaSnakeBigBite : CustomCardModel
     private const bool shouldShowInCardLibrary = true;
 
     // 卡牌的基础属性（例如这里是12点伤害）
-    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[1]
+    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
 	{
-		(DynamicVar)new PowerVar<SanityPower>(5m)
+		(DynamicVar)new PowerVar<SanityPower>(2m),
+        new DynamicVar("Harvest",4)
 	};
-    public override IEnumerable<CardKeyword> CanonicalKeywords => (IEnumerable<CardKeyword>)(object)new CardKeyword[2] { (CardKeyword)1,(CardKeyword)2 };
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[2]
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[]
 	{
 		HoverTipFactory.FromPower<SanityPower>(),
-        HoverTipFactory.FromPower<SanityBurstDescriptionPower>()
+        HoverTipFactory.FromPower<SanityBurstDescriptionPower>(),
+        HoverTipFactory.FromKeyword(Monster2.monster2),
+        HoverTipFactory.FromKeyword(Monster2des.monster2des),
+        HoverTipFactory.FromPower<SeabornizationPower>()
 	};
 
-    public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/Sea_Snake_Bite.png";
+    public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/qiutukunjing.png";
 
     public SeaSnakeBigBite() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
     {
     }
 
+    static public bool HasMinion<T>(Player player) where T : MinionModel
+{
+    return player.PlayerCombatState?.Pets.Any(p =>
+        p is { IsAlive: true, IsPet: true, Monster: T }
+    ) == true;
+}
     // 打出时的效果逻辑
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        if(!HasMinion<HarvestMinion>(Owner))
+        {
+            _ = await MinionCmd.AddMinion<HarvestMinion>(choiceContext,Owner, new MinionSummonOptions(
+                MaxHp: 6m,                              // 血量
+                PrimaryStatAmount: 2m,                  // 主要参数（具体内容在随从的 OnSummon 里定义），还有次要参数等可以按需传入
+                Source: this,                           // 召唤来源（通常是这张牌）
+                Position: MinionPosition.Front));
+        }
+        else 
+        {
+            Creature? pet = Owner.PlayerCombatState?.Pets.FirstOrDefault(p => p.Monster is HarvestMinion);
+            await PowerCmd.Apply<SeabornizationPower>(choiceContext,pet,DynamicVars["Harvest"].BaseValue,pet,null);
+        }
         await PowerCmd.Apply<SanityPower>(choiceContext, cardPlay.Target, ((DynamicVar)((CardModel)this).DynamicVars["SanityPower"]).BaseValue, ((CardModel)this).Owner.Creature, (CardModel)(object)this, false);
     }
 
     // 升级后的效果逻辑
     protected override void OnUpgrade()
     {
-		((DynamicVar)((CardModel)this).DynamicVars["SanityPower"]).UpgradeValueBy(2m);
+		((DynamicVar)((CardModel)this).DynamicVars["SanityPower"]).UpgradeValueBy(1m);
+        ((DynamicVar)((CardModel)this).DynamicVars["Harvest"]).UpgradeValueBy(1m);
     }
 }

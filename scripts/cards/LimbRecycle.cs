@@ -1,6 +1,5 @@
 using Arknights_Mizuki.Scripts.Powers;
 using BaseLib.Abstracts;
-using BaseLib.Extensions;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -33,7 +32,7 @@ public sealed class LimbRecycle : CustomCardModel
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[2]
     {
         HoverTipFactory.FromPower<SanityPower>(),
-HoverTipFactory.FromPower<SanityBurstDescriptionPower>()
+        HoverTipFactory.FromPower<SanityBurstDescriptionPower>()
     };
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => new CardKeyword[1]
@@ -71,10 +70,6 @@ HoverTipFactory.FromPower<SanityBurstDescriptionPower>()
                     (CardModel)(object)this,
                     false);
             }
-        }
-        if(Owner.HasPower<GoldLifeReturnPower>())
-        {
-            await PowerCmd.Apply<GoldLifeReturnPower>(choiceContext,Owner.Creature,-8m,Owner.Creature,this);
         }
         decimal maxHpGain = DynamicVars["MaxHpGain"].BaseValue;
         await CreatureCmd.GainMaxHp(Owner.Creature, maxHpGain);

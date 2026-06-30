@@ -1,5 +1,4 @@
 using Arknights_Mizuki.Scripts.Pools;
-using Arknights_Mizuki.Scripts.Powers;
 using BaseLib.Abstracts;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
@@ -27,9 +26,9 @@ public sealed class LimbSplit : CustomCardModel
         (DynamicVar)new DynamicVar("MaxHpLoss", 8m)
     };
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[]
     {
-        HoverTipFactory.FromCard<LimbRecycle>()
+        HoverTipFactory.FromCard<LimbRecycle>(this.IsUpgraded)
     };
 
     public override string PortraitPath => "res://Arknights_Mizuki/images/cards/LimbSplit.png";
@@ -43,7 +42,6 @@ public sealed class LimbSplit : CustomCardModel
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay, false);
         decimal loss = DynamicVars["MaxHpLoss"].BaseValue;
         await CreatureCmd.SetMaxHp(Owner.Creature, Owner.Creature.MaxHp - loss);
-        await AberrantRegenerationPower.NotifyMaxHpLoss(choiceContext, Owner.Creature, loss, cardPlay);
 
         CardModel recycle = CombatState.CreateCard<LimbRecycle>(Owner);
         if (((CardModel)this).IsUpgraded)

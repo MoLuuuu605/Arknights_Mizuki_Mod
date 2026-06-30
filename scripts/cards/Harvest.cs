@@ -38,9 +38,10 @@ public sealed class Harvest : CustomCardModel
     ) == true;
 }
     public override string PortraitPath => "res://Arknights_Mizuki/images/cards/Harvest.png";
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[2]
 	{
-        HoverTipFactory.FromKeyword(Monster2.monster2)
+        HoverTipFactory.FromKeyword(Monster2.monster2),
+        HoverTipFactory.FromKeyword(Monster2des.monster2des)
 	};
 
 

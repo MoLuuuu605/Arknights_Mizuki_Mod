@@ -12,20 +12,6 @@ public class AutoPlay
     public static CardKeyword Autoplay;
 
 }
-public class KWSeaCreature
-{
-    [CustomEnum("KWSeaCreature")]
-    [KeywordProperties(AutoKeywordPosition.Before)]
-    public static CardKeyword SeaCreature;
-
-}
-public class KWHuman
-{
-    [CustomEnum("KWHuman")]
-    [KeywordProperties(AutoKeywordPosition.Before)]
-    public static CardKeyword Human;
-
-}
 
 public class Echo1
 {
@@ -50,13 +36,13 @@ public class Echo3
     public static CardKeyword Echo;
 
 }
-public class Sputter
-{
-    [CustomEnum("Sputter")]
-    [KeywordProperties(AutoKeywordPosition.Before)]
-    public static CardKeyword sputter;
-}
 
+public class Monster1des
+{
+    [CustomEnum("Monster1des")]
+    [KeywordProperties(AutoKeywordPosition.Before)]
+    public static CardKeyword monster1des;
+}
 public class Monster1
 {
     [CustomEnum("Monster1")]
@@ -69,9 +55,9 @@ public class Monster2
     [KeywordProperties(AutoKeywordPosition.Before)]
     public static CardKeyword monster2;
 }
-public class Monster3
+public class Monster2des
 {
-    [CustomEnum("Monster3")]
+    [CustomEnum("Monster2des")]
     [KeywordProperties(AutoKeywordPosition.Before)]
-    public static CardKeyword monster3;
+    public static CardKeyword monster2des;
 }

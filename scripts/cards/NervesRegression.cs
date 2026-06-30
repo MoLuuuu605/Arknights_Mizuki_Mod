@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Models;
 
 using Arknights_Mizuki.Scripts.Pools;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.HoverTips;
 
 namespace Arknights_Mizuki.Scripts.Cards;
 
@@ -20,19 +21,26 @@ public class NervesRegression : CustomCardModel
     private const TargetType targetType = TargetType.Self;
     private const bool shouldShowInCardLibrary = true;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[3]
+    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[]
     {
-        (DynamicVar)new PowerVar<WeakPower>(2m),
+        (DynamicVar)new PowerVar<WeakPower>(1m),
         new EnergyVar(2),
-        new CardsVar(2),
     };
-    public override IEnumerable<CardKeyword> CanonicalKeywords => new CardKeyword[]
-    {
-        CardKeyword.Exhaust  // 
-    };
+
 
     public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/NervesRegression.png";
 
+
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[]
+    {
+        HoverTipFactory.FromPower<WeakPower>(),
+        HoverTipFactory.FromPower<VulnerablePower>()
+    };
+
+    public override IEnumerable<CardKeyword> CanonicalKeywords => new CardKeyword[1]
+    {
+        CardKeyword.Exhaust
+    };
 
     public NervesRegression() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
     {
@@ -46,12 +54,16 @@ public class NervesRegression : CustomCardModel
         this.Owner.Creature,
         this
         );
-        await CardPileCmd.Draw(choiceContext,DynamicVars.Cards.BaseValue,Owner);
+        await PowerCmd.Apply<VulnerablePower>(choiceContext,
+        this.Owner.Creature,
+        ((DynamicVar)((CardModel)this).DynamicVars["WeakPower"]).BaseValue,
+        this.Owner.Creature,
+        this
+        );
         await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue,Owner);
     }
     protected override void OnUpgrade()
     {
         ((CardModel)this).DynamicVars.Energy.UpgradeValueBy(1);
-        DynamicVars.Cards.UpgradeValueBy(1);
     }
 }

@@ -23,10 +23,11 @@ public class Shock : CustomCardModel
     private const TargetType targetType = TargetType.AllEnemies;
     private const bool shouldShowInCardLibrary = true;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
+    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[]
     {
-        (DynamicVar)new DamageVar(5m, (ValueProp)8),
-        (DynamicVar)new PowerVar<SanityPower>(1m)
+        (DynamicVar)new DamageVar(3m, ValueProp.Move),
+        (DynamicVar)new PowerVar<SanityPower>(1m),
+        (DynamicVar)new DynamicVar("Times", 3m)
     };
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[2]
@@ -52,26 +53,28 @@ HoverTipFactory.FromPower<SanityBurstDescriptionPower>()
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-            .FromCard(this)
-            .TargetingAllOpponents(((CardModel)this).CombatState)
-            .Execute(choiceContext);
-        var opponents = ((CardModel)this).CombatState.GetOpponentsOf(Owner.Creature).ToList();
-        foreach (var opponent in opponents)
-        {
-            await PowerCmd.Apply<SanityPower>(
-                choiceContext,
-                opponent,
-                ((DynamicVar)((CardModel)this).DynamicVars["SanityPower"]).BaseValue,
-                ((CardModel)this).Owner.Creature,
-                (CardModel)(object)this,
-                false
-            );
+        for(int i=0;i<DynamicVars["Times"].BaseValue;i++){
+            await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+                .FromCard(this)
+                .TargetingAllOpponents(((CardModel)this).CombatState)
+                .Execute(choiceContext);
+            var opponents = ((CardModel)this).CombatState.GetOpponentsOf(Owner.Creature).ToList();
+            foreach (var opponent in opponents)
+            {
+                await PowerCmd.Apply<SanityPower>(
+                    choiceContext,
+                    opponent,
+                    ((DynamicVar)((CardModel)this).DynamicVars["SanityPower"]).BaseValue,
+                    ((CardModel)this).Owner.Creature,
+                    (CardModel)(object)this,
+                    false
+                );
+            }
         }
     }
 
     protected override void OnUpgrade()
     {
-        ((DynamicVar)((CardModel)this).DynamicVars["SanityPower"]).UpgradeValueBy(1m);
+        ((DynamicVar)((CardModel)this).DynamicVars["Times"]).UpgradeValueBy(1m);
     }
 }

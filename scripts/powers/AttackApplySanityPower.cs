@@ -2,11 +2,9 @@ using BaseLib.Abstracts;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.ValueProps;
 using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.Commands.Builders;
 
-using Arknights_Mizuki.Scripts.Powers;
 
 namespace Arknights_Mizuki.Scripts.Powers;
 
@@ -30,6 +28,8 @@ public sealed class AttackApplySanityPower : CustomPowerModel
     public override async Task AfterAttack(PlayerChoiceContext choiceContext, AttackCommand command)
     {
         await base.AfterAttack(choiceContext, command);
+        
+        if (command.Attacker != Owner) return;
         
         if (Amount <= 0) return;
         

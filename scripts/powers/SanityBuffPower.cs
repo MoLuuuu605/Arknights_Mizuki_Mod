@@ -21,6 +21,7 @@ public sealed class SanityBuffPower : CustomPowerModel
         await base.AfterAttack(choiceContext, command);
         
         if (Amount <= 0) return;
+        if (command.Attacker != Owner) return;
         
         foreach (var hitResults in command.Results)
         {

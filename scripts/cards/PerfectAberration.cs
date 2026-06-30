@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 
 namespace Arknights_Mizuki.Scripts.Cards;
 
@@ -27,7 +28,7 @@ public sealed class PerfectAberration : CustomCardModel
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
     {
-        HoverTipFactory.FromPower<PerfectAberrationPower>()
+        HoverTipFactory.FromPower<StrengthPower>()
     };
 
     public override string PortraitPath => "res://Arknights_Mizuki/images/cards/PerfectAberration.png";

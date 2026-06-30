@@ -43,7 +43,7 @@ public sealed class TideReflection : CustomCardModel
         await PowerCmd.Apply<TideReflectionPower>(choiceContext, Owner.Creature, DynamicVars["TideReflectionPower"].BaseValue, Owner.Creature, (CardModel)(object)this);
         for (int i = 0; i < DynamicVars.Cards.IntValue; i++)
         {
-            CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(CreateRandomAutoCard(), PileType.Discard, Owner, CardPilePosition.Random));
+            CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(CreateRandomAutoCard(), PileType.Draw, Owner, CardPilePosition.Top));
         }
     }
 

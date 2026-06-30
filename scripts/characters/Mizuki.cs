@@ -1,12 +1,9 @@
-using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using BaseLib.Abstracts;
-using MegaCrit.Sts2.Core.Entities;
 using MegaCrit.Sts2.Core.Animation;
 using MegaCrit.Sts2.Core.Bindings.MegaSpine;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.Characters;
 using MegaCrit.Sts2.Core.Models.Relics;
 using Godot;
 using Arknights_Mizuki.Scripts.Cards;
@@ -74,6 +71,7 @@ public class Mizuki : PlaceholderCharacterModel
     // 初始遗物（暂时空，等确认游戏内遗物类名后替换）
     public override IReadOnlyList<RelicModel> StartingRelics => [
         (RelicModel)(object)ModelDb.Relic<MzkTreeBranch>(),
+        (RelicModel)(object)ModelDb.Relic<Relics.Key>()
     ];
 
     // 攻击建筑师的攻击特效列表

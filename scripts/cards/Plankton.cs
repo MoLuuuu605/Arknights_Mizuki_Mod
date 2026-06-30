@@ -33,9 +33,11 @@ public sealed class Plankton : CustomCardModel
         (DynamicVar)new DynamicVar("Times", 2m)
     };
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[]
     {
-        HoverTipFactory.FromKeyword(Monster1.monster1)
+        HoverTipFactory.FromKeyword(Monster1.monster1),
+        HoverTipFactory.FromKeyword(Monster1des.monster1des),
+        HoverTipFactory.FromPower<SeabornizationPower>()
     };
 
     public override string PortraitPath => "res://Arknights_Mizuki/images/cards/Plankton.png";

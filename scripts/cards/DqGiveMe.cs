@@ -38,7 +38,7 @@ public class DqGiveMe : CustomCardModel
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, cardPlay, false);
 
         CardPile drawPile = PileType.Draw.GetPile(Owner);
-        if (drawPile.Cards.Count <= DynamicVars["DrawPileThreshold"].BaseValue)
+        if (drawPile.Cards.Count < DynamicVars["DrawPileThreshold"].BaseValue)
             return;
 
         int pickCount = Math.Min(DynamicVars["Picks"].IntValue, drawPile.Cards.Count);

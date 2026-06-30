@@ -1,5 +1,4 @@
 using Arknights_Mizuki.Scripts.Pools;
-using Arknights_Mizuki.Scripts.Powers;
 using BaseLib.Abstracts;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
@@ -21,10 +20,8 @@ public sealed class SelfPeel : CustomCardModel
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
     {
         (DynamicVar)new DynamicVar("MaxHpLoss", 3m),
-        (DynamicVar)new EnergyVar(2)
+        (DynamicVar)new EnergyVar(1)
     };
-
-    public override IEnumerable<CardKeyword> CanonicalKeywords => new CardKeyword[1] { CardKeyword.Exhaust };
 
     public override string PortraitPath => "res://Arknights_Mizuki/images/cards/SelfPeel.png";
 
@@ -36,7 +33,6 @@ public sealed class SelfPeel : CustomCardModel
     {
         decimal loss = DynamicVars["MaxHpLoss"].BaseValue;
         await CreatureCmd.SetMaxHp(Owner.Creature, Owner.Creature.MaxHp - loss);
-        await AberrantRegenerationPower.NotifyMaxHpLoss(choiceContext, Owner.Creature, loss, cardPlay);
         await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue, Owner);
     }
 

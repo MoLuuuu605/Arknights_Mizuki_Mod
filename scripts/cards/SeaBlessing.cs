@@ -35,9 +35,11 @@ public class SeaBlessing : CustomCardModel
         (DynamicVar)new DynamicVar("Float", 2m)
     };
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[2]
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[]
     {
         HoverTipFactory.FromKeyword(Monster1.monster1),
+        HoverTipFactory.FromKeyword(Monster1des.monster1des),
+        HoverTipFactory.FromPower<SeabornizationPower>(),
         HoverTipFactory.FromKeyword(((CardModel)this).IsUpgraded ? Echo1.Echo : Echo2.Echo)
     };
 

@@ -21,7 +21,7 @@ public class Food : CustomCardModel
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
     {
         (DynamicVar)new EnergyVar(1),   // 获得 1 点能量（升级不变）
-        (DynamicVar)new CardsVar(2)      // 抽 2 张牌，升级后抽 3 张
+        (DynamicVar)new CardsVar(1)      // 抽 2 张牌，升级后抽 3 张
     };
 
     public override string PortraitPath => "res://Arknights_Mizuki/images/cards/Food.png";

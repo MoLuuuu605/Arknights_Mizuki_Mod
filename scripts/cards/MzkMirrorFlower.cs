@@ -37,17 +37,6 @@ public class MzkMirrorFlower : CustomCardModel
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        // 对所有敌人造成6点伤害2次
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-            .FromCard(this)
-            .TargetingAllOpponents(((CardModel)this).CombatState)
-            .Execute(choiceContext);
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-            .FromCard(this)
-            .TargetingAllOpponents(((CardModel)this).CombatState)
-            .Execute(choiceContext);
-
-        // 如果敌人数量少于等于2，失去6点生命
         var opponents = ((CardModel)this).CombatState.GetOpponentsOf(Owner.Creature);
         if (opponents.Count() <= 2)
         {
@@ -59,6 +48,16 @@ public class MzkMirrorFlower : CustomCardModel
                 ((CardModel)this).Owner.Creature,
                 (CardModel)(object)this);
         }
+        // 对所有敌人造成6点伤害2次
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+            .FromCard(this)
+            .TargetingAllOpponents(((CardModel)this).CombatState)
+            .Execute(choiceContext);
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+            .FromCard(this)
+            .TargetingAllOpponents(((CardModel)this).CombatState)
+            .Execute(choiceContext);
+
     }
 
     protected override void OnUpgrade()

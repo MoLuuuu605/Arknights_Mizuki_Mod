@@ -16,7 +16,7 @@ namespace Arknights_Mizuki.Scripts.Cards;
 [Pool(typeof(MzkCardPool))]
 public class SuperSpeed : CustomCardModel
 {
-    private const int energyCost = 2;
+    private const int energyCost = 3;
     private const CardType type = CardType.Power;
     private const CardRarity rarity = CardRarity.Rare;
     private const TargetType targetType = TargetType.Self;

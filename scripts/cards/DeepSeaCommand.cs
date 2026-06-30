@@ -21,7 +21,7 @@ public sealed class DeepSeaCommand : CustomCardModel
 
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
     {
-        (DynamicVar)new PowerVar<SeabornizationPower>(2m),
+        (DynamicVar)new PowerVar<SeabornizationPower>(5m),
         new CardsVar(1)
     };
 

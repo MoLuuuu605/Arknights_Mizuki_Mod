@@ -37,7 +37,9 @@ public sealed class GroupHatching : CustomCardModel
         HoverTipFactory.FromCard<BabyHs>(),
         HoverTipFactory.FromPower<SeabornizationPower>(),
         HoverTipFactory.FromKeyword(Monster1.monster1),
-        HoverTipFactory.FromKeyword(Monster2.monster2)
+        HoverTipFactory.FromKeyword(Monster1des.monster1des),
+        HoverTipFactory.FromKeyword(Monster2.monster2),
+        HoverTipFactory.FromKeyword(Monster2des.monster2des)
 
     };
 

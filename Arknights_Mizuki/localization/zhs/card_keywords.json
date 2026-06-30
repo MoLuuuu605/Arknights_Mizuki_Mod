@@ -14,12 +14,12 @@
     "ARKNIGHTS_MIZUKI-SPUTTER.title":"溅射",
     "ARKNIGHTS_MIZUKI-SPUTTER.description":"对攻击目标外的其他敌人造成50%的伤害",
     "ARKNIGHTS_MIZUKI-MONSTER1.title":"漂浮",
-    "ARKNIGHTS_MIZUKI-MONSTER1.description":"召唤浮海飘移者，若其已存在，给予其数值层[blue]海嗣化[/blue]",
-    "ARKNIGHTS_MIZUKI-MONSTER2.title":"收获",
-    "ARKNIGHTS_MIZUKI-MONSTER2.description":"召唤钵海收割者，若其已存在，给予其数值层[blue]海嗣化[/blue]",
-    "ARKNIGHTS_MIZUKI-MONSTER3.title":"爬行",
-    "ARKNIGHTS_MIZUKI-MONSTER3.description":"召唤囊海爬行者，若其已存在，给予其数值层[blue]海嗣化[/blue]",
-    "ARKNIGHTS_MIZUKI-MONSTER.title":"召唤",
-    "ARKNIGHTS_MIZUKI-MONSTET.description":"召唤的随从每回合获得一次主动行动"
+    "ARKNIGHTS_MIZUKI-MONSTER1.description":"召唤浮海飘移者，若其已存在，给予其等量[blue]海嗣化[/blue]。",
+    "ARKNIGHTS_MIZUKI-MONSTER2.title":"收割",
+    "ARKNIGHTS_MIZUKI-MONSTER2.description":"召唤钵海收割者，若其已存在，给予其等量[blue]海嗣化[/blue]。",
+    "ARKNIGHTS_MIZUKI-MONSTER1DES.title":"浮海漂移者",
+    "ARKNIGHTS_MIZUKI-MONSTER1DES.description":"每回合一次，主动点击给予一名友方单位[blue]5[/blue]点格挡。\n行动后失去[blue]1[/blue]点生命。",
+    "ARKNIGHTS_MIZUKI-MONSTER2DES.title":"钵海收割者",
+    "ARKNIGHTS_MIZUKI-MONSTER2DES.description":"每回合一次，主动点击对所有敌人造成[blue]4[/blue]点伤害。\n行动后失去[blue]1[/blue]点生命。"
     
 }

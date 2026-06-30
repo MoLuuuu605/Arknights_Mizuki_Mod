@@ -52,10 +52,20 @@ public sealed class Izumik : CustomMonsterModel
     public override async Task AfterAddedToRoom()
     {
         await base.AfterAddedToRoom();
+        var choiceContext = new ThrowingPlayerChoiceContext();
         await PowerCmd.Apply<IzumikPhaseShiftPower>(
-            new ThrowingPlayerChoiceContext(),
+            choiceContext,
             Creature,
             Math.Ceiling(Creature.MaxHp / 2m),
+            Creature,
+            null,
+            false);
+        var playernum=Creature.CombatState.Players.Count();
+        var usingAmount = playernum * ExplainPower.CardPerEnergy;
+        await PowerCmd.Apply<ExplainPower>(
+            choiceContext,
+            Creature,
+            usingAmount,
             Creature,
             null,
             false);
@@ -298,6 +308,11 @@ public sealed class Izumik : CustomMonsterModel
 
     private async Task EnterPhaseTwo()
     {
+        foreach (PowerModel power in Creature.Powers.ToList())
+        {
+            if (power.Type is PowerType.Debuff)
+                await PowerCmd.Remove(power);
+        }
         if (phaseTwoStarted)
             return;
 

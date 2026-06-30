@@ -29,13 +29,15 @@ public sealed class SymbioticShell : CustomCardModel
 
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
     {
-        (DynamicVar)new BlockVar(8m, (ValueProp)4),
-        (DynamicVar)new DynamicVar("Float", 3m)
+        (DynamicVar)new BlockVar(3m, ValueProp.Move),
+        (DynamicVar)new DynamicVar("Float", 2m)
     };
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[]
     {
-        HoverTipFactory.FromKeyword(Monster1.monster1)
+        HoverTipFactory.FromKeyword(Monster1.monster1),
+        HoverTipFactory.FromKeyword(Monster1des.monster1des),
+        HoverTipFactory.FromPower<SeabornizationPower>()
     };
 
     public override string PortraitPath => "res://Arknights_Mizuki/images/cards/SymbioticShell.png";

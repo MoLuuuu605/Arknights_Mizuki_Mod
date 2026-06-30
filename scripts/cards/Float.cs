@@ -38,9 +38,11 @@ public sealed class Float : CustomCardModel
     ) == true;
 }
     public override string PortraitPath => "res://Arknights_Mizuki/images/cards/Float.png";
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[3]
 	{
-        HoverTipFactory.FromKeyword(Monster1.monster1)
+        HoverTipFactory.FromKeyword(Monster1.monster1),
+        HoverTipFactory.FromKeyword(Monster1des.monster1des),
+        HoverTipFactory.FromPower<SeabornizationPower>()
 	};
     public override IEnumerable<CardKeyword> CanonicalKeywords => new CardKeyword[]
     {

@@ -1,5 +1,6 @@
 using Arknights_Mizuki.Scripts.keywords;
 using Arknights_Mizuki.Scripts.Pools;
+using Arknights_Mizuki.Scripts.Powers;
 using BaseLib.Abstracts;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
@@ -27,9 +28,11 @@ public class IronWave : CustomCardModel
         (DynamicVar)new BlockVar(6m, ValueProp.Move),
         (DynamicVar)new DynamicVar("Float", 1m)
     };
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[]
     {
-        HoverTipFactory.FromKeyword(Monster1.monster1)
+        HoverTipFactory.FromKeyword(Monster1.monster1),
+        HoverTipFactory.FromKeyword(Monster1des.monster1des),
+        HoverTipFactory.FromPower<SeabornizationPower>()
     };
     public override string PortraitPath => "res://Arknights_Mizuki/images/cards/IronWave.png";
 

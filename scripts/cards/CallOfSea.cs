@@ -34,10 +34,12 @@ public sealed class CallOfSea : CustomCardModel
         (DynamicVar)new PowerVar<CallOfSeaPower>(1m)
     };
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[3]
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[]
     {
         HoverTipFactory.FromKeyword(Monster1.monster1),
+        HoverTipFactory.FromKeyword(Monster1des.monster1des),
         HoverTipFactory.FromKeyword(Monster2.monster2),
+        HoverTipFactory.FromKeyword(Monster2des.monster2des),
         HoverTipFactory.FromPower<CallOfSeaPower>()
     };
 

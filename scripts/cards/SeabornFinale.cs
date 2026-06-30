@@ -24,7 +24,7 @@ public sealed class SeabornFinale : CustomCardModel
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
     {
         (DynamicVar)new DamageVar(0m, ValueProp.Move),
-        (DynamicVar)new IntVar("Hits", 3m)
+        (DynamicVar)new IntVar("Hits", 2m)
     };
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
@@ -43,7 +43,7 @@ public sealed class SeabornFinale : CustomCardModel
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         List<CardModel> babies = PileType.Draw.GetPile(Owner).Cards
-            .Concat(PileType.Discard.GetPile(Owner).Cards)
+            .Concat(PileType.Exhaust.GetPile(Owner).Cards)
             .Where(card => card is BabyHs)
             .ToList();
 
@@ -62,10 +62,6 @@ public sealed class SeabornFinale : CustomCardModel
             enemies = enemies.Where(enemy => enemy.IsAlive).ToList();
         }
 
-        foreach (CardModel baby in babies)
-        {
-            await CardCmd.Exhaust(choiceContext, baby);
-        }
     }
 
     protected override void OnUpgrade()

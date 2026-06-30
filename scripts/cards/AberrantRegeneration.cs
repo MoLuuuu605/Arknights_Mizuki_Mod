@@ -5,7 +5,6 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 
@@ -22,12 +21,7 @@ public sealed class AberrantRegeneration : CustomCardModel
 
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[1]
     {
-        (DynamicVar)new PowerVar<AberrantRegenerationPower>(1m)
-    };
-
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
-    {
-        HoverTipFactory.FromPower<AberrantRegenerationPower>()
+        (DynamicVar)new PowerVar<AberrantRegenerationPower>(2m)
     };
 
     public override string PortraitPath => "res://Arknights_Mizuki/images/cards/AberrantRegeneration.png";
