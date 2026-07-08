@@ -27,7 +27,11 @@ public class Overload : CustomCardModel
     private const bool shouldShowInCardLibrary = true;
 
     // 鍗＄墝鐨勫熀纭€灞炴€э紙鏍兼尅鍊硷級
-    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[0];
+    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[]
+    {
+        (DynamicVar)new CardsVar(2),
+        new DynamicVar("CardsAdd",2)
+    };
 public override IEnumerable<CardKeyword> CanonicalKeywords => (IEnumerable<CardKeyword>)(object)new CardKeyword[1] { CardKeyword.Exhaust };
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[2]
 	{
@@ -42,16 +46,18 @@ public override IEnumerable<CardKeyword> CanonicalKeywords => (IEnumerable<CardK
     // 鎵撳嚭鏃剁殑鏁堟灉閫昏緫
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(CombatState.CreateCard<Share>(Owner), PileType.Draw,Owner,CardPilePosition.Random));
+        for(int i=0;i<DynamicVars["CardsAdd"].BaseValue;i++)
+        {
+                CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(CombatState.CreateCard<Share>(Owner), PileType.Draw,Owner,CardPilePosition.Random));
+        }
+      
         CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(CombatState.CreateCard<Hurt>(Owner), PileType.Discard,Owner,CardPilePosition.Random));
-        CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(CombatState.CreateCard<Share>(Owner), PileType.Draw,Owner,CardPilePosition.Random));
-        CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(CombatState.CreateCard<Share>(Owner), PileType.Draw,Owner,CardPilePosition.Random));
-        await CardPileCmd.Draw(choiceContext, 1, ((CardModel)this).Owner, false);
+        await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, ((CardModel)this).Owner, false);
     }
 
     protected override void OnUpgrade()
     {
-        this.RemoveKeyword(CardKeyword.Exhaust);
+        this.DynamicVars["CardsAdd"].UpgradeValueBy(1);
     }
 }
 

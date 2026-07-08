@@ -1,12 +1,12 @@
-{
-  "ARKNIGHTS_MIZUKI-SANITY_POWER.smartDescription": "At [blue]{TriggerThreshold}[/blue] stacks, triggers a Neural Damage burst.\nThe next Neural Damage burst deals [blue]{Damage}[/blue] damage to this enemy.",
-  "ARKNIGHTS_MIZUKI-SANITY_POWER.description": "At [blue]{TriggerThreshold}[/blue] stacks, trigger a Neural Damage burst.",
+﻿{
+  "ARKNIGHTS_MIZUKI-SANITY_POWER.smartDescription": "At [blue]{TriggerThreshold}[/blue] stacks, trigger a [gold]Neural Damage burst[/gold].\nThe next burst deals [blue]{Damage}[/blue] damage to this enemy.",
+  "ARKNIGHTS_MIZUKI-SANITY_POWER.description": "At [blue]{TriggerThreshold}[/blue] stacks, trigger a [gold]Neural Damage burst[/gold].",
   "ARKNIGHTS_MIZUKI-SANITY_POWER.title": "Neural Damage",
-  "ARKNIGHTS_MIZUKI-SANITY_BURST_DESCRIPTION_POWER.description": "Deals [blue]10 + 20%[/blue] of max HP as damage, up to [blue]30[/blue]. After bursting, the next Neural Damage burst deals an additional [blue]10%[/blue] of max HP and its damage cap increases by [blue]15[/blue]. In multiplayer, each additional player raises that cap increase by another [blue]10[/blue].\nThen clears all [gold]Neural Damage[/gold] stacks.",
+  "ARKNIGHTS_MIZUKI-SANITY_BURST_DESCRIPTION_POWER.description": "Deals [blue]{BaseDamage}[/blue] damage.\nAfter each burst, later [gold]Neural Damage bursts[/gold] deal [blue]{DamageGrowth}%[/blue] more damage.\nThen clears all [gold]Neural Damage[/gold] stacks, makes the target lose [blue]1[/blue] Strength this turn, and applies [blue]1[/blue] Weak.",
   "ARKNIGHTS_MIZUKI-SANITY_BURST_DESCRIPTION_POWER.title": "Neural Damage Burst",
-  "ARKNIGHTS_MIZUKI-SANITY_MULTIPLIER_POWER.description": "The next Neural Damage burst deals {Amount}% more damage and its damage cap increases by {Amount}.",
+  "ARKNIGHTS_MIZUKI-SANITY_MULTIPLIER_POWER.description": "Each stack multiplies later [gold]Neural Damage bursts[/gold] by [blue]115%[/blue].",
   "ARKNIGHTS_MIZUKI-SANITY_MULTIPLIER_POWER.title": "Deepened Neural Damage",
-  "ARKNIGHTS_MIZUKI-SANITY_UNLIMIT_POWER.description": "Each stack increases Neural Damage burst's damage cap by 20.",
+  "ARKNIGHTS_MIZUKI-SANITY_UNLIMIT_POWER.description": "Each stack makes [gold]Neural Damage bursts[/gold] deal an additional [blue]20%[/blue] damage.",
   "ARKNIGHTS_MIZUKI-SANITY_UNLIMIT_POWER.title": "Damage Unbound",
   "ARKNIGHTS_MIZUKI-SANITY_BURST_POWER.description": "Whenever Neural Damage bursts, gain 1 [blue]Damage Unbound[/blue].",
   "ARKNIGHTS_MIZUKI-SANITY_BURST_POWER.title": "Counter-Empathy",
@@ -91,5 +91,16 @@
   "ARKNIGHTS_MIZUKI-ABERRANT_REGENERATION_POWER.smartDescription": "Whenever you lose HP, gain that much Block {Amount} times.",
   "ARKNIGHTS_MIZUKI-ERODE_TIDE_POWER.smartDescription": "Whenever you play a card, apply [blue]{Amount}[/blue] [blue]Neural Damage[/blue] to all enemies.",
   "ARKNIGHTS_MIZUKI-SEABORNING_POOL.smartDescription": "At the start of your turn, add {Amount} [gold]Juvenile Seaborn[/gold] to the bottom of your draw pile.",
-  "ARKNIGHTS_MIZUKI-STEALTH_POWER.smartDescription": "Until the start of {Amount} turns, take [blue]30%[/blue] less damage."
+  "ARKNIGHTS_MIZUKI-STEALTH_POWER.smartDescription": "Until the start of {Amount} turns, take [blue]30%[/blue] less damage.",
+  "ARKNIGHTS_MIZUKI-SANITY_BURST_DESCRIPTION_POWER.smartDescription": "Deals [blue]{BaseDamage}[/blue] damage.\nAfter each burst, later [gold]Neural Damage bursts[/gold] deal [blue]{DamageGrowth}%[/blue] more damage.\nThen clears all [gold]Neural Damage[/gold] stacks, makes the target lose [blue]1[/blue] Strength this turn, and applies [blue]1[/blue] Weak.",
+  "ARKNIGHTS_MIZUKI-SANITY_MULTIPLIER_POWER.smartDescription": "Each stack multiplies later [gold]Neural Damage bursts[/gold] by [blue]115%[/blue].",
+  "ARKNIGHTS_MIZUKI-IZUMIK_OFFSPRING_GUARD_POWER.title": "Offspring Guard",
+  "ARKNIGHTS_MIZUKI-IZUMIK_OFFSPRING_GUARD_POWER.description": "While an offspring is present, unblocked damage Izumik would take is randomly redirected to one offspring.",
+  "ARKNIGHTS_MIZUKI-SHADOW_EVOLUTION_POWER.title": "Return",
+  "ARKNIGHTS_MIZUKI-SHADOW_EVOLUTION_POWER.description": "Whenever you play [blue]{CardsLeft}[/blue] [gold]Juvenile Seaborn[/gold], gain [blue]{Amount}[/blue] Max HP.",
+  "ARKNIGHTS_MIZUKI-SHADOW_EVOLUTION_POWER.smartDescription": "Whenever you play [blue]{CardsLeft}[/blue] [gold]Juvenile Seaborn[/gold], gain [blue]{Amount}[/blue] Max HP."
+,
+  "ARKNIGHTS_MIZUKI-SYNERGY_STRIKE_POWER.title": "Synergy Strike",
+  "ARKNIGHTS_MIZUKI-SYNERGY_STRIKE_POWER.description": "When you deal unblocked damage this turn, apply {Amount} [blue]Sanity[/blue].",
+  "ARKNIGHTS_MIZUKI-SYNERGY_STRIKE_POWER.smartDescription": "When you deal unblocked damage this turn, apply [blue]{Amount}[/blue] [blue]Sanity[/blue]."
 }

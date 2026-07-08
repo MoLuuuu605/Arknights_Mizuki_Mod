@@ -30,8 +30,8 @@ public sealed class IzumikOffspring : CustomMonsterModel
     private const string ExplodeSacrificeMoveId = "IZUMIK_OFFSPRING_EXPLODE_SACRIFICE";
     private const int AttackDamage = 7;
 
-    public override int MinInitialHp => Asc(28,24);
-    public override int MaxInitialHp => Asc(36,28);
+    public override int MinInitialHp => Asc(34,30);
+    public override int MaxInitialHp => Asc(42,34);
     protected override string VisualsPath => CustomVisualPath;
     public override string CustomVisualPath => "res://Arknights_Mizuki/enemies/son_of_izumik/son_of_izumik.tscn";
     public override NCreatureVisuals? CreateCustomVisuals() => NodeFactory<NCreatureVisuals>.CreateFromScene(CustomVisualPath);

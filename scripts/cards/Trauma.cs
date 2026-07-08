@@ -33,13 +33,7 @@ public class Trauma : CustomCardModel
     {
     }
 
-    public override async Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
-    {
-        if (card == this)
-        {
-            await CardCmd.AutoPlay(choiceContext, card, null, AutoPlayType.Default);
-        }
-    }
+
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {

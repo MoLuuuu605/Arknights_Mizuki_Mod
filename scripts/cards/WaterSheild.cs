@@ -16,7 +16,7 @@ public class WaterSheild : CustomCardModel
 {
     private const int energyCost = 1;
     private const CardType type = CardType.Skill;
-    private const CardRarity rarity = CardRarity.Common;
+    private const CardRarity rarity = CardRarity.Uncommon;
     private const TargetType targetType = TargetType.Self;
     private const bool shouldShowInCardLibrary = true;
 
@@ -33,13 +33,6 @@ public class WaterSheild : CustomCardModel
     {
     }
 
-    public override async Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
-    {
-        if (card == this)
-        {
-            await CardCmd.AutoPlay(choiceContext, card, Owner.Creature, AutoPlayType.Default);
-        }
-    }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
@@ -48,6 +41,6 @@ public class WaterSheild : CustomCardModel
     }
     protected override void OnUpgrade()
     {
-        ((CardModel)this).DynamicVars.Block.UpgradeValueBy(3m);
+        ((CardModel)this).DynamicVars.Block.UpgradeValueBy(2m);
     }
 }

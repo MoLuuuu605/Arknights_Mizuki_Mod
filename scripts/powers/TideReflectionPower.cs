@@ -28,15 +28,8 @@ public sealed class TideReflectionPower : CustomPowerModel
             return;
 
         await CreatureCmd.GainBlock(Owner, Amount, ValueProp.Move, cardPlay);
-
-        var enemies = CombatState.GetOpponentsOf(Owner)
-            .Where(enemy => enemy.IsAlive)
-            .ToList();
-        if (enemies.Count > 0)
-        {
-            var target = Owner.Player.RunState.Rng.CombatCardSelection.NextItem(enemies);
-            await PowerCmd.Apply<SanityPower>(choiceContext, target, Amount, Owner, cardPlay.Card, false);
-        }
+        var target = Owner.Player.RunState.Rng.CombatCardSelection.NextItem(CombatState.HittableEnemies);
+        await PowerCmd.Apply<SanityPower>(choiceContext, target, Amount, Owner, cardPlay.Card, false);
 
         Flash();
     }

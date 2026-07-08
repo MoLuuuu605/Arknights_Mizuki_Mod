@@ -30,8 +30,8 @@ public class SeaborningPoolPower : CustomPowerModel
             return;
 
         if(Amount == 0 )return;
-        var times = Amount * DynamicVars.Cards.BaseValue;
-        for (int i = 0 ; i<times;i++)
+        DynamicVars.Cards.BaseValue=2*Amount;
+        for (int i = 0 ; i<DynamicVars.Cards.BaseValue;i++)
         CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(CombatState.CreateCard<BabyHs>(Owner.Player),MegaCrit.Sts2.Core.Entities.Cards.PileType.Draw,Owner.Player,CardPilePosition.Bottom));
     }
 }

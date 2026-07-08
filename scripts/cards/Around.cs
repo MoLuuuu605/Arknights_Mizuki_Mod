@@ -47,12 +47,12 @@ public class Around : CustomCardModel
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await PowerCmd.Apply<WeakPower>(choiceContext, cardPlay.Target, ((DynamicVar)((CardModel)this).DynamicVars["WeakPower"]).BaseValue, ((CardModel)this).Owner.Creature, (CardModel)(object)this, false);
-        await CardPileCmd.Draw(choiceContext,this.Owner);
+        await CardPileCmd.Draw(choiceContext,DynamicVars.Cards.BaseValue,Owner);
     }   
 
     // 升级后的效果逻辑
     protected override void OnUpgrade()
     {
-        this.EnergyCost.UpgradeBy(-1);
+        this.DynamicVars.Cards.UpgradeValueBy(1);
     }
 }

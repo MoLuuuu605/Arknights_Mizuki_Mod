@@ -22,8 +22,8 @@ public sealed class FroKid : CustomCardModel
 
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
     {
-        (DynamicVar)new DamageVar(2m, (ValueProp)8),
-        (DynamicVar)new IntVar("Hits", 3m)
+        (DynamicVar)new DamageVar(3m, (ValueProp)8),
+        (DynamicVar)new IntVar("Hits", 2m)
     };
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
@@ -41,7 +41,7 @@ public sealed class FroKid : CustomCardModel
     {
         AttackCommand command = DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .WithHitCount(DynamicVars["Hits"].IntValue)
-            .FromCard(this)
+            .FromCard(this,cardPlay)
             .Targeting(cardPlay.Target);
 
         await command.Execute(choiceContext);

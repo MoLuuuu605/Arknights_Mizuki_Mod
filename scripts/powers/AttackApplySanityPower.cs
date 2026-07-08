@@ -2,7 +2,6 @@ using BaseLib.Abstracts;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.Commands.Builders;
 
 
@@ -37,6 +36,7 @@ public sealed class AttackApplySanityPower : CustomPowerModel
         {
             foreach (var damageResult in hitResults)
             {
+                if(damageResult.UnblockedDamage<=0)continue;
                 var target = damageResult.Receiver;
                 
                 if (target != null && target.IsAlive && target != Owner)

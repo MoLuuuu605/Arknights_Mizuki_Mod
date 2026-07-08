@@ -18,7 +18,7 @@ public sealed class Observation : CustomRelicModel
 
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[]
     {
-        new BlockVar(2m, ValueProp.Unpowered)
+        new BlockVar(4m, ValueProp.Unpowered)
     };
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => new IHoverTip[]

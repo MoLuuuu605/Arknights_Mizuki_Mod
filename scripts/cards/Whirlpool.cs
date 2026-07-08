@@ -38,7 +38,7 @@ public class Whirlpool : CustomCardModel
     {
         // 对所有敌人造成2点伤害4
             await DamageCmd.Attack(DynamicVars.Damage.BaseValue).WithHitCount(this.DynamicVars.Repeat.IntValue)
-            .FromCard(this)
+            .FromCard(this,cardPlay)
             .TargetingRandomOpponents(CombatState)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);

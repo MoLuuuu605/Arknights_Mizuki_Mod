@@ -5,6 +5,7 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 
@@ -19,11 +20,16 @@ public class Shadow : CustomCardModel
     private const TargetType targetType = TargetType.Self;
     private const bool shouldShowInCardLibrary = true;
 
-    public override string PortraitPath => "res://Arknights_Mizuki/images/cards/Shadow.png";
+    public override string PortraitPath => "res://Arknights_Mizuki/images/cards/ShadowReturn.png";
 
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[1]
     {
-        (DynamicVar)new PowerVar<ShadowFlagPower>(1m)
+        (DynamicVar)new PowerVar<ShadowEvolutionPower>(1m)
+    };
+
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IReadOnlyList<IHoverTip>)(object)new IHoverTip[1]
+    {
+        HoverTipFactory.FromCard<BabyHs>()
     };
 
     public Shadow()
@@ -33,10 +39,10 @@ public class Shadow : CustomCardModel
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay _)
     {
-        await PowerCmd.Apply<ShadowFlagPower>(
+        await PowerCmd.Apply<ShadowEvolutionPower>(
             choiceContext,
             ((CardModel)this).Owner.Creature,
-            ((CardModel)this).DynamicVars["ShadowFlagPower"].BaseValue,
+            ((CardModel)this).DynamicVars["ShadowEvolutionPower"].BaseValue,
             ((CardModel)this).Owner.Creature,
             (CardModel)(object)this,
             false

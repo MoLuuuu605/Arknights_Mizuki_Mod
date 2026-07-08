@@ -34,6 +34,11 @@ public class SpeedUp : CustomCardModel
 	{
 		HoverTipFactory.FromCard<Learn>()
 	};
+
+        public override IEnumerable<CardKeyword> CanonicalKeywords => new CardKeyword[]
+    {
+        CardKeyword.Exhaust
+    };
     public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/SpeedUp.png";
     public SpeedUp() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
     {
@@ -51,7 +56,6 @@ public class SpeedUp : CustomCardModel
 
     protected override void OnUpgrade()
     {
-        this.AddKeyword(CardKeyword.Innate);
         this.EnergyCost.UpgradeBy(-1);
     }
 }

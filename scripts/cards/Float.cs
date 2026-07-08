@@ -27,9 +27,10 @@ public sealed class Float : CustomCardModel
     private const TargetType targetType = TargetType.Self;
     private const bool shouldShowInCardLibrary = true;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[1]
+    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[]
     {
-        (DynamicVar)new CardsVar(2)      // 抽 2 张牌，升级后抽 3 张
+        (DynamicVar)new CardsVar(3),
+        new DynamicVar("Float",3)      // 抽 2 张牌，升级后抽 3 张
     };
     static public bool HasMinion<T>(Player player) where T : MinionModel
 {
@@ -67,7 +68,7 @@ public sealed class Float : CustomCardModel
         else 
         {
             Creature? pet = Owner.PlayerCombatState?.Pets.FirstOrDefault(p => p.Monster is FloatingSeaMinion);
-            await PowerCmd.Apply<SeabornizationPower>(choiceContext,pet,3,pet,null);
+            await PowerCmd.Apply<SeabornizationPower>(choiceContext,pet,DynamicVars["Float"].BaseValue,pet,null);
         }
         await CardPileCmd.Draw(choiceContext,DynamicVars.Cards.BaseValue,Owner);
     }
@@ -75,6 +76,6 @@ public sealed class Float : CustomCardModel
     protected override void OnUpgrade()
     {
         // 升级：抽牌 2 → 3
-        base.DynamicVars.Cards.UpgradeValueBy(1m);
+        base.DynamicVars["Float"].UpgradeValueBy(2m);
     }
 }

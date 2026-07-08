@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Models;
 
 using Arknights_Mizuki.Scripts.Pools;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.HoverTips;
 
 namespace Arknights_Mizuki.Scripts.Cards;
 
@@ -24,12 +25,18 @@ public class SeaWhisper : CustomCardModel
     {
         (DynamicVar)new PowerVar<StrengthPower>(2m),
         new PowerVar<DexterityPower>(2m),
-        new PowerVar<ArtifactPower>(1m)
+        new PowerVar<ArtifactPower>(2m)
     };
     public override IEnumerable<CardKeyword> CanonicalKeywords => new CardKeyword[]
     {
         CardKeyword.Exhaust  // 
     };
+
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+      HoverTipFactory.FromPower<StrengthPower>(),
+      HoverTipFactory.FromPower<DexterityPower>(),
+    HoverTipFactory.FromPower<ArtifactPower>()  
+    ];
 
     public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/SeaWhisper.png";
 

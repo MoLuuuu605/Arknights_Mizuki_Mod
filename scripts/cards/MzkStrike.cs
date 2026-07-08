@@ -6,7 +6,6 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.HoverTips;
 
 using Arknights_Mizuki.Scripts.Pools;
 using Arknights_Mizuki.Scripts.Powers;
@@ -30,17 +29,12 @@ public class MzkStrike : CustomCardModel
     private const bool shouldShowInCardLibrary = true;
 
     // 卡牌的基础属性（例如这里是12点伤害）
-    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
+    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[]
 	{
 		(DynamicVar)new DamageVar(5m, (ValueProp)8),
-		(DynamicVar)new PowerVar<SanityPower>(1m)
+        new PowerVar<SanityPower>(1)
 	};
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[2]
-    {
-        HoverTipFactory.FromPower<SanityPower>(),
-HoverTipFactory.FromPower<SanityBurstDescriptionPower>()
-    };
 
     public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/Strike.png";
 
@@ -52,16 +46,17 @@ HoverTipFactory.FromPower<SanityBurstDescriptionPower>()
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue) // 造成伤害，数值来源于卡牌的基础伤害属性
-            .FromCard(this) // 伤害来源于这张卡牌
+            .FromCard(this,cardPlay) // 伤害来源于这张卡牌
             .Targeting(cardPlay.Target) // 伤害目标是玩家选择的目标
             .Execute(choiceContext);
-        await PowerCmd.Apply<SanityPower>(choiceContext, cardPlay.Target, ((DynamicVar)((CardModel)this).DynamicVars["SanityPower"]).BaseValue, ((CardModel)this).Owner.Creature, (CardModel)(object)this, false);
+        if(cardPlay.Target.IsAlive)
+        await PowerCmd.Apply<SanityPower>(choiceContext, cardPlay.Target, DynamicVars["SanityPower"].BaseValue,Owner.Creature,null);
     }
 
     // 升级后的效果逻辑
     protected override void OnUpgrade()
     {
-		((DynamicVar)((CardModel)this).DynamicVars.Damage).UpgradeValueBy(3m);
-		((DynamicVar)((CardModel)this).DynamicVars["SanityPower"]).UpgradeValueBy(1m);
+		((DynamicVar)((CardModel)this).DynamicVars.Damage).UpgradeValueBy(2m);
+        this.DynamicVars["SanityPower"].UpgradeValueBy(1);
     }
 }

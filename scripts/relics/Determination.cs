@@ -48,7 +48,7 @@ public sealed class Determination : CustomRelicModel
             .ToList();
 
         if (curses.Count == 0)
-        {
+        { 
             curses.Add(ModelDb.Card<Doubt>());
         }
 
@@ -58,6 +58,6 @@ public sealed class Determination : CustomRelicModel
     public override async Task BeforeCombatStart()
     {
         CardModel slimed = Owner.Creature.CombatState.CreateCard<Slimed>(Owner);
-        CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(slimed, PileType.Hand, Owner));
+        await CardPileCmd.AddGeneratedCardToCombat(slimed, PileType.Hand, Owner);
     }
 }

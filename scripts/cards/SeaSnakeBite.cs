@@ -21,7 +21,7 @@ public class SeaSnakeBite : CustomCardModel
     // 卡牌类型
     private const CardType type = CardType.Skill;
     // 卡牌稀有度
-    private const CardRarity rarity = CardRarity.Uncommon;
+    private const CardRarity rarity = CardRarity.Common;
     // 目标类型（AnyEnemy表示任意敌人）
     private const TargetType targetType = TargetType.AnyEnemy;
     // 是否在卡牌图鉴中显示
@@ -30,7 +30,7 @@ public class SeaSnakeBite : CustomCardModel
     // 卡牌的基础属性（例如这里是12点伤害）
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[1]
 	{
-		(DynamicVar)new PowerVar<SanityPower>(6m)
+		(DynamicVar)new PowerVar<SanityPower>(5m)
 	};
     public override IEnumerable<CardKeyword> CanonicalKeywords => (IEnumerable<CardKeyword>)(object)new CardKeyword[1] { (CardKeyword)5 };
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[2]

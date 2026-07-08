@@ -43,6 +43,6 @@ public sealed class BlueLifeBloom : CustomCardModel
 
     protected override void OnUpgrade()
     {
-        AddKeyword(CardKeyword.Innate);
+        this.DynamicVars["BlueLifeBloomPower"].UpgradeValueBy(1);
     }
 }

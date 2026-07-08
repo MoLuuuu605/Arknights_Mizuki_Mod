@@ -90,8 +90,8 @@ animations = [{
 
 [node name="Visuals" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(121, -169.00002)
-scale = Vector2(0.48550007, 0.47475)
+position = Vector2(103, -107)
+scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_e8q87")
 animation = &"idle_loop"
 autoplay = "idle_loop"
@@ -102,19 +102,19 @@ script = ExtResource("399_y1amw")
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 0
-offset_left = -38.0
-offset_top = -276.0
-offset_right = 281.0
-offset_bottom = 24.0
+offset_left = 4.0
+offset_top = -150.0
+offset_right = 206.0
+offset_bottom = 7.0
 
 [node name="IntentPos" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(103, -168)
+position = Vector2(101, -63)
 
 [node name="CenterPos" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(97, -180)
+position = Vector2(99, -65)
 
 [node name="TalkPos" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(103, -230)
+position = Vector2(101, -65)

@@ -17,7 +17,8 @@ namespace Arknights_Mizuki.Scripts.Cards;
 [Pool(typeof(MzkCardPool))]
 public class ValStrike : CustomCardModel
 {
-    // 基础耗能
+    // 基础耗能\
+
     private const int energyCost = 1;
     protected override HashSet<CardTag> CanonicalTags => new HashSet<CardTag> { CardTag.Strike };
     // 卡牌类型
@@ -51,9 +52,10 @@ public class ValStrike : CustomCardModel
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue) // 造成伤害，数值来源于卡牌的基础伤害属性
-            .FromCard(this) // 伤害来源于这张卡牌
+            .FromCard(this,cardPlay) // 伤害来源于这张卡牌
             .Targeting(cardPlay.Target) // 伤害目标是玩家选择的目标
             .Execute(choiceContext);
+        if(cardPlay.Target.IsAlive)
         await PowerCmd.Apply<VulnerablePower>(choiceContext, cardPlay.Target, ((DynamicVar)((CardModel)this).DynamicVars["VulnerablePower"]).BaseValue, ((CardModel)this).Owner.Creature, (CardModel)(object)this, false);
     }
 

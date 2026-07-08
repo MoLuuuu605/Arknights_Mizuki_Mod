@@ -6,7 +6,6 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Arknights_Mizuki.Scripts.Cards;
 
@@ -14,14 +13,15 @@ namespace Arknights_Mizuki.Scripts.Cards;
 public sealed class HatchTide : CustomCardModel
 {
     private const int energyCost = 1;
-    private const CardType type = CardType.Skill;
-    private const CardRarity rarity = CardRarity.Uncommon;
-    private const TargetType targetType = TargetType.Self;
+    private const CardType type = CardType.Attack;
+    private const CardRarity rarity = CardRarity.Common;
+    private const TargetType targetType = TargetType.AnyEnemy;
     private const bool shouldShowInCardLibrary = true;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[1]
+    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[]
     {
-        (DynamicVar)new CardsVar(2)
+        (DynamicVar)new CardsVar(2),
+        new RepeatVar(3),
     };
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
@@ -48,11 +48,14 @@ public sealed class HatchTide : CustomCardModel
 
         int babyCount = PileType.Draw.GetPile(Owner).Cards.Count(card => card is BabyHs);
         if (babyCount > 0)
-            await CreatureCmd.GainBlock(Owner.Creature, new BlockVar(babyCount, ValueProp.Move), cardPlay, false);
+        await DamageCmd.Attack(babyCount*DynamicVars.Repeat.IntValue)
+        .FromCard(this,cardPlay)
+        .Targeting(cardPlay.Target)
+        .Execute(choiceContext);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Cards.UpgradeValueBy(1m);
+        DynamicVars.Cards.UpgradeValueBy(1);
     }
 }

@@ -23,7 +23,7 @@ public class DqGiveMe : CustomCardModel
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[3]
     {
         (DynamicVar)new BlockVar(6m, (ValueProp)8),
-        (DynamicVar)new DynamicVar("DrawPileThreshold", 15m),
+        (DynamicVar)new DynamicVar("DrawPileThreshold", 10m),
         (DynamicVar)new IntVar("Picks", 1m)
     };
 
@@ -58,7 +58,6 @@ public class DqGiveMe : CustomCardModel
     protected override void OnUpgrade()
     {
         DynamicVars["Picks"].UpgradeValueBy(1m);
-        DynamicVars["DrawPileThreshold"].UpgradeValueBy(-5m);
     }
 }
 

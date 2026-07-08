@@ -12,10 +12,12 @@ namespace Arknights_Mizuki.Scripts.Enchantments;
 
 public sealed class RevelationEnchantment : CustomEnchantmentModel
 {
+
+    private bool used=false;
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[]
     {
         new CardsVar(2),
-        new DynamicVar("Hp", 5m),
+        new DynamicVar("Hp", 4m),
         new PowerVar<SanityPower>(4m)
     };
 
@@ -31,7 +33,8 @@ HoverTipFactory.FromPower<SanityBurstDescriptionPower>()
 
     public override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay? cardPlay)
     {
-        int roll = Card.Owner.RunState.Rng.CombatCardSelection.NextInt(10);
+        if(used)return;
+        int roll = Card.Owner.RunState.Rng.Niche.NextInt(10);
         if (roll < 3)
         {
             await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.IntValue, Card.Owner);
@@ -46,20 +49,18 @@ HoverTipFactory.FromPower<SanityBurstDescriptionPower>()
 
         if (roll < 9)
         {
-            IReadOnlyList<Creature> enemies = Card.CombatState.HittableEnemies;
-            if (enemies.Count > 0)
-            {
-                Creature target = Card.Owner.RunState.Rng.CombatTargets.NextItem(enemies);
-                await PowerCmd.Apply<SanityPower>(
-                    choiceContext,
-                    target,
-                    DynamicVars["SanityPower"].BaseValue,
-                    Card.Owner.Creature,
-                    Card);
-            }
+
+            Creature target = Card.Owner.RunState.Rng.CombatTargets.NextItem(Card.CombatState.HittableEnemies);
+            await PowerCmd.Apply<SanityPower>(
+                choiceContext,
+                target,
+                DynamicVars["SanityPower"].BaseValue,
+                Card.Owner.Creature,
+                Card);
             return;
         }
-
+        
         await RelicCmd.Obtain(RelicFactory.PullNextRelicFromFront(Card.Owner).ToMutable(), Card.Owner);
+        used = true;
     }
 }

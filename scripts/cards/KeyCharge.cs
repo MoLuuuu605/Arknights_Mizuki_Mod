@@ -17,6 +17,7 @@ public sealed class KeyCharge : CustomCardModel
     private const CardRarity rarity = CardRarity.Common;
     private const TargetType targetType = TargetType.Self;
     private const bool shouldShowInCardLibrary = false;
+        public override int MaxUpgradeLevel => 0;
 
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[]
     {

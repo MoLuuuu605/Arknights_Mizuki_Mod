@@ -26,9 +26,10 @@ public class ErodeTide : CustomCardModel
         (DynamicVar)new PowerVar<ErodeTidePower>(1m)
     };
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[]
     {
-        HoverTipFactory.FromPower<ErodeTidePower>()
+        HoverTipFactory.FromPower<SanityPower>(),
+        HoverTipFactory.FromPower<SanityBurstDescriptionPower>()
     };
 
     public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/erode_tide.png";

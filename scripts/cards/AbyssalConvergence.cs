@@ -1,8 +1,10 @@
+using Arknights_Mizuki.Scripts.keywords;
 using Arknights_Mizuki.Scripts.Pools;
 using BaseLib.Abstracts;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 
@@ -24,6 +26,15 @@ public sealed class AbyssalConvergence : CustomCardModel
         (DynamicVar)new DynamicVar("Float", 2m),
         (DynamicVar)new DynamicVar("Harvest", 2m),
         (DynamicVar)new DynamicVar("BonusRepeats", 0m)
+    };
+
+        protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[]
+    {
+        HoverTipFactory.FromKeyword(Monster1.monster1),
+        HoverTipFactory.FromKeyword(Monster1des.monster1des),
+        HoverTipFactory.FromKeyword(Monster2.monster2),
+        HoverTipFactory.FromKeyword(Monster2des.monster2des),
+
     };
 
     public override string PortraitPath => "res://Arknights_Mizuki/images/cards/AbyssalConvergence.png";

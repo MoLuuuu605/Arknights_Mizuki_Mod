@@ -1,7 +1,6 @@
 using BaseLib.Abstracts;
 using MegaCrit.Sts2.Core.Bindings.MegaSpine;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.Monsters;
 using MegaCrit.Sts2.Core.Rooms;
 using Arknights_Mizuki.Scripts.Acts;
 
@@ -16,7 +15,6 @@ public sealed class SingularityBossEncounter : CustomEncounterModel
     public override IEnumerable<MonsterModel> AllPossibleMonsters => new MonsterModel[]
     {
         ModelDb.Monster<Izumik>(),
-        ModelDb.Monster<IzumikOffspring>()
     };
 
     public override string BossNodePath => IconPath;
@@ -38,7 +36,7 @@ public sealed class SingularityBossEncounter : CustomEncounterModel
 
     protected override IReadOnlyList<(MonsterModel, string?)> GenerateMonsters()
     {
-        return new (MonsterModel, string?)[]
+        return new (MonsterModel, string?)[] 
         {
             (ModelDb.Monster<Izumik>().ToMutable(), null)
         };

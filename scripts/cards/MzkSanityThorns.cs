@@ -28,9 +28,11 @@ public class MzkSanityThorns : CustomCardModel
         (DynamicVar)new BlockVar(10m, (ValueProp)8)
     };
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[]
     {
-        HoverTipFactory.FromPower<SanityThornsPower>()
+        HoverTipFactory.FromPower<SanityThornsPower>(),
+        HoverTipFactory.FromPower<SanityPower>(),
+        HoverTipFactory.FromPower<SanityBurstDescriptionPower>()
     };
 
     public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/sanity_thorns.png";

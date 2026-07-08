@@ -27,7 +27,7 @@ public class BlueSeed : CustomCardModel
 
 	protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
     {
-		(DynamicVar)new EnergyVar(1),
+		(DynamicVar)new EnergyVar(2),
 		(DynamicVar)new PowerVar<BlueSeedPower>(1m)
 	};
 
@@ -43,7 +43,6 @@ public class BlueSeed : CustomCardModel
 
 	protected override void OnUpgrade()
 	{
-		((CardModel)this).AddKeyword(CardKeyword.Innate);
 		this.EnergyCost.UpgradeBy(-1);
 	}
 }

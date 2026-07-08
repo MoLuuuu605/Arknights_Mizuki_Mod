@@ -1,4 +1,4 @@
-{
+﻿{
   "ARKNIGHTS_MIZUKI-MZK_STRIKE.title": "打撃",
   "ARKNIGHTS_MIZUKI-MZK_STRIKE.description": "{Damage:diff()}ダメージを与え、{SanityPower:diff()}層の[blue]神経損傷[/blue]を与える。",
   "ARKNIGHTS_MIZUKI-MZK_DEFENCE.title": "防御",
@@ -55,8 +55,8 @@
   "ARKNIGHTS_MIZUKI-HURT.description": "2ダメージを受ける。",
   "ARKNIGHTS_MIZUKI-OVERLOAD.title": "過負荷",
   "ARKNIGHTS_MIZUKI-OVERLOAD.description": "3枚の[gold]閃撃[/gold]を山札に混ぜ、捨て山に[red]損傷[/red]を1枚加える。",
-  "ARKNIGHTS_MIZUKI-SHADOW.title": "随影",
-  "ARKNIGHTS_MIZUKI-SHADOW.description": "このターン中に[gold]疾走[/gold]カードをプレイするたび、ターン終了時に敵に[blue]1[/blue]ダメージを与える。",
+  "ARKNIGHTS_MIZUKI-SHADOW.title": "回帰",
+  "ARKNIGHTS_MIZUKI-SHADOW.description": "[gold]幼体海嗣[/gold]を6枚プレイするたび、{ShadowEvolutionPower:diff()}点の[gold]最大HP[/gold]を得る。",
   "ARKNIGHTS_MIZUKI-SWEEP.title": "払掃",
   "ARKNIGHTS_MIZUKI-SWEEP.description": "すべての敵に{Damage:diff()}ダメージを与え、捨て山に眩暈を1枚加える。",
   "ARKNIGHTS_MIZUKI-BIGGE.title": "暴食",
@@ -77,11 +77,11 @@
   "ARKNIGHTS_MIZUKI-AUTO_PLAY_ALL.title": "海嗣一家",
   "ARKNIGHTS_MIZUKI-AUTO_PLAY_ALL.description": "3枚の[gold]疾走[/gold]カードを捨て山に加え、[gold]海嗣一家[/gold]を1枚得る。",
   "ARKNIGHTS_MIZUKI-ECHO_ATTACK.title": "残響斬撃",
-  "ARKNIGHTS_MIZUKI-ECHO_ATTACK.description": "[[gold]残響1[/gold]]{Damage:diff()}ダメージを2回与える。",
+  "ARKNIGHTS_MIZUKI-ECHO_ATTACK.description": "{Damage:diff()}ダメージを2回与える。\n手札にある間、あと{EchoCountdown}枚カードをプレイすると、このカードのダメージ+1。",
   "ARKNIGHTS_MIZUKI-ECHO_SANITY.title": "残響侵蝕",
-  "ARKNIGHTS_MIZUKI-ECHO_SANITY.description": "[[gold]残響2[/gold]]{SanityPower:diff()}層の[blue]神経損傷[/blue]を与える。",
+  "ARKNIGHTS_MIZUKI-ECHO_SANITY.description": "[blue]神経損傷[/blue]を{SanityPower:diff()}付与する。\n手札にある間、あと{EchoCountdown}枚カードをプレイすると、このカードが付与する[blue]神経損傷[/blue]+1。",
   "ARKNIGHTS_MIZUKI-ECHO_GENERATE_AUTO.title": "認知再構築",
-  "ARKNIGHTS_MIZUKI-ECHO_GENERATE_AUTO.description": "[[gold]残響3[/gold]]{Cards:diff()}枚の[gold]疾走[/gold]カードをランダムに捨て山に混ぜる。",
+  "ARKNIGHTS_MIZUKI-ECHO_GENERATE_AUTO.description": "ランダムな[gold]急速[/gold]カード{Cards:diff()}枚を捨て札に加える。\n手札にある間、あと{EchoCountdown}枚カードをプレイすると、加えるカード枚数+1。",
   "ARKNIGHTS_MIZUKI-END.title": "終焉",
   "ARKNIGHTS_MIZUKI-END.description": "ランダムな敵に{Damage:diff()}ダメージを{Repeat:diff()}回与える。\n無限に強化可能。",
   "ARKNIGHTS_MIZUKI-COPY.title": "鏡中の水月",
@@ -99,7 +99,7 @@
   "ARKNIGHTS_MIZUKI-INITIAL_FORM.title": "大群の初生",
   "ARKNIGHTS_MIZUKI-INITIAL_FORM.description": "{SanityProBurstPower:diff()}層の[blue]初生形態[/blue]を得る。",
   "ARKNIGHTS_MIZUKI-SEA_BLESSING.title": "海佑",
-  "ARKNIGHTS_MIZUKI-SEA_BLESSING.description": "{Block:diff()}ブロックを得る。\n[[gold]残響{IfUpgraded:show:1|2}[/gold]][gold]浮遊[/gold]{Float:diff()}。",
+  "ARKNIGHTS_MIZUKI-SEA_BLESSING.description": "[gold]ブロック[/gold]を{Block:diff()}得る。\n[gold]浮遊[/gold]{Float:diff()}。\n手札にある間、あと{EchoCountdown}枚カードをプレイすると、[gold]浮遊[/gold]+1。",
   "ARKNIGHTS_MIZUKI-WATER_SHEILD.title": "水盾",
   "ARKNIGHTS_MIZUKI-WATER_SHEILD.description": "{Block:diff()}ブロックを得て、カードを1枚引く。",
   "ARKNIGHTS_MIZUKI-BE_BIGGER.title": "増殖組織",
@@ -189,5 +189,14 @@
   "ARKNIGHTS_MIZUKI-FROZEN.title": "凍結",
   "ARKNIGHTS_MIZUKI-FROZEN.description": "ターン終了時、このカードが手札にある場合、[blue]寒冷[/blue]を1層得る。",
   "ARKNIGHTS_MIZUKI-KEY_CHARGE.title": "鍵ひとつ",
-  "ARKNIGHTS_MIZUKI-KEY_CHARGE.description": "[gold]1[/gold]つの鍵を得る。カードを{Cards:diff()}枚引く。\nその後、このカードをデッキから除去する。"
+  "ARKNIGHTS_MIZUKI-KEY_CHARGE.description": "[gold]1[/gold]つの鍵を得る。カードを{Cards:diff()}枚引く。\nその後、このカードをデッキから除去する。",
+  "ARKNIGHTS_MIZUKI-PURIFICATION.title": "浄化",
+  "ARKNIGHTS_MIZUKI-PURIFICATION.description": "味方プレイヤー全員から[blue]神経ダメージ[/blue]と[blue]神経ダメージ増加[/blue]を取り除く。"
+,
+  "ARKNIGHTS_MIZUKI-SYNERGY_STRIKE.title": "Synergy Strike",
+  "ARKNIGHTS_MIZUKI-SYNERGY_STRIKE.description": "Choose another player. When they deal unblocked damage this turn, apply {SanityPower:diff()} [blue]Sanity[/blue].",
+  "ARKNIGHTS_MIZUKI-HATCHING_INFUSION.title": "Hatching Infusion",
+  "ARKNIGHTS_MIZUKI-HATCHING_INFUSION.description": "[gold]Exhaust[/gold]. Add {Cards:diff()} [gold]Larval Seaborn[/gold] to the bottom of all players' draw piles.",
+  "ARKNIGHTS_MIZUKI-GANG_UP_SANITY.title": "Gang Up (Sanity)",
+  "ARKNIGHTS_MIZUKI-GANG_UP_SANITY.description": "Deal {Damage:diff()} damage. For each time another character has attacked this enemy this turn, apply {SanityPower:diff()} [blue]Sanity[/blue]."
 }

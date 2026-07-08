@@ -1,12 +1,12 @@
-{
-  "ARKNIGHTS_MIZUKI-SANITY_POWER.smartDescription": "[blue]{TriggerThreshold}[/blue]???????[gold]??????[/gold]??????\n?????????????[blue]{Damage}[/blue]?????????",
-  "ARKNIGHTS_MIZUKI-SANITY_POWER.description": "[blue]{TriggerThreshold}[/blue]???????[gold]??????[/gold]??????",
+﻿{
+  "ARKNIGHTS_MIZUKI-SANITY_POWER.smartDescription": "[blue]{TriggerThreshold}[/blue]層に達すると[gold]神経損傷爆発[/gold]を起こす。\n次の爆発はこの敵に[blue]{Damage}[/blue]ダメージを与える。",
+  "ARKNIGHTS_MIZUKI-SANITY_POWER.description": "[blue]{TriggerThreshold}[/blue]層に達すると[gold]神経損傷爆発[/gold]を起こす。",
   "ARKNIGHTS_MIZUKI-SANITY_POWER.title": "神経損傷",
-  "ARKNIGHTS_MIZUKI-SANITY_BURST_DESCRIPTION_POWER.description": "[blue]10 + ??HP?20%[/blue]????????????[blue]30[/blue]?????????????????????HP?[blue]10%[/blue]????????[blue]15[/blue]??????????????????????1??????????????[blue]10[/blue]?????\n????[gold]????[/gold]???????????",
+  "ARKNIGHTS_MIZUKI-SANITY_BURST_DESCRIPTION_POWER.description": "[blue]{BaseDamage}[/blue]ダメージを与える。\n爆発するたび、以後の[gold]神経損傷爆発[/gold]のダメージが[blue]{DamageGrowth}%[/blue]増加する。\nその後、[gold]神経損傷[/gold]をすべて取り除き、そのターン中に対象の筋力を[blue]1[/blue]失わせ、[blue]1[/blue]層の弱体を与える。",
   "ARKNIGHTS_MIZUKI-SANITY_BURST_DESCRIPTION_POWER.title": "神経損傷爆発",
-  "ARKNIGHTS_MIZUKI-SANITY_MULTIPLIER_POWER.description": "次回の神経損傷爆発が{Amount}%追加され、ダメージ上限が{Amount}増加する。",
+  "ARKNIGHTS_MIZUKI-SANITY_MULTIPLIER_POWER.description": "1層ごとに、以後の[gold]神経損傷爆発[/gold]のダメージが[blue]115%[/blue]倍になる。",
   "ARKNIGHTS_MIZUKI-SANITY_MULTIPLIER_POWER.title": "神経損傷深化",
-  "ARKNIGHTS_MIZUKI-SANITY_UNLIMIT_POWER.description": "1層ごとに神経損傷爆発のダメージ上限を+20する。",
+  "ARKNIGHTS_MIZUKI-SANITY_UNLIMIT_POWER.description": "1層ごとに[gold]神経損傷爆発[/gold]のダメージが追加で[blue]20%[/blue]増加する。",
   "ARKNIGHTS_MIZUKI-SANITY_UNLIMIT_POWER.title": "損傷制限解除",
   "ARKNIGHTS_MIZUKI-SANITY_BURST_POWER.description": "神経損傷爆発時、[blue]損傷制限解除[/blue]を1層得る。",
   "ARKNIGHTS_MIZUKI-SANITY_BURST_POWER.title": "反移情",
@@ -47,7 +47,7 @@
   "ARKNIGHTS_MIZUKI-SEABORNIZATION_POWER.title": "海嗣化",
   "ARKNIGHTS_MIZUKI-SEABORNIZATION_POWER.description": "従者ステータスを向上させる。",
   "ARKNIGHTS_MIZUKI-SANITY_PRO_BURST_POWER.title": "初生形態",
-  "ARKNIGHTS_MIZUKI-SANITY_PRO_BURST_POWER.description": "?????????????2?????",
+  "ARKNIGHTS_MIZUKI-SANITY_PRO_BURST_POWER.description": "神経損傷爆発に必要な層数が2減少する。",
   "ARKNIGHTS_MIZUKI-SEABORNING_POOL.title": "育生池",
   "ARKNIGHTS_MIZUKI-SEABORNING_POOL.description": "ターン開始時、2枚の[gold]幼体海嗣[/gold]を山札の底に加える。",
   "ARKNIGHTS_MIZUKI-CALL_OF_SEA_POWER.title": "深海の呼び声",
@@ -87,5 +87,16 @@
   "ARKNIGHTS_MIZUKI-ABERRANT_REGENERATION_POWER.smartDescription": "HPを失うたび、その分のブロックを{Amount}回得る。",
   "ARKNIGHTS_MIZUKI-ERODE_TIDE_POWER.smartDescription": "カードを1枚プレイするたび、すべての敵に[blue]{Amount}[/blue]層の[blue]神経損傷[/blue]を与える。",
   "ARKNIGHTS_MIZUKI-SEABORNING_POOL.smartDescription": "ターン開始時、{Amount}枚の[gold]幼体海嗣[/gold]を山札の底に加える。",
-  "ARKNIGHTS_MIZUKI-STEALTH_POWER.smartDescription": "{Amount}回のターン開始時まで、受けるダメージが[blue]30%[/blue]減少する。"
+  "ARKNIGHTS_MIZUKI-STEALTH_POWER.smartDescription": "{Amount}回のターン開始時まで、受けるダメージが[blue]30%[/blue]減少する。",
+  "ARKNIGHTS_MIZUKI-SANITY_BURST_DESCRIPTION_POWER.smartDescription": "[blue]{BaseDamage}[/blue]ダメージを与える。\n爆発するたび、以後の[gold]神経損傷爆発[/gold]のダメージが[blue]{DamageGrowth}%[/blue]増加する。\nその後、[gold]神経損傷[/gold]をすべて取り除き、そのターン中に対象の筋力を[blue]1[/blue]失わせ、[blue]1[/blue]層の弱体を与える。",
+  "ARKNIGHTS_MIZUKI-SANITY_MULTIPLIER_POWER.smartDescription": "1層ごとに、以後の[gold]神経損傷爆発[/gold]のダメージが[blue]115%[/blue]倍になる。",
+  "ARKNIGHTS_MIZUKI-IZUMIK_OFFSPRING_GUARD_POWER.title": "子代の庇護",
+  "ARKNIGHTS_MIZUKI-IZUMIK_OFFSPRING_GUARD_POWER.description": "子代が存在する間、イズミックが受ける未ブロックダメージはランダムな子代に転送される。",
+  "ARKNIGHTS_MIZUKI-SHADOW_EVOLUTION_POWER.title": "回帰",
+  "ARKNIGHTS_MIZUKI-SHADOW_EVOLUTION_POWER.description": "[gold]幼体海嗣[/gold]を[blue]{CardsLeft}[/blue]枚プレイするたび、[blue]{Amount}[/blue]点の[gold]最大HP[/gold]を得る。",
+  "ARKNIGHTS_MIZUKI-SHADOW_EVOLUTION_POWER.smartDescription": "[gold]幼体海嗣[/gold]をあと[blue]{CardsLeft}[/blue]枚プレイすると、[blue]{Amount}[/blue]点の[gold]最大HP[/gold]を得る。"
+,
+  "ARKNIGHTS_MIZUKI-SYNERGY_STRIKE_POWER.title": "Synergy Strike",
+  "ARKNIGHTS_MIZUKI-SYNERGY_STRIKE_POWER.description": "When you deal unblocked damage this turn, apply {Amount} [blue]Sanity[/blue].",
+  "ARKNIGHTS_MIZUKI-SYNERGY_STRIKE_POWER.smartDescription": "When you deal unblocked damage this turn, apply [blue]{Amount}[/blue] [blue]Sanity[/blue]."
 }

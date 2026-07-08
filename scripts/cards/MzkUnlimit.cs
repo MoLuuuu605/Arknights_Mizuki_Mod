@@ -4,7 +4,6 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.ValueProps;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.HoverTips;
 
@@ -53,6 +52,6 @@ public class MzkUnlimit : CustomCardModel
 
     protected override void OnUpgrade()
     {
-        ((DynamicVar)((CardModel)this).DynamicVars["SanityUnlimitPower"]).UpgradeValueBy(1m);
+        this.EnergyCost.UpgradeBy(-1);
     }
 }

@@ -15,7 +15,7 @@ namespace Arknights_Mizuki.Scripts.Cards;
 [Pool(typeof(TokenCardPool))]
 public sealed class LimbRecycle : CustomCardModel
 {
-    private const int energyCost = 2;
+    private const int energyCost = 1;
     private const CardType type = CardType.Skill;
     private const CardRarity rarity = CardRarity.Common;
     private const TargetType targetType = TargetType.AllEnemies;
@@ -23,8 +23,8 @@ public sealed class LimbRecycle : CustomCardModel
 
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[4]
     {
-        (DynamicVar)new DamageVar(12m, (ValueProp)8),
-        (DynamicVar)new DynamicVar("MaxHpGain", 10m),
+        (DynamicVar)new DamageVar(8m, (ValueProp)8),
+        (DynamicVar)new DynamicVar("MaxHpGain", 6m),
         (DynamicVar)new PowerVar<SanityPower>(1m),
         new HpLossVar(5)
     };
@@ -49,7 +49,7 @@ public sealed class LimbRecycle : CustomCardModel
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-            .FromCard(this)
+            .FromCard(this,cardPlay)
             .TargetingAllOpponents(((CardModel)this).CombatState)
             .Execute(choiceContext);
 

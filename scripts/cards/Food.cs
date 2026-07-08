@@ -21,7 +21,7 @@ public class Food : CustomCardModel
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
     {
         (DynamicVar)new EnergyVar(1),   // 获得 1 点能量（升级不变）
-        (DynamicVar)new CardsVar(1)      // 抽 2 张牌，升级后抽 3 张
+        (DynamicVar)new CardsVar(4)      // 抽 2 张牌，升级后抽 3 张
     };
 
     public override string PortraitPath => "res://Arknights_Mizuki/images/cards/Food.png";
@@ -42,12 +42,12 @@ public class Food : CustomCardModel
         
         // 抽 2 张牌（升级后抽 3 张）
         int drawAmount = (int)base.DynamicVars.Cards.BaseValue;
-        await CardPileCmd.Draw(choiceContext, drawAmount, base.Owner, false);
+        await CreatureCmd.Heal(Owner.Creature,DynamicVars.Cards.BaseValue);
     }
 
     protected override void OnUpgrade()
     {
         // 升级：抽牌 2 → 3
-        base.DynamicVars.Cards.UpgradeValueBy(1m);
+        base.DynamicVars.Cards.UpgradeValueBy(2);
     }
 }

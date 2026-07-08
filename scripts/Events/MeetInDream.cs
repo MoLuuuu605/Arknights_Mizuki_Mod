@@ -16,11 +16,11 @@ namespace Arknights_Mizuki.Scripts.Events;
 
 public sealed class MeetInDream : CustomEventModel
 {
-    private const int VoiceCost = 45;
-    private const int PatternCost = 65;
-    private const int InfoHpLoss = 6;
-    private const int JoinHpLoss = 12;
-    private const int CloserHpLoss = 6;
+    private const int VoiceCost = 55;
+    private const int PatternCost = 85;
+    private const int InfoHpLoss = 9;
+    private const int JoinHpLoss = 18;
+    private const int CloserHpLoss = 9;
 
     public override string? CustomInitialPortraitPath => "res://Arknights_Mizuki/images/events/Meetindream.png";
 
@@ -77,7 +77,7 @@ public sealed class MeetInDream : CustomEventModel
 
     private EventOption CreateRecordOption()
     {
-        return new EventOption(this, HasKey() ? RecordInfo : null, OptionKey("RECORD_INFO"));
+        return new EventOption(this, HasKey(2) ? RecordInfo : null, OptionKey("RECORD_INFO"));
     }
 
     private string OptionKey(string option)
@@ -102,7 +102,7 @@ public sealed class MeetInDream : CustomEventModel
     private async Task SummarizeInfo()
     {
         await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), Owner!.Creature, InfoHpLoss, ValueProp.Unblockable | ValueProp.Unpowered, null, null);
-        await PlayerCmd.GainGold(Rng.NextInt(30, 41), Owner);
+        await PlayerCmd.GainGold(Rng.NextInt(30, 60), Owner);
         ContinueDream("SUMMARIZE_INFO");
     }
 
@@ -129,6 +129,7 @@ public sealed class MeetInDream : CustomEventModel
             return;
         }
 
+        key.ChargesRemaining--;
         key.ChargesRemaining--;
         await ObtainRandomRelic();
         ContinueDream("RECORD_INFO");
@@ -163,8 +164,8 @@ public sealed class MeetInDream : CustomEventModel
         await RelicCmd.Obtain(relic, Owner);
     }
 
-    private bool HasKey()
+    private bool HasKey(int amount = 1)
     {
-        return Owner?.GetRelic<Key>()?.ChargesRemaining > 0;
+        return Owner?.GetRelic<Key>()?.ChargesRemaining >= amount;
     }
 }

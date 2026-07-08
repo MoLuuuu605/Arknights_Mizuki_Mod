@@ -2,9 +2,9 @@
   "ARKNIGHTS_MIZUKI-SUBLIMATION.title": "昇華",
   "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.description": "[aqua]大群はただ生存を求める。生存すなわち苦難なり。故に我らは進化を止めない。欠陥を克服し、自然に立ち向かい、外敵と戦う。絶滅は狡猾で飢えている。大群が少しでも雙を見せれば、奴らは我らの血肉を引き裂こうとする。だから我らは誤りを正し、だから我らは適応する。海岸に這い上がったときから、源石に触れたときから、大群の領地を広げ、致命的な脅威に触れ、完全に理解するまで、糧となるまで。今や大地も海も楽土となった。しかし大群はなおも繁殖し、生存はなお苦難である。我らにはより広い故郷が必要だ。[/aqua]\n\n[blue][jitter]進化の特異点[/jitter]を迎える前に、我らの未来を導く彼は自らに答えを与えねばならない：\n\n「[jitter]我は、誰か？[/jitter]」[/blue]",
   "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_DETERMINATION.title": "私はミヅキ。博士の依頼を果たす。",
-  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_DETERMINATION.description": "ランダムな[red]呪い[/red]3枚をデッキに加え、第四層への道を開放する。戦闘開始時、[gold]スライム[/gold]1枚を手札に加える。",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_DETERMINATION.description": "鍵が3本以上必要。3本の鍵を失い、レリック「決心」を獲得する。",
   "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_OBSERVATION.title": "時間に答えてもらおう。",
-  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_OBSERVATION.description": "HPが50%以上。レリック「観望」を取得する。",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_OBSERVATION.description": "鍵が1本以上必要。1本の鍵を失い、レリック「観望」を獲得する。",
   "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_HERD.title": "大群は我にあらず、我すなわち大群。",
   "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_HERD.description": "1枚の[red]疑念[/red]をデッキに加え、{MaxHpGain}の最大HPを得る。",
   "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.DETERMINATION.description": "私は完全な私ではない。彼が完全な彼ではないように。我らの出会いは偶然だったが、別れの時は必ず来る。その時が来た。",
@@ -59,5 +59,7 @@
   "ARKNIGHTS_MIZUKI-MEET_IN_DREAM.pages.SUMMARIZE_INFO.description": "進化。既知のあらゆる形態を超越し、あの最も完全な答えへと向かう。これは止めることのできない本能であり、唯一の「道」だ。",
   "ARKNIGHTS_MIZUKI-MEET_IN_DREAM.pages.JOIN_CONVERSATION.description": "海嗣たちはあなたのために場所を空けた。彼らはあなたを受け入れた。あなたは彼らの同胞であり、彼らの一部だ。",
   "ARKNIGHTS_MIZUKI-MEET_IN_DREAM.pages.MOVE_CLOSER.description": "あなたは同胞たちに近づく。そう、あなたは海嗣だ。何も異常なことではない。むしろ、あなたはこの身分にとても馴染んでいる。",
-  "ARKNIGHTS_MIZUKI-MEET_IN_DREAM.pages.RECORD_INFO.description": "適応……転化……新たな法則……境界はどこに……海だけではない……"
+  "ARKNIGHTS_MIZUKI-MEET_IN_DREAM.pages.RECORD_INFO.description": "適応……転化……新たな法則……境界はどこに……海だけではない……",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_DETERMINATION_OTHER.title": "この決心を受け継ぐ。",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_DETERMINATION_OTHER.description": "ミヅキ以外のキャラクターで選択可能。レリック「決心」を獲得する。"
 }

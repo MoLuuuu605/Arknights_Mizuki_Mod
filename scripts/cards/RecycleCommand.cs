@@ -10,7 +10,6 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using MinionLib.Targeting;
-using MinionLib.Targeting.Pets;
 namespace Arknights_Mizuki.Scripts.Cards;
 
 [Pool(typeof(MzkCardPool))]
@@ -46,7 +45,7 @@ public sealed class RecycleCommand : CustomCardModel
             return;
 
         int stacks = minion.GetPowerAmount<SeabornizationPower>();
-        await CreatureCmd.Damage(choiceContext, minion, 9999m, ValueProp.Unblockable | ValueProp.Unpowered, Owner.Creature, this);
+        await CreatureCmd.Heal(minion,9999);
 
         if (stacks > 0)
             await CreatureCmd.GainBlock(Owner.Creature, new BlockVar(stacks, ValueProp.Move), cardPlay, false);

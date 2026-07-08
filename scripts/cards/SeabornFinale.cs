@@ -3,7 +3,6 @@ using BaseLib.Abstracts;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -17,7 +16,7 @@ public sealed class SeabornFinale : CustomCardModel
 {
     private const int energyCost = 2;
     private const CardType type = CardType.Attack;
-    private const CardRarity rarity = CardRarity.Rare;
+    private const CardRarity rarity = CardRarity.Uncommon;
     private const TargetType targetType = TargetType.AllEnemies;
     private const bool shouldShowInCardLibrary = true;
 
@@ -32,7 +31,6 @@ public sealed class SeabornFinale : CustomCardModel
         HoverTipFactory.FromCard<BabyHs>()
     };
 
-    public override IEnumerable<CardKeyword> CanonicalKeywords => new CardKeyword[1] { CardKeyword.Exhaust };
 
     public override string PortraitPath => "res://Arknights_Mizuki/images/cards/SeabornFinale.png";
 
@@ -48,18 +46,13 @@ public sealed class SeabornFinale : CustomCardModel
             .ToList();
 
         decimal damage = babies.Count;
-        var enemies = CombatState.GetOpponentsOf(Owner.Creature)
-            .Where(enemy => enemy.IsAlive)
-            .ToList();
 
-        for (int i = 0; i < DynamicVars["Hits"].IntValue && enemies.Count > 0; i++)
+        for (int i = 0; i < DynamicVars["Hits"].IntValue; i++)
         {
-            Creature target = Owner.RunState.Rng.CombatCardSelection.NextItem(enemies);
             await DamageCmd.Attack(damage)
-                .FromCard(this)
-                .Targeting(target)
+                .FromCard(this,cardPlay)
+                .TargetingAllOpponents(CombatState)
                 .Execute(choiceContext);
-            enemies = enemies.Where(enemy => enemy.IsAlive).ToList();
         }
 
     }

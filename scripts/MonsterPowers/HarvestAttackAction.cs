@@ -28,11 +28,14 @@ public sealed class HarvestAttackAction : CustomActionModel
         var enemies = CombatState.GetOpponentsOf(Owner).ToList(); // 需要确认实际API
         var extraDamage = actor.GetPowerAmount<SeabornizationPower>();
         baseDamage+=extraDamage;//TODO Change power
-        foreach (var enemy in enemies)
+        for(int i=0;i<2;i++)
         {
-            if (!enemy.IsDead)
+            foreach (var enemy in enemies)
             {
-                await CreatureCmd.Damage(choiceContext, enemy, baseDamage, ValueProp.Move, actor, null);
+                if (!enemy.IsDead)
+                {
+                    await CreatureCmd.Damage(choiceContext,enemy,baseDamage,ValueProp.Move,null);
+                }
             }
         }
         await PowerCmd.Apply<HarvestAttackAction>(choiceContext,Owner,-1,Owner,null);

@@ -70,4 +70,5 @@ public sealed class DeepBlueHeart : CustomRelicModel
             Owner.Creature,
             null);
     }
+    
 }

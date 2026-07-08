@@ -1,4 +1,4 @@
-{
+﻿{
   "ARKNIGHTS_MIZUKI-MZK_STRIKE.title": "Strike",
   "ARKNIGHTS_MIZUKI-MZK_STRIKE.description": "Deal {Damage:diff()} damage and apply {SanityPower:diff()} [blue]Neural Damage[/blue].",
   "ARKNIGHTS_MIZUKI-MZK_DEFENCE.title": "Defend",
@@ -59,8 +59,8 @@
   "ARKNIGHTS_MIZUKI-HURT.description": "Take 2 damage.",
   "ARKNIGHTS_MIZUKI-OVERLOAD.title": "Overload",
   "ARKNIGHTS_MIZUKI-OVERLOAD.description": "Shuffle 3 [gold]Flash Strike[/gold] into your draw pile. Add 1 [red]Damage[/red] to your discard pile.",
-  "ARKNIGHTS_MIZUKI-SHADOW.title": "Following Shadow",
-  "ARKNIGHTS_MIZUKI-SHADOW.description": "For each [gold]Haste[/gold] card you play this turn, deal 1 damage to enemies at end of turn.",
+  "ARKNIGHTS_MIZUKI-SHADOW.title": "Return",
+  "ARKNIGHTS_MIZUKI-SHADOW.description": "Gain {ShadowEvolutionPower:diff()} [gold]Following Shadow[/gold].",
   "ARKNIGHTS_MIZUKI-SWEEP.title": "Sweep",
   "ARKNIGHTS_MIZUKI-SWEEP.description": "Deal {Damage:diff()} damage to all enemies. Add a Dazed to your discard pile.",
   "ARKNIGHTS_MIZUKI-BIGGE.title": "Gluttony",
@@ -81,11 +81,11 @@
   "ARKNIGHTS_MIZUKI-AUTO_PLAY_ALL.title": "Seaborn Family Bucket",
   "ARKNIGHTS_MIZUKI-AUTO_PLAY_ALL.description": "Add 3 [gold]Haste[/gold] cards to your discard pile. Gain a copy of this card.\nThis card will not automatically play itself.",
   "ARKNIGHTS_MIZUKI-ECHO_ATTACK.title": "Echoing Slash",
-  "ARKNIGHTS_MIZUKI-ECHO_ATTACK.description": "Deal [[gold]Echo 1[/gold]] {Damage:diff()} damage 2 times.",
+  "ARKNIGHTS_MIZUKI-ECHO_ATTACK.description": "Deal {Damage:diff()} damage 2 times.\nWhile in your hand, after you play {EchoCountdown} more card(s), this card's damage increases by 1.",
   "ARKNIGHTS_MIZUKI-ECHO_SANITY.title": "Echoing Erosion",
-  "ARKNIGHTS_MIZUKI-ECHO_SANITY.description": "Apply [[gold]Echo 2[/gold]] {SanityPower:diff()} [blue]Neural Damage[/blue].",
+  "ARKNIGHTS_MIZUKI-ECHO_SANITY.description": "Apply {SanityPower:diff()} [blue]Neural Damage[/blue].\nWhile in your hand, after you play {EchoCountdown} more card(s), this card applies 1 more [blue]Neural Damage[/blue].",
   "ARKNIGHTS_MIZUKI-ECHO_GENERATE_AUTO.title": "Cognitive Reassembly",
-  "ARKNIGHTS_MIZUKI-ECHO_GENERATE_AUTO.description": "Randomly shuffle [[gold]Echo 3[/gold]] {Cards:diff()} Haste cards into your discard pile.",
+  "ARKNIGHTS_MIZUKI-ECHO_GENERATE_AUTO.description": "Shuffle {Cards:diff()} random [gold]Haste[/gold] card(s) into your discard pile.\nWhile in your hand, after you play {EchoCountdown} more card(s), shuffle 1 more card.",
   "ARKNIGHTS_MIZUKI-END.title": "Finale",
   "ARKNIGHTS_MIZUKI-END.description": "Deal {Damage:diff()} damage to random enemies {Repeat:diff()} times.\nCan be upgraded any number of times.",
   "ARKNIGHTS_MIZUKI-COPY.title": "Mizuki in the Mirror",
@@ -103,7 +103,7 @@
   "ARKNIGHTS_MIZUKI-INITIAL_FORM.title": "Firstborn of the We Many",
   "ARKNIGHTS_MIZUKI-INITIAL_FORM.description": "Gain {SanityProBurstPower:diff()} [blue]Initial Form[/blue].",
   "ARKNIGHTS_MIZUKI-SEA_BLESSING.title": "Sea Blessing",
-  "ARKNIGHTS_MIZUKI-SEA_BLESSING.description": "Gain {Block:diff()} Block.\n[[gold]Echo {IfUpgraded:show:1|2}[/gold]] [gold]Float[/gold] {Float:diff()}.",
+  "ARKNIGHTS_MIZUKI-SEA_BLESSING.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Float[/gold] {Float:diff()}.\nWhile in your hand, after you play {EchoCountdown} more card(s), gain 1 more [gold]Float[/gold].",
   "ARKNIGHTS_MIZUKI-WATER_SHEILD.title": "Water Shield",
   "ARKNIGHTS_MIZUKI-WATER_SHEILD.description": "Gain {Block:diff()} Block. Draw 1 card.",
   "ARKNIGHTS_MIZUKI-BE_BIGGER.title": "Proliferating Tissue",
@@ -193,5 +193,14 @@
   "ARKNIGHTS_MIZUKI-FROZEN.title": "Frozen",
   "ARKNIGHTS_MIZUKI-FROZEN.description": "At the end of turn, if this card is in your hand, gain 1 [blue]Cold[/blue].",
   "ARKNIGHTS_MIZUKI-KEY_CHARGE.title": "A Key",
-  "ARKNIGHTS_MIZUKI-KEY_CHARGE.description": "Gain [gold]1[/gold] Key. Draw {Cards:diff()} card.\nThen remove this card from your deck."
+  "ARKNIGHTS_MIZUKI-KEY_CHARGE.description": "Gain [gold]1[/gold] Key. Draw {Cards:diff()} card.\nThen remove this card from your deck.",
+  "ARKNIGHTS_MIZUKI-PURIFICATION.title": "Purification",
+  "ARKNIGHTS_MIZUKI-PURIFICATION.description": "Remove [blue]Sanity[/blue] and [blue]Sanity Multiplier[/blue] from all allied players."
+,
+  "ARKNIGHTS_MIZUKI-SYNERGY_STRIKE.title": "Synergy Strike",
+  "ARKNIGHTS_MIZUKI-SYNERGY_STRIKE.description": "Choose another player. When they deal unblocked damage this turn, apply {SanityPower:diff()} [blue]Sanity[/blue].",
+  "ARKNIGHTS_MIZUKI-HATCHING_INFUSION.title": "Hatching Infusion",
+  "ARKNIGHTS_MIZUKI-HATCHING_INFUSION.description": "[gold]Exhaust[/gold]. Add {Cards:diff()} [gold]Larval Seaborn[/gold] to the bottom of all players' draw piles.",
+  "ARKNIGHTS_MIZUKI-GANG_UP_SANITY.title": "Gang Up (Sanity)",
+  "ARKNIGHTS_MIZUKI-GANG_UP_SANITY.description": "Deal {Damage:diff()} damage. For each time another character has attacked this enemy this turn, apply {SanityPower:diff()} [blue]Sanity[/blue]."
 }

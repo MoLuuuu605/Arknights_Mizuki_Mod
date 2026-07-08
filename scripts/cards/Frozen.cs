@@ -4,7 +4,7 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models.CardPools;
 
 namespace Arknights_Mizuki.Scripts.Cards;
@@ -27,6 +27,10 @@ public sealed class Frozen : CustomCardModel
         CardKeyword.Exhaust
     };
 
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
+    {
+        HoverTipFactory.FromPower<ColdPower>()
+    };
     public override bool HasTurnEndInHandEffect => true;
 
     public Frozen() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)

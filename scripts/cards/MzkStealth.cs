@@ -54,6 +54,6 @@ public class MzkStealth : CustomCardModel
 
     protected override void OnUpgrade()
     {
-        ((DynamicVar)((CardModel)this).DynamicVars.Block).UpgradeValueBy(5m);
+        DynamicVars["StealthPower"].UpgradeValueBy(1);
     }
 }

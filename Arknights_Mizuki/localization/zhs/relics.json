@@ -1,10 +1,10 @@
 {
   "ARKNIGHTS_MIZUKI-MZK_TREE_BRANCH.title": "深蓝之籽",
-  "ARKNIGHTS_MIZUKI-MZK_TREE_BRANCH.description": "每场战斗,你造成的第一次伤害附加[gold]3[/gold]层[blue]神经损伤[/blue]",
+  "ARKNIGHTS_MIZUKI-MZK_TREE_BRANCH.description": "每场战斗,你打出的第一张攻击牌附加[gold]3[/gold]层[blue]神经损伤[/blue]。",
   "ARKNIGHTS_MIZUKI-DARK_BLUE_TREE.title": "深蓝之树",
-  "ARKNIGHTS_MIZUKI-DARK_BLUE_TREE.description": "你每次造成伤害时额外施加[gold]2[/gold]层[blue]神经损伤[/blue]",
+  "ARKNIGHTS_MIZUKI-DARK_BLUE_TREE.description": "你的攻击牌时额外附加[gold]1[/gold]层[blue]神经损伤[/blue]。",
   "ARKNIGHTS_MIZUKI-DETERMINATION.title": "决心",
-  "ARKNIGHTS_MIZUKI-DETERMINATION.description": "获得时，将[gold]{Cards}[/gold]张随机诅咒牌加入你的卡组。每场战斗开始时，将一张[blue]粘液[/blue]加入你的手牌。开启通往第四层的道路。",
+  "ARKNIGHTS_MIZUKI-DETERMINATION.description": "获得时，将[gold]{Cards}[/gold]张随机诅咒牌加入你的卡组。每场战斗开始时，将一张[blue]粘液[/blue]加入你的手牌。[gold]开启通往第四层的道路。[/gold]",
   "ARKNIGHTS_MIZUKI-OBSERVATION.title": "观望",
   "ARKNIGHTS_MIZUKI-OBSERVATION.description": "每回合开始时，获得[gold]{Block}[/gold]点格挡。",
   "ARKNIGHTS_MIZUKI-TIDEWATCHER_LANTERN.title": "提灯",

@@ -17,6 +17,8 @@ namespace Arknights_Mizuki.Scripts.Cards;
 [Pool(typeof(MzkCardPool))]
 public class EchoSanity : CustomCardModel
 {
+    private const string EchoCountdownKey = "EchoCountdown";
+    private const int EchoThreshold = 2;
     // 基础耗能
     private const int energyCost = 1;
     // 卡牌类型
@@ -29,9 +31,10 @@ public class EchoSanity : CustomCardModel
     private const bool shouldShowInCardLibrary = true;
 
     // 卡牌的基础属性（例如这里是12点伤害）
-    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[1]
+    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
 	{
-		(DynamicVar)new PowerVar<SanityPower>(2m)
+		(DynamicVar)new PowerVar<SanityPower>(4m),
+        (DynamicVar)new DynamicVar(EchoCountdownKey, EchoThreshold)
 	};
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[3]
@@ -46,19 +49,17 @@ HoverTipFactory.FromPower<SanityBurstDescriptionPower>(),
     {
         
     }
-    private int echo=0;
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         if (cardPlay.Card.Owner != Owner)
             return;
 
         if (this.Pile.Type == PileType.Hand){
-            echo +=1 ;
-            if(echo ==2)
+            DynamicVars[EchoCountdownKey].BaseValue -= 1;
+            if(DynamicVars[EchoCountdownKey].IntValue <= 0)
             {
                 DynamicVars["SanityPower"].BaseValue += 1;
-
-                echo=0;
+                DynamicVars[EchoCountdownKey].BaseValue = EchoThreshold;
             }
         }
     }

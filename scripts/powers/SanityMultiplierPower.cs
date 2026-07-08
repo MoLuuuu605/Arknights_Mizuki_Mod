@@ -1,5 +1,7 @@
 using BaseLib.Abstracts;
 using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Models;
 
 namespace Arknights_Mizuki.Scripts.Powers;
 
@@ -15,4 +17,5 @@ public sealed class SanityMultiplierPower : CustomPowerModel
 
     public override string CustomPackedIconPath => "res://Arknights_Mizuki/images/powers/Sanity_Buff.png";
     public override string CustomBigIconPath => "res://Arknights_Mizuki/images/powers/Sanity_Buff.png";
+
 }

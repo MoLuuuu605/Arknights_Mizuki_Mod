@@ -23,12 +23,13 @@ public class MzkSanityBurst : CustomCardModel
 
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[1]
     {
-        (DynamicVar)new PowerVar<SanityBurstPower>(2m)
+        (DynamicVar)new PowerVar<SanityBurstPower>(1m)
     };
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[]
     {
-        HoverTipFactory.FromPower<SanityUnlimitPower>()
+        HoverTipFactory.FromPower<SanityUnlimitPower>(),
+        HoverTipFactory.FromPower<SanityBurstDescriptionPower>()
     };
 
     public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/burst.png";

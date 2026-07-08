@@ -24,9 +24,9 @@ public class Sign : CustomCardModel
 
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[3]
     {
-        (DynamicVar)new PowerVar<SanityBuffPower>(2m),
+        (DynamicVar)new PowerVar<SanityBuffPower>(1m),
         (DynamicVar)new DamageVar(3m, ValueProp.Unblockable),
-        new PowerVar<VigorPower>(4m)
+        new PowerVar<VigorPower>(3m)
     };
 
     public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/Sign.png";
@@ -55,8 +55,7 @@ public class Sign : CustomCardModel
             ((CardModel)this).Owner.Creature,
             DynamicVars.Damage.BaseValue,
             ValueProp.Unblockable | ValueProp.Unpowered,
-            ((CardModel)this).Owner.Creature,
-            (CardModel)(object)this);
+            ((CardModel)this).Owner.Creature);
     }
     protected override void OnUpgrade()
     {

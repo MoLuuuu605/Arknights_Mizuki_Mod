@@ -19,7 +19,7 @@ public class Shock : CustomCardModel
 {
     private const int energyCost = 1;
     private const CardType type = CardType.Attack;
-    private const CardRarity rarity = CardRarity.Rare;
+    private const CardRarity rarity = CardRarity.Uncommon;
     private const TargetType targetType = TargetType.AllEnemies;
     private const bool shouldShowInCardLibrary = true;
 
@@ -27,7 +27,7 @@ public class Shock : CustomCardModel
     {
         (DynamicVar)new DamageVar(3m, ValueProp.Move),
         (DynamicVar)new PowerVar<SanityPower>(1m),
-        (DynamicVar)new DynamicVar("Times", 3m)
+        (DynamicVar)new DynamicVar("Times", 2m)
     };
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[2]
@@ -43,24 +43,22 @@ HoverTipFactory.FromPower<SanityBurstDescriptionPower>()
     {
     }
 
-    public override async Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
-    {
-        if (card == this)
-        {
-            await CardCmd.AutoPlay(choiceContext, card, null, AutoPlayType.Default);
-        }
-    }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         for(int i=0;i<DynamicVars["Times"].BaseValue;i++){
             await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-                .FromCard(this)
+                .FromCard(this,cardPlay)
                 .TargetingAllOpponents(((CardModel)this).CombatState)
                 .Execute(choiceContext);
-            var opponents = ((CardModel)this).CombatState.GetOpponentsOf(Owner.Creature).ToList();
+            var opponents = ((CardModel)this).CombatState.GetOpponentsOf(Owner.Creature)
+
+                .Where(opponent => opponent.IsAlive)
+
+                .ToList();
             foreach (var opponent in opponents)
             {
+                if(!opponent.IsAlive) continue;
                 await PowerCmd.Apply<SanityPower>(
                     choiceContext,
                     opponent,

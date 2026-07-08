@@ -15,9 +15,9 @@ namespace Arknights_Mizuki.Scripts.Cards;
 [Pool(typeof(MzkCardPool))]
 public class Attack_Sanity : CustomCardModel
 {
-    private const int energyCost = 1;
+    private const int energyCost = 2;
     private const CardType type = CardType.Power;
-    private const CardRarity rarity = CardRarity.Uncommon;
+    private const CardRarity rarity = CardRarity.Rare;
     private const TargetType targetType = TargetType.None;
     private const bool shouldShowInCardLibrary = true;
 
@@ -52,6 +52,6 @@ public class Attack_Sanity : CustomCardModel
 
     protected override void OnUpgrade()
     {
-        ((DynamicVar)((CardModel)this).DynamicVars["AttackApplySanityPower"]).UpgradeValueBy(1m);
+        this.EnergyCost.UpgradeBy(-1);
     }
 }

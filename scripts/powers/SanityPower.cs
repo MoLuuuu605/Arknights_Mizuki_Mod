@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
@@ -26,15 +27,13 @@ public sealed class SanityPower : CustomPowerModel,IHealthBarForecastSource
     public override string CustomPackedIconPath => "res://Arknights_Mizuki/images/powers/Sanity.png";
     public override string CustomBigIconPath => "res://Arknights_Mizuki/images/powers/Sanity.png";
 
-    private const int BaseDamage = 10;
+    private const int BaseDamageAtActOne = 20;
+    private const int DamagePerAdditionalAct = 10;
     private const int TriggerThreshold = 8;
-    private const int MultiplierIncrement = 10;
-    private const int BaseDamagePercent = 20;
-    private const int BaseDamageCap = 30;
-    private const int DamageCapPerBurst = 15;
-    private const int MultiplayerDamageCapPerBurst = 10;
-    private const int DamageCapPerUnlimit = 20;
-    private const int MultiplayerThresholdPerPlayer = 4;
+    private const int MultiplierIncrement = 1;
+    private const double DamageGrowthPerBurst = 1.15d;
+    private const int DamagePercentPerUnlimit = 50;
+    private const int MultiplayerThresholdPerPlayer = 2;
     private const int InitialFormThresholdReduction = 2;
 
     public void SetDamage(decimal damage)
@@ -42,16 +41,55 @@ public sealed class SanityPower : CustomPowerModel,IHealthBarForecastSource
 		AssertMutable();
 		this.DynamicVars.Damage.BaseValue = damage;
 	}
+    public void SetBaseDamage(decimal damage)
+	{
+		AssertMutable();
+		this.DynamicVars["BaseDamage"].BaseValue = damage;
+	}
+
+    public int GetBaseDamage(Creature owner)
+    {
+        int actNumber = owner.CombatState?.Players.FirstOrDefault()?.RunState.CurrentActIndex ?? 0;
+        var damage=BaseDamageAtActOne + actNumber * DamagePerAdditionalAct;
+        SetBaseDamage(damage);
+        return damage;
+    }
+	protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[3]
+    {
+		(DynamicVar)new DamageVar(0m, ValueProp.Unpowered|ValueProp.Unblockable),
+        new DynamicVar("TriggerThreshold", TriggerThreshold),
+        new DynamicVar("BaseDamage", BaseDamageAtActOne)
+
+	};	
 
     private void SetTriggerThreshold(decimal triggerThreshold)
     {
         AssertMutable();
         DynamicVars["TriggerThreshold"].BaseValue = triggerThreshold;
     }
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
+    protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
-        HoverTipFactory.FromPower<SanityBurstDescriptionPower>()
-    };
+        get
+        {
+            if (!IsMutable || Owner == null)
+            {
+                return (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
+                {
+                    HoverTipFactory.FromPower<SanityBurstDescriptionPower>()
+                };
+            }
+
+            PowerModel model = ModelDb.Power<SanityBurstDescriptionPower>();
+            LocString description = model.SmartDescription;
+            description.Add("BaseDamage", GetBaseDamage(Owner));
+            description.Add("DamageGrowth", 15);
+
+            return (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
+            {
+                new HoverTip(model, description.GetFormattedText(), true)
+            };
+        }
+    }
 
     public override IEnumerable<HealthBarForecastSegment> GetHealthBarForecastSegments(HealthBarForecastContext context)
     {
@@ -68,7 +106,7 @@ public sealed class SanityPower : CustomPowerModel,IHealthBarForecastSource
 
         yield return new HealthBarForecastSegment(
             damage,
-            new Color(0.4f, 0.8f, 1.0f, 0.95f),
+            Colors.White,
             HealthBarForecastDirection.FromRight,
             20,
             null,
@@ -81,10 +119,6 @@ public sealed class SanityPower : CustomPowerModel,IHealthBarForecastSource
         return (int)Math.Ceiling(DynamicVars.Damage.BaseValue);
     }
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(0m, ValueProp.Unpowered|ValueProp.Move),
-        new DynamicVar("TriggerThreshold", TriggerThreshold)
-    ];
     public override async Task AfterPowerAmountChanged(
         PlayerChoiceContext choiceContext,
         PowerModel power,
@@ -105,38 +139,15 @@ public sealed class SanityPower : CustomPowerModel,IHealthBarForecastSource
         var multiplier = owner.HasPower<SanityMultiplierPower>()
             ? owner.GetPower<SanityMultiplierPower>().Amount
             : 0;
-        var damagePercent = BaseDamagePercent + multiplier;
-        var maxHp = owner.MaxHp;
-        var damage = maxHp * damagePercent / 100m;
 
-        damage +=BaseDamage;
-
-        var unlimit = applier != null && applier.HasPower<SanityBurstPower>()
-            ? applier.GetPower<SanityBurstPower>().Amount
-            : 0;
-
-        if (unlimit != 0)
-        {
-            await PowerCmd.Apply<SanityUnlimitPower>(
-            choiceContext,
-            applier,
-            unlimit,
-            applier,
-            cardSource,
-            false);
-        }
 
         // 计算爆发伤害上限
         // 基础上限25 + 已爆发次数*30 + 玩家SanityUnlimitPower层数*20
-        var burstCount = multiplier / MultiplierIncrement;
         var unlimitAmount = GetSharedUnlimitAmount(owner);
-        var damageCapPerBurst = DamageCapPerBurst + Math.Max(0, playerCount - 1) * MultiplayerDamageCapPerBurst;
-        var damageCap = BaseDamageCap + burstCount * damageCapPerBurst + unlimitAmount * DamageCapPerUnlimit;
-
-
-
-        if (damage > damageCap)
-            damage = damageCap;
+        var baseDamage = GetBaseDamage(owner);
+        var burstMultiplier = (decimal)Math.Pow(DamageGrowthPerBurst, multiplier);
+        var unlimitMultiplier = 1m + unlimitAmount * DamagePercentPerUnlimit / 100m;
+        var damage = Math.Ceiling(baseDamage * burstMultiplier * unlimitMultiplier);
 
         SetDamage(damage);
 
@@ -145,7 +156,7 @@ public sealed class SanityPower : CustomPowerModel,IHealthBarForecastSource
         // 造成 HpLoss 伤害
 
         
-        await PowerCmd.Apply<PiercingWailPower>(
+        await PowerCmd.Apply<SanityBurstStrengthDebuffPower>(
             choiceContext,
             owner, 
             1,
@@ -162,13 +173,20 @@ public sealed class SanityPower : CustomPowerModel,IHealthBarForecastSource
             false
         );
         
-        await CreatureCmd.Damage(
+        var unlimit = applier != null && applier.HasPower<SanityBurstPower>()
+            ? applier.GetPower<SanityBurstPower>().Amount
+            : 0;
+
+        if (unlimit != 0)
+        {
+            await PowerCmd.Apply<SanityUnlimitPower>(
             choiceContext,
-            owner,
-            damage,
-            ValueProp.Unpowered|ValueProp.Unblockable,
-            owner,
-            cardSource);
+            applier,
+            unlimit,
+            applier,
+            cardSource,
+            false);
+        }
         await PowerCmd.ModifyAmount(
             choiceContext,
             this,
@@ -177,9 +195,13 @@ public sealed class SanityPower : CustomPowerModel,IHealthBarForecastSource
             null,
             false);
 
-        if (applier != null)
-            await PainEchoPower.Trigger(choiceContext, applier);
-
+        if (applier != null){
+            var players = Owner.CombatState.GetOpponentsOf(Owner);
+            foreach (var player in players){
+            await PainEchoPower.Trigger(choiceContext, player);
+            await BlueSeedPower.Trigger(choiceContext, player);
+            }
+        }
         PacmanCollectorsEdition? pacmanCollectorsEdition = applier?.Player?.GetRelic<PacmanCollectorsEdition>();
         if (pacmanCollectorsEdition != null)
         {
@@ -201,7 +223,15 @@ public sealed class SanityPower : CustomPowerModel,IHealthBarForecastSource
             owner,
             cardSource,
             false);
+            
+        await CreatureCmd.Damage(
+            choiceContext,
+            owner,
+            damage,
+            ValueProp.Unpowered|ValueProp.Unblockable,
+            owner);
 
+        if(!Owner.IsAlive)return;
         Flash();
     }
 
@@ -219,6 +249,7 @@ public sealed class SanityPower : CustomPowerModel,IHealthBarForecastSource
 
         return Math.Max(1, threshold);
     }
+
 
     private static decimal GetSharedUnlimitAmount(Creature owner)
     {

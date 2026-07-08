@@ -16,6 +16,8 @@ namespace Arknights_Mizuki.Scripts.Cards;
 [Pool(typeof(MzkCardPool))]
 public class EchoGenerateAuto : CustomCardModel
 {
+    private const string EchoCountdownKey = "EchoCountdown";
+    private const int EchoThreshold = 3;
     // 鍩虹鑰楄兘
     private const int energyCost = 1;
     // 鍗＄墝绫诲瀷锛堥槻寰＄墝鏄妧鑳界被鍨嬶級
@@ -29,9 +31,10 @@ public class EchoGenerateAuto : CustomCardModel
     private const bool shouldShowInCardLibrary = true;
 
     // 鍗＄墝鐨勫熀纭€灞炴€э紙鏍兼尅鍊硷級
-    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[1]
+    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
 	{
-		(DynamicVar)new CardsVar(2)
+		(DynamicVar)new CardsVar(3),
+        (DynamicVar)new DynamicVar(EchoCountdownKey, EchoThreshold)
 	};
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
@@ -42,18 +45,17 @@ public class EchoGenerateAuto : CustomCardModel
     public EchoGenerateAuto() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
     {
     }
-    private int echo=0;
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         if (cardPlay.Card.Owner != Owner)
             return;
 
         if (this.Pile.Type == PileType.Hand){
-            echo +=1 ;
-            if(echo ==3)
+            DynamicVars[EchoCountdownKey].BaseValue -= 1;
+            if(DynamicVars[EchoCountdownKey].IntValue <= 0)
             {
                 DynamicVars.Cards.BaseValue += 1;
-                echo=0;
+                DynamicVars[EchoCountdownKey].BaseValue = EchoThreshold;
             }
         }
     }

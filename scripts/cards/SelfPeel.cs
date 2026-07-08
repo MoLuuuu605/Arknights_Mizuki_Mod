@@ -19,8 +19,8 @@ public sealed class SelfPeel : CustomCardModel
 
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
     {
-        (DynamicVar)new DynamicVar("MaxHpLoss", 3m),
-        (DynamicVar)new EnergyVar(1)
+        (DynamicVar)new DynamicVar("MaxHpLoss", 2m),
+        (DynamicVar)new EnergyVar(2)
     };
 
     public override string PortraitPath => "res://Arknights_Mizuki/images/cards/SelfPeel.png";
@@ -38,6 +38,6 @@ public sealed class SelfPeel : CustomCardModel
 
     protected override void OnUpgrade()
     {
-        DynamicVars["MaxHpLoss"].UpgradeValueBy(-1m);
+        DynamicVars.Energy.UpgradeValueBy(1);
     }
 }

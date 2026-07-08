@@ -1,3 +1,4 @@
+using Arknights_Mizuki.Scripts.Characters;
 using Arknights_Mizuki.Scripts.Relics;
 using BaseLib.Abstracts;
 using MegaCrit.Sts2.Core.Commands;
@@ -12,10 +13,12 @@ namespace Arknights_Mizuki.Scripts.Events;
 
 public sealed class Sublimation : CustomEventModel
 {
-    private const decimal DeterminationHpThreshold = 0.8m;
-    private const decimal ObservationHpThreshold = 0.5m;
+    private const int DeterminationKeyCost = 3;
+    private const int ObservationKeyCost = 1;
 
     public override string? CustomInitialPortraitPath => "res://Arknights_Mizuki/images/events/shenghua.png";
+
+    public override bool IsShared => true;
 
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[]
     {
@@ -34,12 +37,26 @@ public sealed class Sublimation : CustomEventModel
 
     protected override IReadOnlyList<EventOption> GenerateInitialOptions()
     {
-        return new EventOption[]
+        List<EventOption> options = null;
+        if(!AllPlayersAreNotMizuki())
         {
-            new EventOption(this, CanChooseDetermination() ? ChooseDetermination : null, OptionKey("CHOOSE_DETERMINATION")).WithRelic<Determination>(Owner),
-            new EventOption(this, CanChooseObservation() ? ChooseObservation : null, OptionKey("CHOOSE_OBSERVATION")).WithRelic<Observation>(Owner),
-            new EventOption(this, ChooseHerd, OptionKey("CHOOSE_HERD"))
-        };
+            options = new()
+            {
+                new EventOption(this, AllPlayersHaveKeyCharges(DeterminationKeyCost) ? ChooseDetermination : null, OptionKey("CHOOSE_DETERMINATION")).WithRelic<Determination>(Owner),
+                new EventOption(this, AllPlayersHaveKeyCharges(ObservationKeyCost) ? ChooseObservation : null, OptionKey("CHOOSE_OBSERVATION")).WithRelic<Observation>(Owner),
+                new EventOption(this, ChooseHerd, OptionKey("CHOOSE_HERD")),
+            };
+        }
+        else
+        {
+            options = new()
+            {
+                new EventOption(this,AllPlayersAreNotMizuki() ? ChooseDetermination : null, OptionKey("CHOOSE_DETERMINATION_OTHER")).WithRelic<Determination>(Owner),
+                new EventOption(this, ChooseHerd, OptionKey("CHOOSE_HERD")),
+            };
+        }
+
+        return options;
     }
 
     private string OptionKey(string option)
@@ -47,17 +64,29 @@ public sealed class Sublimation : CustomEventModel
         return $"{Id.Entry}.pages.INITIAL.options.{option}";
     }
 
-    private bool CanChooseDetermination()
+    private bool AllPlayersHaveKeyCharges(int amount)
     {
-        return Owner != null && Owner.Creature.CurrentHp > Owner.Creature.MaxHp * DeterminationHpThreshold;
+        return Owner?.RunState.Players.All(player => HasKeyCharges(player, amount)) == true;
     }
 
-    private bool CanChooseObservation()
+    private static bool HasKeyCharges(MegaCrit.Sts2.Core.Entities.Players.Player player, int amount)
     {
-        return Owner != null && Owner.Creature.CurrentHp > Owner.Creature.MaxHp * ObservationHpThreshold;
+        return player.GetRelic<Key>()?.ChargesRemaining >= amount;
+    }
+
+    private bool AllPlayersAreNotMizuki()
+    {
+        return Owner?.RunState.Players.All(player => player.Character is not Mizuki) == true;
     }
 
     private async Task ChooseDetermination()
+    {
+        SpendKeyCharges(DeterminationKeyCost);
+        await RelicCmd.Obtain<Determination>(Owner!);
+        SetEventFinished(PageDescription("DETERMINATION"));
+    }
+
+    private async Task ChooseDeterminationForOtherCharacter()
     {
         await RelicCmd.Obtain<Determination>(Owner!);
         SetEventFinished(PageDescription("DETERMINATION"));
@@ -65,8 +94,20 @@ public sealed class Sublimation : CustomEventModel
 
     private async Task ChooseObservation()
     {
+        SpendKeyCharges(ObservationKeyCost);
         await RelicCmd.Obtain<Observation>(Owner!);
         SetEventFinished(PageDescription("OBSERVATION"));
+    }
+
+    private void SpendKeyCharges(int amount)
+    {
+        Key? key = Owner?.GetRelic<Key>();
+        if (key == null)
+        {
+            return;
+        }
+
+        key.ChargesRemaining -= amount;
     }
 
     private async Task ChooseHerd()

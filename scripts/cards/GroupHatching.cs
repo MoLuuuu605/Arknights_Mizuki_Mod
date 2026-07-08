@@ -69,7 +69,7 @@ public sealed class GroupHatching : CustomCardModel
 
         for (int i = 0; i < consumedBabies; i++)
         {
-            if (Owner.RunState.Rng.CombatCardSelection.NextItem(new[] { 0, 1 }) == 0)
+            if (Owner.RunState.Rng.Niche.NextItem(new[] { 0, 1 }) == 0)
                 await Float(choiceContext, (CardModel)(object)this, Owner, DynamicVars["Assimilation"].BaseValue);
             else
                 await Harvest(choiceContext, (CardModel)(object)this, Owner, DynamicVars["Assimilation"].BaseValue);

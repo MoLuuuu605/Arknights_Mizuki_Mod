@@ -40,9 +40,12 @@ public class CutDown : CustomCardModel
         
         // 造成伤害
         await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
-            .FromCard(this)
+            .FromCard(this,cardPlay)
             .Targeting(target)
             .Execute(choiceContext);
+
+        if (!target.IsAlive)
+            return;
         
         // 施加临时减力量（PiercingWailPower）
         await PowerCmd.Apply<PiercingWailPower>(

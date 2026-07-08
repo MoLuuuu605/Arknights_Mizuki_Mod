@@ -38,7 +38,7 @@ public class Awaken : CustomCardModel, ITranscendenceCard
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[2]
     {
         HoverTipFactory.FromPower<SanityPower>(),
-HoverTipFactory.FromPower<SanityBurstDescriptionPower>()
+        HoverTipFactory.FromPower<SanityBurstDescriptionPower>()
     };
 
     public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/Awaken.png";
@@ -51,7 +51,7 @@ HoverTipFactory.FromPower<SanityBurstDescriptionPower>()
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue) // 造成伤害，数值来源于卡牌的基础伤害属性
-            .FromCard(this) // 伤害来源于这张卡牌
+            .FromCard(this,cardPlay) // 伤害来源于这张卡牌
             .TargetingAllOpponents(((CardModel)this).CombatState)
             .Execute(choiceContext);
         var opponents = ((CardModel)this).CombatState
@@ -60,6 +60,7 @@ HoverTipFactory.FromPower<SanityBurstDescriptionPower>()
             .ToList();
         foreach (var opponent in opponents)
         {
+            if(!opponent.IsAlive)continue;
             await PowerCmd.Apply<SanityPower>(
                 choiceContext, 
                 opponent, 

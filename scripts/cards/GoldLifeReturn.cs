@@ -24,6 +24,10 @@ public sealed class GoldLifeReturn : CustomCardModel
         (DynamicVar)new PowerVar<GoldLifeReturnPower>(1m)
     };
 
+   public override CardKeyword[] CanonicalKeywords => new CardKeyword[1]
+    {
+        CardKeyword.Retain
+    };
 
 
     public override string PortraitPath => "res://Arknights_Mizuki/images/cards/GoldLifeReturn.png";

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://chhbjak2l7my0"]
 
-[ext_resource type="Texture2D" uid="uid://c0pr2igc8xuay" path="res://Arknights_Mizuki/images/bg.png" id="1_ha6g5"]
+[ext_resource type="VideoStream" uid="uid://dymulpphb6fig" path="res://Arknights_Mizuki/scenes/bg.ogv" id="2_xp3ma"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -8,13 +8,15 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 layout_mode = 0
-offset_left = 22.0
-offset_top = 69.0
-offset_right = 3385.0
-offset_bottom = 1219.0
-texture = ExtResource("1_ha6g5")
+offset_left = 171.0
+offset_top = -123.0
+offset_right = 2731.0
+offset_bottom = 1143.0
+stream = ExtResource("2_xp3ma")
+autoplay = true
+loop = true
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2(179, 13)

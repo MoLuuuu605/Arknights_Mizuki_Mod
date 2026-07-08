@@ -25,6 +25,7 @@ public class Hurt : CustomCardModel
     private const TargetType targetType = TargetType.Self;
     // 是否在卡牌图鉴中显示
     private const bool shouldShowInCardLibrary = true;
+    public override int MaxUpgradeLevel => 0;
 
     // 卡牌的基础属性（格挡值）
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[1]
@@ -43,25 +44,17 @@ public class Hurt : CustomCardModel
     {
     }
 
-    // 打出时的效果逻辑
-        public override async Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
-    {
-        
-        // 自动打出（不消耗费用）
-        if(card == this)
-        {
-        await CardCmd.AutoPlay(choiceContext, card, null, AutoPlayType.Default);
-        }
-    }
+
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-            .FromCard(this)
+            .FromCard(this,cardPlay)
             .Targeting(((CardModel)this).Owner.Creature)
             .Execute(choiceContext);
     }
 
     protected override void OnUpgrade()
     {
+        
     }
 }

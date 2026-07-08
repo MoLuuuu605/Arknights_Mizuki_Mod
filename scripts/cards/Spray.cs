@@ -10,7 +10,12 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 using Arknights_Mizuki.Scripts.Pools;
 using Arknights_Mizuki.Scripts.keywords;
-using MegaCrit.Sts2.Core.Models.Powers;
+using Arknights_Mizuki.Scripts.Minions;
+using MinionLib.Minion;
+using MinionLib.Commands;
+using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.Entities.Creatures;
+using Arknights_Mizuki.Scripts.Powers;
 
 namespace Arknights_Mizuki.Scripts.Cards;
 
@@ -23,17 +28,18 @@ public class Spray : CustomCardModel
     private const TargetType targetType = TargetType.AllEnemies;
     private const bool shouldShowInCardLibrary = true;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
+    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[]
     {
         (DynamicVar)new DamageVar(3m, (ValueProp)5),
-        (DynamicVar)new PowerVar<VulnerablePower>(1m)
+        new DynamicVar("Harvest", 1m)
     };
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
-    {
-        HoverTipFactory.FromPower<VulnerablePower>()
-    };
-
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[]
+	{
+        HoverTipFactory.FromKeyword(Monster2.monster2),
+        HoverTipFactory.FromKeyword(Monster2des.monster2des),
+        HoverTipFactory.FromPower<SeabornizationPower>()	
+        };
     public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/Spray.png";
     public override IEnumerable<CardKeyword> CanonicalKeywords => [AutoPlay.Autoplay];
 
@@ -41,37 +47,37 @@ public class Spray : CustomCardModel
     {
     }
 
-    public override async Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
-    {
-        if (card == this)
-        {
-            await CardCmd.AutoPlay(choiceContext, card, null, AutoPlayType.Default);
-        }
-    }
 
+
+    static public bool HasMinion<T>(Player player) where T : MinionModel
+{
+    return player.PlayerCombatState?.Pets.Any(p =>
+        p is { IsAlive: true, IsPet: true, Monster: T }
+    ) == true;
+}
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-            .FromCard(this)
+            .FromCard(this,cardPlay)
             .TargetingAllOpponents(((CardModel)this).CombatState)
             .Execute(choiceContext);
-        var opponents = ((CardModel)this).CombatState.GetOpponentsOf(Owner.Creature);
-        foreach (var opponent in opponents)
+         if(!HasMinion<HarvestMinion>(Owner))
         {
-            await PowerCmd.Apply<VulnerablePower>(
-                choiceContext,
-                opponent,
-                ((DynamicVar)((CardModel)this).DynamicVars["VulnerablePower"]).BaseValue,
-                ((CardModel)this).Owner.Creature,
-                (CardModel)(object)this,
-                false
-            );
+            _ = await MinionCmd.AddMinion<HarvestMinion>(choiceContext,Owner, new MinionSummonOptions(
+                MaxHp: 6m,                              // 血量
+                PrimaryStatAmount: 2m,                  // 主要参数（具体内容在随从的 OnSummon 里定义），还有次要参数等可以按需传入
+                Source: this,                           // 召唤来源（通常是这张牌）
+                Position: MinionPosition.Front));
+        }
+        else 
+        {
+            Creature? pet = Owner.PlayerCombatState?.Pets.FirstOrDefault(p => p.Monster is HarvestMinion);
+            await PowerCmd.Apply<SeabornizationPower>(choiceContext,pet,DynamicVars["Harvest"].BaseValue,pet,null);
         }
     }
 
     protected override void OnUpgrade()
     {
-        ((CardModel)this).DynamicVars.Damage.UpgradeValueBy(2);
-        this.DynamicVars["VulnerablePower"].UpgradeValueBy(1);
+        ((CardModel)this).DynamicVars["Harvest"].UpgradeValueBy(1m);
     }
 }

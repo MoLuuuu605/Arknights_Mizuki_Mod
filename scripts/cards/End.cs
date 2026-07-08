@@ -16,14 +16,14 @@ public class End : CustomCardModel
 {
     private const int energyCost = 1;
     private const CardType type = CardType.Attack;
-    private const CardRarity rarity = CardRarity.Uncommon;
+    private const CardRarity rarity = CardRarity.Rare;
     private const TargetType targetType = TargetType.AllEnemies;
     private const bool shouldShowInCardLibrary = true;
     public override int MaxUpgradeLevel => 999;
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
     {
-        (DynamicVar)new DamageVar(3m, (ValueProp)8),
-        (DynamicVar)new RepeatVar(3)
+        (DynamicVar)new DamageVar(4m, (ValueProp)8),
+        (DynamicVar)new RepeatVar(4)
     };
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[0];
@@ -38,7 +38,7 @@ public class End : CustomCardModel
     {
         // 对所有敌人造成2点伤害4
             await DamageCmd.Attack(DynamicVars.Damage.BaseValue).WithHitCount(this.DynamicVars.Repeat.IntValue)
-            .FromCard(this)
+            .FromCard(this,cardPlay)
             .TargetingRandomOpponents(CombatState)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);

@@ -18,6 +18,7 @@ namespace Arknights_Mizuki.Scripts.Cards;
 [Pool(typeof(MzkCardPool))]
 public class EchoAttack : CustomCardModel
 {
+    private const string EchoCountdownKey = "EchoCountdown";
     // 基础耗能
     private const int energyCost = 1;
     protected override HashSet<CardTag> CanonicalTags => new HashSet<CardTag> { CardTag.Strike };
@@ -31,10 +32,11 @@ public class EchoAttack : CustomCardModel
     private const bool shouldShowInCardLibrary = true;
 
     // 卡牌的基础属性（例如这里是12点伤害）
-    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
+    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[3]
 	{
 		(DynamicVar)new DamageVar(4m, (ValueProp)8),
-		(DynamicVar)new PowerVar<SanityPower>(1m)
+		(DynamicVar)new PowerVar<SanityPower>(1m),
+        (DynamicVar)new DynamicVar(EchoCountdownKey, 1m)
 	};
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
@@ -54,6 +56,7 @@ public class EchoAttack : CustomCardModel
 
         if (this.Pile.Type == PileType.Hand){
         DynamicVars.Damage.BaseValue += 1;
+        DynamicVars[EchoCountdownKey].BaseValue = 1;
         }
     }
 
@@ -61,9 +64,10 @@ public class EchoAttack : CustomCardModel
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue).WithHitCount(2) // 造成伤害，数值来源于卡牌的基础伤害属性
-            .FromCard(this) // 伤害来源于这张卡牌
+            .FromCard(this,cardPlay) // 伤害来源于这张卡牌
             .Targeting(cardPlay.Target) // 伤害目标是玩家选择的目标
             .Execute(choiceContext);
+        if(cardPlay.Target.IsAlive)
         await PowerCmd.Apply<SanityPower>(choiceContext, cardPlay.Target, ((DynamicVar)((CardModel)this).DynamicVars["SanityPower"]).BaseValue, ((CardModel)this).Owner.Creature, (CardModel)(object)this, false);
     }
 

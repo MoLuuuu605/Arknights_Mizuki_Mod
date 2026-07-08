@@ -94,6 +94,5 @@ public class Copy : CustomCardModel
     protected override void OnUpgrade()
     {
         this.DynamicVars.Repeat.UpgradeValueBy(1);
-        this.RemoveKeyword(CardKeyword.Exhaust);
     }
 }

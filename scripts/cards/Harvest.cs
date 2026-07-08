@@ -29,7 +29,7 @@ public sealed class Harvest : CustomCardModel
 
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[1]
     {
-        (DynamicVar)new DamageVar(5,MegaCrit.Sts2.Core.ValueProps.ValueProp.Move)      // 抽 2 张牌，升级后抽 3 张
+        (DynamicVar)new DamageVar(5,MegaCrit.Sts2.Core.ValueProps.ValueProp.Move)     
     };
     static public bool HasMinion<T>(Player player) where T : MinionModel
 {
@@ -38,11 +38,12 @@ public sealed class Harvest : CustomCardModel
     ) == true;
 }
     public override string PortraitPath => "res://Arknights_Mizuki/images/cards/Harvest.png";
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[2]
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[]
 	{
         HoverTipFactory.FromKeyword(Monster2.monster2),
-        HoverTipFactory.FromKeyword(Monster2des.monster2des)
-	};
+        HoverTipFactory.FromKeyword(Monster2des.monster2des),
+        HoverTipFactory.FromPower<SeabornizationPower>()	
+        };
 
 
     public Harvest() : base(energyCost, type, rarity, targetType, shouldShowInCardLibrary)
@@ -66,7 +67,7 @@ public sealed class Harvest : CustomCardModel
             await PowerCmd.Apply<SeabornizationPower>(choiceContext,pet,3,pet,null);
         }
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-            .FromCard(this)
+            .FromCard(this,cardPlay)
             .Targeting(cardPlay.Target)
             .Execute(choiceContext);
     }

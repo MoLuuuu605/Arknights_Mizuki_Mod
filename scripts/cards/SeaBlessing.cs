@@ -21,18 +21,18 @@ namespace Arknights_Mizuki.Scripts.Cards;
 [Pool(typeof(MzkCardPool))]
 public class SeaBlessing : CustomCardModel
 {
+    private const string EchoCountdownKey = "EchoCountdown";
     private const int energyCost = 1;
     private const CardType type = CardType.Skill;
     private const CardRarity rarity = CardRarity.Uncommon;
     private const TargetType targetType = TargetType.Self;
     private const bool shouldShowInCardLibrary = true;
 
-    private int echo;
-
-    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
+    protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[3]
     {
         (DynamicVar)new BlockVar(6m, (ValueProp)8),
-        (DynamicVar)new DynamicVar("Float", 2m)
+        (DynamicVar)new DynamicVar("Float", 2m),
+        (DynamicVar)new DynamicVar(EchoCountdownKey, 2m)
     };
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[]
@@ -57,12 +57,12 @@ public class SeaBlessing : CustomCardModel
         if (Pile.Type != PileType.Hand)
             return;
 
-        echo += 1;
-        if (echo < (((CardModel)this).IsUpgraded ? 1 : 2))
+        DynamicVars[EchoCountdownKey].BaseValue -= 1;
+        if (DynamicVars[EchoCountdownKey].IntValue > 0)
             return;
 
         DynamicVars["Float"].BaseValue += 1;
-        echo = 0;
+        ResetEchoCountdown();
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -91,6 +91,12 @@ public class SeaBlessing : CustomCardModel
 
     protected override void OnUpgrade()
     {
+        DynamicVars[EchoCountdownKey].BaseValue = 1;
+    }
+
+    private void ResetEchoCountdown()
+    {
+        DynamicVars[EchoCountdownKey].BaseValue = ((CardModel)this).IsUpgraded ? 1 : 2;
     }
 
     private static bool HasMinion<T>(Player player) where T : MinionModel

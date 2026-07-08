@@ -1,4 +1,3 @@
-using System.Linq;
 using System.Threading.Tasks;
 using BaseLib.Abstracts;
 using BaseLib.Utils;
@@ -9,7 +8,6 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 
 using Arknights_Mizuki.Scripts.Pools;
@@ -27,13 +25,19 @@ public class MzkEnergyDrain : CustomCardModel
 
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[1]
     {
-        (DynamicVar)new HealVar(3m)
+        (DynamicVar)new HealVar(4m)
     };
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[1]
     {
         HoverTipFactory.FromKeyword(CardKeyword.Exhaust)
     };
+
+    public override IEnumerable<CardKeyword> CanonicalKeywords => new CardKeyword[1]
+    {
+        CardKeyword.Exhaust
+    };
+
 
     public override string PortraitPath => $"res://Arknights_Mizuki/images/cards/eat.png";
 

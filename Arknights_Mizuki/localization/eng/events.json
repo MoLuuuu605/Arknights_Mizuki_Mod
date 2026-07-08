@@ -2,9 +2,9 @@
   "ARKNIGHTS_MIZUKI-SUBLIMATION.title": "Sublimation",
   "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.description": "[aqua]The swarm seeks only survival, and survival is suffering. So we evolve without end. We overcome defects, face nature, resist our enemies. Extinction is cunning and hungry; one lapse, and it tears into our flesh. So we correct. So we adapt. From crawling onto the shore, to touching Originium, to expanding our territory and confronting lethal threats until we understand them completely, until they become nourishment. The land and sea are both paradise now, yet the swarm still breeds, and survival remains suffering. We need a broader home.[/aqua]\n\n[blue]Before the [jitter]singularity of evolution[/jitter] arrives, the one who would guide our future must answer for himself:\n\n\"[jitter]Who am I?[/jitter]\"[/blue]",
   "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_DETERMINATION.title": "I am Mizuki. I will fulfill the Doctor's request.",
-  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_DETERMINATION.description": "Add 3 random [red]Curses[/red] to your deck. Unlock the path to the fourth layer. At the start of each combat, add a [gold]Slimed[/gold] to your hand.",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_DETERMINATION.description": "Requires at least 3 Keys. Lose 3 Keys. Gain the Determination relic.",
   "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_OBSERVATION.title": "Let time answer.",
-  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_OBSERVATION.description": "Above 50% HP. Gain the Observation relic.",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_OBSERVATION.description": "Requires at least 1 Key. Lose 1 Key. Gain the Observation relic.",
   "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_HERD.title": "The swarm is not me. I am the swarm.",
   "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_HERD.description": "Add a [red]Doubt[/red] to your deck. Gain {MaxHpGain} max HP.",
   "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.DETERMINATION.description": "I am not a complete me, just as he is not a complete him. Our meeting was by chance, but the time for parting always comes. That time has come.",
@@ -59,5 +59,7 @@
   "ARKNIGHTS_MIZUKI-MEET_IN_DREAM.pages.SUMMARIZE_INFO.description": "Evolution. To surpass every known form and move toward that most perfect answer. This is an instinct that cannot stop. This is the only path.",
   "ARKNIGHTS_MIZUKI-MEET_IN_DREAM.pages.JOIN_CONVERSATION.description": "The Seaborn make room for you. They accept you. You are their kin, a part of them.",
   "ARKNIGHTS_MIZUKI-MEET_IN_DREAM.pages.MOVE_CLOSER.description": "You draw closer to your kin. Yes, you are a Seaborn. There is nothing strange about that. On the contrary, this identity suits you well.",
-  "ARKNIGHTS_MIZUKI-MEET_IN_DREAM.pages.RECORD_INFO.description": "Adaptation... transformation... new laws... where is the boundary... not only the sea..."
+  "ARKNIGHTS_MIZUKI-MEET_IN_DREAM.pages.RECORD_INFO.description": "Adaptation... transformation... new laws... where is the boundary... not only the sea...",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_DETERMINATION_OTHER.title": "Take up this determination.",
+  "ARKNIGHTS_MIZUKI-SUBLIMATION.pages.INITIAL.options.CHOOSE_DETERMINATION_OTHER.description": "Available to non-Mizuki characters. Gain the Determination relic."
 }

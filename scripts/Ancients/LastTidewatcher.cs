@@ -1,4 +1,5 @@
 using Arknights_Mizuki.Scripts.Acts;
+using Arknights_Mizuki.Scripts.Enchantments;
 using Arknights_Mizuki.Scripts.Relics;
 using BaseLib.Abstracts;
 using BaseLib.Utils;
@@ -9,6 +10,7 @@ using MegaCrit.Sts2.Core.Entities.Gold;
 using MegaCrit.Sts2.Core.Events;
 using MegaCrit.Sts2.Core.Factories;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 
 namespace Arknights_Mizuki.Scripts.Ancients;
@@ -75,7 +77,7 @@ public sealed class LastTidewatcher : CustomAncientModel
 
     private IReadOnlyList<EventOption> MakeOptions()
     {
-        return new EventOption[]
+        var Options = new EventOption[]
         {
             new EventOption(this, LoseMaxHpForFiveRelics, $"{Key}.pages.INITIAL.options.FIVE_RELICS")
                 .ThatDecreasesMaxHp(GetMaxHpCost()),
@@ -84,12 +86,14 @@ public sealed class LastTidewatcher : CustomAncientModel
             new EventOption(this, LoseGoldForHeart, $"{Key}.pages.INITIAL.options.HEART")
                 .WithRelic<DeepBlueHeart>(Owner),
             new EventOption(this, ObtainThreeRelics, $"{Key}.pages.INITIAL.options.THREE_RELICS"),
-            new EventOption(this, ObtainSwanSong, $"{Key}.pages.INITIAL.options.SWAN_SONG")
+            new EventOption(this, ObtainSwanSong, $"{Key}.pages.INITIAL.options.SWAN_SONG", HoverTipFactory.FromEnchantment<RevelationEnchantment>())
                 .WithRelic<SwanSong>(Owner),
             new EventOption(this, ObtainOceanPulse, $"{Key}.pages.INITIAL.options.OCEAN_PULSE")
                 .WithRelic<OceanPulse>(Owner)
         };
+        return Options;
     }
+
 
     private decimal GetMaxHpCost()
     {

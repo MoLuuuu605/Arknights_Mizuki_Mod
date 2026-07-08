@@ -45,16 +45,15 @@ public class MzkMirrorFlower : CustomCardModel
                 ((CardModel)this).Owner.Creature,
                 ((DynamicVar)((CardModel)this).DynamicVars["HpLoss"]).BaseValue,
                 ValueProp.Unblockable | ValueProp.Unpowered,
-                ((CardModel)this).Owner.Creature,
-                (CardModel)(object)this);
+                ((CardModel)this).Owner.Creature);
         }
         // 对所有敌人造成6点伤害2次
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-            .FromCard(this)
+            .FromCard(this,cardPlay)
             .TargetingAllOpponents(((CardModel)this).CombatState)
             .Execute(choiceContext);
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-            .FromCard(this)
+            .FromCard(this,cardPlay)
             .TargetingAllOpponents(((CardModel)this).CombatState)
             .Execute(choiceContext);
 

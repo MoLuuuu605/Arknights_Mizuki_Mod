@@ -3,6 +3,7 @@ using BaseLib.Abstracts;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
@@ -39,8 +40,19 @@ public sealed class BedCollapse : CustomCardModel
 
         foreach (CardModel card in bottomCards)
         {
-            await CardCmd.AutoPlay(choiceContext, card, GetTarget(card), AutoPlayType.Default);
-            await CardCmd.Exhaust(choiceContext, card);
+            if(card.TargetType == TargetType.AnyEnemy)
+            {
+                Creature target = base.Owner.RunState.Rng.CombatTargets.NextItem(base.CombatState.HittableEnemies);
+                await CardCmd.AutoPlay(choiceContext, card, target);
+            }
+            else if(card.TargetType == TargetType.Self)
+            {
+                await CardCmd.AutoPlay(choiceContext, card, Owner.Creature);
+            }
+            else
+            {
+                await CardCmd.AutoPlay(choiceContext, card, null);
+            }
         }
     }
 
@@ -52,7 +64,7 @@ public sealed class BedCollapse : CustomCardModel
         if (card.TargetType == TargetType.AnyEnemy || card.TargetType == TargetType.AllEnemies)
         {
             var enemies = CombatState.GetOpponentsOf(Owner.Creature).Where(enemy => enemy.IsAlive).ToList();
-            return enemies.Count == 0 ? null : Owner.RunState.Rng.CombatCardSelection.NextItem(enemies);
+            return enemies.Count == 0 ? null : Owner.RunState.Rng.CombatTargets.NextItem(CombatState.HittableEnemies);
         }
 
         return null;

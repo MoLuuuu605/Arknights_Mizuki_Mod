@@ -21,6 +21,7 @@ using MegaCrit.Sts2.Core.MonsterMoves.Intents;
 using MegaCrit.Sts2.Core.MonsterMoves.MonsterMoveStateMachine;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
+using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Arknights_Mizuki.Scripts.Enemies;
@@ -36,6 +37,9 @@ public sealed class Izumik : CustomMonsterModel
     private const string PhaseTwoCorruptMoveId = "IZUMIK_PHASE_2_CORRUPT";
     private const string PhaseTwoCrushMoveId = "IZUMIK_PHASE_2_CRUSH";
     private const string PhaseTwoSpawnMoveId = "IZUMIK_PHASE_2_SPAWN";
+    private const decimal StartingBlockPerPlayer = 120m;
+    private const decimal MoveBlockMultiplier = 1.5m;
+    private const decimal MoveBlockPerExtraPlayerMultiplier = 0.25m;
 
     private int absorbedOffspring;
     private bool phaseTwoStarted;
@@ -52,7 +56,9 @@ public sealed class Izumik : CustomMonsterModel
     public override async Task AfterAddedToRoom()
     {
         await base.AfterAddedToRoom();
+        EnsureBossHistoryModelId();
         var choiceContext = new ThrowingPlayerChoiceContext();
+        var playernum=Creature.CombatState.Players.Count();
         await PowerCmd.Apply<IzumikPhaseShiftPower>(
             choiceContext,
             Creature,
@@ -60,7 +66,13 @@ public sealed class Izumik : CustomMonsterModel
             Creature,
             null,
             false);
-        var playernum=Creature.CombatState.Players.Count();
+        await PowerCmd.Apply<IzumikOffspringGuardPower>(
+            choiceContext,
+            Creature,
+            1,
+            Creature,
+            null,
+            false);
         var usingAmount = playernum * ExplainPower.CardPerEnergy;
         await PowerCmd.Apply<ExplainPower>(
             choiceContext,
@@ -71,12 +83,19 @@ public sealed class Izumik : CustomMonsterModel
             false);
     }
 
+    private void EnsureBossHistoryModelId()
+    {
+        var historyRoom = Creature.CombatState.RunState.CurrentMapPointHistoryEntry?.Rooms.LastOrDefault();
+        if (historyRoom is { RoomType: RoomType.Boss, ModelId: null })
+            historyRoom.ModelId = Creature.CombatState.Encounter.Id;
+    }
+
     protected override MonsterMoveStateMachine GenerateMoveStateMachine()
     {
         absorbedOffspring = 0;
         phaseTwoStarted = false;
 
-        MoveState spawn = new(SpawnMoveId, _ => SummonOffspring(2, 14), new SummonIntent(), new BuffIntent())
+        MoveState spawn = new(SpawnMoveId, _ => SummonOffspring(2, ScaleMoveBlock(14)), new SummonIntent(), new BuffIntent())
         {
             FollowUpStateId = PressureMoveId
         };
@@ -153,6 +172,13 @@ public sealed class Izumik : CustomMonsterModel
         }
     }
 
+    public async Task ApplyOpeningOffspringGuard()
+    {
+        int playerCount = Math.Max(1, Creature.CombatState?.Players.Count ?? 1);
+        await CreatureCmd.GainBlock(Creature, new BlockVar(StartingBlockPerPlayer * playerCount, ValueProp.Move), null, false);
+        await SummonOffspring(3, 0);
+    }
+
     private async Task SummonOffspring(int count, decimal block)
     {
         if (count > 0)
@@ -160,9 +186,6 @@ public sealed class Izumik : CustomMonsterModel
 
         for (int i = 0; i < count; i++)
         {
-            if (Creature.CombatState.Enemies.Count(enemy => enemy.IsAlive && enemy.Monster is IzumikOffspring) >= 3)
-                break;
-
             await CreatureCmd.Add<IzumikOffspring>(Creature.CombatState);
             SeparateOffspringVisuals();
         }
@@ -255,6 +278,7 @@ public sealed class Izumik : CustomMonsterModel
     private async Task CorruptAndSummon(IReadOnlyList<Creature> targets, decimal weak, decimal vulnerable, decimal sanity, int summonCount)
     {
         await CorruptPlayer(targets, weak, vulnerable, sanity);
+        await AddPurificationToAllPlayers();
         await SummonOffspring(summonCount, 0);
         for (int i = 0; i < targets.Count; i++)
         {
@@ -270,6 +294,7 @@ public sealed class Izumik : CustomMonsterModel
     private async Task PhaseTwoCorruption(IReadOnlyList<Creature> targets)
     {
         await CreatureCmd.TriggerAnim(Creature, "Cast", 0.25f);
+        await AddPurificationToAllPlayers();
         Creature? target = targets.FirstOrDefault();
         if (target?.Player != null)
         {
@@ -288,7 +313,7 @@ public sealed class Izumik : CustomMonsterModel
                 PileType.Discard,
                 target.Player,
                 CardPilePosition.Random));
-            CardModel hazed = Creature.CombatState.CreateCard<Haze>(target.Player);
+            CardModel hazed = Creature.CombatState.CreateCard<Hurt>(target.Player);
             CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(
                 hazed,
                 PileType.Discard,
@@ -299,9 +324,22 @@ public sealed class Izumik : CustomMonsterModel
         await CorruptPlayer(targets, weak: 0, vulnerable: 2, sanity: Asc(4, 3));
     }
 
+    private async Task AddPurificationToAllPlayers()
+    {
+        foreach (var player in Creature.CombatState.Players)
+        {
+            CardModel purification = Creature.CombatState.CreateCard<Purification>(player);
+            CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(
+                purification,
+                PileType.Draw,
+                player,
+                CardPilePosition.Random));
+        }
+    }
+
     private async Task SummonAndStrengthen()
     {
-        await SummonOffspring(2, Asc(18, 14));
+        await SummonOffspring(2, ScaleMoveBlock(Asc(18, 14)));
         await CreatureCmd.TriggerAnim(Creature, "Buff", 0.2f);
         await PowerCmd.Apply<StrengthPower>(new ThrowingPlayerChoiceContext(), Creature, Asc(3, 2), Creature, null, false);
     }
@@ -333,13 +371,7 @@ public sealed class Izumik : CustomMonsterModel
             }
         }
 
-        foreach (PowerModel power in Creature.Powers.ToList())
-        {
-            if (power.Type == PowerType.Debuff)
-                await PowerCmd.Remove(power);
-        }
-
-        decimal targetHp = Creature.MaxHp * 0.6m;
+        decimal targetHp = Creature.MaxHp * 0.7m;
         if (Creature.CurrentHp < targetHp)
             await CreatureCmd.Heal(Creature, targetHp - Creature.CurrentHp, true);
 
@@ -360,6 +392,13 @@ public sealed class Izumik : CustomMonsterModel
     private static int Asc(int highAscensionValue, int normalValue)
     {
         return AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, highAscensionValue, normalValue);
+    }
+
+    private decimal ScaleMoveBlock(decimal baseBlock)
+    {
+        int playerCount = Math.Max(1, Creature.CombatState?.Players.Count ?? 1);
+        decimal multiplayerMultiplier = 1m + Math.Max(0, playerCount - 1) * MoveBlockPerExtraPlayerMultiplier;
+        return Math.Ceiling(baseBlock * MoveBlockMultiplier * multiplayerMultiplier);
     }
     private async Task AddFrozen(Creature? target)
     {

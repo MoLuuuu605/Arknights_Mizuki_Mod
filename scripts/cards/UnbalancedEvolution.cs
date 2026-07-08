@@ -14,7 +14,7 @@ namespace Arknights_Mizuki.Scripts.Cards;
 public sealed class UnbalancedEvolution : CustomCardModel
 {
     private const int energyCost = 2;
-    private const CardType type = CardType.Skill;
+    private const CardType type = CardType.Power;
     private const CardRarity rarity = CardRarity.Rare;
     private const TargetType targetType = TargetType.Self;
     private const bool shouldShowInCardLibrary = true;
@@ -22,11 +22,9 @@ public sealed class UnbalancedEvolution : CustomCardModel
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[3]
     {
         (DynamicVar)new DynamicVar("MaxHpLoss", 5m),
-        (DynamicVar)new PowerVar<StrengthPower>(3m),
-        (DynamicVar)new PowerVar<DexterityPower>(3m)
+        (DynamicVar)new PowerVar<StrengthPower>(2m),
+        (DynamicVar)new PowerVar<DexterityPower>(2m)
     };
-
-    public override IEnumerable<CardKeyword> CanonicalKeywords => new CardKeyword[1] { CardKeyword.Exhaust };
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[]
     {

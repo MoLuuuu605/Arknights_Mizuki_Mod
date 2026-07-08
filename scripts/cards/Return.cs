@@ -22,7 +22,7 @@ public class Return : CustomCardModel
 
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
     {
-        (DynamicVar)new CardsVar(6),
+        (DynamicVar)new CardsVar(4),
         (DynamicVar)new DamageVar(4m, ValueProp.Unblockable),
     };
 
@@ -37,13 +37,7 @@ public class Return : CustomCardModel
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CardPileCmd.Draw(choiceContext,((DynamicVar)((CardModel)this).DynamicVars.Cards).BaseValue,Owner,false);
-        await CreatureCmd.Damage(
-            choiceContext,
-            ((CardModel)this).Owner.Creature,
-            DynamicVars.Damage.BaseValue,
-            ValueProp.Unblockable | ValueProp.Unpowered,
-            ((CardModel)this).Owner.Creature,
-            (CardModel)(object)this);
+        await CreatureCmd.Damage(choiceContext,Owner.Creature,DynamicVars.Damage,Owner.Creature);
     }
     protected override void OnUpgrade()
     {

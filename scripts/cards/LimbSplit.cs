@@ -22,8 +22,8 @@ public sealed class LimbSplit : CustomCardModel
 
     protected override IEnumerable<DynamicVar> CanonicalVars => (IEnumerable<DynamicVar>)(object)new DynamicVar[2]
     {
-        (DynamicVar)new BlockVar(12m, (ValueProp)8),
-        (DynamicVar)new DynamicVar("MaxHpLoss", 8m)
+        (DynamicVar)new BlockVar(16m, (ValueProp)8),
+        (DynamicVar)new DynamicVar("MaxHpLoss", 6m)
     };
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => (IEnumerable<IHoverTip>)(object)new IHoverTip[]
